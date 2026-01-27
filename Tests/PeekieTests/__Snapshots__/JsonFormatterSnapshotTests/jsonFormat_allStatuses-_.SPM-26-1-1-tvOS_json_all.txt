@@ -1,0 +1,243 @@
+{
+  "coverage" : 0.6006600660066007,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 15,
+        "percentage" : 0.21428571428571427,
+        "totalLines" : 70
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "Calculator",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 167,
+        "percentage" : 0.7167381974248928,
+        "totalLines" : 233
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "name" : "ExampleSUITests",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 57,
+            "percentage" : 0.8507462686567164,
+            "totalLines" : 67
+          },
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "ExamplesTests",
+      "suites" : [
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 0,
+              "name" : "async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Test 'disabled()' skipped: Disabled reason",
+              "name" : "disabled()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Failure is expected",
+              "name" : "expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+              "name" : "flackyParameterized(value:) [false]",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0,
+              "name" : "flackyParameterized(value:) [true]",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0,
+              "name" : "success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0,
+              "name" : "withAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 13.643980026245117,
+              "name" : "test_async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 13.444066047668457,
+              "name" : "test_asyncWithExpectation()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 563.5050535202026,
+              "message" : "Failure is expected",
+              "name" : "test_expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 3.248929977416992,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 28.267860412597656,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "test_flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 261.3009214401245,
+              "name" : "test_performance()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 7.004976272583008,
+              "message" : "Skip message",
+              "name" : "test_skip()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 0.6669759750366211,
+              "name" : "test_success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 16.337871551513672,
+              "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 1.3369321823120117,
+              "name" : "test_withAttachment()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 1.077890396118164,
+              "name" : "test_withWarning()",
+              "status" : "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "files" : [
+
+      ],
+      "name" : "StringUtils",
+      "suites" : [
+
+      ]
+    }
+  ]
+}

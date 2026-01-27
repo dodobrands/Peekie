@@ -22,6 +22,7 @@ The `PeekieSDK` package provides a Swift module for parsing `.xcresult` files ge
   - [Formatters](#formatters)
     - [ListFormatter](#listformatter)
     - [SonarFormatter](#sonarformatter)
+    - [JsonFormatter](#jsonformatter)
   - [Command-Line Tool](#command-line-tool)
 - [Updating Test Resources](#updating-test-resources)
 - [License](#license)
@@ -40,6 +41,7 @@ The `PeekieSDK` package provides a Swift module for parsing `.xcresult` files ge
 - Includes utility functions for filtering tests based on status.
 - Can be executed as a command-line tool to generate test reports directly from the terminal.
 - **SonarQube integration**: Generates SonarQube Generic Test Execution XML format for CI/CD integration.
+- **JSON output**: Generates structured JSON with full report data (tests, coverage, warnings) for machine consumption and `jq` processing.
 
 ## Installation
 
@@ -142,6 +144,7 @@ The `PeekieSDK` package provides multiple formatters to convert parsed `.xcresul
 
 - **ListFormatter**: Generates human-readable list output for terminal display and logs
 - **SonarFormatter**: Generates SonarQube Generic Test Execution XML format for CI/CD integration
+- **JsonFormatter**: Generates structured JSON output with full report data including tests, coverage, and warnings
 
 ### ListFormatter
 
@@ -317,9 +320,90 @@ The formatter generates XML in the following structure:
 </testExecutions>
 ```
 
+### JsonFormatter
+
+The `JsonFormatter` class generates a structured JSON output containing the full report data: test results, code coverage at all levels (total, module, file), and build warnings. Ideal for machine consumption, CI/CD integrations, and downstream processing with tools like `jq`.
+
+#### Usage
+
+```swift
+import PeekieSDK
+
+// Assuming you have already created a `Report` instance as `report`
+let report: Report = ...
+
+// Create a JSON formatter
+let formatter = JsonFormatter()
+
+// Format the report as JSON
+let jsonOutput = try formatter.format(report)
+
+// Print the JSON output
+print(jsonOutput)
+```
+
+**Filtering by status:**
+
+```swift
+// Only show failures
+let failuresOnly = try formatter.format(report, include: [.failure])
+
+// Show both failures and skipped tests
+let failuresAndSkipped = try formatter.format(report, include: [.failure, .skipped])
+```
+
+**Including device details:**
+
+```swift
+// Include device details in test names
+let outputWithDevices = try formatter.format(report, includeDeviceDetails: true)
+```
+
+#### JSON Output Structure
+
+```json
+{
+  "coverage": 0.60,
+  "modules": [
+    {
+      "name": "ExampleTests",
+      "coverage": {
+        "coveredLines": 167,
+        "totalLines": 233,
+        "percentage": 0.716
+      },
+      "files": [
+        {
+          "name": "Calculator.swift",
+          "coverage": {
+            "coveredLines": 15,
+            "totalLines": 34,
+            "percentage": 0.441
+          },
+          "warnings": []
+        }
+      ],
+      "suites": [
+        {
+          "name": "CalculatorTests",
+          "tests": [
+            {
+              "name": "testAddition()",
+              "status": "success",
+              "durationMs": 12.5,
+              "message": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### Command-Line Tool
 
-The package includes a command-line tool that can be executed to generate test reports. The tool supports two subcommands: `list` for human-readable list output and `sonar` for SonarQube XML format.
+The package includes a command-line tool that can be executed to generate test reports. The tool supports three subcommands: `list` for human-readable list output, `sonar` for SonarQube XML format, and `json` for structured JSON output.
 
 #### List Format Subcommand
 
@@ -367,6 +451,73 @@ swift run peekie sonar path/to/tests.xcresult --tests-path Tests/PeekieTests > s
 **Available options for `sonar` subcommand:**
 - `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
 - `--tests-path`: Specifies the path to the directory containing test source files (required). This must be a directory path (not a `.xcresult` file) containing your test source code (`.swift` files). This is used to map test suite names to file paths.
+
+#### JSON Format Subcommand
+
+```bash
+swift run peekie json path/to/tests.xcresult
+```
+
+**Examples:**
+
+```bash
+# Full JSON report with tests, coverage, and warnings
+swift run peekie json path/to/tests.xcresult
+
+# Only failures
+swift run peekie json path/to/tests.xcresult --include failure
+
+# Without coverage data
+swift run peekie json path/to/tests.xcresult --include-coverage false
+
+# Save output to file
+swift run peekie json path/to/tests.xcresult > report.json
+```
+
+**Available options for `json` subcommand:**
+- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
+- `--include`: Filters the test results to include only certain statuses. Comma-separated list of: `success`, `failure`, `skipped`, `expectedFailure`, `mixed`, `unknown`. Default: all statuses.
+- `--include-coverage`: Whether to parse and include code coverage data. Default: `true`.
+- `--include-warnings`: Whether to parse and include build warnings. Default: `true`.
+- `--include-device-details`: Include device information in test names. Default: `false`.
+
+#### Extracting Coverage with `jq`
+
+The JSON output works well with [`jq`](https://jqlang.github.io/jq/) for extracting specific data in CI/CD scripts.
+
+**Get total coverage:**
+
+```bash
+swift run peekie json path/to/tests.xcresult | jq '.coverage'
+# 0.6006600660066007
+```
+
+**Get coverage for a specific module:**
+
+```bash
+swift run peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .coverage'
+# {
+#   "coveredLines": 167,
+#   "totalLines": 233,
+#   "percentage": 0.716
+# }
+```
+
+**Get coverage percentage for all modules:**
+
+```bash
+swift run peekie json path/to/tests.xcresult | jq '.modules[] | {name, coverage: .coverage.percentage}'
+# { "name": "Calculator", "coverage": 0.214 }
+# { "name": "ExampleTests", "coverage": 0.716 }
+```
+
+**Get file-level coverage for a module:**
+
+```bash
+swift run peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .files[] | {name, coverage: .coverage.percentage}'
+# { "name": "Calculator.swift", "coverage": 0.441 }
+# { "name": "NumberHelper.swift", "coverage": 0 }
+```
 
 ## Updating Test Resources
 
