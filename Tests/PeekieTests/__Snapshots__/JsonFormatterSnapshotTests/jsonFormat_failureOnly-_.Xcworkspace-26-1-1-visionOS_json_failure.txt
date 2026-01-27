@@ -1,0 +1,220 @@
+{
+  "coverage" : 0.6703703703703704,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 29,
+        "percentage" : 0.34523809523809523,
+        "totalLines" : 84
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 14,
+            "percentage" : 1,
+            "totalLines" : 14
+          },
+          "name" : "XcodeprojExampleApp.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "XcodeprojExample.app",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 0,
+        "percentage" : 0,
+        "totalLines" : 23
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 23
+          },
+          "name" : "TextProcessor.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleFramework.framework",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 152,
+        "percentage" : 0.9325153374233128,
+        "totalLines" : 163
+      },
+      "files" : [
+        {
+          "name" : "ExampleSUITests",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleTests",
+      "suites" : [
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 0,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 1852.773904800415,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 11.878013610839844,
+              "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 152,
+        "percentage" : 0.9325153374233128,
+        "totalLines" : 163
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 57,
+            "percentage" : 0.8507462686567164,
+            "totalLines" : 67
+          },
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleTests.xctest",
+      "suites" : [
+
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "coverage" : 0.6006600660066007,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 15,
+        "percentage" : 0.21428571428571427,
+        "totalLines" : 70
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "Calculator",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 167,
+        "percentage" : 0.7167381974248928,
+        "totalLines" : 233
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "name" : "ExampleSUITests",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 57,
+            "percentage" : 0.8507462686567164,
+            "totalLines" : 67
+          },
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "ExamplesTests",
+      "suites" : [
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 0,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0,
+              "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 2.4628639221191406,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 19.759178161621094,
+              "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "files" : [
+
+      ],
+      "name" : "StringUtils",
+      "suites" : [
+
+      ]
+    }
+  ]
+}
