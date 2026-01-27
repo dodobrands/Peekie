@@ -24,7 +24,7 @@ jobs:
         xcode-version: ${{ steps.xcode-version.outputs.version }}
 
     - name: Build release binary
-      run: swift build -c release
+      run: swift build -c release --product peekie
 
     - name: Package binary
       run: |
