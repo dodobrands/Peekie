@@ -84,7 +84,7 @@ The package exports:
 
 ## Testing
 
-Test resources are stored in `Tests/PeekieTests/Resources/DBXCResultParser.xcresult` - this is a sample `.xcresult` file used for testing.
+Test resources are stored in `Tests/PeekieTests/Resources/` - sample `.xcresult` files used for testing (e.g., `SPM-26.1.1-iOS.xcresult`, `Xcworkspace-26.1.1-iOS.xcresult`).
 
 ## Code Style Guidelines
 

@@ -95,7 +95,7 @@ extension Report {
                 if let coverageReportDTO = coverageReportDTO {
                     for target in coverageReportDTO.targets {
                         // Try to match target name with module name
-                        // Module name is like "DBXCResultParserTests", target might be "DBXCResultParser"
+                        // Module name is like "MyPackageTests", target might be "MyPackage"
                         let targetBaseName = target.name.replacingOccurrences(of: "Tests", with: "")
                         let moduleBaseName = moduleName.replacingOccurrences(of: "Tests", with: "")
 
@@ -468,7 +468,7 @@ extension Report {
                 }()
 
                 // Try to find existing module by target name or create a new one
-                // Target name might be like "DBXCResultParser", module might be "DBXCResultParserTests"
+                // Target name might be like "MyPackage", module might be "MyPackageTests"
                 var moduleName = target.name
                 var existingModule = modules[moduleName]
 
