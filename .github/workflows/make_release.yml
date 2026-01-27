@@ -5,6 +5,9 @@ on:
     tags:
       - "*.*.*"
 
+env:
+  PRODUCT_NAME: peekie
+
 jobs:
   release:
     runs-on: 'macos-latest'
@@ -24,14 +27,14 @@ jobs:
         xcode-version: ${{ steps.xcode-version.outputs.version }}
 
     - name: Build release binary
-      run: swift build -c release --product peekie
+      run: swift build -c release --product "$PRODUCT_NAME"
 
     - name: Package binary
       run: |
-        BINARY_PATH=$(swift build -c release --show-bin-path)/peekie
+        BINARY_PATH=$(swift build -c release --product "$PRODUCT_NAME" --show-bin-path)/$PRODUCT_NAME
         TAG_NAME=${GITHUB_REF#refs/tags/}
-        ARCHIVE_NAME="peekie_${TAG_NAME}_darwin_arm64.tar.gz"
-        tar -czf "${ARCHIVE_NAME}" -C "$(dirname "${BINARY_PATH}")" peekie
+        ARCHIVE_NAME="${PRODUCT_NAME}_${TAG_NAME}_darwin_arm64.tar.gz"
+        tar -czf "${ARCHIVE_NAME}" -C "$(dirname "${BINARY_PATH}")" "$PRODUCT_NAME"
         echo "ARCHIVE_NAME=${ARCHIVE_NAME}" >> $GITHUB_ENV
 
     - name: Release
