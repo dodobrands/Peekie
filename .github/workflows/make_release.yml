@@ -7,12 +7,35 @@ on:
 
 jobs:
   release:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'macos-latest'
 
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     steps:
+    - uses: actions/checkout@v6
+
+    - name: Read Xcode version
+      id: xcode-version
+      run: echo "version=$(<.xcode-version)" >> $GITHUB_OUTPUT
+
+    - name: Select Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ steps.xcode-version.outputs.version }}
+
+    - name: Build release binary
+      run: swift build -c release
+
+    - name: Package binary
+      run: |
+        BINARY_PATH=$(swift build -c release --show-bin-path)/peekie
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        ARCHIVE_NAME="peekie_${TAG_NAME}_darwin_arm64.tar.gz"
+        tar -czf "${ARCHIVE_NAME}" -C "$(dirname "${BINARY_PATH}")" peekie
+        echo "ARCHIVE_NAME=${ARCHIVE_NAME}" >> $GITHUB_ENV
+
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-          generate_release_notes: true
+        generate_release_notes: true
+        files: ${{ env.ARCHIVE_NAME }}
