@@ -27,17 +27,20 @@ jobs:
         xcode-version: ${{ steps.xcode-version.outputs.version }}
 
     - name: Build release binary
-      run: swift build -c release --product "$PRODUCT_NAME"
+      id: build
+      run: |
+        swift build -c release --product "$PRODUCT_NAME"
+        echo "bin-path=$(swift build -c release --product "$PRODUCT_NAME" --show-bin-path)" >> $GITHUB_OUTPUT
 
     - name: Package binary
+      id: package
       run: |
-        BINARY_PATH=$(swift build -c release --product "$PRODUCT_NAME" --show-bin-path)/$PRODUCT_NAME
         ARCHIVE_NAME="${PRODUCT_NAME}_${GITHUB_REF_NAME}_darwin_arm64.tar.gz"
-        tar -czf "${ARCHIVE_NAME}" -C "$(dirname "${BINARY_PATH}")" "$PRODUCT_NAME"
-        echo "ARCHIVE_NAME=${ARCHIVE_NAME}" >> $GITHUB_ENV
+        tar -czf "${ARCHIVE_NAME}" -C "${{ steps.build.outputs.bin-path }}" "$PRODUCT_NAME"
+        echo "archive-name=${ARCHIVE_NAME}" >> $GITHUB_OUTPUT
 
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
         generate_release_notes: true
-        files: ${{ env.ARCHIVE_NAME }}
+        files: ${{ steps.package.outputs.archive-name }}
