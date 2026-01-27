@@ -5,14 +5,42 @@ on:
     tags:
       - "*.*.*"
 
+env:
+  PRODUCT_NAME: peekie
+
 jobs:
   release:
-    runs-on: 'ubuntu-latest'
+    runs-on: 'macos-latest'
 
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     steps:
+    - uses: actions/checkout@v6
+
+    - name: Read Xcode version
+      id: xcode-version
+      run: echo "version=$(<.xcode-version)" >> $GITHUB_OUTPUT
+
+    - name: Select Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ steps.xcode-version.outputs.version }}
+
+    - name: Build release binary
+      id: build
+      run: |
+        swift build -c release --product "$PRODUCT_NAME"
+        echo "bin-path=$(swift build -c release --product "$PRODUCT_NAME" --show-bin-path)" >> $GITHUB_OUTPUT
+
+    - name: Package binary
+      id: package
+      run: |
+        ARCHIVE_NAME="${PRODUCT_NAME}_${GITHUB_REF_NAME}_darwin_arm64.tar.gz"
+        tar -czf "${ARCHIVE_NAME}" -C "${{ steps.build.outputs.bin-path }}" "$PRODUCT_NAME"
+        echo "archive-name=${ARCHIVE_NAME}" >> $GITHUB_OUTPUT
+
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-          generate_release_notes: true
+        generate_release_notes: true
+        files: ${{ steps.package.outputs.archive-name }}
