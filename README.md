@@ -18,12 +18,10 @@ The `PeekieSDK` package provides a Swift module for parsing `.xcresult` files ge
 - [Installation](#installation)
 - [Migration Guide](#migration-guide)
 - [Usage](#usage)
-  - [Parsing xcresult Files](#parsing-xcresult-files)
-  - [Formatters](#formatters)
-    - [ListFormatter](#listformatter)
-    - [SonarFormatter](#sonarformatter)
-    - [JsonFormatter](#jsonformatter)
   - [Command-Line Tool](#command-line-tool)
+  - [Programmatic Usage](#programmatic-usage)
+    - [Parsing xcresult Files](#parsing-xcresult-files)
+    - [Formatters](#formatters)
 - [Updating Test Resources](#updating-test-resources)
 - [License](#license)
 
@@ -83,7 +81,127 @@ If you're upgrading from version 3.* (formerly `DBXCResultParser`), please see t
 
 ## Usage
 
-### Parsing xcresult Files
+### Command-Line Tool
+
+The package includes a command-line tool that can be executed to generate test reports. The tool supports three subcommands: `list` for human-readable list output, `sonar` for SonarQube XML format, and `json` for structured JSON output.
+
+#### List Format Subcommand
+
+```bash
+peekie list path/to/tests.xcresult
+```
+
+**Examples:**
+
+```bash
+# Default: all test statuses
+peekie list path/to/tests.xcresult
+
+# Show only failures
+peekie list path/to/tests.xcresult --include failure
+
+# Show failures and skipped tests
+peekie list path/to/tests.xcresult --include failure,skipped
+```
+
+**Available options for `list` subcommand:**
+- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
+- `--include`: Filters the test results to include only certain statuses. Comma-separated list of: `success`, `failure`, `skipped`, `expectedFailure`, `mixed`, `unknown`. Default: all statuses.
+- `--include-coverage`: Whether to parse and include code coverage data. Default: `true`.
+- `--include-warnings`: Whether to parse and include build warnings. Default: `true`.
+- `--include-device-details`: Include device information in test names (e.g., `[iPhone 15 Pro]`). Useful when analyzing merged results from multiple devices. Default: `false`.
+
+#### SonarQube Format Subcommand
+
+```bash
+peekie sonar path/to/tests.xcresult --tests-path path/to/tests
+```
+
+**Examples:**
+
+```bash
+# Generate SonarQube XML report
+# Note: --tests-path must point to a directory containing test source files, not the .xcresult file
+peekie sonar path/to/tests.xcresult --tests-path path/to/tests
+
+# Save output to file
+peekie sonar path/to/tests.xcresult --tests-path Tests/PeekieTests > sonar-report.xml
+```
+
+**Available options for `sonar` subcommand:**
+- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
+- `--tests-path`: Specifies the path to the directory containing test source files (required). This must be a directory path (not a `.xcresult` file) containing your test source code (`.swift` files). This is used to map test suite names to file paths.
+
+#### JSON Format Subcommand
+
+```bash
+peekie json path/to/tests.xcresult
+```
+
+**Examples:**
+
+```bash
+# Full JSON report with tests, coverage, and warnings
+peekie json path/to/tests.xcresult
+
+# Only failures
+peekie json path/to/tests.xcresult --include failure
+
+# Without coverage data
+peekie json path/to/tests.xcresult --include-coverage false
+
+# Save output to file
+peekie json path/to/tests.xcresult > report.json
+```
+
+**Available options for `json` subcommand:**
+- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
+- `--include`: Filters the test results to include only certain statuses. Comma-separated list of: `success`, `failure`, `skipped`, `expectedFailure`, `mixed`, `unknown`. Default: all statuses.
+- `--include-coverage`: Whether to parse and include code coverage data. Default: `true`.
+- `--include-warnings`: Whether to parse and include build warnings. Default: `true`.
+- `--include-device-details`: Include device information in test names. Default: `false`.
+
+#### Extracting Coverage with `jq`
+
+The JSON output works well with [`jq`](https://jqlang.github.io/jq/) for extracting specific data in CI/CD scripts.
+
+**Get total coverage:**
+
+```bash
+peekie json path/to/tests.xcresult | jq '.coverage'
+# 0.6006600660066007
+```
+
+**Get coverage for a specific module:**
+
+```bash
+peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .coverage'
+# {
+#   "coveredLines": 167,
+#   "totalLines": 233,
+#   "percentage": 0.716
+# }
+```
+
+**Get coverage percentage for all modules:**
+
+```bash
+peekie json path/to/tests.xcresult | jq '.modules[] | {name, coverage: .coverage.percentage}'
+# { "name": "Calculator", "coverage": 0.214 }
+# { "name": "ExampleTests", "coverage": 0.716 }
+```
+
+**Get file-level coverage for a module:**
+
+```bash
+peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .files[] | {name, coverage: .coverage.percentage}'
+# { "name": "Calculator.swift", "coverage": 0.441 }
+# { "name": "NumberHelper.swift", "coverage": 0 }
+```
+
+### Programmatic Usage
+
+#### Parsing xcresult Files
 
 To parse an `.xcresult` file and access the report data, initialize a `Report` with the path to the `.xcresult` file:
 
@@ -409,124 +527,6 @@ let outputWithDevices = try formatter.format(report, includeDeviceDetails: true)
     }
   ]
 }
-```
-
-### Command-Line Tool
-
-The package includes a command-line tool that can be executed to generate test reports. The tool supports three subcommands: `list` for human-readable list output, `sonar` for SonarQube XML format, and `json` for structured JSON output.
-
-#### List Format Subcommand
-
-```bash
-swift run peekie list path/to/tests.xcresult
-```
-
-**Examples:**
-
-```bash
-# Default: all test statuses
-swift run peekie list path/to/tests.xcresult
-
-# Show only failures
-swift run peekie list path/to/tests.xcresult --include failure
-
-# Show failures and skipped tests
-swift run peekie list path/to/tests.xcresult --include failure,skipped
-```
-
-**Available options for `list` subcommand:**
-- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
-- `--include`: Filters the test results to include only certain statuses. Comma-separated list of: `success`, `failure`, `skipped`, `expectedFailure`, `mixed`, `unknown`. Default: all statuses.
-- `--include-coverage`: Whether to parse and include code coverage data. Default: `true`.
-- `--include-warnings`: Whether to parse and include build warnings. Default: `true`.
-- `--include-device-details`: Include device information in test names (e.g., `[iPhone 15 Pro]`). Useful when analyzing merged results from multiple devices. Default: `false`.
-
-#### SonarQube Format Subcommand
-
-```bash
-swift run peekie sonar path/to/tests.xcresult --tests-path path/to/tests
-```
-
-**Examples:**
-
-```bash
-# Generate SonarQube XML report
-# Note: --tests-path must point to a directory containing test source files, not the .xcresult file
-swift run peekie sonar path/to/tests.xcresult --tests-path path/to/tests
-
-# Save output to file
-swift run peekie sonar path/to/tests.xcresult --tests-path Tests/PeekieTests > sonar-report.xml
-```
-
-**Available options for `sonar` subcommand:**
-- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
-- `--tests-path`: Specifies the path to the directory containing test source files (required). This must be a directory path (not a `.xcresult` file) containing your test source code (`.swift` files). This is used to map test suite names to file paths.
-
-#### JSON Format Subcommand
-
-```bash
-swift run peekie json path/to/tests.xcresult
-```
-
-**Examples:**
-
-```bash
-# Full JSON report with tests, coverage, and warnings
-swift run peekie json path/to/tests.xcresult
-
-# Only failures
-swift run peekie json path/to/tests.xcresult --include failure
-
-# Without coverage data
-swift run peekie json path/to/tests.xcresult --include-coverage false
-
-# Save output to file
-swift run peekie json path/to/tests.xcresult > report.json
-```
-
-**Available options for `json` subcommand:**
-- `<xcresult-path>`: Path to the `.xcresult` file (required, positional argument).
-- `--include`: Filters the test results to include only certain statuses. Comma-separated list of: `success`, `failure`, `skipped`, `expectedFailure`, `mixed`, `unknown`. Default: all statuses.
-- `--include-coverage`: Whether to parse and include code coverage data. Default: `true`.
-- `--include-warnings`: Whether to parse and include build warnings. Default: `true`.
-- `--include-device-details`: Include device information in test names. Default: `false`.
-
-#### Extracting Coverage with `jq`
-
-The JSON output works well with [`jq`](https://jqlang.github.io/jq/) for extracting specific data in CI/CD scripts.
-
-**Get total coverage:**
-
-```bash
-swift run peekie json path/to/tests.xcresult | jq '.coverage'
-# 0.6006600660066007
-```
-
-**Get coverage for a specific module:**
-
-```bash
-swift run peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .coverage'
-# {
-#   "coveredLines": 167,
-#   "totalLines": 233,
-#   "percentage": 0.716
-# }
-```
-
-**Get coverage percentage for all modules:**
-
-```bash
-swift run peekie json path/to/tests.xcresult | jq '.modules[] | {name, coverage: .coverage.percentage}'
-# { "name": "Calculator", "coverage": 0.214 }
-# { "name": "ExampleTests", "coverage": 0.716 }
-```
-
-**Get file-level coverage for a module:**
-
-```bash
-swift run peekie json path/to/tests.xcresult | jq '.modules[] | select(.name == "MyModule") | .files[] | {name, coverage: .coverage.percentage}'
-# { "name": "Calculator.swift", "coverage": 0.441 }
-# { "name": "NumberHelper.swift", "coverage": 0 }
 ```
 
 ## Updating Test Resources
