@@ -45,6 +45,16 @@ The `PeekieSDK` package provides a Swift module for parsing `.xcresult` files ge
 
 ## Installation
 
+### Command-Line Tool (Recommended)
+
+The recommended way to install the `peekie` command-line tool is via [mise](https://mise.jdx.dev/getting-started.html):
+
+```bash
+mise use github:dodobrands/peekie
+```
+
+### Swift Package
+
 To use `PeekieSDK` in your Swift package, add it to the dependencies for your `Package.swift` file:
 
 ```swift
