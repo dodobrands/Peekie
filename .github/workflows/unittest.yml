@@ -56,7 +56,7 @@ jobs:
       run: swift run peekie sonar Tests/PeekieTests/Resources/SPM-26.1.1-iOS.xcresult --tests-path swift-tests-example/SPM/Tests/ExamplesTests
 
     - name: Install mise
-      uses: jdx/mise-action@v3
+      uses: jdx/mise-action@v4
 
     - name: Scan for unused code with Periphery
       run: periphery scan --skip-build --strict
