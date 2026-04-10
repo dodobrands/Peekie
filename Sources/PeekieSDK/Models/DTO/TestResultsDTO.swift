@@ -9,6 +9,7 @@ extension TestResultsDTO {
         let children: [TestNode]?
         let durationInSeconds: Double?
         let name: String
+        let nodeIdentifier: String?
         let nodeIdentifierURL: String?
         let nodeType: NodeType
         let result: Result?
