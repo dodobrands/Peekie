@@ -1,6 +1,9 @@
 import Foundation
 import Logging
 
+private typealias AttachmentsByTestIdentifierURL = [String: [Report.Module.Suite.RepeatableTest
+    .Attachment]]
+
 extension Report {
     private static let logger = Logger(label: "com.peekie.report")
 
@@ -11,11 +14,13 @@ extension Report {
     ///   - xcresultPath: The file URL of the `.xcresult` file to parse.
     ///   - includeCoverage: Whether to parse and include code coverage data. Defaults to `true`.
     ///   - includeWarnings: Whether to parse and include build warnings. Defaults to `true`.
+    ///   - attachmentsOutputDirectory:  Where to export the test attachments, if nil won't export. Defaults to `nil`
     /// - Throws: An error if the `.xcresult` file cannot be parsed.
     public init(
         xcresultPath: URL,
         includeCoverage: Bool = true,
-        includeWarnings: Bool = true
+        includeWarnings: Bool = true,
+        attachmentsOutputDirectory: URL? = nil
     ) async throws {
         Self.logger.debug(
             "Initializing Report from xcresult",
@@ -39,6 +44,29 @@ extension Report {
             includeCoverage ? try await CoverageReportDTO(from: xcresultPath) : nil
         if includeCoverage {
             Self.logger.debug("CoverageReportDTO loaded")
+        }
+
+        let attachmentsGrouped: AttachmentsByTestIdentifierURL?
+        if let attachmentsOutputDirectory {
+            let attachmentsDTO = try await AttachmentsDTO(
+                from: xcresultPath, attachmentsOutputDirectory: attachmentsOutputDirectory)
+            attachmentsGrouped = Dictionary(
+                grouping: attachmentsDTO,
+                by: {
+                    $0.testIdentifierURL
+                }
+            ).mapValues {
+                $0.flatMap {
+                    $0.attachments.map {
+                        Report.Module.Suite.RepeatableTest.Attachment(
+                            path: attachmentsOutputDirectory.appending(path: $0.exportedFileName),
+                            suggestedHumanReadableName: $0.suggestedHumanReadableName
+                        )
+                    }
+                }
+            }
+        } else {
+            attachmentsGrouped = nil
         }
 
         // Build a map of file paths to coverage data
@@ -138,7 +166,10 @@ extension Report {
                     guard testCase.nodeType == .testCase else { continue }
 
                     try Self.processTestCaseNode(
-                        testCase: testCase, container: &module.repeatableTests)
+                        testCase: testCase,
+                        container: &module.repeatableTests,
+                        attachmentsByTestIdentifierURL: attachmentsGrouped
+                    )
 
                 }
 
@@ -154,6 +185,7 @@ extension Report {
                         warningsByFileName: warningsByFileName,
                         includeCoverage: includeCoverage,
                         includeWarnings: includeWarnings,
+                        attachmentsByTestIdentifierURL: attachmentsGrouped,
                         moduleFiles: &module.files,
                         container: &module.suites
                     )
@@ -281,7 +313,9 @@ extension Report {
     }
 
     private static func processTestCaseNode(
-        testCase: TestResultsDTO.TestNode, container: inout Set<Report.Module.Suite.RepeatableTest>
+        testCase: TestResultsDTO.TestNode,
+        container: inout Set<Report.Module.Suite.RepeatableTest>,
+        attachmentsByTestIdentifierURL: AttachmentsByTestIdentifierURL?
     ) throws {
         let testName = testCase.name
         var repeatableTest =
@@ -289,6 +323,7 @@ extension Report {
             ?? Report.Module.Suite.RepeatableTest(
                 name: testName,
                 nodeIdentifier: testCase.nodeIdentifier!,
+                attachments: attachmentsByTestIdentifierURL?[testCase.nodeIdentifierURL!],
                 tests: []
             )
 
@@ -427,6 +462,7 @@ extension Report {
         warningsByFileName: [String: [Report.Module.File.Issue]],
         includeCoverage: Bool,
         includeWarnings: Bool,
+        attachmentsByTestIdentifierURL: AttachmentsByTestIdentifierURL?,
         moduleFiles: inout Set<Module.File>,
         container: inout Set<Report.Module.Suite>
     ) throws {
@@ -609,6 +645,7 @@ extension Report {
                 warningsByFileName: warningsByFileName,
                 includeCoverage: includeCoverage,
                 includeWarnings: includeWarnings,
+                attachmentsByTestIdentifierURL: attachmentsByTestIdentifierURL,
                 moduleFiles: &moduleFiles,
                 container: &suite.suites
             )
@@ -620,7 +657,11 @@ extension Report {
         for testCase in testCases {
             guard testCase.nodeType == .testCase else { continue }
 
-            try processTestCaseNode(testCase: testCase, container: &suite.repeatableTests)
+            try processTestCaseNode(
+                testCase: testCase,
+                container: &suite.repeatableTests,
+                attachmentsByTestIdentifierURL: attachmentsByTestIdentifierURL
+            )
 
         }
 

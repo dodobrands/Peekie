@@ -171,6 +171,8 @@ extension Report.Module.Suite {
 
         public let nodeIdentifier: String
 
+        public let attachments: [Attachment]?
+
         /// Array of test executions (multiple entries if test was retried or run with different parameters)
         public internal(set) var tests: [Test]
 
@@ -181,6 +183,13 @@ extension Report.Module.Suite {
         public static func == (lhs: Self, rhs: Self) -> Bool {
             lhs.name == rhs.name
         }
+    }
+}
+
+extension Report.Module.Suite.RepeatableTest {
+    public struct Attachment {
+        public let path: URL
+        public let suggestedHumanReadableName: String
     }
 }
 

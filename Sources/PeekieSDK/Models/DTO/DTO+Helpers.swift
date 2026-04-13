@@ -112,3 +112,22 @@ extension BuildResultsDTO {
         Self.logger.debug("BuildResultsDTO parsed successfully")
     }
 }
+
+extension AttachmentsDTO {
+
+    init(from xcresultPath: URL, attachmentsOutputDirectory: URL) async throws {
+        let output = try await Shell.execute(
+            "xcrun",
+            arguments: [
+                "xcresulttool", "export", "attachments",
+                "--path", xcresultPath.path,
+                "--output-path", attachmentsOutputDirectory.path,
+            ]
+        )
+        let manifestPath = attachmentsOutputDirectory.appending(path: "manifest.json")
+
+        let data = try Data(contentsOf: manifestPath)
+
+        self = try JSONDecoder().decode(AttachmentsDTO.self, from: data)
+    }
+}
