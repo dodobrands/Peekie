@@ -190,6 +190,7 @@ extension Report.Module.Suite.RepeatableTest {
     public struct Attachment {
         public let path: URL
         public let suggestedHumanReadableName: String
+        public let arguments: [String]?
     }
 }
 

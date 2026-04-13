@@ -60,7 +60,8 @@ extension Report {
                     $0.attachments.map {
                         Report.Module.Suite.RepeatableTest.Attachment(
                             path: attachmentsOutputDirectory.appending(path: $0.exportedFileName),
-                            suggestedHumanReadableName: $0.suggestedHumanReadableName
+                            suggestedHumanReadableName: $0.suggestedHumanReadableName,
+                            arguments: $0.arguments
                         )
                     }
                 }

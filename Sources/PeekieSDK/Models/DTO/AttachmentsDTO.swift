@@ -15,6 +15,6 @@ struct AttachmentDetails: Decodable, Sendable {
         let exportedFileName: String
         let suggestedHumanReadableName: String
         let repetitionNumber: Int?
-        let arguments: [Int]?
+        let arguments: [String]?
     }
 }
