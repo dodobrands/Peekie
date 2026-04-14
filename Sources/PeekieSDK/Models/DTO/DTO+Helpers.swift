@@ -116,7 +116,7 @@ extension BuildResultsDTO {
 extension AttachmentsDTO {
 
     init(from xcresultPath: URL, attachmentsOutputDirectory: URL) async throws {
-        let output = try await Shell.execute(
+        try await Shell.execute(
             "xcrun",
             arguments: [
                 "xcresulttool", "export", "attachments",
