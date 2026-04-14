@@ -13,6 +13,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.1,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -22,6 +23,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -46,6 +48,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.1,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -55,6 +58,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.05,
             name: "Retry 1",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -64,6 +68,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition1, repetition2],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -92,6 +97,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -101,6 +107,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition],
             durationInSeconds: nil,
             name: "false",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: nil
@@ -125,6 +132,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -134,6 +142,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition],
             durationInSeconds: nil,
             name: "false",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: nil
@@ -143,6 +152,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [arguments],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -168,6 +178,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "false",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: .passed
@@ -177,6 +188,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [arguments],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -200,6 +212,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "false",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: .passed
@@ -209,6 +222,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "true",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: .passed
@@ -218,6 +232,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [arguments1, arguments2],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -245,6 +260,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: nil,
             name: "Test failed",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .failureMessage,
             result: nil
@@ -254,6 +270,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.1,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .failed
@@ -263,6 +280,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [failureMessage, repetition],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil
@@ -294,6 +312,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .failed
@@ -303,6 +322,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "Retry 1",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .failed
@@ -312,6 +332,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition1, repetition2],
             durationInSeconds: nil,
             name: "false",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: nil
@@ -321,6 +342,7 @@ struct TestResultsDTOExtractPathsTests {
             children: nil,
             durationInSeconds: 0.0,
             name: "First Run",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .repetition,
             result: .passed
@@ -330,6 +352,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [repetition3],
             durationInSeconds: nil,
             name: "true",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .arguments,
             result: nil
@@ -339,6 +362,7 @@ struct TestResultsDTOExtractPathsTests {
             children: [argumentsFalse, argumentsTrue],
             durationInSeconds: nil,
             name: "iPhone 13",
+            nodeIdentifier: nil,
             nodeIdentifierURL: nil,
             nodeType: .device,
             result: nil

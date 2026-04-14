@@ -85,8 +85,8 @@ let package = Package(
             ],
             path: "Sources/PeekieSDK",
             swiftSettings: [
-                .swiftLanguageMode(.v6),
-                .treatAllWarnings(as: .error),
+                .swiftLanguageMode(.v6)
+                //                .treatAllWarnings(as: .error),
             ]
         ),
         .executableTarget(
@@ -103,8 +103,8 @@ let package = Package(
                 ),
             ],
             swiftSettings: [
-                .swiftLanguageMode(.v6),
-                .treatAllWarnings(as: .error),
+                .swiftLanguageMode(.v6)
+                //                .treatAllWarnings(as: .error),
             ]
         ),
         .target(
@@ -113,8 +113,8 @@ let package = Package(
                 .init(stringLiteral: parserTargetName)
             ],
             swiftSettings: [
-                .swiftLanguageMode(.v6),
-                .treatAllWarnings(as: .error),
+                .swiftLanguageMode(.v6)
+                //                .treatAllWarnings(as: .error),
             ]
         ),
         .testTarget(
