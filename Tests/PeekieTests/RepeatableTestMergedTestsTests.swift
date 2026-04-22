@@ -61,6 +61,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2, test3],
         )
 
@@ -127,6 +128,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2]
         )
 
@@ -204,6 +206,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2],
         )
 
@@ -277,6 +280,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2],
         )
 
@@ -338,6 +342,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2],
         )
 
@@ -386,6 +391,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test1, test2],
         )
 
@@ -446,6 +452,7 @@ struct RepeatableTestMergedTestsTests {
 
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [test],
         )
 
@@ -466,6 +473,7 @@ struct RepeatableTestMergedTestsTests {
         // Empty tests should return empty array
         let repeatableTest = Report.Module.Suite.RepeatableTest(
             name: "testExample()",
+            nodeIdentifier: "Module/testExample()",
             tests: [],
         )
 

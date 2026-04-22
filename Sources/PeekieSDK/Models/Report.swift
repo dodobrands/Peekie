@@ -25,6 +25,9 @@ extension Report {
         /// Set of test suites in this module
         public internal(set) var suites: Set<Suite>
 
+        /// Set of repeatable tests in this module
+        public internal(set) var repeatableTests: Set<Suite.RepeatableTest>
+
         /// Set of files with coverage and warnings data
         public internal(set) var files: Set<File>
 
@@ -144,6 +147,9 @@ extension Report.Module {
         /// Format: `test://com.apple.xcode/<Module>/<Bundle>/<Suite>/<TestCase>`
         public let nodeIdentifierURL: String
 
+        /// Set of nested suites
+        public internal(set) var suites: Set<Suite>
+
         /// Set of repeatable tests in this suite
         public internal(set) var repeatableTests: Set<RepeatableTest>
 
@@ -162,6 +168,8 @@ extension Report.Module.Suite {
     public struct RepeatableTest: Hashable {
         /// Name of the test (e.g., "test_example()")
         public let name: String
+
+        public let nodeIdentifier: String
 
         /// Array of test executions (multiple entries if test was retried or run with different parameters)
         public internal(set) var tests: [Test]
