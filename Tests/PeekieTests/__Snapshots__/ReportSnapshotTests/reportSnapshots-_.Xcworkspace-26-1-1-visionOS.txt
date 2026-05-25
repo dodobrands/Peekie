@@ -21,6 +21,7 @@
               - message: "Some warning from StringUtils"
               - type: IssueType.buildWarning
       - name: "XcodeprojExampleFramework.framework"
+      - repeatableTests: 0 members
       - suites: 0 members
     ▿ Module
       ▿ coverage: Optional<Coverage>
@@ -57,6 +58,7 @@
           - name: "XcodeprojExampleApp.swift"
           - warnings: 0 elements
       - name: "XcodeprojExample.app"
+      - repeatableTests: 0 members
       - suites: 0 members
     ▿ Module
       ▿ coverage: Optional<Coverage>
@@ -90,6 +92,7 @@
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.buildWarning
       - name: "XcodeprojExampleTests"
+      - repeatableTests: 0 members
       ▿ suites: 2 members
         ▿ Suite
           - name: "ExampleSUITests"
@@ -97,6 +100,7 @@
           ▿ repeatableTests: 9 members
             ▿ RepeatableTest
               - name: "async()"
+              - nodeIdentifier: "ExampleSUITests/async()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -157,6 +161,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "disabled()"
+              - nodeIdentifier: "ExampleSUITests/disabled()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -226,6 +231,7 @@
                   - status: Status.skipped
             ▿ RepeatableTest
               - name: "expectedFailure()"
+              - nodeIdentifier: "ExampleSUITests/expectedFailure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -286,6 +292,7 @@
                   - status: Status.expectedFailure
             ▿ RepeatableTest
               - name: "failure()"
+              - nodeIdentifier: "ExampleSUITests/failure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -352,6 +359,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "flacky()"
+              - nodeIdentifier: "ExampleSUITests/flacky()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -414,6 +422,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "flackyParameterized(value:)"
+              - nodeIdentifier: "ExampleSUITests/flackyParameterized(value:)"
               ▿ tests: 6 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -579,6 +588,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "success()"
+              - nodeIdentifier: "ExampleSUITests/success()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -639,6 +649,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "throwing()"
+              - nodeIdentifier: "ExampleSUITests/throwing()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -705,6 +716,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "withAttachment()"
+              - nodeIdentifier: "ExampleSUITests/withAttachment()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -763,12 +775,14 @@
                       - type: NodeType.repetition
                   - skipMessage: Optional<String>.none
                   - status: Status.success
+          - suites: 0 members
         ▿ Suite
           - name: "XCTestTests"
           - nodeIdentifierURL: "test://com.apple.xcode/XcodeprojExample/XcodeprojExampleTests/XCTestTests"
           ▿ repeatableTests: 11 members
             ▿ RepeatableTest
               - name: "test_async()"
+              - nodeIdentifier: "XCTestTests/test_async()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 13.127923011779785 ms
@@ -781,6 +795,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_asyncWithExpectation()"
+              - nodeIdentifier: "XCTestTests/test_asyncWithExpectation()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 11.837959289550781 ms
@@ -793,6 +808,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_expectedFailure()"
+              - nodeIdentifier: "XCTestTests/test_expectedFailure()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 474.67100620269775 ms
@@ -806,6 +822,7 @@
                   - status: Status.expectedFailure
             ▿ RepeatableTest
               - name: "test_failure()"
+              - nodeIdentifier: "XCTestTests/test_failure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 1850.8079051971436 ms
@@ -872,6 +889,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "test_flacky()"
+              - nodeIdentifier: "XCTestTests/test_flacky()"
               ▿ tests: 2 elements
                 ▿ Test
                   ▿ duration: 50.92203617095947 ms
@@ -915,6 +933,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_performance()"
+              - nodeIdentifier: "XCTestTests/test_performance()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 255.52797317504883 ms
@@ -927,6 +946,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_skip()"
+              - nodeIdentifier: "XCTestTests/test_skip()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 5.5389404296875 ms
@@ -941,6 +961,7 @@
                   - status: Status.skipped
             ▿ RepeatableTest
               - name: "test_success()"
+              - nodeIdentifier: "XCTestTests/test_success()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 0.35703182220458984 ms
@@ -953,6 +974,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_throwing()"
+              - nodeIdentifier: "XCTestTests/test_throwing()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 6.467938423156738 ms
@@ -1019,6 +1041,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "test_withAttachment()"
+              - nodeIdentifier: "XCTestTests/test_withAttachment()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 0.7059574127197266 ms
@@ -1031,6 +1054,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_withWarning()"
+              - nodeIdentifier: "XCTestTests/test_withWarning()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 0.3809928894042969 ms
@@ -1041,6 +1065,7 @@
                   - path: 0 elements
                   - skipMessage: Optional<String>.none
                   - status: Status.success
+          - suites: 0 members
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
@@ -1086,4 +1111,5 @@
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.buildWarning
       - name: "XcodeprojExampleTests.xctest"
+      - repeatableTests: 0 members
       - suites: 0 members

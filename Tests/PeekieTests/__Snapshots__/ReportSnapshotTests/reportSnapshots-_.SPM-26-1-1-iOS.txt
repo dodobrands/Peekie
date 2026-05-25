@@ -6,6 +6,7 @@
       - coverage: Optional<Coverage>.none
       - files: 0 members
       - name: "StringUtils"
+      - repeatableTests: 0 members
       - suites: 0 members
     ▿ Module
       ▿ coverage: Optional<Coverage>
@@ -31,6 +32,7 @@
           - name: "Calculator.swift"
           - warnings: 0 elements
       - name: "Calculator"
+      - repeatableTests: 0 members
       - suites: 0 members
     ▿ Module
       ▿ coverage: Optional<Coverage>
@@ -82,6 +84,7 @@
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.buildWarning
       - name: "ExamplesTests"
+      - repeatableTests: 0 members
       ▿ suites: 2 members
         ▿ Suite
           - name: "ExampleSUITests"
@@ -89,6 +92,7 @@
           ▿ repeatableTests: 9 members
             ▿ RepeatableTest
               - name: "async()"
+              - nodeIdentifier: "ExampleSUITests/async()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -149,6 +153,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "disabled()"
+              - nodeIdentifier: "ExampleSUITests/disabled()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -218,6 +223,7 @@
                   - status: Status.skipped
             ▿ RepeatableTest
               - name: "expectedFailure()"
+              - nodeIdentifier: "ExampleSUITests/expectedFailure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -278,6 +284,7 @@
                   - status: Status.expectedFailure
             ▿ RepeatableTest
               - name: "failure()"
+              - nodeIdentifier: "ExampleSUITests/failure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -344,6 +351,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "flacky()"
+              - nodeIdentifier: "ExampleSUITests/flacky()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -406,6 +414,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "flackyParameterized(value:)"
+              - nodeIdentifier: "ExampleSUITests/flackyParameterized(value:)"
               ▿ tests: 6 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -571,6 +580,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "success()"
+              - nodeIdentifier: "ExampleSUITests/success()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -631,6 +641,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "throwing()"
+              - nodeIdentifier: "ExampleSUITests/throwing()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -697,6 +708,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "withAttachment()"
+              - nodeIdentifier: "ExampleSUITests/withAttachment()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 0.0 ms
@@ -755,12 +767,14 @@
                       - type: NodeType.repetition
                   - skipMessage: Optional<String>.none
                   - status: Status.success
+          - suites: 0 members
         ▿ Suite
           - name: "XCTestTests"
           - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/XCTestTests"
           ▿ repeatableTests: 11 members
             ▿ RepeatableTest
               - name: "test_async()"
+              - nodeIdentifier: "XCTestTests/test_async()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 13.859987258911133 ms
@@ -773,6 +787,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_asyncWithExpectation()"
+              - nodeIdentifier: "XCTestTests/test_asyncWithExpectation()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 14.058947563171387 ms
@@ -785,6 +800,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_expectedFailure()"
+              - nodeIdentifier: "XCTestTests/test_expectedFailure()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 612.3518943786621 ms
@@ -798,6 +814,7 @@
                   - status: Status.expectedFailure
             ▿ RepeatableTest
               - name: "test_failure()"
+              - nodeIdentifier: "XCTestTests/test_failure()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 4.438042640686035 ms
@@ -864,6 +881,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "test_flacky()"
+              - nodeIdentifier: "XCTestTests/test_flacky()"
               ▿ tests: 2 elements
                 ▿ Test
                   ▿ duration: 4.491925239562988 ms
@@ -907,6 +925,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_performance()"
+              - nodeIdentifier: "XCTestTests/test_performance()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 262.43507862091064 ms
@@ -919,6 +938,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_skip()"
+              - nodeIdentifier: "XCTestTests/test_skip()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 5.001068115234375 ms
@@ -933,6 +953,7 @@
                   - status: Status.skipped
             ▿ RepeatableTest
               - name: "test_success()"
+              - nodeIdentifier: "XCTestTests/test_success()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 0.32901763916015625 ms
@@ -945,6 +966,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_throwing()"
+              - nodeIdentifier: "XCTestTests/test_throwing()"
               ▿ tests: 3 elements
                 ▿ Test
                   ▿ duration: 6.803035736083984 ms
@@ -1011,6 +1033,7 @@
                   - status: Status.failure
             ▿ RepeatableTest
               - name: "test_withAttachment()"
+              - nodeIdentifier: "XCTestTests/test_withAttachment()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 1.5929937362670898 ms
@@ -1023,6 +1046,7 @@
                   - status: Status.success
             ▿ RepeatableTest
               - name: "test_withWarning()"
+              - nodeIdentifier: "XCTestTests/test_withWarning()"
               ▿ tests: 1 element
                 ▿ Test
                   ▿ duration: 0.9049177169799805 ms
@@ -1033,3 +1057,4 @@
                   - path: 0 elements
                   - skipMessage: Optional<String>.none
                   - status: Status.success
+          - suites: 0 members
