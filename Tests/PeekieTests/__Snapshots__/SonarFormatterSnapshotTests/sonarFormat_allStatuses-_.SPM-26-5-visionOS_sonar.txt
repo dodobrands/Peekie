@@ -1,0 +1,41 @@
+<testExecutions version="1">
+    <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)/ExampleSUITests.swift">
+        <testCase name="async()" duration="45" />
+        <testCase name="disabled()" duration="0">
+            <skipped message="Test skipped: Disabled reason" />
+        </testCase>
+        <testCase name="expectedFailure()" duration="9" />
+        <testCase name="failure()" duration="8">
+            <failure message="Expected 5.0 but got 6.0" />
+        </testCase>
+        <testCase name="flacky()" duration="9" />
+        <testCase name="flackyParameterized(value:) [false]" duration="0">
+            <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
+        </testCase>
+        <testCase name="flackyParameterized(value:) [true]" duration="0" />
+        <testCase name="success()" duration="8" />
+        <testCase name="throwing()" duration="8">
+            <failure message="Calculator.swift:26: Caught error: .divisionByZero" />
+        </testCase>
+        <testCase name="withAttachment()" duration="8" />
+    </file>
+    <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)/XCTestTests.swift">
+        <testCase name="test_async()" duration="14" />
+        <testCase name="test_asyncWithExpectation()" duration="13" />
+        <testCase name="test_expectedFailure()" duration="395" />
+        <testCase name="test_failure()" duration="11">
+            <failure message="Expected 5.0 but got 6.0" />
+        </testCase>
+        <testCase name="test_flacky()" duration="9" />
+        <testCase name="test_performance()" duration="260" />
+        <testCase name="test_skip()" duration="29">
+            <skipped message="Skip message" />
+        </testCase>
+        <testCase name="test_success()" duration="2" />
+        <testCase name="test_throwing()" duration="8">
+            <failure message="Calculator.swift:26: failed: caught error: &quot;divisionByZero&quot;" />
+        </testCase>
+        <testCase name="test_withAttachment()" duration="18" />
+        <testCase name="test_withWarning()" duration="1" />
+    </file>
+</testExecutions>

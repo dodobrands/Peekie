@@ -1,0 +1,312 @@
+{
+  "coverage" : 0.6703703703703704,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 29,
+        "percentage" : 0.34523809523809523,
+        "totalLines" : 84
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 14,
+            "percentage" : 1,
+            "totalLines" : 14
+          },
+          "name" : "XcodeprojExampleApp.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "XcodeprojExample.app",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 0,
+        "percentage" : 0,
+        "totalLines" : 23
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 23
+          },
+          "name" : "TextProcessor.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleFramework.framework",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 152,
+        "percentage" : 0.9325153374233128,
+        "totalLines" : 163
+      },
+      "files" : [
+        {
+          "name" : "ExampleSUITests",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleTests",
+      "suites" : [
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 362.2920513153076,
+              "name" : "async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 2.8619766235351562,
+              "message" : "Test skipped: Disabled reason",
+              "name" : "disabled()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 207.9331874847412,
+              "message" : "Failure is expected",
+              "name" : "expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 207.5040340423584,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 363.2078170776367,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 254.3802261352539,
+              "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+              "name" : "flackyParameterized(value:) [false]",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 157.54199028015137,
+              "name" : "flackyParameterized(value:) [true]",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 265.23780822753906,
+              "name" : "success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 364.1691207885742,
+              "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 109.74383354187012,
+              "name" : "withAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 13.841032981872559,
+              "name" : "test_async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 11.62099838256836,
+              "name" : "test_asyncWithExpectation()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 395.0389623641968,
+              "message" : "Failure is expected",
+              "name" : "test_expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 2239.737033843994,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 1.3148784637451172,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "test_flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 267.13407039642334,
+              "name" : "test_performance()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 40.708065032958984,
+              "message" : "Skip message",
+              "name" : "test_skip()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 0.39589405059814453,
+              "name" : "test_success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 6.775975227355957,
+              "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 0.7349252700805664,
+              "name" : "test_withAttachment()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0.3190040588378906,
+              "name" : "test_withWarning()",
+              "status" : "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 152,
+        "percentage" : 0.9325153374233128,
+        "totalLines" : 163
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 57,
+            "percentage" : 0.8507462686567164,
+            "totalLines" : 67
+          },
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleTests.xctest",
+      "suites" : [
+
+      ]
+    }
+  ]
+}
