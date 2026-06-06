@@ -1,0 +1,249 @@
+{
+  "coverage" : 0.6006600660066007,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 15,
+        "percentage" : 0.21428571428571427,
+        "totalLines" : 70
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "Calculator",
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 167,
+        "percentage" : 0.7167381974248928,
+        "totalLines" : 233
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 15,
+            "percentage" : 0.4411764705882353,
+            "totalLines" : 34
+          },
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "name" : "ExampleSUITests",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 57,
+            "percentage" : 0.8507462686567164,
+            "totalLines" : 67
+          },
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "ExamplesTests",
+      "suites" : [
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 35.79592704772949,
+              "name" : "async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0.2079010009765625,
+              "message" : "Test skipped: Disabled reason",
+              "name" : "disabled()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 5.196094512939453,
+              "message" : "Failure is expected",
+              "name" : "expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 4.931926727294922,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 4.455327987670898,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 5.427837371826172,
+              "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+              "name" : "flackyParameterized(value:) [false]",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 2.246856689453125,
+              "name" : "flackyParameterized(value:) [true]",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 1.9767284393310547,
+              "name" : "success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 6.902933120727539,
+              "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 2.110004425048828,
+              "name" : "withAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 20.943045616149902,
+              "name" : "test_async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 16.31605625152588,
+              "name" : "test_asyncWithExpectation()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 966.454029083252,
+              "message" : "Failure is expected",
+              "name" : "test_expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 24.163007736206055,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 6.351947784423828,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "test_flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 254.44507598876953,
+              "name" : "test_performance()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 10.33008098602295,
+              "message" : "Skip message",
+              "name" : "test_skip()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 0.926971435546875,
+              "name" : "test_success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 7.684946060180664,
+              "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 3.0139684677124023,
+              "name" : "test_withAttachment()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0.47600269317626953,
+              "name" : "test_withWarning()",
+              "status" : "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "files" : [
+
+      ],
+      "name" : "StringUtils",
+      "suites" : [
+
+      ]
+    }
+  ]
+}

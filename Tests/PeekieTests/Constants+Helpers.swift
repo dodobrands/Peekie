@@ -64,7 +64,7 @@ struct Constants {
     ///
     /// Note: This issue appears to be specific to Xcode 15.0 xcresult files. The exact reason
     /// is unknown, but it's likely related to how SQLite database files are structured or
-    /// accessed in Xcode 15.0's xcresult format. Newer versions (e.g., 26.1.1) don't exhibit
+    /// accessed in Xcode 15.0's xcresult format. Newer versions (e.g., 26.5) don't exhibit
     /// this behavior, but we apply the fix to all xcresult files for consistency and safety.
     ///
     /// This happens because SQLite tries to move/access database files concurrently, leading to:

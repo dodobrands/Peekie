@@ -50,10 +50,10 @@ jobs:
 
     # Verify CLI tool functionality by parsing test xcresult file
     - name: Parse xcresult (list format)
-      run: swift run peekie list Tests/PeekieTests/Resources/SPM-26.1.1-iOS.xcresult
+      run: swift run peekie list Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult
 
     - name: Parse xcresult (sonar format)
-      run: swift run peekie sonar Tests/PeekieTests/Resources/SPM-26.1.1-iOS.xcresult --tests-path swift-tests-example/SPM/Tests/ExamplesTests
+      run: swift run peekie sonar Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult --tests-path swift-tests-example/SPM/Tests/ExamplesTests
 
     - name: Install mise
       uses: jdx/mise-action@v4
