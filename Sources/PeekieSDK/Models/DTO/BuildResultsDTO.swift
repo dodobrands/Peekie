@@ -2,6 +2,23 @@ import Foundation
 
 struct BuildResultsDTO: Decodable, Sendable {
     let warnings: [Issue]
+    let errors: [Issue]
+
+    init(warnings: [Issue] = [], errors: [Issue] = []) {
+        self.warnings = warnings
+        self.errors = errors
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.warnings = try container.decodeIfPresent([Issue].self, forKey: .warnings) ?? []
+        self.errors = try container.decodeIfPresent([Issue].self, forKey: .errors) ?? []
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case warnings
+        case errors
+    }
 
     struct Issue: Decodable, Sendable {
         let issueType: String

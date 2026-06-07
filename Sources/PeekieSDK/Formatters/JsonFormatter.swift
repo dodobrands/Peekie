@@ -106,11 +106,13 @@ private struct JsonFile: Encodable {
     let coverage: JsonCoverage?
     let name: String
     let warnings: [JsonWarning]
+    let errors: [JsonWarning]
 
     init(from file: Report.Module.File) {
         self.name = file.name
         self.coverage = file.coverage.map { JsonCoverage(from: $0) }
         self.warnings = file.warnings.map { JsonWarning(from: $0) }
+        self.errors = file.errors.map { JsonWarning(from: $0) }
     }
 }
 

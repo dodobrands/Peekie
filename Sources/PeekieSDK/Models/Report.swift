@@ -14,6 +14,12 @@ public struct Report {
     public var warnings: [Module.File.Issue] {
         modules.flatMap { $0.warnings }
     }
+
+    /// All errors from all modules in this report
+    /// - Note: Computed property that aggregates errors from all Module.File.errors
+    public var errors: [Module.File.Issue] {
+        modules.flatMap { $0.errors }
+    }
 }
 
 extension Report {
@@ -44,6 +50,12 @@ extension Report {
         /// - Note: Computed property that aggregates warnings from all File.warnings
         public var warnings: [File.Issue] {
             files.flatMap { $0.warnings }
+        }
+
+        /// All errors from all files in this module
+        /// - Note: Computed property that aggregates errors from all File.errors
+        public var errors: [File.Issue] {
+            files.flatMap { $0.errors }
         }
     }
 
@@ -91,7 +103,7 @@ extension Report.Module.File {
 }
 
 extension Report.Module {
-    /// A source file with coverage and warnings information
+    /// A source file with coverage, warnings, and errors information
     public struct File: Hashable {
         /// Name of the file (e.g., "Report.swift")
         public let name: String
@@ -100,9 +112,25 @@ extension Report.Module {
         /// - Note: Read directly from xcresult DTO
         public internal(set) var warnings: [File.Issue]
 
+        /// Build errors associated with this file
+        /// - Note: Read directly from xcresult DTO
+        public internal(set) var errors: [File.Issue]
+
         /// Code coverage information for this file
         /// - Note: Read directly from file-level coverage data in xcresult DTO
         public let coverage: File.Coverage?
+
+        public init(
+            name: String,
+            warnings: [File.Issue] = [],
+            errors: [File.Issue] = [],
+            coverage: File.Coverage? = nil
+        ) {
+            self.name = name
+            self.warnings = warnings
+            self.errors = errors
+            self.coverage = coverage
+        }
 
         public func hash(into hasher: inout Hasher) {
             hasher.combine(name)
