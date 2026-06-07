@@ -123,10 +123,52 @@ extension Report.Module.File {
         /// Human-readable message describing the issue
         public let message: String
 
-        /// Types of build issues that can be reported
-        public enum IssueType: String, Equatable, Sendable {
-            case buildWarning = "Swift Compiler Warning"
+        /// Types of build issues that can be reported.
+        ///
+        /// The set of `issueType` values emitted by `xcresulttool` is open — Apple
+        /// adds new typed diagnostics in newer Xcode releases. Use `.unknown(_)`
+        /// for forward compatibility; the raw string is preserved verbatim.
+        public enum IssueType: Equatable, Sendable {
+            case swiftCompilerWarning
+            case swiftCompilerError
+            case deprecatedDeclaration
+            case noUsage
+            case unknown(String)
         }
+    }
+}
+
+extension Report.Module.File.Issue.IssueType {
+    public init(rawValue: String) {
+        switch rawValue {
+        case "Swift Compiler Warning": self = .swiftCompilerWarning
+        case "Swift Compiler Error": self = .swiftCompilerError
+        case "DeprecatedDeclaration": self = .deprecatedDeclaration
+        case "No-usage": self = .noUsage
+        default: self = .unknown(rawValue)
+        }
+    }
+
+    public var rawValue: String {
+        switch self {
+        case .swiftCompilerWarning: return "Swift Compiler Warning"
+        case .swiftCompilerError: return "Swift Compiler Error"
+        case .deprecatedDeclaration: return "DeprecatedDeclaration"
+        case .noUsage: return "No-usage"
+        case .unknown(let raw): return raw
+        }
+    }
+}
+
+extension Report.Module.File.Issue.IssueType: Codable {
+    public init(from decoder: Decoder) throws {
+        let raw = try decoder.singleValueContainer().decode(String.self)
+        self.init(rawValue: raw)
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
     }
 }
 
