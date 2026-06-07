@@ -4,35 +4,35 @@
         <testCase name="disabled()" duration="0">
             <skipped message="Test skipped: Disabled reason" />
         </testCase>
-        <testCase name="expectedFailure()" duration="2" />
-        <testCase name="failure()" duration="1">
+        <testCase name="expectedFailure()" duration="6" />
+        <testCase name="failure()" duration="6">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="flacky()" duration="1" />
-        <testCase name="flackyParameterized(value:) [false]" duration="1">
+        <testCase name="flacky()" duration="6" />
+        <testCase name="flackyParameterized(value:) [false]" duration="6">
             <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
         </testCase>
         <testCase name="flackyParameterized(value:) [true]" duration="0" />
-        <testCase name="success()" duration="0" />
-        <testCase name="throwing()" duration="2">
+        <testCase name="success()" duration="1" />
+        <testCase name="throwing()" duration="6">
             <failure message="Calculator.swift:26: Caught error: .divisionByZero" />
         </testCase>
         <testCase name="withAttachment()" duration="0" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-SPM-tvOS/XCTestTests.swift">
-        <testCase name="test_async()" duration="12" />
+        <testCase name="test_async()" duration="11" />
         <testCase name="test_asyncWithExpectation()" duration="13" />
-        <testCase name="test_expectedFailure()" duration="420" />
+        <testCase name="test_expectedFailure()" duration="374" />
         <testCase name="test_failure()" duration="4">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="test_flacky()" duration="1" />
-        <testCase name="test_performance()" duration="258" />
-        <testCase name="test_skip()" duration="4">
+        <testCase name="test_flacky()" duration="2" />
+        <testCase name="test_performance()" duration="257" />
+        <testCase name="test_skip()" duration="3">
             <skipped message="Skip message" />
         </testCase>
         <testCase name="test_success()" duration="0" />
-        <testCase name="test_throwing()" duration="4">
+        <testCase name="test_throwing()" duration="3">
             <failure message="Calculator.swift:26: failed: caught error: &quot;divisionByZero&quot;" />
         </testCase>
         <testCase name="test_withAttachment()" duration="0" />

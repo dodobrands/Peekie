@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6703703703703704,
+  "coverage" : 0.5915032679738562,
   "modules" : [
     {
       "coverage" : {
@@ -76,58 +76,58 @@
           "name" : "ExampleSUITests",
           "tests" : [
             {
-              "durationMs" : 35.44902801513672,
+              "durationMs" : 34.09004211425781,
               "name" : "async()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.4329681396484375,
+              "durationMs" : 0.1709461212158203,
               "message" : "Test skipped: Disabled reason",
               "name" : "disabled()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 2.6061534881591797,
+              "durationMs" : 6.756067276000977,
               "message" : "Failure is expected",
               "name" : "expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 2.2590160369873047,
+              "durationMs" : 2.3441314697265625,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 2.5420188903808594,
+              "durationMs" : 2.1741390228271484,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 2.347707748413086,
+              "durationMs" : 1.9609928131103516,
               "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
               "name" : "flackyParameterized(value:) [false]",
               "status" : "failure"
             },
             {
-              "durationMs" : 1.651763916015625,
+              "durationMs" : 0.400543212890625,
               "name" : "flackyParameterized(value:) [true]",
               "status" : "success"
             },
             {
-              "durationMs" : 1.9869804382324219,
+              "durationMs" : 6.494998931884766,
               "name" : "success()",
               "status" : "success"
             },
             {
-              "durationMs" : 2.6693344116210938,
+              "durationMs" : 6.947040557861328,
               "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 2.1369457244873047,
+              "durationMs" : 2.359151840209961,
               "name" : "withAttachment()",
               "status" : "success"
             }
@@ -137,62 +137,62 @@
           "name" : "XCTestTests",
           "tests" : [
             {
-              "durationMs" : 13.139963150024414,
+              "durationMs" : 12.540936470031738,
               "name" : "test_async()",
               "status" : "success"
             },
             {
-              "durationMs" : 11.280059814453125,
+              "durationMs" : 11.505961418151855,
               "name" : "test_asyncWithExpectation()",
               "status" : "success"
             },
             {
-              "durationMs" : 63.93897533416748,
+              "durationMs" : 47.48106002807617,
               "message" : "Failure is expected",
               "name" : "test_expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 2.5730133056640625,
+              "durationMs" : 2.53903865814209,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 3.843069076538086,
+              "durationMs" : 5.848050117492676,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "test_flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 258.4850788116455,
+              "durationMs" : 256.88207149505615,
               "name" : "test_performance()",
               "status" : "success"
             },
             {
-              "durationMs" : 1.9630193710327148,
+              "durationMs" : 2.180933952331543,
               "message" : "Skip message",
               "name" : "test_skip()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 0.861048698425293,
+              "durationMs" : 1.031041145324707,
               "name" : "test_success()",
               "status" : "success"
             },
             {
-              "durationMs" : 8.183121681213379,
+              "durationMs" : 10.738134384155273,
               "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 2.424001693725586,
+              "durationMs" : 1.7620325088500977,
               "name" : "test_withAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.8809566497802734,
+              "durationMs" : 1.1249780654907227,
               "name" : "test_withWarning()",
               "status" : "success"
             }
@@ -204,7 +204,7 @@
       "coverage" : {
         "coveredLines" : 0,
         "percentage" : 0,
-        "totalLines" : 23
+        "totalLines" : 59
       },
       "files" : [
         {
@@ -236,6 +236,99 @@
                 "startLine" : 13
               },
               "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "WarningsCatalog.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
               "type" : "Swift Compiler Warning"
             }
           ]
