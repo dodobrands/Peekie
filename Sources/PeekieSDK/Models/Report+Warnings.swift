@@ -31,13 +31,7 @@ extension Report {
         }
 
         let grouped = Dictionary(grouping: parsed, by: { $0.0 })
-        return grouped.mapValues { pairs in
-            var seen = Set<String>()
-            return pairs.compactMap { _, issue in
-                guard seen.insert(issue.message).inserted else { return nil }
-                return issue
-            }
-        }
+        return grouped.mapValues { $0.map(\.1) }
     }
 
     /// Normalizes a warning message by removing duplicate patterns and cleaning up formatting
@@ -80,18 +74,12 @@ extension Report {
         return []
     }
 
-    /// Merges two arrays of warnings, removing duplicates based on message content
+    /// Concatenates two arrays of warnings. The SDK no longer deduplicates — every
+    /// xcresult record is surfaced; grouping/dedup is a consumer decision.
     static func mergeWarnings(
         _ existing: [Module.File.Issue],
         _ new: [Module.File.Issue]
     ) -> [Module.File.Issue] {
-        guard !new.isEmpty else { return existing }
-        var combined = existing
-        // Use normalized messages for comparison since warnings are already normalized
-        let existingMessages = Set(combined.map { $0.message })
-        for warning in new where !existingMessages.contains(warning.message) {
-            combined.append(warning)
-        }
-        return combined
+        existing + new
     }
 }
