@@ -20,8 +20,8 @@ jobs:
       - name: Install mise
         uses: jdx/mise-action@v4
 
-      - name: SwiftFormat (lint)
-        run: swiftformat --lint .
+      - name: SwiftFormat (lint, strict)
+        run: swiftformat --lint --strict .
 
       - name: SwiftLint (strict)
         run: swiftlint --strict --quiet

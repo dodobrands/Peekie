@@ -13,8 +13,8 @@ fi
 
 eval "$(mise activate bash)"
 
-echo "→ swiftformat --lint"
-swiftformat --lint .
+echo "→ swiftformat --lint --strict"
+swiftformat --lint --strict .
 
 echo "→ swiftlint --strict"
 swiftlint --strict --quiet
