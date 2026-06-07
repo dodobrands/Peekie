@@ -4,7 +4,8 @@ import Foundation
 
 extension Report {
     public static func testMake(
-        modules: Set<Module> = [],
+        files: [File] = [],
+        modules: [Module] = [],
         coverage: Double? = nil
     ) -> Self {
         // Calculate coverage from files if not provided
@@ -12,7 +13,7 @@ extension Report {
         if let coverage = coverage {
             calculatedCoverage = coverage
         } else {
-            let fileCoverages = modules.flatMap { $0.files }.compactMap { $0.coverage }
+            let fileCoverages = files.compactMap { $0.coverage }
             if fileCoverages.count > 0 {
                 let totalLines = fileCoverages.reduce(into: 0) { $0 += $1.totalLines }
                 let totalCoveredLines = fileCoverages.reduce(into: 0) { $0 += $1.coveredLines }
@@ -26,6 +27,7 @@ extension Report {
             }
         }
         return .init(
+            files: files,
             modules: modules,
             coverage: calculatedCoverage
         )
@@ -35,15 +37,15 @@ extension Report {
 extension Report.Module {
     public static func testMake(
         name: String = "",
-        suites: Set<Suite> = [],
-        files: Set<File> = [],
-        coverage: Report.Coverage? = nil
+        files: [Report.File] = [],
+        coverage: Report.Coverage? = nil,
+        suites: [Suite] = []
     ) -> Self {
-        .init(name: name, suites: suites, files: files, coverage: coverage)
+        .init(name: name, files: files, coverage: coverage, suites: suites)
     }
 }
 
-extension Report.Module.File.Coverage {
+extension Report.File.Coverage {
     public static func testMake(
         coveredLines: Int = 0,
         totalLines: Int = 0,
@@ -56,13 +58,23 @@ extension Report.Module.File.Coverage {
     }
 }
 
-extension Report.Module.File {
+extension Report.File {
     public static func testMake(
         name: String = "",
-        warnings: [Report.Module.File.Issue] = [],
-        coverage: Report.Module.File.Coverage? = nil
+        path: String? = nil,
+        module: String? = nil,
+        coverage: Report.File.Coverage? = nil,
+        warnings: [Report.File.Issue] = [],
+        errors: [Report.File.Issue] = []
     ) -> Self {
-        .init(name: name, warnings: warnings, coverage: coverage)
+        .init(
+            name: name,
+            path: path,
+            module: module,
+            coverage: coverage,
+            warnings: warnings,
+            errors: errors
+        )
     }
 }
 

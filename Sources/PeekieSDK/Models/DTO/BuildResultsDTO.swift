@@ -39,7 +39,7 @@ extension BuildResultsDTO.Issue {
     /// Parses Apple's `sourceURL` fragment (`...#StartingLineNumber=N&...`) into a typed location.
     /// Returns `nil` when `sourceURL` is absent, has no fragment, or the fragment carries no
     /// `StartingLineNumber` key — line is the minimum we need to surface a location at all.
-    var location: Report.Module.File.Issue.Location? {
+    var location: Report.File.Issue.Location? {
         guard let sourceURL else { return nil }
         guard
             let fragment = sourceURL.split(separator: "#", maxSplits: 1).dropFirst().first

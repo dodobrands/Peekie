@@ -1,42 +1,132 @@
 import Foundation
 
-/// Parsed report from an `.xcresult` file containing test results, coverage, and warnings
+/// Parsed report from an `.xcresult` file.
+///
+/// `files` is the primary index — every file we have any signal about (coverage,
+/// warnings, errors) lives here exactly once, regardless of which target it
+/// belongs to. `modules` is a projection over `files` for the subset where a
+/// target name is known. Build issues with no module signal (`xcresulttool`
+/// doesn't currently surface `producingTarget` for them) still surface — they
+/// appear in `files` with `File.module == nil` and are reachable via
+/// `Report.warnings` / `Report.errors`.
 public struct Report {
-    /// Set of all modules in this report
-    public let modules: Set<Module>
+    /// Every file the bundle has any signal about (coverage, warnings, errors).
+    public let files: [File]
 
-    /// Total code coverage percentage (0.0 to 1.0)
-    /// - Note: Read directly from xcresult DTO (not calculated)
+    /// Module projection — one entry per target name we could identify
+    /// (from coverage or from tests). Files whose target is unknown are
+    /// **not** represented here; reach them via `files`.
+    public let modules: [Module]
+
+    /// Total code coverage percentage (0.0 to 1.0).
+    /// - Note: Read directly from xcresult coverage data (not calculated from files).
     public let coverage: Double?
 
-    /// All warnings from all modules in this report
-    /// - Note: Computed property that aggregates warnings from all Module.File.warnings
-    public var warnings: [Module.File.Issue] {
-        modules.flatMap { $0.warnings }
+    /// All warnings from all files in this report.
+    public var warnings: [File.Issue] {
+        files.flatMap { $0.warnings }
     }
 
-    /// All errors from all modules in this report
-    /// - Note: Computed property that aggregates errors from all Module.File.errors
-    public var errors: [Module.File.Issue] {
-        modules.flatMap { $0.errors }
+    /// All errors from all files in this report.
+    public var errors: [File.Issue] {
+        files.flatMap { $0.errors }
+    }
+
+    public init(
+        files: [File],
+        modules: [Module],
+        coverage: Double?
+    ) {
+        self.files = files
+        self.modules = modules
+        self.coverage = coverage
     }
 }
 
 extension Report {
-    /// A module (test target) containing test suites and coverage files
-    public struct Module: Hashable {
-        /// Name of the module (e.g., "PeekieTests")
+    /// A source file with coverage, warnings, and errors information.
+    ///
+    /// `File` is the primary entity in the model — every data source xcresult
+    /// emits identifies files by `sourceURL` or coverage path. `module` is the
+    /// only optional identity field: build-issue records don't carry target
+    /// ownership, so a file known only from `warnings[]` / `errors[]` has
+    /// `module == nil`. Identity (hash, equality) is `path ?? name`: two files
+    /// with the same basename but different paths are distinct.
+    public struct File: Hashable {
+        /// Basename of the file (e.g., "Report.swift").
         public let name: String
 
-        /// Set of test suites in this module
-        public internal(set) var suites: Set<Suite>
+        /// Absolute path when xcresult provided one (coverage and warnings/errors do).
+        public let path: String?
 
-        /// Set of files with coverage and warnings data
-        public internal(set) var files: Set<File>
+        /// Owning target name when known. `nil` for files known only from
+        /// build issues (xcresult doesn't emit `producingTarget` for those).
+        public let module: String?
 
-        /// Code coverage for this module
-        /// - Note: Read directly from target-level coverage data in xcresult DTO
+        /// Code coverage for this file when present.
         public let coverage: Coverage?
+
+        /// Build warnings on this file.
+        public let warnings: [Issue]
+
+        /// Build errors on this file.
+        public let errors: [Issue]
+
+        public init(
+            name: String,
+            path: String? = nil,
+            module: String? = nil,
+            coverage: Coverage? = nil,
+            warnings: [Issue] = [],
+            errors: [Issue] = []
+        ) {
+            self.name = name
+            self.path = path
+            self.module = module
+            self.coverage = coverage
+            self.warnings = warnings
+            self.errors = errors
+        }
+
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(path ?? name)
+        }
+
+        public static func == (lhs: Self, rhs: Self) -> Bool {
+            (lhs.path ?? lhs.name) == (rhs.path ?? rhs.name)
+        }
+    }
+
+    /// Projection over `Report.files` grouped by target name.
+    ///
+    /// `Module` is built from coverage targets and test bundles — the two data
+    /// sources xcresult emits that name a target. A module's `files` slice is
+    /// every `Report.files` entry whose `File.module` matches; `suites` is the
+    /// tests xcresult reported for that target.
+    public struct Module: Hashable {
+        /// Target name (e.g., "Bonuses", "PeekieTests").
+        public let name: String
+
+        /// Files in this report whose `File.module == self.name`.
+        public let files: [File]
+
+        /// Target-level coverage when xcresult reported one.
+        public let coverage: Coverage?
+
+        /// Test suites this target ran.
+        public let suites: [Suite]
+
+        public init(
+            name: String,
+            files: [File] = [],
+            coverage: Coverage? = nil,
+            suites: [Suite] = []
+        ) {
+            self.name = name
+            self.files = files
+            self.coverage = coverage
+            self.suites = suites
+        }
 
         public func hash(into hasher: inout Hasher) {
             hasher.combine(name)
@@ -46,49 +136,39 @@ extension Report {
             lhs.name == rhs.name
         }
 
-        /// All warnings from all files in this module
-        /// - Note: Computed property that aggregates warnings from all File.warnings
+        /// All warnings from all files in this module.
         public var warnings: [File.Issue] {
             files.flatMap { $0.warnings }
         }
 
-        /// All errors from all files in this module
-        /// - Note: Computed property that aggregates errors from all File.errors
+        /// All errors from all files in this module.
         public var errors: [File.Issue] {
             files.flatMap { $0.errors }
         }
     }
 
-    /// Code coverage information for a module or file
+    /// Aggregate code coverage at the module or report scope.
     public struct Coverage: Equatable {
-        /// Number of lines covered by tests
         public let coveredLines: Int
-
-        /// Total number of executable lines
         public let totalLines: Int
-
-        /// Coverage percentage (0.0 to 1.0)
         public let coverage: Double
+
+        public init(coveredLines: Int, totalLines: Int, coverage: Double) {
+            self.coveredLines = coveredLines
+            self.totalLines = totalLines
+            self.coverage = coverage
+        }
     }
 }
 
-extension Report.Module.File {
-    /// Code coverage information for a specific file
+extension Report.File {
+    /// Code coverage information for a specific file.
     public struct Coverage: Equatable {
-        /// Number of lines covered by tests
         public let coveredLines: Int
-
-        /// Total number of executable lines
         public let totalLines: Int
-
-        /// Coverage percentage (0.0 to 1.0)
         public let coverage: Double
 
-        init(
-            coveredLines: Int,
-            totalLines: Int,
-            coverage: Double
-        ) {
+        public init(coveredLines: Int, totalLines: Int, coverage: Double) {
             self.coveredLines = coveredLines
             self.totalLines = totalLines
             self.coverage = coverage
@@ -100,60 +180,15 @@ extension Report.Module.File {
             self.coverage = dto.lineCoverage
         }
     }
-}
 
-extension Report.Module {
-    /// A source file with coverage, warnings, and errors information
-    public struct File: Hashable {
-        /// Name of the file (e.g., "Report.swift")
-        public let name: String
-
-        /// Build warnings associated with this file
-        /// - Note: Read directly from xcresult DTO
-        public internal(set) var warnings: [File.Issue]
-
-        /// Build errors associated with this file
-        /// - Note: Read directly from xcresult DTO
-        public internal(set) var errors: [File.Issue]
-
-        /// Code coverage information for this file
-        /// - Note: Read directly from file-level coverage data in xcresult DTO
-        public let coverage: File.Coverage?
-
-        public init(
-            name: String,
-            warnings: [File.Issue] = [],
-            errors: [File.Issue] = [],
-            coverage: File.Coverage? = nil
-        ) {
-            self.name = name
-            self.warnings = warnings
-            self.errors = errors
-            self.coverage = coverage
-        }
-
-        public func hash(into hasher: inout Hasher) {
-            hasher.combine(name)
-        }
-
-        public static func == (lhs: Self, rhs: Self) -> Bool {
-            lhs.name == rhs.name
-        }
-    }
-}
-
-extension Report.Module.File {
-    /// A build issue (warning or error) associated with a file
+    /// A build issue (warning or error) associated with a file.
     public struct Issue: Equatable, Sendable {
-        /// Type of the issue
         public let type: IssueType
-
-        /// Human-readable message describing the issue
         public let message: String
 
-        /// Source location in the file the issue refers to, when xcresult provides one.
-        /// `nil` for project-level warnings or when the `sourceURL` fragment has no
-        /// `StartingLineNumber`.
+        /// Source location in the file when xcresult provided one.
+        /// `nil` for project-level issues or when the `sourceURL` fragment has
+        /// no `StartingLineNumber`.
         public let location: Location?
 
         public init(type: IssueType, message: String, location: Location? = nil) {
@@ -162,9 +197,9 @@ extension Report.Module.File {
             self.location = location
         }
 
-        /// Source range inside a file. `startLine` is the minimum guarantee — the
-        /// other three fields are independently optional because `xcresulttool` is
-        /// not contractually obligated to emit all of them.
+        /// Source range inside a file. `startLine` is the minimum guarantee;
+        /// other three fields are independently optional because `xcresulttool`
+        /// is not contractually obligated to emit all of them.
         public struct Location: Equatable, Sendable, Codable {
             public let startLine: Int
             public let startColumn: Int?
@@ -186,9 +221,10 @@ extension Report.Module.File {
 
         /// Types of build issues that can be reported.
         ///
-        /// The set of `issueType` values emitted by `xcresulttool` is open — Apple
-        /// adds new typed diagnostics in newer Xcode releases. Use `.unknown(_)`
-        /// for forward compatibility; the raw string is preserved verbatim.
+        /// The set of `issueType` values emitted by `xcresulttool` is open —
+        /// Apple adds new typed diagnostics in newer Xcode releases. Use
+        /// `.unknown(_)` for forward compatibility; the raw string is preserved
+        /// verbatim.
         public enum IssueType: Equatable, Sendable {
             case swiftCompilerWarning
             case swiftCompilerError
@@ -199,7 +235,7 @@ extension Report.Module.File {
     }
 }
 
-extension Report.Module.File.Issue.IssueType {
+extension Report.File.Issue.IssueType {
     public init(rawValue: String) {
         switch rawValue {
         case "Swift Compiler Warning": self = .swiftCompilerWarning
@@ -221,7 +257,7 @@ extension Report.Module.File.Issue.IssueType {
     }
 }
 
-extension Report.Module.File.Issue.IssueType: Codable {
+extension Report.File.Issue.IssueType: Codable {
     public init(from decoder: Decoder) throws {
         let raw = try decoder.singleValueContainer().decode(String.self)
         self.init(rawValue: raw)
@@ -249,6 +285,16 @@ extension Report.Module {
 
         /// Set of repeatable tests in this suite
         public internal(set) var repeatableTests: Set<RepeatableTest>
+
+        public init(
+            name: String,
+            nodeIdentifierURL: String,
+            repeatableTests: Set<RepeatableTest> = []
+        ) {
+            self.name = name
+            self.nodeIdentifierURL = nodeIdentifierURL
+            self.repeatableTests = repeatableTests
+        }
 
         public func hash(into hasher: inout Hasher) {
             hasher.combine(name)
@@ -783,26 +829,20 @@ extension Array where Element: Equatable {
     }
 }
 
-extension Set where Element == Report.Module.Suite {
-    subscript(_ name: String) -> Element? {
+extension Array where Element == Report.Module.Suite {
+    public subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }
 
-extension Set where Element == Report.Module.File {
-    subscript(_ name: String) -> Element? {
+extension Array where Element == Report.File {
+    public subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }
 
-extension Set where Element == Report.Module.Suite.RepeatableTest {
-    subscript(_ name: String) -> Element? {
-        first { $0.name == name }
-    }
-}
-
-extension Set where Element == Report.Module {
-    subscript(_ name: String) -> Element? {
+extension Array where Element == Report.Module {
+    public subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }

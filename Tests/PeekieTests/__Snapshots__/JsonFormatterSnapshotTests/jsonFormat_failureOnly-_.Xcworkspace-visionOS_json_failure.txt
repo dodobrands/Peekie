@@ -72,7 +72,40 @@
       ],
       "name" : "XcodeprojExample.app",
       "suites" : [
-
+        {
+          "name" : "ExampleSUITests",
+          "tests" : [
+            {
+              "durationMs" : 44.786930084228516,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 45.06516456604004,
+              "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            }
+          ]
+        },
+        {
+          "name" : "XCTestTests",
+          "tests" : [
+            {
+              "durationMs" : 1141.6420936584473,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 7.061958312988281,
+              "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            }
+          ]
+        }
       ]
     },
     {
@@ -129,124 +162,6 @@
       },
       "files" : [
         {
-          "errors" : [
-
-          ],
-          "name" : "ExampleSUITests",
-          "warnings" : [
-
-          ]
-        },
-        {
-          "coverage" : {
-            "coveredLines" : 95,
-            "percentage" : 0.9895833333333334,
-            "totalLines" : 96
-          },
-          "errors" : [
-
-          ],
-          "name" : "XCTestTests.swift",
-          "warnings" : [
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 102,
-                "startColumn" : 9,
-                "startLine" : 102
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Error"
-            },
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 102,
-                "startColumn" : 9,
-                "startLine" : 102
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Warning"
-            },
-            {
-              "location" : {
-                "endColumn" : 25,
-                "endLine" : 50,
-                "startColumn" : 25,
-                "startLine" : 50
-              },
-              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
-              "type" : "Swift Compiler Warning"
-            },
-            {
-              "location" : {
-                "endColumn" : 32,
-                "endLine" : 53,
-                "startColumn" : 32,
-                "startLine" : 53
-              },
-              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
-              "type" : "Swift Compiler Warning"
-            },
-            {
-              "location" : {
-                "endColumn" : 36,
-                "endLine" : 64,
-                "startColumn" : 36,
-                "startLine" : 64
-              },
-              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
-              "type" : "Swift Compiler Warning"
-            }
-          ]
-        }
-      ],
-      "name" : "XcodeprojExampleTests",
-      "suites" : [
-        {
-          "name" : "ExampleSUITests",
-          "tests" : [
-            {
-              "durationMs" : 44.786930084228516,
-              "message" : "Expected 5.0 but got 6.0",
-              "name" : "failure()",
-              "status" : "failure"
-            },
-            {
-              "durationMs" : 45.06516456604004,
-              "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
-              "name" : "throwing()",
-              "status" : "failure"
-            }
-          ]
-        },
-        {
-          "name" : "XCTestTests",
-          "tests" : [
-            {
-              "durationMs" : 1141.6420936584473,
-              "message" : "Expected 5.0 but got 6.0",
-              "name" : "test_failure()",
-              "status" : "failure"
-            },
-            {
-              "durationMs" : 7.061958312988281,
-              "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
-              "name" : "test_throwing()",
-              "status" : "failure"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "coverage" : {
-        "coveredLines" : 152,
-        "percentage" : 0.9325153374233128,
-        "totalLines" : 163
-      },
-      "files" : [
-        {
           "coverage" : {
             "coveredLines" : 57,
             "percentage" : 0.8507462686567164,
@@ -257,26 +172,6 @@
           ],
           "name" : "SwiftTestingTests.swift",
           "warnings" : [
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 98,
-                "startColumn" : 9,
-                "startLine" : 98
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Error"
-            },
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 98,
-                "startColumn" : 9,
-                "startLine" : 98
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Warning"
-            },
             {
               "location" : {
                 "endColumn" : 25,
@@ -296,6 +191,26 @@
               },
               "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 98,
+                "startColumn" : 9,
+                "startLine" : 98
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 98,
+                "startColumn" : 9,
+                "startLine" : 98
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
             }
           ]
         },
@@ -310,26 +225,6 @@
           ],
           "name" : "XCTestTests.swift",
           "warnings" : [
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 102,
-                "startColumn" : 9,
-                "startLine" : 102
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Error"
-            },
-            {
-              "location" : {
-                "endColumn" : 9,
-                "endLine" : 102,
-                "startColumn" : 9,
-                "startLine" : 102
-              },
-              "message" : "Some warning from ExampleSUITests",
-              "type" : "Swift Compiler Warning"
-            },
             {
               "location" : {
                 "endColumn" : 25,
@@ -358,6 +253,26 @@
                 "startLine" : 64
               },
               "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 102,
+                "startColumn" : 9,
+                "startLine" : 102
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 102,
+                "startColumn" : 9,
+                "startLine" : 102
+              },
+              "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
             }
           ]

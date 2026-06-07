@@ -3,7 +3,7 @@ import Testing
 
 @testable import PeekieSDK
 
-private typealias IssueType = Report.Module.File.Issue.IssueType
+private typealias IssueType = Report.File.Issue.IssueType
 
 @Suite
 struct IssueTypeTests {
