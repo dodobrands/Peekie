@@ -293,11 +293,11 @@ extension Report {
         switch node.nodeType {
         case .device, .arguments, .repetition:
             let result: Module.Suite.RepeatableTest.Test.Status? = {
-                guard let r = node.result else {
+                guard let dtoResult = node.result else {
                     return nil
                 }
 
-                switch r {
+                switch dtoResult {
                 case .passed:
                     return .success
                 case .failed:

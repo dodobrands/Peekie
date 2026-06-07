@@ -64,12 +64,12 @@ extension BuildResultsDTO.Issue {
             fragment
                 .split(separator: "&")
                 .reduce(into: [:]) { acc, part in
-                    let kv = part.split(separator: "=", maxSplits: 1)
-                    guard kv.count == 2 else {
+                    let pair = part.split(separator: "=", maxSplits: 1)
+                    guard pair.count == 2 else {
                         return
                     }
 
-                    acc[String(kv[0])] = String(kv[1])
+                    acc[String(pair[0])] = String(pair[1])
                 }
 
         guard let startLine = params["StartingLineNumber"].flatMap(Int.init) else {

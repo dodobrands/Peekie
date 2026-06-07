@@ -2,12 +2,9 @@ import Foundation
 
 // MARK: - WarningRegex
 
-private enum WarningRegex {
-    static let duplicate = try! NSRegularExpression(
-        pattern: "(?m)^(.+?)\\r?\\n#warning\\(\"\\1\"\\)"
-    )
-    static let whitespace = try! NSRegularExpression(pattern: "\\s+")
-}
+// Regex literals (Swift 5.7+) are compile-time-validated. Kept as local lets
+// instead of static lets because `Regex<…>` isn't `Sendable` under Swift 6
+// strict concurrency.
 
 extension Report {
     // MARK: - Warnings Processing
@@ -59,7 +56,7 @@ extension Report {
             )
         }
 
-        let grouped = Dictionary(grouping: parsed, by: { $0.0 })
+        let grouped = Dictionary(grouping: parsed) { $0.0 }
         // Sort issues within each file deterministically — concurrentCompactMap
         // doesn't guarantee order, and snapshot tests are sensitive to it.
         return grouped.mapValues { pairs in
@@ -84,12 +81,12 @@ extension Report {
 
     /// Normalizes a warning message by removing duplicate patterns and cleaning up formatting
     static func normalizeWarningMessage(_ message: String) -> String {
-        let duplicateWarningRemoved = WarningRegex.duplicate.stringByReplacingMatches(
-            in: message,
-            options: [],
-            range: NSRange(location: 0, length: (message as NSString).length),
-            withTemplate: "$1"
-        )
+        // `#warning("…")` directives produce a record whose message body
+        // repeats the directive echo on the next line — strip the echo.
+        let duplicateRegex = #/(?m)^(.+?)\r?\n#warning\("\1"\)/#
+        let duplicateWarningRemoved = message.replacing(duplicateRegex) { match in
+            String(match.output.1)
+        }
 
         let filtered =
             duplicateWarningRemoved
@@ -98,12 +95,7 @@ extension Report {
                 .filter { $0.hasPrefix("^") == false && $0.hasPrefix("#warning(") == false }
                 .joined(separator: "\n")
 
-        let collapsed = WarningRegex.whitespace.stringByReplacingMatches(
-            in: filtered,
-            options: [],
-            range: NSRange(location: 0, length: (filtered as NSString).length),
-            withTemplate: " "
-        )
+        let collapsed = filtered.replacing(#/\s+/#, with: " ")
 
         return collapsed.trimmingCharacters(in: .whitespacesAndNewlines)
     }

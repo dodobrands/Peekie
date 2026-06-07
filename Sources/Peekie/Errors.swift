@@ -42,9 +42,9 @@ public struct Errors: AsyncParsableCommand {
         let formatter = IssuesFormatter()
         switch format {
         case .json:
-            try print(formatter.json(report.files, on: \.errors))
+            try print(formatter.json(report.files, flattening: \.errors))
         case .list:
-            print(formatter.list(report.files, on: \.errors))
+            print(formatter.list(report.files, flattening: \.errors))
         }
     }
 }

@@ -8,16 +8,20 @@ import Foundation
 public final class IssuesFormatter {
     // MARK: Lifecycle
 
+    /// Creates a new formatter.
     public init() {}
 
     // MARK: Public
 
     /// JSON: a sorted flat array of `{file, line, column, type, message}` objects.
     /// `line` / `column` are `null` when `Issue.location` is absent.
-    public func json(_ files: [Report.File], on keyPath: KeyPath<Report.File, [Report.File.Issue]>)
+    public func json(
+        _ files: [Report.File],
+        flattening keyPath: KeyPath<Report.File, [Report.File.Issue]>
+    )
         throws -> String
     {
-        let entries = entries(files: files, on: keyPath)
+        let entries = entries(files: files, flattening: keyPath)
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         let data = try encoder.encode(entries)
@@ -25,10 +29,13 @@ public final class IssuesFormatter {
     }
 
     /// Human-readable: one `file:line:column [Type] message` per line.
-    public func list(_ files: [Report.File], on keyPath: KeyPath<Report.File, [Report.File.Issue]>)
+    public func list(
+        _ files: [Report.File],
+        flattening keyPath: KeyPath<Report.File, [Report.File.Issue]>
+    )
         -> String
     {
-        let entries = entries(files: files, on: keyPath)
+        let entries = entries(files: files, flattening: keyPath)
         return
             entries
                 .map { entry in
@@ -65,7 +72,7 @@ public final class IssuesFormatter {
 
     private func entries(
         files: [Report.File],
-        on keyPath: KeyPath<Report.File, [Report.File.Issue]>
+        flattening keyPath: KeyPath<Report.File, [Report.File.Issue]>
     )
         -> [Entry]
     {

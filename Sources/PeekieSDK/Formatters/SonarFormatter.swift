@@ -42,7 +42,7 @@ public final class SonarFormatter {
         )
 
         // Group files by actual file path (multiple test suites can be in one file)
-        var filesByPath = [String: [testExecutions.file.testCase]]()
+        var filesByPath = [String: [TestCase]]()
         // Track paths by nodeIdentifierURL (full node identifier)
         var pathsByNode = [String: String]()
 
@@ -121,7 +121,7 @@ public final class SonarFormatter {
             }
 
             // Extract test cases from this file
-            let testCases = try testExecutions.file.testCases(from: file)
+            let testCases = TestCase.cases(from: file)
 
             // Merge test cases by file path
             if filesByPath[path] != nil {
@@ -133,14 +133,14 @@ public final class SonarFormatter {
 
         // Create file entries from grouped test cases
         let sonarFiles = filesByPath.map { path, testCases in
-            testExecutions.file(path: path, testCase: testCases)
+            XMLFile(path: path, testCase: testCases)
         }
         .sorted { $0.path < $1.path }
-        let dto = testExecutions(file: sonarFiles)
+        let dto = TestExecutions(file: sonarFiles)
 
         let encoder = XMLEncoder()
         encoder.outputFormatting = .prettyPrinted
-        let data = try encoder.encode(dto)
+        let data = try encoder.encode(dto, withRootKey: "testExecutions")
         return String(decoding: data, as: UTF8.self)
     }
 
@@ -149,93 +149,22 @@ public final class SonarFormatter {
     private let logger: Logger = .init(label: "com.peekie.formatter.sonar")
 }
 
-// MARK: - testExecutions
+// MARK: - TestExecutions
 
-private struct testExecutions: Encodable, DynamicNodeEncoding {
+//
+// Type names are PascalCase as Swift convention requires. The XML element
+// names are mapped via `CodingKeys` raw values (`testExecutions`, `file`,
+// `testCase`, `skipped`, `failure`) — that's the SonarQube schema and what
+// the encoder writes.
+
+private struct TestExecutions: Encodable, DynamicNodeEncoding {
     enum CodingKeys: String, CodingKey {
         case version
         case file
     }
 
-    struct file: Encodable, DynamicNodeEncoding {
-        enum CodingKeys: String, CodingKey {
-            case path
-            case testCase
-        }
-
-        struct testCase: Encodable, DynamicNodeEncoding {
-            enum CodingKeys: String, CodingKey {
-                case name
-                case duration
-                case skipped
-                case failure
-            }
-
-            struct skipped: Encodable, DynamicNodeEncoding {
-                enum CodingKeys: String, CodingKey {
-                    case message
-                }
-
-                let message: String
-
-                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-                    switch key {
-                    case CodingKeys.message:
-                        .attribute
-                    default:
-                        .element
-                    }
-                }
-            }
-
-            struct failure: Encodable, DynamicNodeEncoding {
-                enum CodingKeys: String, CodingKey {
-                    case message
-                }
-
-                let message: String
-
-                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-                    switch key {
-                    case CodingKeys.message:
-                        .attribute
-                    default:
-                        .element
-                    }
-                }
-            }
-
-            let name: String
-            let duration: Int
-            let skipped: skipped?
-            let failure: failure?
-
-            static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-                switch key {
-                case CodingKeys.name,
-                     CodingKeys.duration:
-                    .attribute
-                default:
-                    .element
-                }
-            }
-        }
-
-        let path: String
-        let testCase: [testCase]
-
-        static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-            switch key {
-            case CodingKeys.path:
-                .attribute
-            default:
-                .element
-            }
-        }
-    }
-
     let version = 1
-    let file: [file]
+    let file: [XMLFile]
 
     static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
         switch key {
@@ -247,7 +176,92 @@ private struct testExecutions: Encodable, DynamicNodeEncoding {
     }
 }
 
-extension testExecutions.file.testCase {
+// MARK: - XMLFile
+
+private struct XMLFile: Encodable, DynamicNodeEncoding {
+    enum CodingKeys: String, CodingKey {
+        case path
+        case testCase
+    }
+
+    let path: String
+    let testCase: [TestCase]
+
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+        switch key {
+        case CodingKeys.path:
+            .attribute
+        default:
+            .element
+        }
+    }
+}
+
+// MARK: - TestCase
+
+private struct TestCase: Encodable, DynamicNodeEncoding {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case duration
+        case skipped
+        case failure
+    }
+
+    let name: String
+    let duration: Int
+    let skipped: Skipped?
+    let failure: Failure?
+
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+        switch key {
+        case CodingKeys.name,
+             CodingKeys.duration:
+            .attribute
+        default:
+            .element
+        }
+    }
+}
+
+// MARK: - Skipped
+
+private struct Skipped: Encodable, DynamicNodeEncoding {
+    enum CodingKeys: String, CodingKey {
+        case message
+    }
+
+    let message: String
+
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+        switch key {
+        case CodingKeys.message:
+            .attribute
+        default:
+            .element
+        }
+    }
+}
+
+// MARK: - Failure
+
+private struct Failure: Encodable, DynamicNodeEncoding {
+    enum CodingKeys: String, CodingKey {
+        case message
+    }
+
+    let message: String
+
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+        switch key {
+        case CodingKeys.message:
+            .attribute
+        default:
+            .element
+        }
+    }
+}
+
+extension TestCase {
     init(_ test: Report.Module.Suite.RepeatableTest.Test) {
         self.init(
             name: test.name,
@@ -258,11 +272,9 @@ extension testExecutions.file.testCase {
     }
 }
 
-private extension testExecutions.file {
-    static func testCases(from file: Report.Module.Suite) throws -> [testExecutions.file
-        .testCase]
-    {
-        var testCases = [testExecutions.file.testCase]()
+private extension TestCase {
+    static func cases(from file: Report.Module.Suite) -> [Self] {
+        var testCases = [Self]()
 
         for repeatableTest in file.repeatableTests.sorted(by: { $0.name < $1.name }) {
             // Use merged tests which already handle repetitions and optionally devices
@@ -270,7 +282,7 @@ private extension testExecutions.file {
 
             // Output each merged test separately
             for test in mergedTests {
-                testCases.append(testExecutions.file.testCase.init(test))
+                testCases.append(Self(test))
             }
         }
 

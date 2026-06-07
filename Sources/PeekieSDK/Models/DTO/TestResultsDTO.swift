@@ -8,7 +8,7 @@ struct TestResultsDTO: Decodable {
 
 extension TestResultsDTO {
     struct TestNode: Decodable {
-        let children: [TestNode]?
+        let children: [Self]?
         let durationInSeconds: Double?
         let name: String
         let nodeIdentifierURL: String?
@@ -143,7 +143,7 @@ extension TestResultsDTO.TestNode {
 
         // MARK: Internal
 
-        static func ==(lhs: NodeType, rhs: NodeType) -> Bool {
+        static func ==(lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
             case (.testCase, .testCase),
                  (.testSuite, .testSuite),

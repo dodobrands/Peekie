@@ -44,10 +44,9 @@ struct NormalizeWarningMessageAuditTests {
         note: class 'Foo' does not conform to the 'Sendable' protocol
         """
         let out = Report.normalizeWarningMessage(input)
-        #expect(
-            out
-                == "Capture of 'self' with non-sendable type 'Foo' in a `@Sendable` closure note: class 'Foo' does not conform to the 'Sendable' protocol"
-        )
+        let expected = "Capture of 'self' with non-sendable type 'Foo' in a `@Sendable` closure "
+            + "note: class 'Foo' does not conform to the 'Sendable' protocol"
+        #expect(out == expected)
         // The `note:` survives, but its visual separation from the main message is gone.
         // Acceptable for dashboards / single-line logs; if a UI needs the structure,
         // it should read the raw `BuildResultsDTO.Issue.message` instead — #164 left
@@ -64,10 +63,10 @@ struct NormalizeWarningMessageAuditTests {
             Result<Foo, Bar>>>>' to expected argument type 'Int'
         """
         let out = Report.normalizeWarningMessage(input)
-        #expect(
-            out
-                == "Cannot convert value of type 'Dictionary<String, Array<Dictionary<Int, Result<Foo, Bar>>>>' to expected argument type 'Int'"
-        )
+        let expected = "Cannot convert value of type "
+            + "'Dictionary<String, Array<Dictionary<Int, Result<Foo, Bar>>>>' "
+            + "to expected argument type 'Int'"
+        #expect(out == expected)
     }
 
     /// Caret line on a non-`#warning` diagnostic (compiler shows `^` under the

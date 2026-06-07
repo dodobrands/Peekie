@@ -3,13 +3,22 @@ import Logging
 
 // MARK: - JSONFormatter
 
+/// Formats a `Report` as a pretty-printed JSON tree of modules / suites / tests.
+/// Used by `peekie tests --format json`.
 public final class JSONFormatter {
     // MARK: Lifecycle
 
+    /// Creates a new formatter.
     public init() {}
 
     // MARK: Public
 
+    /// Encodes `report` to JSON.
+    /// - Parameters:
+    ///   - report: The parsed report.
+    ///   - include: Test statuses to surface (defaults to all).
+    ///   - includeDeviceDetails: When `true`, device names appear in test names
+    ///     (`[iPhone 15 Pro]`). Useful for matrix runs.
     public func format(
         _ report: Report,
         include: [Report.Module.Suite.RepeatableTest.Test.Status] = Report.Module

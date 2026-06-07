@@ -1,0 +1,238 @@
+# SwiftLint config — Peekie
+# https://realm.github.io/SwiftLint/rule-directory.html
+#
+# Posture: every shipped rule is enabled, including opt-in. Only rules that
+# directly conflict with SwiftFormat are disabled — SwiftFormat owns layout
+# and whitespace, SwiftLint owns semantics.
+
+excluded:
+  - .build
+  - DerivedData
+  - Tests/PeekieTests/Resources
+  - Tests/PeekieTests/__Snapshots__
+  - swift-tests-example
+
+# missing_docs is scoped to the public SDK only — the helper module is
+# test-only and its `testMake()` factories don't carry user docs.
+missing_docs:
+  excluded:
+    - Sources/PeekieTestHelpers
+    - Tests
+
+disabled_rules:
+  # Format conflicts — SwiftLint fires on code SwiftFormat already
+  # laid out per our `.swiftformat` config.
+  - opening_brace                            # ↔ swiftformat braces / wrapMultilineStatementBraces
+  - function_name_whitespace                 # ↔ swiftformat operator-func no-space
+  - file_header                              # ↔ swiftformat fileHeader
+  - pattern_matching_keywords                # ↔ swiftformat hoistPatternLet (opposite directions)
+
+  # Style preferences we deliberately don't enforce.
+  - explicit_type_interface                  # against Swift type inference
+  - explicit_acl                             # internal is the Swift default
+  - explicit_top_level_acl                   # same
+  - explicit_enum_raw_value                  # `case foo = "foo"` is redundant; Swift infers
+  - prefixed_toplevel_constant               # Hungarian (`kFoo`) prefix is Objective-C era
+  - required_deinit                          # not every class needs `deinit`
+  - no_extension_access_modifier             # `private extension Foo {}` is a useful Swift pattern
+  - no_grouping_extension                    # we group conformances into extensions on purpose
+  - one_declaration_per_file                 # small related types belong together
+  - variable_shadowing                       # `if let x = x` is canonical Swift
+  - discouraged_default_parameter            # default parameters are core SDK ergonomics
+  - no_magic_numbers                         # tests + xcresult schema have unavoidable numeric literals
+  - no_empty_block                           # empty bodies appear in test stubs / no-op closures
+  - file_name                                # private wrapper types intentionally live alongside their owners
+  - static_operator                          # free operator overloads on Measurement are idiomatic
+  - force_try                                # `try! NSRegularExpression(pattern:)` is compile-time-validated
+  - closure_parameter_position               # multi-line closure args land on a new line via SwiftFormat
+  - discouraged_optional_collection          # xcresult schema models "absent vs empty" with optional arrays
+  - legacy_objc_type                         # we use NSRegularExpression / NSString API surface intentionally
+  - optional_data_string_conversion          # `String(decoding:as:)` is the modern non-failable form for known-UTF-8 JSON output
+analyzer_rules:
+  - capture_variable
+  - explicit_self
+  - typesafe_array_init
+  - unused_declaration
+  - unused_import
+
+opt_in_rules:
+  - accessibility_label_for_image
+  - accessibility_trait_for_button
+  - array_init
+  - async_without_await
+  - attributes
+  - balanced_xctest_lifecycle
+  - closure_body_length
+  - closure_spacing
+  - collection_alignment
+  - comma_inheritance
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discarded_notification_center_observer
+  - discouraged_assert
+  - discouraged_default_parameter
+  - discouraged_none_name
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - enum_case_associated_values_count
+  - expiring_todo
+  - explicit_acl
+  - explicit_enum_raw_value
+  - explicit_init
+  - explicit_top_level_acl
+  - explicit_type_interface
+  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+  - file_name
+  - file_name_no_space
+  - final_test_case
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - ibinspectable_in_extension
+  - identical_operands
+  - implicitly_unwrapped_optional
+  - incompatible_concurrency_annotation
+  - joined_default_parameter
+  - last_where
+  - legacy_multiple
+  - legacy_objc_type
+  - legacy_uigraphics_function
+  - local_doc_comment
+  - lower_acl_than_parent
+  - missing_docs
+  - nimble_operator
+  - no_empty_block
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - no_magic_numbers
+  - non_overridable_class_declaration
+  - nslocalizedstring_key
+  - nslocalizedstring_require_bundle
+  - number_separator
+  - object_literal
+  - one_declaration_per_file
+  - optional_enum_case_matching
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - period_spacing
+  - prefer_asset_symbols
+  - prefer_condition_list
+  - prefer_nimble
+  - prefer_self_in_static_references
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  - private_subject
+  - private_swiftui_state
+  - private_unit_test
+  - prohibited_interface_builder
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - raw_value_for_camel_cased_codable_enum
+  - reduce_into
+  - redundant_nil_coalescing
+  - required_deinit
+  - required_enum_case
+  - return_value_from_void_function
+  - self_binding
+  - shorthand_argument
+  - single_test_class
+  - sorted_first_last
+  - static_operator
+  - strict_fileprivate
+  - strong_iboutlet
+  - superfluous_else
+  - test_case_accessibility
+  - todo
+  - toggle_bool
+  - trailing_closure
+  - unavailable_function
+  - unhandled_throwing_task
+  - unneeded_escaping
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - untyped_error_in_catch
+  - unused_parameter
+  - variable_shadowing
+  - weak_delegate
+  - xct_specific_matcher
+  - yoda_condition
+
+# ─── Rule-specific options ──────────────────────────────────────────────────
+
+line_length:
+  warning: 110
+  error: 140
+  ignores_urls: true
+  ignores_comments: false
+
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  max_length:
+    warning: 60
+    error: 80
+
+type_name:
+  min_length:
+    warning: 3
+    error: 2
+  max_length:
+    warning: 60
+    error: 80
+
+function_body_length:
+  warning: 100
+  error: 150
+
+function_parameter_count:
+  warning: 6
+  error: 8
+
+cyclomatic_complexity:
+  warning: 15
+  error: 25
+
+nesting:
+  type_level: 5
+  function_level: 5
+
+type_body_length:
+  warning: 500
+  error: 700
+
+file_length:
+  warning: 800
+  error: 1200
+  ignore_comment_only_lines: true
+
+closure_body_length:
+  warning: 40
+  error: 80
+
+enum_case_associated_values_count:
+  warning: 5
+  error: 8
+
+trailing_comma:
+  mandatory_comma: true
+
+number_separator:
+  minimum_length: 5

@@ -1,3 +1,5 @@
+// swiftlint:disable:next blanket_disable_command
+// swiftlint:disable missing_docs
 import Foundation
 
 public extension Measurement where UnitType: UnitDuration {

@@ -1,3 +1,5 @@
+// swiftlint:disable:next blanket_disable_command
+// swiftlint:disable missing_docs
 import Foundation
 @testable import PeekieSDK
 
@@ -119,7 +121,7 @@ public extension Report.Module.Suite.RepeatableTest {
         -> Self
     {
         let tests = Array(
-            repeating: Report.Module.Suite.RepeatableTest.Test.testMake(
+            repeating: Self.Test.testMake(
                 name: name,
                 status: .failure
             ),
@@ -159,7 +161,7 @@ public extension Report.Module.Suite.RepeatableTest {
         -> Self
     {
         let failedTests = Array(
-            repeating: Report.Module.Suite.RepeatableTest.Test.testMake(
+            repeating: Self.Test.testMake(
                 name: name, status: .failure
             ),
             count: failedTimes

@@ -14,6 +14,9 @@ import Foundation
 public struct Report {
     // MARK: Lifecycle
 
+    /// Creates a `Report` from already-parsed pieces. The async
+    /// `Report(xcresultPath:…)` initializer is the usual entry point;
+    /// this memberwise init is for tests and test helpers.
     public init(
         files: [File],
         modules: [Module],
@@ -266,6 +269,8 @@ public extension Report.File {
 }
 
 public extension Report.File.Issue.IssueType {
+    /// Maps an Apple-emitted `issueType` string to a typed case. Unrecognized
+    /// values fall through to `.unknown(raw)`, preserving the original string.
     init(rawValue: String) {
         switch rawValue {
         case "Swift Compiler Warning":
@@ -281,6 +286,8 @@ public extension Report.File.Issue.IssueType {
         }
     }
 
+    /// The raw `issueType` string as emitted by `xcresulttool`. Round-trips
+    /// through `init(rawValue:)`.
     var rawValue: String {
         switch self {
         case .swiftCompilerWarning:
@@ -509,9 +516,8 @@ public extension Report.Module.Suite.RepeatableTest {
         let statuses = tests.map(\.status)
         if statuses.elementsAreEqual {
             return statuses.first ?? .success
-        } else {
-            return .mixed
         }
+        return .mixed
     }
 
     /// Average duration across all test executions
@@ -617,7 +623,7 @@ public extension Report.Module.Suite.RepeatableTest {
             // For failures, prefer message from failed test, otherwise use first available
             let failureMessage: String? = {
                 if status == .failure || status == .mixed {
-                    return groupTests.first(where: { $0.status == .failure })?.failureMessage
+                    return groupTests.first { $0.status == .failure }?.failureMessage
                         ?? groupTests.first?.failureMessage
                 }
                 return nil
@@ -626,7 +632,7 @@ public extension Report.Module.Suite.RepeatableTest {
             // For skipped, prefer message from skipped test
             let skipMessage: String? = {
                 if status == .skipped {
-                    return groupTests.first(where: { $0.status == .skipped })?.skipMessage
+                    return groupTests.first { $0.status == .skipped }?.skipMessage
                         ?? groupTests.first?.skipMessage
                 }
                 return nil
@@ -735,7 +741,8 @@ extension Set<Report.Module.Suite.RepeatableTest> {
         filter { $0.combinedStatus == .failure }
     }
 
-    /// Property that filters the collection to include only elements whose status is `.expectedFailure`.
+    /// Property that filters the collection to include only elements whose status is
+    /// `.expectedFailure`.
     var expectedFailed: Self {
         filter { $0.combinedStatus == .expectedFailure }
     }
@@ -752,7 +759,8 @@ extension Set<Report.Module.Suite.RepeatableTest> {
     }
 
     /// Property that filters the collection to include only elements whose status is `.unknown`.
-    /// This status might be used when the status of an element has not been determined or is not applicable.
+    /// This status might be used when the status of an element has not been determined or is not
+    /// applicable.
     var unknown: Self {
         filter { $0.combinedStatus == .unknown }
     }
@@ -903,24 +911,28 @@ extension Array where Element: Equatable {
 }
 
 public extension [Report.Module.Suite] {
+    /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }
 
 public extension [Report.File] {
+    /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }
 
 public extension [Report.Module] {
+    /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
     }
 }
 
 public extension [Report.Module.Suite.RepeatableTest] {
+    /// Sum of the per-test totals; assumes all tests use the same `UnitDuration`.
     var totalDuration: Measurement<UnitDuration> {
         assert(map(\.totalDuration.unit).elementsAreEqual)
         let value = map(\.totalDuration.value).sum()

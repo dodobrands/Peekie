@@ -3,7 +3,7 @@ import Foundation
 public extension Sequence {
     /// Sequential async map: awaits each transform in order.
     func asyncMap<T>(
-        _ transform: @escaping (Element) async throws -> T
+        _ transform: (Element) async throws -> T
     ) async rethrows
         -> [T]
     {

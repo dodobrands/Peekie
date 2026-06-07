@@ -7,6 +7,7 @@ import Foundation
 public final class CoverageFormatter {
     // MARK: Lifecycle
 
+    /// Creates a new formatter.
     public init() {}
 
     // MARK: Public
@@ -40,8 +41,8 @@ public final class CoverageFormatter {
         let nameWidth = max(5, rows.map(\.name.count).max() ?? 0)
         let lineRows: [String] = rows.map { row in
             let pct = String(format: "%5.1f%%", row.coverage * 100)
-            return
-                "\(row.name.padding(toLength: nameWidth, withPad: " ", startingAt: 0))  \(pct)  (\(row.coveredLines)/\(row.totalLines))"
+            let paddedName = row.name.padding(toLength: nameWidth, withPad: " ", startingAt: 0)
+            return "\(paddedName)  \(pct)  (\(row.coveredLines)/\(row.totalLines))"
         }
 
         var lines = lineRows
