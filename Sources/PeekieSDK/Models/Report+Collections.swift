@@ -7,6 +7,7 @@ extension Array where Element: Equatable {
 }
 
 public extension [Report.Module.Suite] {
+    // periphery:ignore
     /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
@@ -14,6 +15,7 @@ public extension [Report.Module.Suite] {
 }
 
 public extension [Report.File] {
+    // periphery:ignore
     /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
@@ -21,6 +23,7 @@ public extension [Report.File] {
 }
 
 public extension [Report.Module] {
+    // periphery:ignore
     /// Convenience lookup by `name`.
     subscript(_ name: String) -> Element? {
         first { $0.name == name }
@@ -28,6 +31,7 @@ public extension [Report.Module] {
 }
 
 public extension [Report.Module.Suite.RepeatableTest] {
+    // periphery:ignore
     /// Sum of the per-test totals; assumes all tests use the same `UnitDuration`.
     var totalDuration: Measurement<UnitDuration> {
         assert(map(\.totalDuration.unit).elementsAreEqual)
