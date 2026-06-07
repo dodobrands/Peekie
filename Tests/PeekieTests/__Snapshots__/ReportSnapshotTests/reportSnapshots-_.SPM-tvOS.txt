@@ -32,7 +32,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from Calculator"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
       - name: "Calculator"
       - suites: 0 members
     ▿ Module
@@ -64,7 +64,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from Calculator"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -75,7 +75,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from ExampleSUITests"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -86,7 +86,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from ExampleSUITests"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
       - name: "ExamplesTests"
       ▿ suites: 2 members
         ▿ Suite

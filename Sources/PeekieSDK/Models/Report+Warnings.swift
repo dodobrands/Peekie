@@ -15,17 +15,17 @@ extension Report {
     ) async -> [String: [Module.File.Issue]] {
         let parsed = await buildResultsDTO.warnings.concurrentCompactMap {
             warning -> (String, Module.File.Issue)? in
-            guard
-                let issueType = Module.File.Issue.IssueType(rawValue: warning.issueType),
-                let fileName = warning.fileName
-            else { return nil }
+            guard let fileName = warning.fileName else { return nil }
 
             let normalized = normalizeWarningMessage(warning.message)
             guard !normalized.isEmpty else { return nil }
 
             return (
                 fileName,
-                Module.File.Issue(type: issueType, message: normalized)
+                Module.File.Issue(
+                    type: Module.File.Issue.IssueType(rawValue: warning.issueType),
+                    message: normalized
+                )
             )
         }
 

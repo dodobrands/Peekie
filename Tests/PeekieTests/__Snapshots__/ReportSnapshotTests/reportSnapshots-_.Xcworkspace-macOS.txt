@@ -19,7 +19,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from StringUtils"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
       - name: "XcodeprojExampleFramework.framework"
       - suites: 0 members
     ▿ Module
@@ -47,7 +47,7 @@
           ▿ warnings: 1 element
             ▿ Issue
               - message: "Some warning from Calculator"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -79,16 +79,16 @@
           ▿ warnings: 4 elements
             ▿ Issue
               - message: "Some warning from ExampleSUITests"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
             ▿ Issue
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
             ▿ Issue
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
             ▿ Issue
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
       - name: "XcodeprojExampleTests"
       ▿ suites: 2 members
         ▿ Suite
@@ -1058,13 +1058,13 @@
           ▿ warnings: 3 elements
             ▿ Issue
               - message: "Some warning from ExampleSUITests"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
             ▿ Issue
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
             ▿ Issue
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -1075,15 +1075,15 @@
           ▿ warnings: 4 elements
             ▿ Issue
               - message: "Some warning from ExampleSUITests"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerError
             ▿ Issue
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
             ▿ Issue
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
             ▿ Issue
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.buildWarning
+              - type: IssueType.swiftCompilerWarning
       - name: "XcodeprojExampleTests.xctest"
       - suites: 0 members
