@@ -54,12 +54,15 @@ extension Report {
             }
         }
 
-        // Parse warnings from build results
+        // Parse warnings and errors from build results
         let warningsByFileName: [String: [Report.Module.File.Issue]]
+        let errorsByFileName: [String: [Report.Module.File.Issue]]
         if let buildResultsDTO = buildResultsDTO {
             warningsByFileName = await Self.parseWarnings(from: buildResultsDTO)
+            errorsByFileName = await Self.parseErrors(from: buildResultsDTO)
         } else {
             warningsByFileName = [:]
+            errorsByFileName = [:]
         }
 
         var modules = Set<Module>()
@@ -252,10 +255,14 @@ extension Report {
                         }
                     }
 
-                    // Get or create File with coverage and warnings
+                    // Get or create File with coverage, warnings and errors
                     let fileWarnings: [Report.Module.File.Issue] =
                         includeWarnings
-                        ? Self.warningsFor(fileName: fileName, in: warningsByFileName)
+                        ? Self.issuesFor(fileName: fileName, in: warningsByFileName)
+                        : []
+                    let fileErrors: [Report.Module.File.Issue] =
+                        includeWarnings
+                        ? Self.issuesFor(fileName: fileName, in: errorsByFileName)
                         : []
 
                     var file = module.files[fileName]
@@ -263,13 +270,17 @@ extension Report {
                         file = Report.Module.File(
                             name: fileName,
                             warnings: fileWarnings,
+                            errors: fileErrors,
                             coverage: fileCoverage
                         )
                         module.files.insert(file!)
                     } else {
-                        // Merge warnings if file already exists
+                        // Merge warnings/errors if file already exists
                         if includeWarnings && !fileWarnings.isEmpty {
-                            file!.warnings = Self.mergeWarnings(file!.warnings, fileWarnings)
+                            file!.warnings = Self.mergeIssues(file!.warnings, fileWarnings)
+                        }
+                        if includeWarnings && !fileErrors.isEmpty {
+                            file!.errors = Self.mergeIssues(file!.errors, fileErrors)
                         }
                     }
 
@@ -490,25 +501,33 @@ extension Report {
                     // Use the name as it appears in xcresult
                     let fileName = fileCoverageDTO.name
 
-                    // Get warnings for this file
+                    // Get warnings and errors for this file
                     let fileWarnings: [Report.Module.File.Issue] =
                         includeWarnings
-                        ? Self.warningsFor(fileName: fileName, in: warningsByFileName)
+                        ? Self.issuesFor(fileName: fileName, in: warningsByFileName)
+                        : []
+                    let fileErrors: [Report.Module.File.Issue] =
+                        includeWarnings
+                        ? Self.issuesFor(fileName: fileName, in: errorsByFileName)
                         : []
 
-                    // Create or update File with coverage and warnings
+                    // Create or update File with coverage, warnings and errors
                     var file = moduleFiles[fileName]
                     if file == nil {
                         file = Report.Module.File(
                             name: fileName,
                             warnings: fileWarnings,
+                            errors: fileErrors,
                             coverage: coverage
                         )
                         moduleFiles.insert(file!)
                     } else {
-                        // Merge warnings if file already exists
+                        // Merge warnings/errors if file already exists
                         if includeWarnings && !fileWarnings.isEmpty {
-                            file!.warnings = Self.mergeWarnings(file!.warnings, fileWarnings)
+                            file!.warnings = Self.mergeIssues(file!.warnings, fileWarnings)
+                        }
+                        if includeWarnings && !fileErrors.isEmpty {
+                            file!.errors = Self.mergeIssues(file!.errors, fileErrors)
                         }
                     }
                 }

@@ -13,19 +13,35 @@ extension Report {
     static func parseWarnings(
         from buildResultsDTO: BuildResultsDTO
     ) async -> [String: [Module.File.Issue]] {
-        let parsed = await buildResultsDTO.warnings.concurrentCompactMap {
-            warning -> (String, Module.File.Issue)? in
-            guard let fileName = warning.fileName else { return nil }
+        await parseIssues(buildResultsDTO.warnings)
+    }
 
-            let normalized = normalizeWarningMessage(warning.message)
+    /// Parses errors from BuildResultsDTO and returns a map of file names to their issues.
+    /// Symmetric to ``parseWarnings(from:)``: same DTO shape, same normalization, same
+    /// per-file grouping. Errors without a `sourceURL` (link errors, project-level errors)
+    /// are dropped — same as warnings.
+    static func parseErrors(
+        from buildResultsDTO: BuildResultsDTO
+    ) async -> [String: [Module.File.Issue]] {
+        await parseIssues(buildResultsDTO.errors)
+    }
+
+    private static func parseIssues(
+        _ dtoIssues: [BuildResultsDTO.Issue]
+    ) async -> [String: [Module.File.Issue]] {
+        let parsed = await dtoIssues.concurrentCompactMap {
+            issue -> (String, Module.File.Issue)? in
+            guard let fileName = issue.fileName else { return nil }
+
+            let normalized = normalizeWarningMessage(issue.message)
             guard !normalized.isEmpty else { return nil }
 
             return (
                 fileName,
                 Module.File.Issue(
-                    type: Module.File.Issue.IssueType(rawValue: warning.issueType),
+                    type: Module.File.Issue.IssueType(rawValue: issue.issueType),
                     message: normalized,
-                    location: warning.location
+                    location: issue.location
                 )
             )
         }
@@ -60,23 +76,23 @@ extension Report {
         return collapsed.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    /// Retrieves warnings matching a file name, optionally trying with a `.swift` suffix
-    static func warningsFor(
+    /// Retrieves issues matching a file name, optionally trying with a `.swift` suffix
+    static func issuesFor(
         fileName: String,
-        in warningsByFileName: [String: [Module.File.Issue]]
+        in issuesByFileName: [String: [Module.File.Issue]]
     ) -> [Module.File.Issue] {
-        if let warnings = warningsByFileName[fileName] {
-            return warnings
+        if let issues = issuesByFileName[fileName] {
+            return issues
         }
         if !fileName.hasSuffix(".swift") {
-            return warningsByFileName[fileName + ".swift"] ?? []
+            return issuesByFileName[fileName + ".swift"] ?? []
         }
         return []
     }
 
-    /// Concatenates two arrays of warnings. The SDK no longer deduplicates — every
+    /// Concatenates two arrays of issues. The SDK no longer deduplicates — every
     /// xcresult record is surfaced; grouping/dedup is a consumer decision.
-    static func mergeWarnings(
+    static func mergeIssues(
         _ existing: [Module.File.Issue],
         _ new: [Module.File.Issue]
     ) -> [Module.File.Issue] {
