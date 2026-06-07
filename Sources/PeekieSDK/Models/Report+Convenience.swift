@@ -62,10 +62,6 @@ extension Report {
             warningsByFileName = [:]
         }
 
-        // Try to get total coverage from xcresult file
-        let totalCoverageDTO: TotalCoverageDTO? =
-            includeCoverage ? try? await TotalCoverageDTO(from: xcresultPath) : nil
-
         var modules = Set<Module>()
 
         // Process test nodes: Test Plan -> Unit test bundle -> Test Suite -> Test Case -> Repetition
@@ -534,12 +530,8 @@ extension Report {
         let totalCoverage: Double? =
             includeCoverage
             ? {
-                if let totalCoverageDTO = totalCoverageDTO {
-                    let lineCoverage = totalCoverageDTO.lineCoverage
-                    // totalCoverageDTO is available; still allow fallback in case of zeroed data
-                    if lineCoverage > 0 {
-                        return lineCoverage
-                    }
+                if let lineCoverage = coverageReportDTO?.lineCoverage, lineCoverage > 0 {
+                    return lineCoverage
                 }
 
                 let fileCoverages = modules.flatMap { $0.files }.compactMap { $0.coverage }

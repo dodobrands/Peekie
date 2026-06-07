@@ -17,5 +17,6 @@ struct TargetCoverageDTO: Decodable {
 }
 
 struct CoverageReportDTO: Decodable {
+    var lineCoverage: Double
     var targets: [TargetCoverageDTO]
 }

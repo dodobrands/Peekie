@@ -66,27 +66,6 @@ extension CoverageReportDTO {
     }
 }
 
-extension TotalCoverageDTO {
-    init(from xcresultPath: URL) async throws {
-        let output = try await Shell.execute(
-            "xcrun",
-            arguments: [
-                "xccov", "view", "--report", "--json",
-                xcresultPath.path,
-            ]
-        )
-        guard let data = output.data(using: .utf8) else {
-            throw DecodingError.dataCorrupted(
-                DecodingError.Context(
-                    codingPath: [],
-                    debugDescription: "Failed to convert output to Data"
-                )
-            )
-        }
-        self = try JSONDecoder().decode(TotalCoverageDTO.self, from: data)
-    }
-}
-
 extension BuildResultsDTO {
     private static let logger = Logger(label: "com.peekie.dto")
 
