@@ -2,12 +2,10 @@ import Foundation
 import PeekieTestHelpers
 import SnapshotTesting
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
-struct JsonFormatterSnapshotTests {
-    let formatter = PeekieSDK.JsonFormatter()
+struct JSONFormatterSnapshotTests {
+    let formatter = PeekieSDK.JSONFormatter()
 
     @Test(arguments: Constants.testsReportFileNames)
     func jsonFormat_allStatuses(_ fileName: String) async throws {

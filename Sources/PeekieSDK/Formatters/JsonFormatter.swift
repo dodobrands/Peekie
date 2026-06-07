@@ -1,27 +1,33 @@
 import Foundation
 import Logging
 
-public class JsonFormatter {
-    private let logger = Logger(label: "com.peekie.formatter.json")
+// MARK: - JSONFormatter
+
+public final class JSONFormatter {
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public func format(
         _ report: Report,
         include: [Report.Module.Suite.RepeatableTest.Test.Status] = Report.Module
             .Suite.RepeatableTest.Test.Status.allCases,
         includeDeviceDetails: Bool = false
-    ) throws -> String {
+    ) throws
+        -> String
+    {
         logger.debug(
             "Formatting report as JSON",
             metadata: [
                 "modulesCount": "\(report.modules.count)",
-                "includeStatuses": "\(include.map { $0.rawValue }.joined(separator: ","))",
+                "includeStatuses": "\(include.map(\.rawValue).joined(separator: ","))",
                 "includeDeviceDetails": "\(includeDeviceDetails)",
             ]
         )
 
-        let jsonReport = JsonReport(
+        let jsonReport = JSONReport(
             from: report,
             include: include,
             includeDeviceDetails: includeDeviceDetails
@@ -32,133 +38,179 @@ public class JsonFormatter {
         let data = try encoder.encode(jsonReport)
         return String(decoding: data, as: UTF8.self)
     }
+
+    // MARK: Private
+
+    private let logger: Logger = .init(label: "com.peekie.formatter.json")
 }
 
-private struct JsonReport: Encodable {
-    let coverage: Double?
-    let modules: [JsonModule]
+// MARK: - JSONReport
+
+private struct JSONReport: Encodable {
+    // MARK: Lifecycle
 
     init(
         from report: Report,
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
-        self.coverage = report.coverage
-        self.modules = report.modules
+        coverage = report.coverage
+        modules = report.modules
             .sorted { $0.name < $1.name }
             .map {
-                JsonModule(
+                JSONModule(
                     from: $0,
                     include: include,
                     includeDeviceDetails: includeDeviceDetails
                 )
             }
     }
+
+    // MARK: Internal
+
+    let coverage: Double?
+    let modules: [JSONModule]
 }
 
-private struct JsonModule: Encodable {
-    let coverage: JsonCoverage?
-    let files: [JsonFile]
-    let name: String
-    let suites: [JsonSuite]
+// MARK: - JSONModule
+
+private struct JSONModule: Encodable {
+    // MARK: Lifecycle
 
     init(
         from module: Report.Module,
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
-        self.name = module.name
-        self.coverage = module.coverage.map { JsonCoverage(from: $0) }
-        self.files = module.files
+        name = module.name
+        coverage = module.coverage.map { JSONCoverage(from: $0) }
+        files = module.files
             .sorted { $0.name < $1.name }
-            .map { JsonFile(from: $0) }
-        self.suites = module.suites
+            .map { JSONFile(from: $0) }
+        suites = module.suites
             .sorted { $0.name < $1.name }
             .map {
-                JsonSuite(
+                JSONSuite(
                     from: $0,
                     include: include,
                     includeDeviceDetails: includeDeviceDetails
                 )
             }
     }
+
+    // MARK: Internal
+
+    let coverage: JSONCoverage?
+    let files: [JSONFile]
+    let name: String
+    let suites: [JSONSuite]
 }
 
-private struct JsonCoverage: Encodable {
-    let coveredLines: Int
-    let percentage: Double
-    let totalLines: Int
+// MARK: - JSONCoverage
+
+private struct JSONCoverage: Encodable {
+    // MARK: Lifecycle
 
     init(from coverage: Report.Coverage) {
-        self.coveredLines = coverage.coveredLines
-        self.totalLines = coverage.totalLines
-        self.percentage = coverage.coverage
+        coveredLines = coverage.coveredLines
+        totalLines = coverage.totalLines
+        percentage = coverage.coverage
     }
 
     init(from coverage: Report.File.Coverage) {
-        self.coveredLines = coverage.coveredLines
-        self.totalLines = coverage.totalLines
-        self.percentage = coverage.coverage
+        coveredLines = coverage.coveredLines
+        totalLines = coverage.totalLines
+        percentage = coverage.coverage
     }
+
+    // MARK: Internal
+
+    let coveredLines: Int
+    let percentage: Double
+    let totalLines: Int
 }
 
-private struct JsonFile: Encodable {
-    let coverage: JsonCoverage?
-    let name: String
-    let warnings: [JsonIssue]
-    let errors: [JsonIssue]
+// MARK: - JSONFile
+
+private struct JSONFile: Encodable {
+    // MARK: Lifecycle
 
     init(from file: Report.File) {
-        self.name = file.name
-        self.coverage = file.coverage.map { JsonCoverage(from: $0) }
-        self.warnings = file.warnings.map { JsonIssue(from: $0) }
-        self.errors = file.errors.map { JsonIssue(from: $0) }
+        name = file.name
+        coverage = file.coverage.map { JSONCoverage(from: $0) }
+        warnings = file.warnings.map { JSONIssue(from: $0) }
+        errors = file.errors.map { JSONIssue(from: $0) }
     }
+
+    // MARK: Internal
+
+    let coverage: JSONCoverage?
+    let name: String
+    let warnings: [JSONIssue]
+    let errors: [JSONIssue]
 }
 
-private struct JsonIssue: Encodable {
+// MARK: - JSONIssue
+
+private struct JSONIssue: Encodable {
+    // MARK: Lifecycle
+
+    init(from issue: Report.File.Issue) {
+        type = issue.type.rawValue
+        message = issue.message
+        location = issue.location
+    }
+
+    // MARK: Internal
+
     let message: String
     let type: String
     let location: Report.File.Issue.Location?
-
-    init(from issue: Report.File.Issue) {
-        self.type = issue.type.rawValue
-        self.message = issue.message
-        self.location = issue.location
-    }
 }
 
-private struct JsonSuite: Encodable {
-    let name: String
-    let tests: [JsonTest]
+// MARK: - JSONSuite
+
+private struct JSONSuite: Encodable {
+    // MARK: Lifecycle
 
     init(
         from suite: Report.Module.Suite,
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
-        self.name = suite.name
-        self.tests = suite.repeatableTests
+        name = suite.name
+        tests = suite.repeatableTests
             .filtered(testResults: include)
             .sorted { $0.name < $1.name }
             .flatMap { repeatableTest in
-                repeatableTest.mergedTests(filterDevice: !includeDeviceDetails)
+                repeatableTest.mergedTests(filterDevice: includeDeviceDetails == false)
                     .filter { include.contains($0.status) }
-                    .map { JsonTest(from: $0) }
+                    .map { JSONTest(from: $0) }
             }
     }
+
+    // MARK: Internal
+
+    let name: String
+    let tests: [JSONTest]
 }
 
-private struct JsonTest: Encodable {
+// MARK: - JSONTest
+
+private struct JSONTest: Encodable {
+    // MARK: Lifecycle
+
+    init(from test: Report.Module.Suite.RepeatableTest.Test) {
+        name = test.name
+        status = test.status.rawValue
+        durationMs = test.duration.converted(to: .milliseconds).value
+        message = test.message
+    }
+
+    // MARK: Internal
+
     let durationMs: Double
     let message: String?
     let name: String
     let status: String
-
-    init(from test: Report.Module.Suite.RepeatableTest.Test) {
-        self.name = test.name
-        self.status = test.status.rawValue
-        self.durationMs = test.duration.converted(to: .milliseconds).value
-        self.message = test.message
-    }
 }

@@ -3,17 +3,21 @@ import Foundation
 import PeekieSDK
 
 public struct Coverage: AsyncParsableCommand {
-    public static let configuration = CommandConfiguration(
-        commandName: "coverage",
-        abstract: "Print code coverage from an .xcresult bundle"
-    )
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public enum Format: String, ExpressibleByArgument, CaseIterable {
         case json
         case list
     }
+
+    public static let configuration: CommandConfiguration = .init(
+        commandName: "coverage",
+        abstract: "Print code coverage from an .xcresult bundle"
+    )
 
     @Argument(help: "Path to .xcresult")
     public var xcresultPath: String

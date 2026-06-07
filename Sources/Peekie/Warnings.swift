@@ -3,17 +3,21 @@ import Foundation
 import PeekieSDK
 
 public struct Warnings: AsyncParsableCommand {
-    public static let configuration = CommandConfiguration(
-        commandName: "warnings",
-        abstract: "Print build warnings from an .xcresult bundle"
-    )
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public enum Format: String, ExpressibleByArgument, CaseIterable {
         case json
         case list
     }
+
+    public static let configuration: CommandConfiguration = .init(
+        commandName: "warnings",
+        abstract: "Print build warnings from an .xcresult bundle"
+    )
 
     @Argument(help: "Path to .xcresult")
     public var xcresultPath: String

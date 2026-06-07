@@ -1,9 +1,7 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct FileIdentityTests {
     @Test
     func filesWithSamePathAreEqual() {

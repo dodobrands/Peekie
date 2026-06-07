@@ -1,18 +1,20 @@
 import Foundation
 
-extension URL {
-    public enum Error: Swift.Error {
+// MARK: - URL.Error
+
+public extension URL {
+    enum Error: Swift.Error {
         case noResourceValues
     }
 }
 
-extension URL {
+public extension URL {
     /// Returns a relative path from a base URL
     /// - Parameter baseURL: The base URL to calculate the relative path from.
     /// - Returns: A relative path if possible, otherwise nil.
-    public func relativePath(from baseURL: URL) -> String? {
+    func relativePath(from baseURL: URL) -> String? {
         // Check if both URLs are file URLs and that the base URL is a directory
-        guard self.isFileURL, baseURL.isFileURL, baseURL.hasDirectoryPath else {
+        guard isFileURL, baseURL.isFileURL, baseURL.hasDirectoryPath else {
             return nil
         }
 
@@ -26,7 +28,7 @@ extension URL {
         // Build the relative path
         let relativeComponents =
             Array(repeating: "..", count: basePathComponents.count - commonPart)
-            + pathComponents.dropFirst(commonPart)
+                + pathComponents.dropFirst(commonPart)
 
         return relativeComponents.joined(separator: "/")
     }

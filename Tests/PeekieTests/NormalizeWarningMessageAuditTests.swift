@@ -1,6 +1,5 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
 /// Audit suite covering #164: how does `normalizeWarningMessage` behave on the
@@ -11,7 +10,6 @@ import Testing
 /// today?") rather than prescriptive ("what should it do?"). If we decide a
 /// shape needs different handling, change the implementation and these
 /// expectations together.
-@Suite
 struct NormalizeWarningMessageAuditTests {
     /// `#warning("…")` directive — the form the existing regex was tuned for.
     /// Expected: drop the caret-line and the directive echo, keep just the
@@ -19,10 +17,10 @@ struct NormalizeWarningMessageAuditTests {
     @Test
     func warningDirectiveCollapsesToHumanMessage() {
         let input = """
-            Some warning from Calculator
-                    #warning("Some warning from Calculator")
-                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            """
+        Some warning from Calculator
+                #warning("Some warning from Calculator")
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        """
         let out = Report.normalizeWarningMessage(input)
         #expect(out == "Some warning from Calculator")
     }
@@ -42,9 +40,9 @@ struct NormalizeWarningMessageAuditTests {
     @Test
     func sendableLikeNoteBlockGetsCollapsedToOneLine() {
         let input = """
-            Capture of 'self' with non-sendable type 'Foo' in a `@Sendable` closure
-            note: class 'Foo' does not conform to the 'Sendable' protocol
-            """
+        Capture of 'self' with non-sendable type 'Foo' in a `@Sendable` closure
+        note: class 'Foo' does not conform to the 'Sendable' protocol
+        """
         let out = Report.normalizeWarningMessage(input)
         #expect(
             out
@@ -62,9 +60,9 @@ struct NormalizeWarningMessageAuditTests {
     @Test
     func wrappedLongTypeNameCollapsesToOneLine() {
         let input = """
-            Cannot convert value of type 'Dictionary<String, Array<Dictionary<Int,
-                Result<Foo, Bar>>>>' to expected argument type 'Int'
-            """
+        Cannot convert value of type 'Dictionary<String, Array<Dictionary<Int,
+            Result<Foo, Bar>>>>' to expected argument type 'Int'
+        """
         let out = Report.normalizeWarningMessage(input)
         #expect(
             out
@@ -77,9 +75,9 @@ struct NormalizeWarningMessageAuditTests {
     @Test
     func caretLineOnGenericDiagnosticIsStripped() {
         let input = """
-            'oldFoo()' is deprecated: use newFoo()
-                ^~~~~~~~
-            """
+        'oldFoo()' is deprecated: use newFoo()
+            ^~~~~~~~
+        """
         let out = Report.normalizeWarningMessage(input)
         #expect(out == "'oldFoo()' is deprecated: use newFoo()")
     }

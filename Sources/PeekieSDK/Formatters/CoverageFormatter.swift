@@ -5,7 +5,11 @@ import Foundation
 /// Used by `peekie coverage`. Drops everything except `coverage`, `modules[].coverage`,
 /// `modules[].files[].coverage`.
 public final class CoverageFormatter {
+    // MARK: Lifecycle
+
     public init() {}
+
+    // MARK: Public
 
     /// JSON: `{coverage, modules: [{name, coverage, files: [{name, path, coverage}]}]}`.
     public func json(_ report: Report) throws -> String {
@@ -20,7 +24,10 @@ public final class CoverageFormatter {
     public func list(_ report: Report) -> String {
         let rows = report.modules
             .compactMap { module -> Row? in
-                guard let coverage = module.coverage else { return nil }
+                guard let coverage = module.coverage else {
+                    return nil
+                }
+
                 return Row(
                     name: module.name,
                     coverage: coverage.coverage,
@@ -41,10 +48,13 @@ public final class CoverageFormatter {
         if let total = report.coverage {
             let pct = String(format: "%5.1f%%", total * 100)
             lines.append(
-                "\("total".padding(toLength: nameWidth, withPad: " ", startingAt: 0))  \(pct)")
+                "\("total".padding(toLength: nameWidth, withPad: " ", startingAt: 0))  \(pct)"
+            )
         }
         return lines.joined(separator: "\n")
     }
+
+    // MARK: Private
 
     private struct Row {
         let name: String
@@ -54,33 +64,36 @@ public final class CoverageFormatter {
     }
 
     private struct Snapshot: Encodable {
-        let coverage: Double?
-        let modules: [ModuleSnapshot]
+        // MARK: Lifecycle
 
         init(from report: Report) {
-            self.coverage = report.coverage
-            self.modules = report.modules
+            coverage = report.coverage
+            modules = report.modules
                 .sorted { $0.name < $1.name }
                 .map(ModuleSnapshot.init)
         }
+
+        // MARK: Internal
+
+        let coverage: Double?
+        let modules: [ModuleSnapshot]
     }
 
     private struct ModuleSnapshot: Encodable {
-        let name: String
-        let coverage: Double?
-        let coveredLines: Int?
-        let totalLines: Int?
-        let files: [FileSnapshot]
+        // MARK: Lifecycle
 
         init(_ module: Report.Module) {
-            self.name = module.name
-            self.coverage = module.coverage?.coverage
-            self.coveredLines = module.coverage?.coveredLines
-            self.totalLines = module.coverage?.totalLines
-            self.files = module.files
+            name = module.name
+            coverage = module.coverage?.coverage
+            coveredLines = module.coverage?.coveredLines
+            totalLines = module.coverage?.totalLines
+            files = module.files
                 .sorted { $0.name < $1.name }
                 .compactMap { file -> FileSnapshot? in
-                    guard let coverage = file.coverage else { return nil }
+                    guard let coverage = file.coverage else {
+                        return nil
+                    }
+
                     return .init(
                         name: file.name,
                         path: file.path,
@@ -90,6 +103,14 @@ public final class CoverageFormatter {
                     )
                 }
         }
+
+        // MARK: Internal
+
+        let name: String
+        let coverage: Double?
+        let coveredLines: Int?
+        let totalLines: Int?
+        let files: [FileSnapshot]
     }
 
     private struct FileSnapshot: Encodable {

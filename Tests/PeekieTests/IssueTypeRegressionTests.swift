@@ -1,7 +1,6 @@
 import Foundation
 import PeekieTestHelpers
 import Testing
-
 @testable import PeekieSDK
 
 /// Explicit presence checks for every typed `IssueType` case that `swift-tests-example`
@@ -9,7 +8,6 @@ import Testing
 /// tests alone wouldn't catch a regression where the enum mapping drops a typed case —
 /// the diff would look like a count change and could be accepted by mistake. These
 /// asserts make a missing typed case impossible to merge.
-@Suite
 struct IssueTypeRegressionTests {
     @Test(
         arguments: ["SPM-26.5-iOS.xcresult", "Xcworkspace-26.5-iOS.xcresult"]
@@ -50,7 +48,11 @@ struct IssueTypeRegressionTests {
         // No issue should silently fall through to `.unknown(_)` — if Apple ships a
         // new typed group, we want to know and add it to the enum.
         let unknowns: [String] = warnings.compactMap {
-            if case .unknown(let raw) = $0.type { return raw } else { return nil }
+            if case .unknown(let raw) = $0.type {
+                raw
+            } else {
+                nil
+            }
         }
         let unknownsList = Set(unknowns).sorted().joined(separator: ", ")
         #expect(unknowns.isEmpty, "unexpected unknown issueType(s): \(unknownsList)")

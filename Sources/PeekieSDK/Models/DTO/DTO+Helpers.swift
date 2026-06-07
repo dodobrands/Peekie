@@ -2,7 +2,7 @@ import Foundation
 import Logging
 
 extension TestResultsDTO {
-    private static let logger = Logger(label: "com.peekie.dto")
+    private static let logger: Logger = .init(label: "com.peekie.dto")
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(
             "xcrun",
@@ -20,24 +20,25 @@ extension TestResultsDTO {
                 )
             )
         }
+
         Self.logger.debug(
             "Parsing TestResultsDTO",
             metadata: [
-                "dataSize": "\(data.count)"
+                "dataSize": "\(data.count)",
             ]
         )
         self = try JSONDecoder().decode(TestResultsDTO.self, from: data)
         Self.logger.debug(
             "TestResultsDTO parsed successfully",
             metadata: [
-                "testNodesCount": "\(testNodes.count)"
+                "testNodesCount": "\(testNodes.count)",
             ]
         )
     }
 }
 
 extension CoverageReportDTO {
-    private static let logger = Logger(label: "com.peekie.dto")
+    private static let logger: Logger = .init(label: "com.peekie.dto")
 
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(
@@ -55,19 +56,20 @@ extension CoverageReportDTO {
                 )
             )
         }
+
         Self.logger.debug("Parsing CoverageReportDTO")
         self = try JSONDecoder().decode(CoverageReportDTO.self, from: data)
         Self.logger.debug(
             "CoverageReportDTO parsed successfully",
             metadata: [
-                "targetsCount": "\(targets.count)"
+                "targetsCount": "\(targets.count)",
             ]
         )
     }
 }
 
 extension BuildResultsDTO {
-    private static let logger = Logger(label: "com.peekie.dto")
+    private static let logger: Logger = .init(label: "com.peekie.dto")
 
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(
@@ -86,6 +88,7 @@ extension BuildResultsDTO {
                 )
             )
         }
+
         Self.logger.debug("Parsing BuildResultsDTO")
         self = try JSONDecoder().decode(BuildResultsDTO.self, from: data)
         Self.logger.debug("BuildResultsDTO parsed successfully")

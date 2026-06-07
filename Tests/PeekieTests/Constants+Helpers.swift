@@ -1,53 +1,15 @@
 import Foundation
 import Testing
 
-struct Constants {
-    private static var resourcesPath: URL {
-        get throws {
-            guard let resourceURL = Bundle.module.resourceURL else {
-                throw TestError.couldNotFindBundleResourceURL
-            }
-            // When using .copy("Resources"), the Resources folder contents are copied to resourceURL
-            // Check if Resources subdirectory exists, otherwise use resourceURL directly
-            let resourcesSubdir = resourceURL.appendingPathComponent("Resources")
-            if FileManager.default.fileExists(atPath: resourcesSubdir.path) {
-                return resourcesSubdir
-            }
-            // If Resources subdirectory doesn't exist, xcresult files are directly in resourceURL
-            return resourceURL
-        }
-    }
+// MARK: - Constants
 
-    private static var testsReportPaths: [URL] {
-        get throws {
-            let resourcesURL = try resourcesPath
-            let fileManager = FileManager.default
-
-            guard fileManager.fileExists(atPath: resourcesURL.path) else {
-                throw TestError.resourcesDirectoryDoesNotExist(path: resourcesURL.path)
-            }
-
-            guard
-                let contents = try? fileManager.contentsOfDirectory(
-                    at: resourcesURL,
-                    includingPropertiesForKeys: [.isDirectoryKey],
-                    options: [.skipsHiddenFiles]
-                )
-            else {
-                throw TestError.couldNotReadResourcesDirectory
-            }
-
-            return contents.filter { url in
-                url.pathExtension == "xcresult"
-                    && (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true
-            }.sorted { $0.lastPathComponent < $1.lastPathComponent }
-        }
-    }
+enum Constants {
+    // MARK: Internal
 
     /// Returns array of xcresult file names for use in parameterized tests
     /// Returns empty array if paths cannot be loaded (test will be skipped)
     static var testsReportFileNames: [String] {
-        ((try? testsReportPaths) ?? []).map { $0.lastPathComponent }
+        ((try? testsReportPaths) ?? []).map(\.lastPathComponent)
     }
 
     /// Copies xcresult bundle to a temporary directory to avoid SQLite access conflicts
@@ -101,9 +63,57 @@ struct Constants {
         guard let url = paths.first(where: { $0.lastPathComponent == fileName }) else {
             throw TestError.couldNotFindXcresultFile(fileName: fileName)
         }
+
         return url
     }
+
+    // MARK: Private
+
+    private static var resourcesPath: URL {
+        get throws {
+            guard let resourceURL = Bundle.module.resourceURL else {
+                throw TestError.couldNotFindBundleResourceURL
+            }
+
+            // When using .copy("Resources"), the Resources folder contents are copied to
+            // resourceURL
+            // Check if Resources subdirectory exists, otherwise use resourceURL directly
+            let resourcesSubdir = resourceURL.appendingPathComponent("Resources")
+            if FileManager.default.fileExists(atPath: resourcesSubdir.path) {
+                return resourcesSubdir
+            }
+            // If Resources subdirectory doesn't exist, xcresult files are directly in resourceURL
+            return resourceURL
+        }
+    }
+
+    private static var testsReportPaths: [URL] {
+        get throws {
+            let resourcesURL = try resourcesPath
+            let fileManager = FileManager.default
+
+            guard fileManager.fileExists(atPath: resourcesURL.path) else {
+                throw TestError.resourcesDirectoryDoesNotExist(path: resourcesURL.path)
+            }
+            guard let contents = try? fileManager.contentsOfDirectory(
+                at: resourcesURL,
+                includingPropertiesForKeys: [.isDirectoryKey],
+                options: [.skipsHiddenFiles]
+            )
+            else {
+                throw TestError.couldNotReadResourcesDirectory
+            }
+
+            return contents.filter { url in
+                url.pathExtension == "xcresult"
+                    && (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true
+            }
+            .sorted { $0.lastPathComponent < $1.lastPathComponent }
+        }
+    }
 }
+
+// MARK: - TestError
 
 enum TestError: Error {
     case couldNotFindBundleResourceURL

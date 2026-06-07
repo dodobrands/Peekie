@@ -1,20 +1,21 @@
 import Foundation
-
 @testable import PeekieSDK
 
-extension Report {
-    public static func testMake(
+public extension Report {
+    static func testMake(
         files: [File] = [],
         modules: [Module] = [],
         coverage: Double? = nil
-    ) -> Self {
+    )
+        -> Self
+    {
         // Calculate coverage from files if not provided
         let calculatedCoverage: Double?
-        if let coverage = coverage {
+        if let coverage {
             calculatedCoverage = coverage
         } else {
-            let fileCoverages = files.compactMap { $0.coverage }
-            if fileCoverages.count > 0 {
+            let fileCoverages = files.compactMap(\.coverage)
+            if fileCoverages.isEmpty == false {
                 let totalLines = fileCoverages.reduce(into: 0) { $0 += $1.totalLines }
                 let totalCoveredLines = fileCoverages.reduce(into: 0) { $0 += $1.coveredLines }
                 if totalLines != 0 {
@@ -34,39 +35,46 @@ extension Report {
     }
 }
 
-extension Report.Module {
-    public static func testMake(
+public extension Report.Module {
+    static func testMake(
         name: String = "",
         files: [Report.File] = [],
         coverage: Report.Coverage? = nil,
         suites: [Suite] = []
-    ) -> Self {
+    )
+        -> Self
+    {
         .init(name: name, files: files, coverage: coverage, suites: suites)
     }
 }
 
-extension Report.File.Coverage {
-    public static func testMake(
+public extension Report.File.Coverage {
+    static func testMake(
         coveredLines: Int = 0,
         totalLines: Int = 0,
         coverage: Double = 0.0
-    ) -> Self {
+    )
+        -> Self
+    {
         Self(
             coveredLines: coveredLines,
             totalLines: totalLines,
-            coverage: coverage)
+            coverage: coverage
+        )
     }
 }
 
-extension Report.File {
-    public static func testMake(
+public extension Report.File {
+    static func testMake(
         name: String = "",
         path: String? = nil,
         module: String? = nil,
         coverage: Report.File.Coverage? = nil,
         warnings: [Report.File.Issue] = [],
         errors: [Report.File.Issue] = []
-    ) -> Self {
+    )
+        -> Self
+    {
         .init(
             name: name,
             path: path,
@@ -78,12 +86,14 @@ extension Report.File {
     }
 }
 
-extension Report.Module.Suite {
-    public static func testMake(
+public extension Report.Module.Suite {
+    static func testMake(
         name: String = "",
         nodeIdentifierURL: String = "",
         repeatableTests: Set<RepeatableTest> = []
-    ) -> Self {
+    )
+        -> Self
+    {
         .init(
             name: name,
             nodeIdentifierURL: nodeIdentifierURL,
@@ -92,67 +102,83 @@ extension Report.Module.Suite {
     }
 }
 
-extension Report.Module.Suite.RepeatableTest {
-    public static func testMake(
+public extension Report.Module.Suite.RepeatableTest {
+    static func testMake(
         name: String = "",
         tests: [Test] = []
-    ) -> Self {
+    )
+        -> Self
+    {
         .init(name: name, tests: tests)
     }
 
-    public static func failed(
+    static func failed(
         named name: String,
         times: Int = 1
-    ) -> Self {
+    )
+        -> Self
+    {
         let tests = Array(
             repeating: Report.Module.Suite.RepeatableTest.Test.testMake(
                 name: name,
-                status: .failure),
+                status: .failure
+            ),
             count: times
         )
         return .testMake(name: name, tests: tests)
     }
 
-    public static func succeeded(
+    static func succeeded(
         named name: String
-    ) -> Self {
+    )
+        -> Self
+    {
         .testMake(name: name, tests: [.testMake(name: name, status: .success)])
     }
 
-    public static func skipped(
+    static func skipped(
         named name: String
-    ) -> Self {
+    )
+        -> Self
+    {
         .testMake(name: name, tests: [.testMake(name: name, status: .skipped)])
     }
 
-    public static func expectedFailed(
+    static func expectedFailed(
         named name: String
-    ) -> Self {
+    )
+        -> Self
+    {
         .testMake(name: name, tests: [.testMake(name: name, status: .expectedFailure)])
     }
 
-    public static func mixedFailedSucceeded(
+    static func mixedFailedSucceeded(
         named name: String,
         failedTimes: Int = 1
-    ) -> Self {
+    )
+        -> Self
+    {
         let failedTests = Array(
             repeating: Report.Module.Suite.RepeatableTest.Test.testMake(
-                name: name, status: .failure),
+                name: name, status: .failure
+            ),
             count: failedTimes
         )
         return .testMake(name: name, tests: failedTests + [.testMake(name: name, status: .success)])
     }
 }
 
-extension Report.Module.Suite.RepeatableTest.Test {
-    public static func testMake(
+public extension Report.Module.Suite.RepeatableTest.Test {
+    static func testMake(
         name: String = "",
         status: Status = .success,
         duration: Measurement<UnitDuration> = .testMake(),
         path: [Report.Module.Suite.RepeatableTest.PathNode] = [],
         failureMessage: String? = nil,
         skipMessage: String? = nil
-    ) -> Self {
+    )
+        -> Self
+    {
         .init(
             name: name,
             status: status,

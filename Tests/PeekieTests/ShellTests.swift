@@ -1,9 +1,7 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct ShellTests {
     @Test
     func test() async throws {

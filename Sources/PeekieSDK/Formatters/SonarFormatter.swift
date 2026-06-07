@@ -2,6 +2,8 @@ import Foundation
 import Logging
 import XMLCoder
 
+// MARK: - SonarFormatter
+
 /// Formatter that generates SonarQube Generic Test Execution XML format
 ///
 /// This formatter converts test results into XML format compatible with SonarQube's
@@ -9,11 +11,13 @@ import XMLCoder
 ///
 /// - Note: Requires a testsPath directory to map test suite names to actual file paths,
 ///   as xcresult files only contain suite URLs without file paths.
-public class SonarFormatter {
-    private let logger = Logger(label: "com.peekie.formatter.sonar")
+public final class SonarFormatter {
+    // MARK: Lifecycle
 
     /// Creates a new SonarQube formatter instance
     public init() {}
+
+    // MARK: Public
 
     /// Formats a report into SonarQube Generic Test Execution XML
     /// - Parameters:
@@ -24,7 +28,9 @@ public class SonarFormatter {
     public func format(
         report: Report,
         testsPath: URL
-    ) throws -> String {
+    ) throws
+        -> String
+    {
         let fsIndex = try FSIndex(path: testsPath)
 
         logger.debug(
@@ -36,13 +42,13 @@ public class SonarFormatter {
         )
 
         // Group files by actual file path (multiple test suites can be in one file)
-        var filesByPath: [String: [testExecutions.file.testCase]] = [:]
+        var filesByPath = [String: [testExecutions.file.testCase]]()
         // Track paths by nodeIdentifierURL (full node identifier)
-        var pathsByNode: [String: String] = [:]
+        var pathsByNode = [String: String]()
 
-        for file in report.modules.flatMap({ $0.suites }).sorted(by: { $0.name < $1.name }) {
+        for file in report.modules.flatMap(\.suites).sorted(by: { $0.name < $1.name }) {
             // Skip files that don't have any tests (coverage-only files)
-            guard !file.repeatableTests.isEmpty else {
+            guard file.repeatableTests.isEmpty == false else {
                 logger.debug(
                     "Skipping Suite: no tests",
                     metadata: [
@@ -64,6 +70,7 @@ public class SonarFormatter {
                 )
                 continue
             }
+
             let className = url.lastPathComponent
 
             logger.debug(
@@ -127,7 +134,8 @@ public class SonarFormatter {
         // Create file entries from grouped test cases
         let sonarFiles = filesByPath.map { path, testCases in
             testExecutions.file(path: path, testCase: testCases)
-        }.sorted { $0.path < $1.path }
+        }
+        .sorted { $0.path < $1.path }
         let dto = testExecutions(file: sonarFiles)
 
         let encoder = XMLEncoder()
@@ -135,53 +143,27 @@ public class SonarFormatter {
         let data = try encoder.encode(dto)
         return String(decoding: data, as: UTF8.self)
     }
+
+    // MARK: Private
+
+    private let logger: Logger = .init(label: "com.peekie.formatter.sonar")
 }
 
-// swift-format-ignore: TypeNamesShouldBeCapitalized
-private struct testExecutions: Encodable, DynamicNodeEncoding {
-    let version = 1
-    let file: [file]
+// MARK: - testExecutions
 
+private struct testExecutions: Encodable, DynamicNodeEncoding {
     enum CodingKeys: String, CodingKey {
         case version
         case file
     }
 
-    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-        switch key {
-        case CodingKeys.version:
-            return .attribute
-        default:
-            return .element
-        }
-    }
-
-    // swift-format-ignore: TypeNamesShouldBeCapitalized
     struct file: Encodable, DynamicNodeEncoding {
-        let path: String
-        let testCase: [testCase]
-
         enum CodingKeys: String, CodingKey {
             case path
             case testCase
         }
 
-        static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-            switch key {
-            case CodingKeys.path:
-                return .attribute
-            default:
-                return .element
-            }
-        }
-
-        // swift-format-ignore: TypeNamesShouldBeCapitalized
         struct testCase: Encodable, DynamicNodeEncoding {
-            let name: String
-            let duration: Int
-            let skipped: skipped?
-            let failure: failure?
-
             enum CodingKeys: String, CodingKey {
                 case name
                 case duration
@@ -189,51 +171,78 @@ private struct testExecutions: Encodable, DynamicNodeEncoding {
                 case failure
             }
 
+            struct skipped: Encodable, DynamicNodeEncoding {
+                enum CodingKeys: String, CodingKey {
+                    case message
+                }
+
+                let message: String
+
+                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+                    switch key {
+                    case CodingKeys.message:
+                        .attribute
+                    default:
+                        .element
+                    }
+                }
+            }
+
+            struct failure: Encodable, DynamicNodeEncoding {
+                enum CodingKeys: String, CodingKey {
+                    case message
+                }
+
+                let message: String
+
+                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+                    switch key {
+                    case CodingKeys.message:
+                        .attribute
+                    default:
+                        .element
+                    }
+                }
+            }
+
+            let name: String
+            let duration: Int
+            let skipped: skipped?
+            let failure: failure?
+
             static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
                 switch key {
                 case CodingKeys.name,
-                    CodingKeys.duration:
-                    return .attribute
+                     CodingKeys.duration:
+                    .attribute
                 default:
-                    return .element
+                    .element
                 }
             }
+        }
 
-            // swift-format-ignore: TypeNamesShouldBeCapitalized
-            struct skipped: Encodable, DynamicNodeEncoding {
-                let message: String
+        let path: String
+        let testCase: [testCase]
 
-                enum CodingKeys: String, CodingKey {
-                    case message
-                }
-
-                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-                    switch key {
-                    case CodingKeys.message:
-                        return .attribute
-                    default:
-                        return .element
-                    }
-                }
+        static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+            switch key {
+            case CodingKeys.path:
+                .attribute
+            default:
+                .element
             }
+        }
+    }
 
-            // swift-format-ignore: TypeNamesShouldBeCapitalized
-            struct failure: Encodable, DynamicNodeEncoding {
-                let message: String
+    let version = 1
+    let file: [file]
 
-                enum CodingKeys: String, CodingKey {
-                    case message
-                }
-
-                static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
-                    switch key {
-                    case CodingKeys.message:
-                        return .attribute
-                    default:
-                        return .element
-                    }
-                }
-            }
+    static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+        switch key {
+        case CodingKeys.version:
+            .attribute
+        default:
+            .element
         }
     }
 }
@@ -249,11 +258,11 @@ extension testExecutions.file.testCase {
     }
 }
 
-extension testExecutions.file {
-    fileprivate static func testCases(from file: Report.Module.Suite) throws -> [testExecutions.file
+private extension testExecutions.file {
+    static func testCases(from file: Report.Module.Suite) throws -> [testExecutions.file
         .testCase]
     {
-        var testCases: [testExecutions.file.testCase] = []
+        var testCases = [testExecutions.file.testCase]()
 
         for repeatableTest in file.repeatableTests.sorted(by: { $0.name < $1.name }) {
             // Use merged tests which already handle repetitions and optionally devices

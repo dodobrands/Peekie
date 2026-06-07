@@ -1,25 +1,31 @@
 import Foundation
 
+// MARK: - FSIndex
+
 struct FSIndex {
-    let classes: [String: String]
+    // MARK: Lifecycle
 
     init(path: URL) throws {
-        self.classes = try Self.classes(in: path)
+        classes = try Self.classes(in: path)
     }
+
+    // MARK: Internal
+
+    let classes: [String: String]
 }
 
 extension FSIndex {
     private static func classes(in path: URL) throws -> [String: String] {
         let fileManager = FileManager.default
 
-        var classDictionary: [String: String] = [:]
+        var classDictionary = [String: String]()
 
         // Create a DirectoryEnumerator to recursively search for .swift files
         let enumerator = fileManager.enumerator(
             at: URL(fileURLWithPath: path.relativePath),
             includingPropertiesForKeys: [.isRegularFileKey],
             options: [.skipsHiddenFiles]
-        ) { (url, error) -> Bool in
+        ) { url, error -> Bool in
             let message =
                 "Warning: Directory enumeration error at \(url)\nWarning: \(error.localizedDescription)\n"
             FileHandle.standardError.write(Data(message.utf8))
@@ -30,9 +36,9 @@ extension FSIndex {
         while let element = enumerator?.nextObject() as? URL {
             let isFile =
                 try element.resourceValues(forKeys: [URLResourceKey.isRegularFileKey]).isRegularFile
-                ?? false
+                    ?? false
             guard isFile,
-                element.pathExtension == "swift"
+                  element.pathExtension == "swift"
             else {
                 continue
             }
@@ -46,7 +52,8 @@ extension FSIndex {
 
             // Regular expression to find class and struct names
             let regex = try NSRegularExpression(
-                pattern: "(?:class|struct)\\s+([A-Za-z_][A-Za-z_0-9]*)", options: [])
+                pattern: "(?:class|struct)\\s+([A-Za-z_][A-Za-z_0-9]*)", options: []
+            )
 
             // Search for class definitions
             let nsRange = NSRange(fileContent.startIndex..<fileContent.endIndex, in: fileContent)
@@ -54,7 +61,7 @@ extension FSIndex {
 
             let relativePath: String =
                 try element.relativePath(from: path)
-                ?! Error.cantGetRelativePath(filePath: element, basePath: path)
+                    ?! Error.cantGetRelativePath(filePath: element, basePath: path)
 
             // Extract class names from the matches and store them in the dictionary
             for match in matches {

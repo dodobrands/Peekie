@@ -1,13 +1,10 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct TestResultsDTOExtractPathsTests {
-
     @Test
-    func extractPathsFromDeviceAndRepetition() throws {
+    func extractPathsFromDeviceAndRepetition() {
         // Test Case -> Device -> Repetition
         let repetition = TestResultsDTO.TestNode(
             children: nil,
@@ -34,13 +31,15 @@ struct TestResultsDTOExtractPathsTests {
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
-                ]
-            ])
+                        name: "First Run", type: .repetition
+                    ),
+                ],
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromMultipleRepetitions() throws {
+    func extractPathsFromMultipleRepetitions() {
         // Test Case -> Device -> Repetition (First Run, Retry 1)
         let repetition1 = TestResultsDTO.TestNode(
             children: nil,
@@ -76,17 +75,19 @@ struct TestResultsDTOExtractPathsTests {
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
+                        name: "First Run", type: .repetition
+                    ),
                 ],
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "Retry 1", type: .repetition),
                 ],
-            ])
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromArgumentsAndRepetition() throws {
+    func extractPathsFromArgumentsAndRepetition() {
         // Test Case -> Arguments -> Repetition
         let repetition = TestResultsDTO.TestNode(
             children: nil,
@@ -113,13 +114,15 @@ struct TestResultsDTOExtractPathsTests {
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "false", type: .arguments),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
-                ]
-            ])
+                        name: "First Run", type: .repetition
+                    ),
+                ],
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromDeviceArgumentsAndRepetition() throws {
+    func extractPathsFromDeviceArgumentsAndRepetition() {
         // Test Case -> Device -> Arguments -> Repetition
         let repetition = TestResultsDTO.TestNode(
             children: nil,
@@ -156,13 +159,15 @@ struct TestResultsDTOExtractPathsTests {
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "false", type: .arguments),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
-                ]
-            ])
+                        name: "First Run", type: .repetition
+                    ),
+                ],
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromArgumentsWithoutRepetition() throws {
+    func extractPathsFromArgumentsWithoutRepetition() {
         // Test Case -> Device -> Arguments (without Repetition)
         let arguments = TestResultsDTO.TestNode(
             children: nil,
@@ -189,12 +194,13 @@ struct TestResultsDTOExtractPathsTests {
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "false", type: .arguments),
-                ]
-            ])
+                ],
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromMultipleArguments() throws {
+    func extractPathsFromMultipleArguments() {
         // Test Case -> Device -> Arguments (false, true)
         let arguments1 = TestResultsDTO.TestNode(
             children: nil,
@@ -235,11 +241,12 @@ struct TestResultsDTOExtractPathsTests {
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "true", type: .arguments),
                 ],
-            ])
+            ]
+        )
     }
 
     @Test
-    func extractPathsIgnoresMetadataNodes() throws {
+    func extractPathsIgnoresMetadataNodes() {
         // Test Case -> Device -> Failure Message -> Repetition
         let failureMessage = TestResultsDTO.TestNode(
             children: nil,
@@ -275,19 +282,21 @@ struct TestResultsDTOExtractPathsTests {
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
-                ]
-            ])
+                        name: "First Run", type: .repetition
+                    ),
+                ],
+            ]
+        )
     }
 
     @Test
-    func extractPathsFromEmptyChildren() throws {
+    func extractPathsFromEmptyChildren() {
         let paths = TestResultsDTO.extractPaths(from: [])
         #expect(paths.isEmpty)
     }
 
     @Test
-    func extractPathsFromComplexNestedStructure() throws {
+    func extractPathsFromComplexNestedStructure() {
         // Test Case -> Device -> Arguments (false) -> Repetition (First Run, Retry 1)
         //              Device -> Arguments (true) -> Repetition (First Run)
         let repetition1 = TestResultsDTO.TestNode(
@@ -352,7 +361,8 @@ struct TestResultsDTOExtractPathsTests {
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "false", type: .arguments),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
+                        name: "First Run", type: .repetition
+                    ),
                 ],
                 [
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
@@ -363,8 +373,10 @@ struct TestResultsDTOExtractPathsTests {
                     Report.Module.Suite.RepeatableTest.PathNode(name: "iPhone 13", type: .device),
                     Report.Module.Suite.RepeatableTest.PathNode(name: "true", type: .arguments),
                     Report.Module.Suite.RepeatableTest.PathNode(
-                        name: "First Run", type: .repetition),
+                        name: "First Run", type: .repetition
+                    ),
                 ],
-            ])
+            ]
+        )
     }
 }

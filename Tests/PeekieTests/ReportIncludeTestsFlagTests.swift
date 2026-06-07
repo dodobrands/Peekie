@@ -1,10 +1,8 @@
 import Foundation
 import PeekieTestHelpers
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct ReportIncludeTestsFlagTests {
     @Test(arguments: Constants.testsReportFileNames)
     func includeTestsFalseSkipsSuitesButKeepsFilesAndWarnings(_ fileName: String) async throws {
@@ -23,7 +21,7 @@ struct ReportIncludeTestsFlagTests {
         #expect(suitesTotal == 0, "expected zero suites when includeTests is false")
 
         // For fixtures that have coverage data, modules and files are still populated.
-        #expect(!report.files.isEmpty, "files should remain populated without tests")
+        #expect(report.files.isEmpty == false, "files should remain populated without tests")
     }
 
     @Test(arguments: Constants.testsReportFileNames)
@@ -42,6 +40,7 @@ struct ReportIncludeTestsFlagTests {
         // Coverage is nil
         #expect(report.coverage == nil)
         // Modules with suites are absent (no tests parsed)
+        // swiftformat:disable:next preferKeyPath
         #expect(report.modules.allSatisfy { $0.suites.isEmpty })
         // Files only show up if the fixture has build warnings; not all fixtures do,
         // but the call must succeed and return a well-formed Report.

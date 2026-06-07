@@ -1,26 +1,24 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct ParseErrorsTests {
     @Test
     func errorsArrayDecodesSymmetricallyToWarnings() throws {
         let json = """
-            {
-                "warningCount": 1,
-                "errorCount": 1,
-                "warnings": [
-                    { "issueType": "DeprecatedDeclaration", "message": "warned",
-                      "sourceURL": "file:///foo.swift#StartingLineNumber=1" }
-                ],
-                "errors": [
-                    { "issueType": "Swift Compiler Error", "message": "expected expression",
-                      "sourceURL": "file:///foo.swift#StartingLineNumber=42" }
-                ]
-            }
-            """
+        {
+            "warningCount": 1,
+            "errorCount": 1,
+            "warnings": [
+                { "issueType": "DeprecatedDeclaration", "message": "warned",
+                  "sourceURL": "file:///foo.swift#StartingLineNumber=1" }
+            ],
+            "errors": [
+                { "issueType": "Swift Compiler Error", "message": "expected expression",
+                  "sourceURL": "file:///foo.swift#StartingLineNumber=42" }
+            ]
+        }
+        """
         let dto = try JSONDecoder().decode(BuildResultsDTO.self, from: Data(json.utf8))
 
         #expect(dto.warnings.count == 1)
@@ -31,8 +29,8 @@ struct ParseErrorsTests {
     @Test
     func errorsArrayDefaultsToEmptyWhenAbsent() throws {
         let json = """
-            { "warningCount": 0, "warnings": [] }
-            """
+        { "warningCount": 0, "warnings": [] }
+        """
         let dto = try JSONDecoder().decode(BuildResultsDTO.self, from: Data(json.utf8))
 
         #expect(dto.warnings.isEmpty)
@@ -77,7 +75,7 @@ struct ParseErrorsTests {
                     issueType: "Swift Compiler Error",
                     message: "linker error",
                     sourceURL: nil
-                )
+                ),
             ]
         )
 
