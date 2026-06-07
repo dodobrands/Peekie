@@ -96,8 +96,16 @@ private struct JSONModule: Encodable {
         files = module.files
             .sorted { $0.name < $1.name }
             .map { JSONFile(from: $0) }
-        suites = module.suites
+        rootLevelTests = module.rootLevelTests
+            .filtered(testResults: include)
             .sorted { $0.name < $1.name }
+            .flatMap { repeatableTest in
+                repeatableTest.mergedTests(filterDevice: includeDeviceDetails == false)
+                    .filter { include.contains($0.status) }
+                    .map { JSONTest(from: $0) }
+            }
+        suites = module.suites
+            .sorted { $0.fullPath < $1.fullPath }
             .map {
                 JSONSuite(
                     from: $0,
@@ -112,6 +120,7 @@ private struct JSONModule: Encodable {
     let coverage: JSONCoverage?
     let files: [JSONFile]
     let name: String
+    let rootLevelTests: [JSONTest]
     let suites: [JSONSuite]
 }
 
@@ -188,6 +197,7 @@ private struct JSONSuite: Encodable {
         includeDeviceDetails: Bool
     ) {
         name = suite.name
+        fullPath = suite.fullPath
         tests = suite.repeatableTests
             .filtered(testResults: include)
             .sorted { $0.name < $1.name }
@@ -196,11 +206,21 @@ private struct JSONSuite: Encodable {
                     .filter { include.contains($0.status) }
                     .map { JSONTest(from: $0) }
             }
+        nestedSuites = suite.nestedSuites
+            .map {
+                Self(
+                    from: $0,
+                    include: include,
+                    includeDeviceDetails: includeDeviceDetails
+                )
+            }
     }
 
     // MARK: Internal
 
+    let fullPath: String
     let name: String
+    let nestedSuites: [Self]
     let tests: [JSONTest]
 }
 

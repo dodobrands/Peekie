@@ -38,20 +38,35 @@ public final class SonarFormatter {
 
     // MARK: Private
 
+    /// Flatten a suite tree into all suites (root + nested) so each maps to its
+    /// own source file in the SonarQube XML output.
+    private static func flatten(_ suite: Report.Module.Suite) -> [Report.Module.Suite] {
+        [suite] + suite.nestedSuites.flatMap { flatten($0) }
+    }
+
     private func collectFiles(report: Report, fsIndex: FSIndex) -> [XMLFile] {
         var filesByPath = [String: [TestCase]]()
         var pathsByNode = [String: String]()
 
-        for suite in report.modules.flatMap(\.suites).sorted(by: { $0.name < $1.name }) {
-            guard suite.repeatableTests.isEmpty == false else {
-                continue
-            }
-            guard let path = resolvePath(for: suite, fsIndex: fsIndex, cache: &pathsByNode) else {
-                continue
-            }
+        for module in report.modules.sorted(by: { $0.name < $1.name }) {
+            // Root-level @Tests: no enclosing suite means no filesystem anchor —
+            // SonarQube needs a file path per <file> element, so we can't surface
+            // these tests in the XML output. They still appear in the List/JSON
+            // formatters which don't require path resolution.
 
-            let testCases = TestCase.cases(from: suite)
-            filesByPath[path, default: []].append(contentsOf: testCases)
+            let flatSuites = module.suites.flatMap { Self.flatten($0) }
+            for suite in flatSuites.sorted(by: { $0.fullPath < $1.fullPath }) {
+                guard suite.repeatableTests.isEmpty == false else {
+                    continue
+                }
+                guard let path = resolvePath(for: suite, fsIndex: fsIndex, cache: &pathsByNode)
+                else {
+                    continue
+                }
+
+                let testCases = TestCase.cases(from: suite)
+                filesByPath[path, default: []].append(contentsOf: testCases)
+            }
         }
 
         return filesByPath
@@ -200,9 +215,9 @@ private struct Failure: Encodable, DynamicNodeEncoding {
 }
 
 extension TestCase {
-    init(_ test: Report.Module.Suite.RepeatableTest.Test) {
+    init(_ test: Report.Module.Suite.RepeatableTest.Test, qualifiedName: String? = nil) {
         self.init(
-            name: test.name,
+            name: qualifiedName ?? test.name,
             duration: Int(test.duration.converted(to: .milliseconds).value),
             skipped: test.status == .skipped ? test.message.map { .init(message: $0) } : nil,
             failure: test.status == .failure ? test.message.map { .init(message: $0) } : nil
@@ -211,16 +226,19 @@ extension TestCase {
 }
 
 private extension TestCase {
-    static func cases(from file: Report.Module.Suite) -> [Self] {
+    static func cases(from suite: Report.Module.Suite) -> [Self] {
         var testCases = [Self]()
 
-        for repeatableTest in file.repeatableTests.sorted(by: { $0.name < $1.name }) {
+        for repeatableTest in suite.repeatableTests.sorted(by: { $0.name < $1.name }) {
             // Use merged tests which already handle repetitions and optionally devices
             let mergedTests = repeatableTest.mergedTests(filterDevice: false)
 
-            // Output each merged test separately
+            // Qualify the test name with the suite's full path so nested suites
+            // can share a source file without collisions (XMLEncoder handles
+            // special-character escaping on attribute values).
             for test in mergedTests {
-                testCases.append(Self(test))
+                let qualifiedName = "\(suite.fullPath) / \(test.name)"
+                testCases.append(Self(test, qualifiedName: qualifiedName))
             }
         }
 
