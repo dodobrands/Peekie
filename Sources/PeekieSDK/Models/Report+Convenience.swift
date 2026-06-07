@@ -17,11 +17,16 @@ extension Report {
     ///   - xcresultPath: The file URL of the `.xcresult` file to parse.
     ///   - includeCoverage: Whether to parse and include code coverage data. Defaults to `true`.
     ///   - includeWarnings: Whether to parse and include build warnings/errors. Defaults to `true`.
+    ///   - includeTests: Whether to parse and include test results (suites/cases).
+    ///     Defaults to `true`. Disabling skips the slowest `xcresulttool` call and is
+    ///     useful for warnings-only flows; in that case `Module.suites` is empty but
+    ///     `files`, `Module.files`, and warnings/errors remain populated.
     /// - Throws: An error if the `.xcresult` file cannot be parsed.
     public init(
         xcresultPath: URL,
         includeCoverage: Bool = true,
-        includeWarnings: Bool = true
+        includeWarnings: Bool = true,
+        includeTests: Bool = true
     ) async throws {
         Self.logger.debug(
             "Initializing Report from xcresult",
@@ -29,10 +34,12 @@ extension Report {
                 "xcresultPath": "\(xcresultPath.path)",
                 "includeCoverage": "\(includeCoverage)",
                 "includeWarnings": "\(includeWarnings)",
+                "includeTests": "\(includeTests)",
             ]
         )
 
-        let testResultsDTO = try await TestResultsDTO(from: xcresultPath)
+        let testResultsDTO: TestResultsDTO? =
+            includeTests ? try await TestResultsDTO(from: xcresultPath) : nil
         let buildResultsDTO: BuildResultsDTO? =
             includeWarnings ? try await BuildResultsDTO(from: xcresultPath) : nil
         let coverageReportDTO: CoverageReportDTO? =
@@ -57,7 +64,8 @@ extension Report {
 
         // Build suites grouped by their test bundle name; alias test-bundle names to
         // canonical coverage-target names so they project onto the same Module.
-        let suitesByBundle = Self.buildSuites(from: testResultsDTO)
+        let suitesByBundle: [String: [Module.Suite]] =
+            testResultsDTO.map(Self.buildSuites(from:)) ?? [:]
         let coverageTargetNames = Set(coverageReportDTO?.targets.map(\.name) ?? [])
         let aliasing = Self.aliasTestBundlesToCoverageTargets(
             testBundleNames: Set(suitesByBundle.keys),
