@@ -1,0 +1,64 @@
+---
+description: Parse Xcode .xcresult bundles via the `peekie` CLI for tests, warnings, errors, and coverage.
+globs:
+  - "**/*.xcresult"
+  - "**/*.xcresult/**"
+alwaysApply: false
+---
+
+# Peekie
+
+`peekie` is a CLI for Xcode `.xcresult` bundles. Use it before composing `xcrun xcresulttool` calls by hand.
+
+## Subcommands
+
+```
+peekie tests     <xcresult>  [--format json|list|sonar]  default: list
+peekie warnings  <xcresult>  [--format json|list]        default: json
+peekie errors    <xcresult>  [--format json|list]        default: json
+peekie coverage  <xcresult>  [--format json|list]        default: json
+```
+
+Each subcommand runs only the `xcresulttool` / `xccov` calls it needs.
+
+## When to use which
+
+- "What tests failed?" → `peekie tests <x> --include failure,mixed`
+- "What warnings?" → `peekie warnings <x>`
+- "Why is the build broken?" → `peekie errors <x>`
+- "What's the coverage?" → `peekie coverage <x>`
+- "SonarQube report" → `peekie tests <x> --format sonar --tests-path <dir>`
+
+## Output
+
+- `peekie warnings` / `peekie errors` emit a flat JSON array of `{file, line, column, type, message}`. Use `jq` to filter.
+- `peekie coverage` emits `{coverage, modules: [{name, coverage, files: […]}]}`.
+- `peekie tests --format json` emits the full Report shape (modules → suites → tests). Coverage / files arrays are empty because the subcommand doesn't fetch them.
+
+## Recipes
+
+```bash
+# Build-failed gate
+errors=$(peekie errors Build.xcresult | jq 'length')
+[ "$errors" -gt 0 ] && exit 1
+
+# Coverage as a number
+peekie coverage Tests.xcresult | jq '.coverage'
+
+# Warnings grouped by type
+peekie warnings Build.xcresult | jq 'group_by(.type) | map({type: .[0].type, count: length})'
+```
+
+## Filtering
+
+- `peekie tests` has `--include success,failure,…` for statuses.
+- `peekie warnings` / `peekie errors` have **no `--include` flag** — filter with `jq` instead.
+
+## Install
+
+If `peekie` is missing: `mise use github:dodobrands/peekie`, or download from [Releases](https://github.com/dodobrands/Peekie/releases). Don't fall back to `swift run peekie …`.
+
+## Don't
+
+- Don't invent `--include-coverage` / `--include-warnings` / `--include-tests` flags on the CLI — the subcommand determines what gets fetched.
+- Don't expect `peekie tests` to print coverage or `peekie coverage` to print suites. Compose two calls if you need both.
