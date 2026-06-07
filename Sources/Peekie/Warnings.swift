@@ -3,26 +3,30 @@ import Foundation
 import PeekieSDK
 
 public struct Warnings: AsyncParsableCommand {
-    public static let configuration = CommandConfiguration(
-        commandName: "warnings",
-        abstract: "Print build warnings from an .xcresult bundle"
-    )
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public enum Format: String, ExpressibleByArgument, CaseIterable {
         case json
         case list
     }
 
+    public static let configuration = CommandConfiguration(
+        commandName: "warnings",
+        abstract: "Print build warnings from an .xcresult bundle"
+    )
+
     @Argument(help: "Path to .xcresult")
     public var xcresultPath: String
 
     @Option(help: "Output format: json or list.")
-    public var format: Format = .json
+    public var format = Format.json
 
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
-    public var verbose: Bool = false
+    public var verbose = false
 
     public func run() async throws {
         LoggingSetup.setup(verbose: verbose)
@@ -38,9 +42,9 @@ public struct Warnings: AsyncParsableCommand {
         let formatter = IssuesFormatter()
         switch format {
         case .json:
-            try print(formatter.json(report.files, on: \.warnings))
+            try print(formatter.json(report.files, flattening: \.warnings))
         case .list:
-            print(formatter.list(report.files, on: \.warnings))
+            print(formatter.list(report.files, flattening: \.warnings))
         }
     }
 }

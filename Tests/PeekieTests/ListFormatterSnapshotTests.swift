@@ -2,10 +2,8 @@ import Foundation
 import PeekieTestHelpers
 import SnapshotTesting
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct ListFormatterSnapshotTests {
     let formatter = PeekieSDK.ListFormatter()
 
@@ -85,5 +83,4 @@ struct ListFormatterSnapshotTests {
             named: "\(snapshotName(from: fileName))_skipped"
         )
     }
-
 }

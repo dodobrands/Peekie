@@ -1,11 +1,11 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
 private typealias IssueType = Report.File.Issue.IssueType
 
-@Suite
+// MARK: - IssueTypeTests
+
 struct IssueTypeTests {
     @Test
     func knownRawValuesMapToTypedCases() {

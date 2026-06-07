@@ -1,9 +1,7 @@
 import Foundation
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct ParseWarningsDedupTests {
     @Test
     func identicalMessagesInSameFileAreNotDeduplicated() async {

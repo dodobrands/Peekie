@@ -2,11 +2,11 @@ import Foundation
 import PeekieTestHelpers
 import SnapshotTesting
 import Testing
-
 @testable import PeekieSDK
 
-@Suite
 struct SonarFormatterSnapshotTests {
+    // MARK: Internal
+
     let formatter = SonarFormatter()
 
     @Test(arguments: Constants.testsReportFileNames)
@@ -41,6 +41,8 @@ struct SonarFormatterSnapshotTests {
         )
     }
 
+    // MARK: Private
+
     // MARK: - Helpers
 
     private func createTestDirectory(for report: Report, slug: String) throws -> URL {
@@ -58,8 +60,9 @@ struct SonarFormatterSnapshotTests {
         // Only include files that have tests (skip coverage-only files)
         let testSuites = Set(
             report.modules.flatMap {
-                $0.suites.filter { !$0.repeatableTests.isEmpty }.map { $0.name }
-            })
+                $0.suites.filter { $0.repeatableTests.isEmpty == false }.map(\.name)
+            }
+        )
 
         for testSuiteName in testSuites {
             // Create a simple Swift file with the test suite class/struct
@@ -71,19 +74,19 @@ struct SonarFormatterSnapshotTests {
             // Remove .swift extension for struct name
             let structName =
                 testSuiteName.hasSuffix(".swift")
-                ? String(testSuiteName.dropLast(6))
-                : testSuiteName
+                    ? String(testSuiteName.dropLast(6))
+                    : testSuiteName
 
             // Generate minimal Swift test file content
             let fileContent = """
-                import Foundation
-                import Testing
+            import Foundation
+            import Testing
 
-                @Suite
-                struct \(structName) {
-                    // Mock test suite for snapshot testing
-                }
-                """
+            @Suite
+            struct \(structName) {
+                // Mock test suite for snapshot testing
+            }
+            """
 
             try fileContent.write(to: filePath, atomically: true, encoding: .utf8)
         }
@@ -93,10 +96,12 @@ struct SonarFormatterSnapshotTests {
     }
 
     private func normalizePaths(in xml: String) -> String {
-        // Find the marker "PeekieSonarTests-" in paths and replace everything before it with {TEMP_DIR}/
+        // Find the marker "PeekieSonarTests-" in paths and replace everything before it with
+        // {TEMP_DIR}/
         let marker = "PeekieSonarTests-"
 
-        // Use regex to match path="...PeekieSonarTests-..." and replace everything before marker with {TEMP_DIR}/
+        // Use regex to match path="...PeekieSonarTests-..." and replace everything before marker
+        // with {TEMP_DIR}/
         // Pattern matches: path="(anything)PeekieSonarTests-(rest of path)"
         let pattern =
             #"path="[^"]*"# + NSRegularExpression.escapedPattern(for: marker) + #"([^"]*)""#

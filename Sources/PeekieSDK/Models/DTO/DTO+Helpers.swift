@@ -20,17 +20,18 @@ extension TestResultsDTO {
                 )
             )
         }
+
         Self.logger.debug(
             "Parsing TestResultsDTO",
             metadata: [
-                "dataSize": "\(data.count)"
+                "dataSize": "\(data.count)",
             ]
         )
         self = try JSONDecoder().decode(TestResultsDTO.self, from: data)
         Self.logger.debug(
             "TestResultsDTO parsed successfully",
             metadata: [
-                "testNodesCount": "\(testNodes.count)"
+                "testNodesCount": "\(testNodes.count)",
             ]
         )
     }
@@ -55,12 +56,13 @@ extension CoverageReportDTO {
                 )
             )
         }
+
         Self.logger.debug("Parsing CoverageReportDTO")
         self = try JSONDecoder().decode(CoverageReportDTO.self, from: data)
         Self.logger.debug(
             "CoverageReportDTO parsed successfully",
             metadata: [
-                "targetsCount": "\(targets.count)"
+                "targetsCount": "\(targets.count)",
             ]
         )
     }
@@ -86,6 +88,7 @@ extension BuildResultsDTO {
                 )
             )
         }
+
         Self.logger.debug("Parsing BuildResultsDTO")
         self = try JSONDecoder().decode(BuildResultsDTO.self, from: data)
         Self.logger.debug("BuildResultsDTO parsed successfully")

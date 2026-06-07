@@ -22,25 +22,27 @@ swift test --filter <TestClassName>.<testMethodName>
 
 ### Linting
 
-The project uses `swift format` for code formatting checks. Before committing, ensure your code passes the linting checks:
+The project uses [nicklockwood/SwiftFormat](https://github.com/nicklockwood/SwiftFormat) for code formatting and [realm/SwiftLint](https://github.com/realm/SwiftLint) for semantic checks. Both are pinned via mise (`mise.toml`).
 
 ```bash
-# Check formatting (strict mode)
-swift format lint --recursive --strict Sources Tests
-```
-
-**Note**: The `swift format` tool is part of the Swift toolchain. If it's not available, you may need to install it or use the version provided by Xcode.
-
-The project also uses Periphery for detecting unused code:
-
-```bash
-# Install mise (if not already installed)
-# Then install periphery via mise
+# Install (or update) toolchain
 mise install
 
-# Scan for unused code
-periphery scan
+# Format the codebase in place
+swiftformat .
+
+# CI-equivalent strict checks (run before pushing)
+swiftformat --lint .
+swiftlint --strict
 ```
+
+Configuration: `.swiftformat` and `.swiftlint.yml` at repo root. Periphery still runs for unused-code detection:
+
+```bash
+periphery scan --skip-build --strict
+```
+
+CI runs SwiftFormat (`--lint`), SwiftLint (`--strict`), and Periphery in a separate **Lint** workflow that must pass before merging to `main`.
 
 ### Running the Command-Line Tool
 ```bash

@@ -1,12 +1,14 @@
 import Foundation
 
+// MARK: - TestResultsDTO
+
 struct TestResultsDTO: Decodable {
     let testNodes: [TestNode]
 }
 
 extension TestResultsDTO {
     struct TestNode: Decodable {
-        let children: [TestNode]?
+        let children: [Self]?
         let durationInSeconds: Double?
         let name: String
         let nodeIdentifierURL: String?
@@ -15,32 +17,34 @@ extension TestResultsDTO {
     }
 
     /// Extracts all test paths from test case children
-    /// Returns an array of paths, where each path represents a route through the tree to a Repetition or Arguments node
+    /// Returns an array of paths, where each path represents a route through the tree to a
+    /// Repetition or Arguments node
     /// - Parameter children: Array of child nodes from a test case
     /// - Returns: Array of paths (arrays of PathNode) representing all paths through the tree
     static func extractPaths(from children: [TestNode]) -> [[Report.Module.Suite.RepeatableTest
-        .PathNode]]
+            .PathNode]]
     {
-        var result: [[Report.Module.Suite.RepeatableTest.PathNode]] = []
+        var result = [[Report.Module.Suite.RepeatableTest.PathNode]]()
 
         func processNode(
             _ node: TestNode,
             path: [Report.Module.Suite.RepeatableTest.PathNode]
         ) {
             // Check if this node should be added to path
-            let pathNode: Report.Module.Suite.RepeatableTest.PathNode?
-            switch node.nodeType {
-            case .device, .arguments, .repetition:
-                pathNode = Report.Module.Suite.RepeatableTest.PathNode(
-                    name: node.name,
-                    type: .init(from: node.nodeType)
-                )
-            default:
-                pathNode = nil
-            }
+            let pathNode: Report.Module.Suite.RepeatableTest.PathNode? =
+                switch node.nodeType {
+                case .device, .arguments, .repetition:
+                    Report.Module.Suite.RepeatableTest.PathNode(
+                        name: node.name,
+                        type: .init(from: node.nodeType)
+                    )
+
+                default:
+                    nil
+                }
 
             var newPath = path
-            if let pathNode = pathNode {
+            if let pathNode {
                 newPath.append(pathNode)
             }
 
@@ -61,7 +65,7 @@ extension TestResultsDTO {
             // If this is an arguments node, check if it has repetitions
             if node.nodeType == .arguments {
                 let hasRepetitions = nodeChildren.contains { $0.nodeType == .repetition }
-                if !hasRepetitions {
+                if hasRepetitions == false {
                     // Arguments without repetitions - add to result and stop recursion
                     result.append(newPath)
                     return
@@ -72,7 +76,10 @@ extension TestResultsDTO {
             // Recursively process children
             for child in nodeChildren {
                 // Skip metadata nodes
-                guard !child.isMetadata else { continue }
+                guard child.isMetadata == false else {
+                    continue
+                }
+
                 processNode(child, path: newPath)
             }
         }
@@ -80,7 +87,10 @@ extension TestResultsDTO {
         // Process all children
         for child in children {
             // Skip metadata nodes
-            guard !child.isMetadata else { continue }
+            guard child.isMetadata == false else {
+                continue
+            }
+
             processNode(child, path: [])
         }
 
@@ -100,6 +110,8 @@ extension TestResultsDTO.TestNode {
         case device
         case runtimeWarning
         case unknown(String)
+
+        // MARK: Lifecycle
 
         init(from decoder: Decoder) throws {
             let container = try decoder.singleValueContainer()
@@ -129,22 +141,24 @@ extension TestResultsDTO.TestNode {
             }
         }
 
-        static func == (lhs: NodeType, rhs: NodeType) -> Bool {
+        // MARK: Internal
+
+        static func ==(lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
             case (.testCase, .testCase),
-                (.testSuite, .testSuite),
-                (.unitTestBundle, .unitTestBundle),
-                (.repetition, .repetition),
-                (.failureMessage, .failureMessage),
-                (.testPlan, .testPlan),
-                (.arguments, .arguments),
-                (.device, .device),
-                (.runtimeWarning, .runtimeWarning):
-                return true
+                 (.testSuite, .testSuite),
+                 (.unitTestBundle, .unitTestBundle),
+                 (.repetition, .repetition),
+                 (.failureMessage, .failureMessage),
+                 (.testPlan, .testPlan),
+                 (.arguments, .arguments),
+                 (.device, .device),
+                 (.runtimeWarning, .runtimeWarning):
+                true
             case (.unknown(let lhsValue), .unknown(let rhsValue)):
-                return lhsValue == rhsValue
+                lhsValue == rhsValue
             default:
-                return false
+                false
             }
         }
     }
@@ -157,12 +171,17 @@ extension TestResultsDTO.TestNode {
     }
 
     /// Extracts failure message from children nodes
-    /// Extracts message after "failed -" separator (e.g., "File.swift:51: failed - Failure message" -> "Failure message")
-    /// For Swift Testing format, extracts message after "Issue recorded: " (e.g., "File.swift:56: Issue recorded: Failure message" -> "Failure message")
+    /// Extracts message after "failed -" separator (e.g., "File.swift:51: failed - Failure message"
+    /// -> "Failure message")
+    /// For Swift Testing format, extracts message after "Issue recorded: " (e.g., "File.swift:56:
+    /// Issue recorded: Failure message" -> "Failure message")
     var failureMessage: String? {
-        guard let children = children,
-            let messageNode = children.first(where: { $0.nodeType == .failureMessage })
-        else { return nil }
+        guard let children,
+              let messageNode = children.first(where: { $0.nodeType == .failureMessage })
+        else {
+            return nil
+        }
+
         let message = messageNode.name
         // Try Swift Testing format first: "Issue recorded: "
         if let range = message.range(of: "Issue recorded: ") {
@@ -176,13 +195,20 @@ extension TestResultsDTO.TestNode {
     }
 
     /// Extracts skip message from children nodes
-    /// Extracts message after "skipped -" separator (e.g., "Test skipped - Skip message" -> "Skip message")
+    /// Extracts message after "skipped -" separator (e.g., "Test skipped - Skip message" -> "Skip
+    /// message")
     var skipMessage: String? {
-        guard let children = children else { return nil }
+        guard let children else {
+            return nil
+        }
+
         let messageNode = children.first {
             $0.nodeType == .failureMessage && $0.name.lowercased().contains("skip")
         }
-        guard let message = messageNode?.name else { return nil }
+        guard let message = messageNode?.name else {
+            return nil
+        }
+
         if let range = message.range(of: "skipped -") {
             return String(message[range.upperBound...]).trimmingCharacters(in: .whitespaces)
         }

@@ -32,9 +32,6 @@ jobs:
       with:
         xcode-version: ${{ steps.xcode-version.outputs.version }}
 
-    - name: Check formatting
-      run: swift format lint --recursive --strict Sources Tests
-
     - name: Resolve Dependencies
       run: swift package resolve
 

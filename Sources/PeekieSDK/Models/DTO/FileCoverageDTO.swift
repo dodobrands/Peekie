@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - FileCoverageDTO
+
 struct FileCoverageDTO: Decodable {
     var coveredLines: Int
     var executableLines: Int
@@ -8,6 +10,8 @@ struct FileCoverageDTO: Decodable {
     var path: String
 }
 
+// MARK: - TargetCoverageDTO
+
 struct TargetCoverageDTO: Decodable {
     var name: String
     var coveredLines: Int
@@ -15,6 +19,8 @@ struct TargetCoverageDTO: Decodable {
     var lineCoverage: Double
     var files: [FileCoverageDTO]
 }
+
+// MARK: - CoverageReportDTO
 
 struct CoverageReportDTO: Decodable {
     var lineCoverage: Double

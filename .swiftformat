@@ -1,0 +1,109 @@
+# SwiftFormat (nicklockwood) — Peekie style guide
+# https://github.com/nicklockwood/SwiftFormat
+
+--swift-version 6.0
+--exclude .build,DerivedData,Tests/PeekieTests/Resources,Tests/PeekieTests/__Snapshots__
+
+--max-width 100
+--indent 4
+--smarttabs enabled
+--ifdef no-indent
+--xcodeindentation disabled
+--indentcase false
+--indent-strings false
+
+--linebreaks lf
+--semicolons never
+
+--wrap-arguments before-first
+--wrap-collections before-first
+--wrap-conditions after-first
+--wrap-parameters before-first
+--wrap-return-type if-multiline
+--wrap-ternary default
+--wrap-string-interpolation preserve
+--wrap-effects preserve
+--wrap-type-aliases before-first
+--closing-paren balanced
+--call-site-paren default
+--func-attributes prev-line
+--type-attributes prev-line
+--var-attributes preserve
+--complex-attributes prev-line
+--computed-var-attributes preserve
+
+--operator-func no-space
+--no-space-operators ..<,...
+--ranges spaced
+--type-delimiter space-after
+--pattern-let inline
+--empty-braces no-space
+--trim-whitespace always
+--trailing-closures
+--never-trailing none
+
+--allman false
+--else-position same-line
+--guardelse auto
+--some-any enabled
+--enum-namespaces always
+--shortoptionals always
+
+--self remove
+--self-required
+--init-coder-nil false
+
+--property-types inferred
+
+--decimalgrouping 3,6
+--binarygrouping 4,8
+--octalgrouping 4,8
+--hexgrouping 4,8
+--fractiongrouping disabled
+--exponentgrouping disabled
+--hexliteralcase uppercase
+--exponentcase lowercase
+
+--commas always
+--header ignore
+
+--import-grouping testable-bottom
+
+--lifecycle viewDidLoad,viewWillAppear,viewDidAppear,viewWillDisappear,viewDidDisappear,viewWillLayoutSubviews,viewDidLayoutSubviews,updateViewConstraints,loadView
+--mark-categories true
+--mark-extensions always
+--struct-threshold 0
+--enum-threshold 0
+--extension-length 0
+
+--acronyms ID,URL,UUID,JSON,XML,API,SDK,CLI,IO,HTTP,HTTPS,SQL
+
+# Opt-in rules (disabled by default in SwiftFormat). All 27 entries below.
+
+--enable acronyms
+--enable blankLineAfterSwitchCase
+--enable blankLinesAfterGuardStatements
+--enable blockComments
+--enable isEmpty
+--enable markTypes
+--disable noExplicitOwnership
+--enable noGuardInTests
+--enable organizeDeclarations
+--enable preferExplicitFalse
+--enable preferFinalClasses
+--enable preferSwiftStringAPI
+--enable preferSwiftTesting
+--enable privateStateVariables
+--enable propertyTypes
+--enable singlePropertyPerLine
+--disable sortSwitchCases
+--enable testSuiteAccessControl
+--enable unusedPrivateDeclarations
+--disable urlMacro
+--enable validateTestCases
+--enable wrapCaseBodies
+--enable wrapConditionalBodies
+--enable wrapEnumCases
+--enable wrapMultilineConditionalAssignment
+--enable wrapMultilineFunctionChains
+--disable wrapSwitchCases

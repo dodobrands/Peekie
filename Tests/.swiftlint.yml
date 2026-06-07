@@ -1,0 +1,16 @@
+# Nested config for tests — relax body-length thresholds.
+# Tests are fixture-heavy; splitting them sacrifices readability for
+# a marginal lint win.
+
+function_body_length:
+  warning: 120
+  error: 200
+
+type_body_length:
+  warning: 600
+  error: 900
+
+file_length:
+  warning: 1000
+  error: 1500
+  ignore_comment_only_lines: true

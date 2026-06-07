@@ -3,12 +3,11 @@ import Foundation
 import PeekieSDK
 
 public struct Tests: AsyncParsableCommand {
-    public static let configuration = CommandConfiguration(
-        commandName: "tests",
-        abstract: "Print test results from an .xcresult bundle"
-    )
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public enum Format: String, ExpressibleByArgument, CaseIterable {
         case json
@@ -16,25 +15,30 @@ public struct Tests: AsyncParsableCommand {
         case sonar
     }
 
+    public static let configuration = CommandConfiguration(
+        commandName: "tests",
+        abstract: "Print test results from an .xcresult bundle"
+    )
+
     @Argument(help: "Path to .xcresult")
     public var xcresultPath: String
 
     @Option(help: "Output format: json, list, or sonar.")
-    public var format: Format = .list
+    public var format = Format.list
 
     @Option(help: "Comma-separated test statuses to include (success,failure,skipped,...).")
-    public var include: String = Report.Module.Suite.RepeatableTest.Test.Status.allCases.map {
-        $0.rawValue
-    }.joined(separator: ",")
+    public var include: String = Report.Module.Suite.RepeatableTest.Test.Status.allCases
+        .map(\.rawValue)
+        .joined(separator: ",")
 
     @Option(help: "Include device information in test names (matters for matrix runs).")
-    public var includeDeviceDetails: Bool = false
+    public var includeDeviceDetails = false
 
     @Option(help: "Path to test sources (required with --format sonar).")
     public var testsPath: String?
 
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
-    public var verbose: Bool = false
+    public var verbose = false
 
     public func run() async throws {
         LoggingSetup.setup(verbose: verbose)
@@ -55,20 +59,29 @@ public struct Tests: AsyncParsableCommand {
             let formatter = PeekieSDK.ListFormatter()
             print(
                 formatter.format(
-                    report, include: statuses, includeDeviceDetails: includeDeviceDetails))
+                    report, include: statuses, includeDeviceDetails: includeDeviceDetails
+                )
+            )
+
         case .json:
-            let formatter = PeekieSDK.JsonFormatter()
+            let formatter = PeekieSDK.JSONFormatter()
             try print(
                 formatter.format(
-                    report, include: statuses, includeDeviceDetails: includeDeviceDetails))
+                    report, include: statuses, includeDeviceDetails: includeDeviceDetails
+                )
+            )
+
         case .sonar:
             guard let testsPath else {
                 throw ValidationError("--tests-path is required when --format sonar")
             }
+
             let formatter = PeekieSDK.SonarFormatter()
             try print(
                 formatter.format(
-                    report: report, testsPath: URL(fileURLWithPath: testsPath)))
+                    report: report, testsPath: URL(fileURLWithPath: testsPath)
+                )
+            )
         }
     }
 }

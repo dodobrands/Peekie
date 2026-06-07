@@ -1,8 +1,9 @@
 import Foundation
 
-struct BuildResultsDTO: Decodable, Sendable {
-    let warnings: [Issue]
-    let errors: [Issue]
+// MARK: - BuildResultsDTO
+
+struct BuildResultsDTO: Decodable {
+    // MARK: Lifecycle
 
     init(warnings: [Issue] = [], errors: [Issue] = []) {
         self.warnings = warnings
@@ -11,28 +12,39 @@ struct BuildResultsDTO: Decodable, Sendable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.warnings = try container.decodeIfPresent([Issue].self, forKey: .warnings) ?? []
-        self.errors = try container.decodeIfPresent([Issue].self, forKey: .errors) ?? []
+        warnings = try container.decodeIfPresent([Issue].self, forKey: .warnings) ?? []
+        errors = try container.decodeIfPresent([Issue].self, forKey: .errors) ?? []
     }
+
+    // MARK: Internal
+
+    struct Issue: Decodable {
+        let issueType: String
+        let message: String
+        let sourceURL: String?
+    }
+
+    let warnings: [Issue]
+    let errors: [Issue]
+
+    // MARK: Private
 
     private enum CodingKeys: String, CodingKey {
         case warnings
         case errors
     }
-
-    struct Issue: Decodable, Sendable {
-        let issueType: String
-        let message: String
-        let sourceURL: String?
-    }
 }
 
 extension BuildResultsDTO.Issue {
     var fileName: String? {
-        guard let sourceURL else { return nil }
+        guard let sourceURL else {
+            return nil
+        }
+
         let url = URL(string: sourceURL) ?? URL(fileURLWithPath: sourceURL)
         let fragmentTrimmed = URL(
-            string: url.absoluteString.components(separatedBy: "#").first ?? url.absoluteString)
+            string: url.absoluteString.components(separatedBy: "#").first ?? url.absoluteString
+        )
         return (fragmentTrimmed ?? url).lastPathComponent
     }
 
@@ -40,21 +52,29 @@ extension BuildResultsDTO.Issue {
     /// Returns `nil` when `sourceURL` is absent, has no fragment, or the fragment carries no
     /// `StartingLineNumber` key — line is the minimum we need to surface a location at all.
     var location: Report.File.Issue.Location? {
-        guard let sourceURL else { return nil }
-        guard
-            let fragment = sourceURL.split(separator: "#", maxSplits: 1).dropFirst().first
-        else { return nil }
+        guard let sourceURL else {
+            return nil
+        }
+        guard let fragment = sourceURL.split(separator: "#", maxSplits: 1).dropFirst().first
+        else {
+            return nil
+        }
 
         let params: [String: String] =
             fragment
-            .split(separator: "&")
-            .reduce(into: [:]) { acc, part in
-                let kv = part.split(separator: "=", maxSplits: 1)
-                guard kv.count == 2 else { return }
-                acc[String(kv[0])] = String(kv[1])
-            }
+                .split(separator: "&")
+                .reduce(into: [:]) { acc, part in
+                    let pair = part.split(separator: "=", maxSplits: 1)
+                    guard pair.count == 2 else {
+                        return
+                    }
 
-        guard let startLine = params["StartingLineNumber"].flatMap(Int.init) else { return nil }
+                    acc[String(pair[0])] = String(pair[1])
+                }
+
+        guard let startLine = params["StartingLineNumber"].flatMap(Int.init) else {
+            return nil
+        }
 
         return .init(
             startLine: startLine,

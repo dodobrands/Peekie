@@ -2,8 +2,10 @@ import Foundation
 import Logging
 import Subprocess
 
-class Shell {
-    private static let logger = Logger(label: "com.peekie.shell")
+// MARK: - Shell
+
+enum Shell {
+    // MARK: Internal
 
     @discardableResult
     static func execute(_ executable: String, arguments: [String] = []) async throws -> String {
@@ -25,12 +27,12 @@ class Shell {
         // Check if process exited successfully
         guard case .exited(let code) = result.terminationStatus, code == 0 else {
             let errorOutput = result.standardError ?? ""
-            let exitCode: String
-            if case .exited(let exitCodeValue) = result.terminationStatus {
-                exitCode = "\(exitCodeValue)"
-            } else {
-                exitCode = "\(result.terminationStatus)"
-            }
+            let exitCode =
+                if case .exited(let exitCodeValue) = result.terminationStatus {
+                    "\(exitCodeValue)"
+                } else {
+                    "\(result.terminationStatus)"
+                }
             logger.debug(
                 "Command failed",
                 metadata: [
@@ -44,7 +46,7 @@ class Shell {
 
         let output =
             result.standardOutput?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            ?? ""
+                ?? ""
         logger.debug(
             "Command completed successfully",
             metadata: [
@@ -54,7 +56,13 @@ class Shell {
         )
         return output
     }
+
+    // MARK: Private
+
+    private static let logger = Logger(label: "com.peekie.shell")
 }
+
+// MARK: - ShellError
 
 enum ShellError: Error {
     case processFailed(exitCode: TerminationStatus, error: String)

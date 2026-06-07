@@ -18,25 +18,25 @@ let parserTestsTargetName = parserTargetName + "Tests"
 let package = Package(
     name: packageName,
     platforms: [
-        .macOS(.v13)
+        .macOS(.v13),
     ],
     products: [
         .library(
             name: parserLibraryName,
             targets: [
-                parserTargetName
+                parserTargetName,
             ]
         ),
         .library(
             name: testHelpersLibraryName,
             targets: [
-                testHelpersTargetName
+                testHelpersTargetName,
             ]
         ),
         .executable(
             name: executableLibraryName,
             targets: [
-                executableTargetName
+                executableTargetName,
             ]
         ),
     ],
@@ -110,7 +110,7 @@ let package = Package(
         .target(
             name: testHelpersTargetName,
             dependencies: [
-                .init(stringLiteral: parserTargetName)
+                .init(stringLiteral: parserTargetName),
             ],
             swiftSettings: [
                 .swiftLanguageMode(.v6),
@@ -133,13 +133,13 @@ let package = Package(
             ],
             path: "Tests/PeekieTests",
             exclude: [
-                "__Snapshots__"
+                "__Snapshots__",
             ],
             resources: [
-                .copy("Resources")
+                .copy("Resources"),
             ],
             swiftSettings: [
-                .swiftLanguageMode(.v6)
+                .swiftLanguageMode(.v6),
             ]
         ),
     ]

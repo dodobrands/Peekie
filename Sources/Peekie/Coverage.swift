@@ -3,26 +3,30 @@ import Foundation
 import PeekieSDK
 
 public struct Coverage: AsyncParsableCommand {
-    public static let configuration = CommandConfiguration(
-        commandName: "coverage",
-        abstract: "Print code coverage from an .xcresult bundle"
-    )
+    // MARK: Lifecycle
 
     public init() {}
+
+    // MARK: Public
 
     public enum Format: String, ExpressibleByArgument, CaseIterable {
         case json
         case list
     }
 
+    public static let configuration = CommandConfiguration(
+        commandName: "coverage",
+        abstract: "Print code coverage from an .xcresult bundle"
+    )
+
     @Argument(help: "Path to .xcresult")
     public var xcresultPath: String
 
     @Option(help: "Output format: json or list.")
-    public var format: Format = .json
+    public var format = Format.json
 
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
-    public var verbose: Bool = false
+    public var verbose = false
 
     public func run() async throws {
         LoggingSetup.setup(verbose: verbose)
