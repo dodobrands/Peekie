@@ -123,6 +123,39 @@ extension Report.Module.File {
         /// Human-readable message describing the issue
         public let message: String
 
+        /// Source location in the file the issue refers to, when xcresult provides one.
+        /// `nil` for project-level warnings or when the `sourceURL` fragment has no
+        /// `StartingLineNumber`.
+        public let location: Location?
+
+        public init(type: IssueType, message: String, location: Location? = nil) {
+            self.type = type
+            self.message = message
+            self.location = location
+        }
+
+        /// Source range inside a file. `startLine` is the minimum guarantee — the
+        /// other three fields are independently optional because `xcresulttool` is
+        /// not contractually obligated to emit all of them.
+        public struct Location: Equatable, Sendable, Codable {
+            public let startLine: Int
+            public let startColumn: Int?
+            public let endLine: Int?
+            public let endColumn: Int?
+
+            public init(
+                startLine: Int,
+                startColumn: Int? = nil,
+                endLine: Int? = nil,
+                endColumn: Int? = nil
+            ) {
+                self.startLine = startLine
+                self.startColumn = startColumn
+                self.endLine = endLine
+                self.endColumn = endColumn
+            }
+        }
+
         /// Types of build issues that can be reported.
         ///
         /// The set of `issueType` values emitted by `xcresulttool` is open — Apple

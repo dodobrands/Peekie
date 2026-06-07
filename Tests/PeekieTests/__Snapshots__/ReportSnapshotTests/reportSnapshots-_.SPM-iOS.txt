@@ -31,6 +31,15 @@
           - name: "Calculator.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 17
+                  ▿ endLine: Optional<Int>
+                    - some: 7
+                  ▿ startColumn: Optional<Int>
+                    - some: 17
+                  - startLine: 7
               - message: "Some warning from Calculator"
               - type: IssueType.swiftCompilerError
       - name: "Calculator"
@@ -63,6 +72,15 @@
           - name: "Calculator.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 17
+                  ▿ endLine: Optional<Int>
+                    - some: 7
+                  ▿ startColumn: Optional<Int>
+                    - some: 17
+                  - startLine: 7
               - message: "Some warning from Calculator"
               - type: IssueType.swiftCompilerError
         ▿ File
@@ -74,6 +92,15 @@
           - name: "SwiftTestingTests.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 98
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 98
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
         ▿ File
@@ -85,6 +112,15 @@
           - name: "XCTestTests.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 102
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 102
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
       - name: "ExamplesTests"

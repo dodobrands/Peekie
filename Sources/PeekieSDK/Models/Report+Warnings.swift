@@ -24,7 +24,8 @@ extension Report {
                 fileName,
                 Module.File.Issue(
                     type: Module.File.Issue.IssueType(rawValue: warning.issueType),
-                    message: normalized
+                    message: normalized,
+                    location: warning.location
                 )
             )
         }

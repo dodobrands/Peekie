@@ -117,10 +117,12 @@ private struct JsonFile: Encodable {
 private struct JsonWarning: Encodable {
     let message: String
     let type: String
+    let location: Report.Module.File.Issue.Location?
 
     init(from issue: Report.Module.File.Issue) {
         self.type = issue.type.rawValue
         self.message = issue.message
+        self.location = issue.location
     }
 }
 
