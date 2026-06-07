@@ -123,11 +123,13 @@ public extension Report {
             name: String,
             files: [File] = [],
             coverage: Coverage? = nil,
+            rootLevelTests: Set<Suite.RepeatableTest> = [],
             suites: [Suite] = []
         ) {
             self.name = name
             self.files = files
             self.coverage = coverage
+            self.rootLevelTests = rootLevelTests
             self.suites = suites
         }
 
@@ -142,7 +144,15 @@ public extension Report {
         /// Target-level coverage when xcresult reported one.
         public let coverage: Coverage?
 
-        /// Test suites this target ran.
+        /// Swift Testing `@Test` functions declared at the bundle root, i.e. outside
+        /// any `@Suite` type. These appear in xcresult JSON as `Test Case` nodes
+        /// directly under the `Unit test bundle` node. Empty for legacy `XCTest`-only
+        /// bundles, where every test is wrapped in an `XCTestCase` subclass that
+        /// surfaces as a `Test Suite` node.
+        public let rootLevelTests: Set<Suite.RepeatableTest>
+
+        /// Top-level test suites this target ran. Nested suites live inside their
+        /// parents via `Suite.nestedSuites` — only the outermost suites appear here.
         public let suites: [Suite]
 
         /// All warnings from all files in this module.
@@ -328,17 +338,28 @@ public extension Report.Module {
         public init(
             name: String,
             nodeIdentifierURL: String,
-            repeatableTests: Set<RepeatableTest> = []
+            fullPath: String? = nil,
+            repeatableTests: Set<RepeatableTest> = [],
+            nestedSuites: [Self] = []
         ) {
             self.name = name
+            self.fullPath = fullPath ?? name
             self.nodeIdentifierURL = nodeIdentifierURL
             self.repeatableTests = repeatableTests
+            self.nestedSuites = nestedSuites
         }
 
         // MARK: Public
 
-        /// Name of the test suite (e.g., "ReportTests")
+        /// Short name of the test suite (e.g., "InnerSuite")
         public let name: String
+
+        /// Fully qualified suite path joined by `" / "` from the outermost suite to
+        /// `self`. For top-level suites this equals `name`; for nested suites it is
+        /// e.g. `"OuterSuite / InnerSuite / DeeplyNestedSuite"`. Used for
+        /// human-facing identification and as the equality / hash key, so two
+        /// suites named `InnerSuite` under different parents stay distinct.
+        public let fullPath: String
 
         /// URL identifier from the test node in xcresult JSON.
         /// Examples:
@@ -348,15 +369,21 @@ public extension Report.Module {
         /// Format: `test://com.apple.xcode/<Module>/<Bundle>/<Suite>/<TestCase>`
         public let nodeIdentifierURL: String
 
-        /// Set of repeatable tests in this suite
+        /// Set of repeatable tests directly inside this suite (excluding tests of
+        /// any nested `@Suite`-typed child).
         public internal(set) var repeatableTests: Set<RepeatableTest>
 
+        /// Suites declared inside this suite (nested `@Suite` types). Order matches
+        /// the order returned by `xcresulttool`; in practice this is declaration
+        /// order from the source file. Empty when this suite has no nested suites.
+        public let nestedSuites: [Self]
+
         public static func ==(lhs: Self, rhs: Self) -> Bool {
-            lhs.name == rhs.name
+            lhs.fullPath == rhs.fullPath
         }
 
         public func hash(into hasher: inout Hasher) {
-            hasher.combine(name)
+            hasher.combine(fullPath)
         }
     }
 }
