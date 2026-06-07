@@ -1,84 +1,203 @@
 ▿ Report
   ▿ coverage: Optional<Double>
     - some: 0.6006600660066007
-  ▿ modules: 3 members
-    ▿ Module
+  ▿ files: 5 elements
+    ▿ File
+      ▿ coverage: Optional<Coverage>
+        ▿ some: Coverage
+          - coverage: 0.4411764705882353
+          - coveredLines: 15
+          - totalLines: 34
+      - errors: 0 elements
+      ▿ module: Optional<String>
+        - some: "ExamplesTests"
+      - name: "Calculator.swift"
+      ▿ path: Optional<String>
+        - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/Calculator.swift"
+      ▿ warnings: 4 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 17
+              ▿ endLine: Optional<Int>
+                - some: 7
+              ▿ startColumn: Optional<Int>
+                - some: 17
+              - startLine: 7
+          - message: "Some warning from Calculator"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 17
+              ▿ endLine: Optional<Int>
+                - some: 7
+              ▿ startColumn: Optional<Int>
+                - some: 17
+              - startLine: 7
+          - message: "Some warning from Calculator"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 17
+              ▿ endLine: Optional<Int>
+                - some: 7
+              ▿ startColumn: Optional<Int>
+                - some: 17
+              - startLine: 7
+          - message: "Some warning from Calculator"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 17
+              ▿ endLine: Optional<Int>
+                - some: 7
+              ▿ startColumn: Optional<Int>
+                - some: 17
+              - startLine: 7
+          - message: "Some warning from Calculator"
+          - type: IssueType.swiftCompilerWarning
+    ▿ File
+      ▿ coverage: Optional<Coverage>
+        ▿ some: Coverage
+          - coverage: 0.0
+          - coveredLines: 0
+          - totalLines: 36
+      - errors: 0 elements
+      ▿ module: Optional<String>
+        - some: "ExamplesTests"
+      - name: "NumberHelper.swift"
+      ▿ path: Optional<String>
+        - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/NumberHelper.swift"
+      - warnings: 0 elements
+    ▿ File
+      ▿ coverage: Optional<Coverage>
+        ▿ some: Coverage
+          - coverage: 0.8507462686567164
+          - coveredLines: 57
+          - totalLines: 67
+      - errors: 0 elements
+      ▿ module: Optional<String>
+        - some: "ExamplesTests"
+      - name: "SwiftTestingTests.swift"
+      ▿ path: Optional<String>
+        - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/SwiftTestingTests.swift"
+      ▿ warnings: 2 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 98
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 98
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 98
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 98
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerWarning
+    ▿ File
+      ▿ coverage: Optional<Coverage>
+        ▿ some: Coverage
+          - coverage: 0.9895833333333334
+          - coveredLines: 95
+          - totalLines: 96
+      - errors: 0 elements
+      ▿ module: Optional<String>
+        - some: "ExamplesTests"
+      - name: "XCTestTests.swift"
+      ▿ path: Optional<String>
+        - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
+      ▿ warnings: 2 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 102
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 102
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 102
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 102
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerWarning
+    ▿ File
       - coverage: Optional<Coverage>.none
-      - files: 0 members
-      - name: "StringUtils"
-      - suites: 0 members
+      - errors: 0 elements
+      - module: Optional<String>.none
+      - name: "TextProcessor.swift"
+      - path: Optional<String>.none
+      ▿ warnings: 2 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 13
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 13
+          - message: "Some warning from StringUtils"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 13
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 13
+          - message: "Some warning from StringUtils"
+          - type: IssueType.swiftCompilerWarning
+  ▿ modules: 3 elements
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
           - coverage: 0.21428571428571427
           - coveredLines: 15
           - totalLines: 70
-      ▿ files: 2 members
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.0
-              - coveredLines: 0
-              - totalLines: 36
-          - errors: 0 elements
-          - name: "NumberHelper.swift"
-          - warnings: 0 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.4411764705882353
-              - coveredLines: 15
-              - totalLines: 34
-          - errors: 0 elements
-          - name: "Calculator.swift"
-          ▿ warnings: 2 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 17
-                  ▿ endLine: Optional<Int>
-                    - some: 7
-                  ▿ startColumn: Optional<Int>
-                    - some: 17
-                  - startLine: 7
-              - message: "Some warning from Calculator"
-              - type: IssueType.swiftCompilerError
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 17
-                  ▿ endLine: Optional<Int>
-                    - some: 7
-                  ▿ startColumn: Optional<Int>
-                    - some: 17
-                  - startLine: 7
-              - message: "Some warning from Calculator"
-              - type: IssueType.swiftCompilerWarning
+      - files: 0 elements
       - name: "Calculator"
-      - suites: 0 members
+      - suites: 0 elements
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
           - coverage: 0.7167381974248928
           - coveredLines: 167
           - totalLines: 233
-      ▿ files: 5 members
-        ▿ File
-          - coverage: Optional<Coverage>.none
-          - errors: 0 elements
-          - name: "ExampleSUITests"
-          - warnings: 0 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.0
-              - coveredLines: 0
-              - totalLines: 36
-          - errors: 0 elements
-          - name: "NumberHelper.swift"
-          - warnings: 0 elements
+      ▿ files: 4 elements
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -86,8 +205,12 @@
               - coveredLines: 15
               - totalLines: 34
           - errors: 0 elements
+          ▿ module: Optional<String>
+            - some: "ExamplesTests"
           - name: "Calculator.swift"
-          ▿ warnings: 2 elements
+          ▿ path: Optional<String>
+            - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/Calculator.swift"
+          ▿ warnings: 4 elements
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -112,6 +235,43 @@
                   - startLine: 7
               - message: "Some warning from Calculator"
               - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 17
+                  ▿ endLine: Optional<Int>
+                    - some: 7
+                  ▿ startColumn: Optional<Int>
+                    - some: 17
+                  - startLine: 7
+              - message: "Some warning from Calculator"
+              - type: IssueType.swiftCompilerError
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 17
+                  ▿ endLine: Optional<Int>
+                    - some: 7
+                  ▿ startColumn: Optional<Int>
+                    - some: 17
+                  - startLine: 7
+              - message: "Some warning from Calculator"
+              - type: IssueType.swiftCompilerWarning
+        ▿ File
+          ▿ coverage: Optional<Coverage>
+            ▿ some: Coverage
+              - coverage: 0.0
+              - coveredLines: 0
+              - totalLines: 36
+          - errors: 0 elements
+          ▿ module: Optional<String>
+            - some: "ExamplesTests"
+          - name: "NumberHelper.swift"
+          ▿ path: Optional<String>
+            - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/NumberHelper.swift"
+          - warnings: 0 elements
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -119,7 +279,11 @@
               - coveredLines: 57
               - totalLines: 67
           - errors: 0 elements
+          ▿ module: Optional<String>
+            - some: "ExamplesTests"
           - name: "SwiftTestingTests.swift"
+          ▿ path: Optional<String>
+            - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/SwiftTestingTests.swift"
           ▿ warnings: 2 elements
             ▿ Issue
               ▿ location: Optional<Location>
@@ -152,7 +316,11 @@
               - coveredLines: 95
               - totalLines: 96
           - errors: 0 elements
+          ▿ module: Optional<String>
+            - some: "ExamplesTests"
           - name: "XCTestTests.swift"
+          ▿ path: Optional<String>
+            - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
           ▿ warnings: 2 elements
             ▿ Issue
               ▿ location: Optional<Location>
@@ -179,7 +347,285 @@
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerWarning
       - name: "ExamplesTests"
-      ▿ suites: 2 members
+      ▿ suites: 2 elements
+        ▿ Suite
+          - name: "XCTestTests"
+          - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/XCTestTests"
+          ▿ repeatableTests: 11 members
+            ▿ RepeatableTest
+              - name: "test_async()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 14.413952827453613 ms
+                    - value: 14.413952827453613
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_async()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_asyncWithExpectation()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 13.530969619750977 ms
+                    - value: 13.530969619750977
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_asyncWithExpectation()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_expectedFailure()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 395.1590061187744 ms
+                    - value: 395.1590061187744
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Failure is expected"
+                  - name: "test_expectedFailure()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.expectedFailure
+            ▿ RepeatableTest
+              - name: "test_failure()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 5.090951919555664 ms
+                    - value: 5.090951919555664
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 5.090951919555664 ms
+                          - value: 5.090951919555664
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 1.8000602722167969 ms
+                    - value: 1.8000602722167969
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.8000602722167969 ms
+                          - value: 1.8000602722167969
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 4.80198860168457 ms
+                    - value: 4.80198860168457
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 4.80198860168457 ms
+                          - value: 4.80198860168457
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "test_flacky()"
+              ▿ tests: 2 elements
+                ▿ Test
+                  ▿ duration: 6.7549943923950195 ms
+                    - value: 6.7549943923950195
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Flacky failure message: result was 2.0"
+                  - name: "test_flacky()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 6.7549943923950195 ms
+                          - value: 6.7549943923950195
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Flacky failure message: result was 2.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 2.3180246353149414 ms
+                    - value: 2.3180246353149414
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_flacky()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2.3180246353149414 ms
+                          - value: 2.3180246353149414
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_performance()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 260.1979970932007 ms
+                    - value: 260.1979970932007
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_performance()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_skip()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 29.132962226867676 ms
+                    - value: 29.132962226867676
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Test skipped - Skip message"
+                  - name: "test_skip()"
+                  - path: 0 elements
+                  ▿ skipMessage: Optional<String>
+                    - some: "Skip message"
+                  - status: Status.skipped
+            ▿ RepeatableTest
+              - name: "test_success()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 2.454996109008789 ms
+                    - value: 2.454996109008789
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_success()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_throwing()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 3.408074378967285 ms
+                    - value: 3.408074378967285
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                  - name: "test_throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 3.408074378967285 ms
+                          - value: 3.408074378967285
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 1.710057258605957 ms
+                    - value: 1.710057258605957
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                  - name: "test_throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.710057258605957 ms
+                          - value: 1.710057258605957
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 3.4459829330444336 ms
+                    - value: 3.4459829330444336
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                  - name: "test_throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 3.4459829330444336 ms
+                          - value: 3.4459829330444336
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "test_withAttachment()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 18.209099769592285 ms
+                    - value: 18.209099769592285
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_withAttachment()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "test_withWarning()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 1.1410713195800781 ms
+                    - value: 1.1410713195800781
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_withWarning()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
         ▿ Suite
           - name: "ExampleSUITests"
           - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/ExampleSUITests"
@@ -852,281 +1298,8 @@
                       - type: NodeType.repetition
                   - skipMessage: Optional<String>.none
                   - status: Status.success
-        ▿ Suite
-          - name: "XCTestTests"
-          - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/XCTestTests"
-          ▿ repeatableTests: 11 members
-            ▿ RepeatableTest
-              - name: "test_async()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 14.413952827453613 ms
-                    - value: 14.413952827453613
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_async()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_asyncWithExpectation()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 13.530969619750977 ms
-                    - value: 13.530969619750977
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_asyncWithExpectation()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_expectedFailure()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 395.1590061187744 ms
-                    - value: 395.1590061187744
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Failure is expected"
-                  - name: "test_expectedFailure()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.expectedFailure
-            ▿ RepeatableTest
-              - name: "test_failure()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 5.090951919555664 ms
-                    - value: 5.090951919555664
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "test_failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 5.090951919555664 ms
-                          - value: 5.090951919555664
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 1.8000602722167969 ms
-                    - value: 1.8000602722167969
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "test_failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.8000602722167969 ms
-                          - value: 1.8000602722167969
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 4.80198860168457 ms
-                    - value: 4.80198860168457
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "test_failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.80198860168457 ms
-                          - value: 4.80198860168457
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-            ▿ RepeatableTest
-              - name: "test_flacky()"
-              ▿ tests: 2 elements
-                ▿ Test
-                  ▿ duration: 6.7549943923950195 ms
-                    - value: 6.7549943923950195
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Flacky failure message: result was 2.0"
-                  - name: "test_flacky()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 6.7549943923950195 ms
-                          - value: 6.7549943923950195
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Flacky failure message: result was 2.0"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 2.3180246353149414 ms
-                    - value: 2.3180246353149414
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_flacky()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.3180246353149414 ms
-                          - value: 2.3180246353149414
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_performance()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 260.1979970932007 ms
-                    - value: 260.1979970932007
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_performance()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_skip()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 29.132962226867676 ms
-                    - value: 29.132962226867676
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Test skipped - Skip message"
-                  - name: "test_skip()"
-                  - path: 0 elements
-                  ▿ skipMessage: Optional<String>
-                    - some: "Skip message"
-                  - status: Status.skipped
-            ▿ RepeatableTest
-              - name: "test_success()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 2.454996109008789 ms
-                    - value: 2.454996109008789
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_success()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_throwing()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 3.408074378967285 ms
-                    - value: 3.408074378967285
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                  - name: "test_throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.408074378967285 ms
-                          - value: 3.408074378967285
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 1.710057258605957 ms
-                    - value: 1.710057258605957
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                  - name: "test_throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.710057258605957 ms
-                          - value: 1.710057258605957
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 3.4459829330444336 ms
-                    - value: 3.4459829330444336
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                  - name: "test_throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.4459829330444336 ms
-                          - value: 3.4459829330444336
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-            ▿ RepeatableTest
-              - name: "test_withAttachment()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 18.209099769592285 ms
-                    - value: 18.209099769592285
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_withAttachment()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "test_withWarning()"
-              ▿ tests: 1 element
-                ▿ Test
-                  ▿ duration: 1.1410713195800781 ms
-                    - value: 1.1410713195800781
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "test_withWarning()"
-                  - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
+    ▿ Module
+      - coverage: Optional<Coverage>.none
+      - files: 0 elements
+      - name: "StringUtils"
+      - suites: 0 elements

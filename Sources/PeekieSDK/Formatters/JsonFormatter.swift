@@ -95,7 +95,7 @@ private struct JsonCoverage: Encodable {
         self.percentage = coverage.coverage
     }
 
-    init(from coverage: Report.Module.File.Coverage) {
+    init(from coverage: Report.File.Coverage) {
         self.coveredLines = coverage.coveredLines
         self.totalLines = coverage.totalLines
         self.percentage = coverage.coverage
@@ -108,7 +108,7 @@ private struct JsonFile: Encodable {
     let warnings: [JsonIssue]
     let errors: [JsonIssue]
 
-    init(from file: Report.Module.File) {
+    init(from file: Report.File) {
         self.name = file.name
         self.coverage = file.coverage.map { JsonCoverage(from: $0) }
         self.warnings = file.warnings.map { JsonIssue(from: $0) }
@@ -119,9 +119,9 @@ private struct JsonFile: Encodable {
 private struct JsonIssue: Encodable {
     let message: String
     let type: String
-    let location: Report.Module.File.Issue.Location?
+    let location: Report.File.Issue.Location?
 
-    init(from issue: Report.Module.File.Issue) {
+    init(from issue: Report.File.Issue) {
         self.type = issue.type.rawValue
         self.message = issue.message
         self.location = issue.location
