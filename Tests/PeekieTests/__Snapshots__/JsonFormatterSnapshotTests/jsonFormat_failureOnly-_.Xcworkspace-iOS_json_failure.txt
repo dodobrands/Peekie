@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6703703703703704,
+  "coverage" : 0.5915032679738562,
   "modules" : [
     {
       "coverage" : {
@@ -76,13 +76,13 @@
           "name" : "ExampleSUITests",
           "tests" : [
             {
-              "durationMs" : 207.5040340423584,
+              "durationMs" : 16.636133193969727,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 364.1691207885742,
+              "durationMs" : 16.064882278442383,
               "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -93,13 +93,13 @@
           "name" : "XCTestTests",
           "tests" : [
             {
-              "durationMs" : 2239.737033843994,
+              "durationMs" : 57.03091621398926,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 6.775975227355957,
+              "durationMs" : 4.715085029602051,
               "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
@@ -112,7 +112,7 @@
       "coverage" : {
         "coveredLines" : 0,
         "percentage" : 0,
-        "totalLines" : 23
+        "totalLines" : 59
       },
       "files" : [
         {
@@ -144,6 +144,99 @@
                 "startLine" : 13
               },
               "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "WarningsCatalog.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
               "type" : "Swift Compiler Warning"
             }
           ]

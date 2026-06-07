@@ -1,7 +1,7 @@
 ▿ Report
   ▿ coverage: Optional<Double>
-    - some: 0.6006600660066007
-  ▿ files: 5 elements
+    - some: 0.48533333333333334
+  ▿ files: 6 elements
     ▿ File
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
@@ -76,6 +76,211 @@
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/NumberHelper.swift"
       - warnings: 0 elements
+    ▿ File
+      ▿ coverage: Optional<Coverage>
+        ▿ some: Coverage
+          - coverage: 0.0
+          - coveredLines: 0
+          - totalLines: 36
+      - errors: 0 elements
+      ▿ module: Optional<String>
+        - some: "ExamplesTests"
+      - name: "WarningsCatalog.swift"
+      ▿ path: Optional<String>
+        - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/WarningsCatalog.swift"
+      ▿ warnings: 16 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 22
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 22
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 23
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 23
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 24
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 24
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 4
+              ▿ endLine: Optional<Int>
+                - some: 40
+              ▿ startColumn: Optional<Int>
+                - some: 4
+              - startLine: 40
+          - message: "Code after \'return\' will never be executed"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 4
+              ▿ endLine: Optional<Int>
+                - some: 49
+              ▿ startColumn: Optional<Int>
+                - some: 4
+              - startLine: 49
+          - message: "Result of call to \'unusedResultProducer()\' is unused"
+          - type: IssueType.noUsage
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 14
+              ▿ endLine: Optional<Int>
+                - some: 56
+              ▿ startColumn: Optional<Int>
+                - some: 14
+              - startLine: 56
+          - message: "String interpolation produces a debug description for an optional value; did you mean to make this explicit?"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 13
+              ▿ endLine: Optional<Int>
+                - some: 65
+              ▿ startColumn: Optional<Int>
+                - some: 13
+              - startLine: 65
+          - message: "Conditional cast from \'Bar\' to \'Foo\' always succeeds"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 8
+              ▿ endLine: Optional<Int>
+                - some: 89
+              ▿ startColumn: Optional<Int>
+                - some: 8
+              - startLine: 89
+          - message: "No calls to throwing functions occur within \'try\' expression"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 22
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 22
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 23
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 23
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 26
+              ▿ endLine: Optional<Int>
+                - some: 24
+              ▿ startColumn: Optional<Int>
+                - some: 26
+              - startLine: 24
+          - message: "\'oldFoo()\' is deprecated: use newFoo()"
+          - type: IssueType.deprecatedDeclaration
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 4
+              ▿ endLine: Optional<Int>
+                - some: 40
+              ▿ startColumn: Optional<Int>
+                - some: 4
+              - startLine: 40
+          - message: "Code after \'return\' will never be executed"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 4
+              ▿ endLine: Optional<Int>
+                - some: 49
+              ▿ startColumn: Optional<Int>
+                - some: 4
+              - startLine: 49
+          - message: "Result of call to \'unusedResultProducer()\' is unused"
+          - type: IssueType.noUsage
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 14
+              ▿ endLine: Optional<Int>
+                - some: 56
+              ▿ startColumn: Optional<Int>
+                - some: 14
+              - startLine: 56
+          - message: "String interpolation produces a debug description for an optional value; did you mean to make this explicit?"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 13
+              ▿ endLine: Optional<Int>
+                - some: 65
+              ▿ startColumn: Optional<Int>
+                - some: 13
+              - startLine: 65
+          - message: "Conditional cast from \'Bar\' to \'Foo\' always succeeds"
+          - type: IssueType.swiftCompilerWarning
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 8
+              ▿ endLine: Optional<Int>
+                - some: 89
+              ▿ startColumn: Optional<Int>
+                - some: 8
+              - startLine: 89
+          - message: "No calls to throwing functions occur within \'try\' expression"
+          - type: IssueType.swiftCompilerWarning
     ▿ File
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
@@ -185,19 +390,19 @@
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
-          - coverage: 0.21428571428571427
+          - coverage: 0.14150943396226415
           - coveredLines: 15
-          - totalLines: 70
+          - totalLines: 106
       - files: 0 elements
       - name: "Calculator"
       - suites: 0 elements
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
-          - coverage: 0.7167381974248928
+          - coverage: 0.620817843866171
           - coveredLines: 167
-          - totalLines: 233
-      ▿ files: 4 elements
+          - totalLines: 269
+      ▿ files: 5 elements
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -272,6 +477,211 @@
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/NumberHelper.swift"
           - warnings: 0 elements
+        ▿ File
+          ▿ coverage: Optional<Coverage>
+            ▿ some: Coverage
+              - coverage: 0.0
+              - coveredLines: 0
+              - totalLines: 36
+          - errors: 0 elements
+          ▿ module: Optional<String>
+            - some: "ExamplesTests"
+          - name: "WarningsCatalog.swift"
+          ▿ path: Optional<String>
+            - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/WarningsCatalog.swift"
+          ▿ warnings: 16 elements
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 22
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 22
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 23
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 23
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 24
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 24
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 4
+                  ▿ endLine: Optional<Int>
+                    - some: 40
+                  ▿ startColumn: Optional<Int>
+                    - some: 4
+                  - startLine: 40
+              - message: "Code after \'return\' will never be executed"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 4
+                  ▿ endLine: Optional<Int>
+                    - some: 49
+                  ▿ startColumn: Optional<Int>
+                    - some: 4
+                  - startLine: 49
+              - message: "Result of call to \'unusedResultProducer()\' is unused"
+              - type: IssueType.noUsage
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 14
+                  ▿ endLine: Optional<Int>
+                    - some: 56
+                  ▿ startColumn: Optional<Int>
+                    - some: 14
+                  - startLine: 56
+              - message: "String interpolation produces a debug description for an optional value; did you mean to make this explicit?"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 13
+                  ▿ endLine: Optional<Int>
+                    - some: 65
+                  ▿ startColumn: Optional<Int>
+                    - some: 13
+                  - startLine: 65
+              - message: "Conditional cast from \'Bar\' to \'Foo\' always succeeds"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 8
+                  ▿ endLine: Optional<Int>
+                    - some: 89
+                  ▿ startColumn: Optional<Int>
+                    - some: 8
+                  - startLine: 89
+              - message: "No calls to throwing functions occur within \'try\' expression"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 22
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 22
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 23
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 23
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 26
+                  ▿ endLine: Optional<Int>
+                    - some: 24
+                  ▿ startColumn: Optional<Int>
+                    - some: 26
+                  - startLine: 24
+              - message: "\'oldFoo()\' is deprecated: use newFoo()"
+              - type: IssueType.deprecatedDeclaration
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 4
+                  ▿ endLine: Optional<Int>
+                    - some: 40
+                  ▿ startColumn: Optional<Int>
+                    - some: 4
+                  - startLine: 40
+              - message: "Code after \'return\' will never be executed"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 4
+                  ▿ endLine: Optional<Int>
+                    - some: 49
+                  ▿ startColumn: Optional<Int>
+                    - some: 4
+                  - startLine: 49
+              - message: "Result of call to \'unusedResultProducer()\' is unused"
+              - type: IssueType.noUsage
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 14
+                  ▿ endLine: Optional<Int>
+                    - some: 56
+                  ▿ startColumn: Optional<Int>
+                    - some: 14
+                  - startLine: 56
+              - message: "String interpolation produces a debug description for an optional value; did you mean to make this explicit?"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 13
+                  ▿ endLine: Optional<Int>
+                    - some: 65
+                  ▿ startColumn: Optional<Int>
+                    - some: 13
+                  - startLine: 65
+              - message: "Conditional cast from \'Bar\' to \'Foo\' always succeeds"
+              - type: IssueType.swiftCompilerWarning
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 8
+                  ▿ endLine: Optional<Int>
+                    - some: 89
+                  ▿ startColumn: Optional<Int>
+                    - some: 8
+                  - startLine: 89
+              - message: "No calls to throwing functions occur within \'try\' expression"
+              - type: IssueType.swiftCompilerWarning
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
@@ -356,8 +766,8 @@
               - name: "test_async()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 14.665961265563965 ms
-                    - value: 14.665961265563965
+                  ▿ duration: 13.387918472290039 ms
+                    - value: 13.387918472290039
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_async()"
@@ -368,8 +778,8 @@
               - name: "test_asyncWithExpectation()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 13.393998146057129 ms
-                    - value: 13.393998146057129
+                  ▿ duration: 13.229966163635254 ms
+                    - value: 13.229966163635254
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_asyncWithExpectation()"
@@ -380,8 +790,8 @@
               - name: "test_expectedFailure()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 479.96699810028076 ms
-                    - value: 479.96699810028076
+                  ▿ duration: 362.7290725708008 ms
+                    - value: 362.7290725708008
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Failure is expected"
@@ -393,8 +803,8 @@
               - name: "test_failure()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 0.9859800338745117 ms
-                    - value: 0.9859800338745117
+                  ▿ duration: 0.9340047836303711 ms
+                    - value: 0.9340047836303711
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -402,8 +812,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.9859800338745117 ms
-                          - value: 0.9859800338745117
+                        ▿ some: 0.9340047836303711 ms
+                          - value: 0.9340047836303711
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -414,8 +824,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.9039640426635742 ms
-                    - value: 0.9039640426635742
+                  ▿ duration: 0.800013542175293 ms
+                    - value: 0.800013542175293
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -423,8 +833,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.9039640426635742 ms
-                          - value: 0.9039640426635742
+                        ▿ some: 0.800013542175293 ms
+                          - value: 0.800013542175293
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -435,8 +845,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.8350610733032227 ms
-                    - value: 0.8350610733032227
+                  ▿ duration: 0.7749795913696289 ms
+                    - value: 0.7749795913696289
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -444,8 +854,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.8350610733032227 ms
-                          - value: 0.8350610733032227
+                        ▿ some: 0.7749795913696289 ms
+                          - value: 0.7749795913696289
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -459,8 +869,8 @@
               - name: "test_flacky()"
               ▿ tests: 2 elements
                 ▿ Test
-                  ▿ duration: 0.9180307388305664 ms
-                    - value: 0.9180307388305664
+                  ▿ duration: 0.7799863815307617 ms
+                    - value: 0.7799863815307617
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Flacky failure message: result was 2.0"
@@ -468,8 +878,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.9180307388305664 ms
-                          - value: 0.9180307388305664
+                        ▿ some: 0.7799863815307617 ms
+                          - value: 0.7799863815307617
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Flacky failure message: result was 2.0"
@@ -480,16 +890,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.42808055877685547 ms
-                    - value: 0.42808055877685547
+                  ▿ duration: 0.39005279541015625 ms
+                    - value: 0.39005279541015625
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_flacky()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.42808055877685547 ms
-                          - value: 0.42808055877685547
+                        ▿ some: 0.39005279541015625 ms
+                          - value: 0.39005279541015625
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -502,8 +912,8 @@
               - name: "test_performance()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 264.117956161499 ms
-                    - value: 264.117956161499
+                  ▿ duration: 260.2590322494507 ms
+                    - value: 260.2590322494507
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_performance()"
@@ -514,8 +924,8 @@
               - name: "test_skip()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 1.4600753784179688 ms
-                    - value: 1.4600753784179688
+                  ▿ duration: 1.8409490585327148 ms
+                    - value: 1.8409490585327148
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Test skipped - Skip message"
@@ -528,8 +938,8 @@
               - name: "test_success()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 0.42498111724853516 ms
-                    - value: 0.42498111724853516
+                  ▿ duration: 0.7939338684082031 ms
+                    - value: 0.7939338684082031
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_success()"
@@ -540,8 +950,8 @@
               - name: "test_throwing()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 1.9450187683105469 ms
-                    - value: 1.9450187683105469
+                  ▿ duration: 1.909017562866211 ms
+                    - value: 1.909017562866211
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -549,8 +959,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.9450187683105469 ms
-                          - value: 1.9450187683105469
+                        ▿ some: 1.909017562866211 ms
+                          - value: 1.909017562866211
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -561,8 +971,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 1.2379884719848633 ms
-                    - value: 1.2379884719848633
+                  ▿ duration: 1.4410018920898438 ms
+                    - value: 1.4410018920898438
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -570,8 +980,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.2379884719848633 ms
-                          - value: 1.2379884719848633
+                        ▿ some: 1.4410018920898438 ms
+                          - value: 1.4410018920898438
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -582,8 +992,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 2.089977264404297 ms
-                    - value: 2.089977264404297
+                  ▿ duration: 1.4420747756958008 ms
+                    - value: 1.4420747756958008
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -591,8 +1001,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.089977264404297 ms
-                          - value: 2.089977264404297
+                        ▿ some: 1.4420747756958008 ms
+                          - value: 1.4420747756958008
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -606,8 +1016,8 @@
               - name: "test_withAttachment()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 1.8069744110107422 ms
-                    - value: 1.8069744110107422
+                  ▿ duration: 1.127004623413086 ms
+                    - value: 1.127004623413086
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_withAttachment()"
@@ -618,8 +1028,8 @@
               - name: "test_withWarning()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 0.9820461273193359 ms
-                    - value: 0.9820461273193359
+                  ▿ duration: 0.5279779434204102 ms
+                    - value: 0.5279779434204102
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_withWarning()"
@@ -634,16 +1044,16 @@
               - name: "async()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 12.61591911315918 ms
-                    - value: 12.61591911315918
+                  ▿ duration: 12.881994247436523 ms
+                    - value: 12.881994247436523
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "async()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 12.61591911315918 ms
-                          - value: 12.61591911315918
+                        ▿ some: 12.881994247436523 ms
+                          - value: 12.881994247436523
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -653,16 +1063,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 15.820026397705078 ms
-                    - value: 15.820026397705078
+                  ▿ duration: 12.811899185180664 ms
+                    - value: 12.811899185180664
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "async()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 15.820026397705078 ms
-                          - value: 15.820026397705078
+                        ▿ some: 12.811899185180664 ms
+                          - value: 12.811899185180664
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -672,16 +1082,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 14.816999435424805 ms
-                    - value: 14.816999435424805
+                  ▿ duration: 17.565011978149414 ms
+                    - value: 17.565011978149414
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "async()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 14.816999435424805 ms
-                          - value: 14.816999435424805
+                        ▿ some: 17.565011978149414 ms
+                          - value: 17.565011978149414
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -694,8 +1104,8 @@
               - name: "disabled()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 0.19407272338867188 ms
-                    - value: 0.19407272338867188
+                  ▿ duration: 0.1537799835205078 ms
+                    - value: 0.1537799835205078
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Test skipped: Disabled reason"
@@ -703,8 +1113,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.19407272338867188 ms
-                          - value: 0.19407272338867188
+                        ▿ some: 0.1537799835205078 ms
+                          - value: 0.1537799835205078
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Test skipped: Disabled reason"
@@ -716,8 +1126,8 @@
                     - some: "Test skipped: Disabled reason"
                   - status: Status.skipped
                 ▿ Test
-                  ▿ duration: 0.04315376281738281 ms
-                    - value: 0.04315376281738281
+                  ▿ duration: 0.18310546875 ms
+                    - value: 0.18310546875
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Test skipped: Disabled reason"
@@ -725,8 +1135,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.04315376281738281 ms
-                          - value: 0.04315376281738281
+                        ▿ some: 0.18310546875 ms
+                          - value: 0.18310546875
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Test skipped: Disabled reason"
@@ -738,8 +1148,8 @@
                     - some: "Test skipped: Disabled reason"
                   - status: Status.skipped
                 ▿ Test
-                  ▿ duration: 2.321004867553711 ms
-                    - value: 2.321004867553711
+                  ▿ duration: 0.06198883056640625 ms
+                    - value: 0.06198883056640625
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Test skipped: Disabled reason"
@@ -747,8 +1157,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.321004867553711 ms
-                          - value: 2.321004867553711
+                        ▿ some: 0.06198883056640625 ms
+                          - value: 0.06198883056640625
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Test skipped: Disabled reason"
@@ -763,16 +1173,16 @@
               - name: "expectedFailure()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 5.033016204833984 ms
-                    - value: 5.033016204833984
+                  ▿ duration: 7.153987884521484 ms
+                    - value: 7.153987884521484
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 5.033016204833984 ms
-                          - value: 5.033016204833984
+                        ▿ some: 7.153987884521484 ms
+                          - value: 7.153987884521484
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -782,16 +1192,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.expectedFailure
                 ▿ Test
-                  ▿ duration: 3.554105758666992 ms
-                    - value: 3.554105758666992
+                  ▿ duration: 4.8389434814453125 ms
+                    - value: 4.8389434814453125
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.554105758666992 ms
-                          - value: 3.554105758666992
+                        ▿ some: 4.8389434814453125 ms
+                          - value: 4.8389434814453125
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -801,16 +1211,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.expectedFailure
                 ▿ Test
-                  ▿ duration: 2.2499561309814453 ms
-                    - value: 2.2499561309814453
+                  ▿ duration: 5.063056945800781 ms
+                    - value: 5.063056945800781
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.2499561309814453 ms
-                          - value: 2.2499561309814453
+                        ▿ some: 5.063056945800781 ms
+                          - value: 5.063056945800781
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -823,8 +1233,8 @@
               - name: "failure()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 4.987001419067383 ms
-                    - value: 4.987001419067383
+                  ▿ duration: 0.4029273986816406 ms
+                    - value: 0.4029273986816406
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -832,8 +1242,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.987001419067383 ms
-                          - value: 4.987001419067383
+                        ▿ some: 0.4029273986816406 ms
+                          - value: 0.4029273986816406
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -844,8 +1254,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 3.7679672241210938 ms
-                    - value: 3.7679672241210938
+                  ▿ duration: 4.852056503295898 ms
+                    - value: 4.852056503295898
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -853,8 +1263,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.7679672241210938 ms
-                          - value: 3.7679672241210938
+                        ▿ some: 4.852056503295898 ms
+                          - value: 4.852056503295898
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -865,8 +1275,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 2.362966537475586 ms
-                    - value: 2.362966537475586
+                  ▿ duration: 4.979133605957031 ms
+                    - value: 4.979133605957031
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -874,8 +1284,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.362966537475586 ms
-                          - value: 2.362966537475586
+                        ▿ some: 4.979133605957031 ms
+                          - value: 4.979133605957031
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -889,8 +1299,8 @@
               - name: "flacky()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 4.9381256103515625 ms
-                    - value: 4.9381256103515625
+                  ▿ duration: 0.5431175231933594 ms
+                    - value: 0.5431175231933594
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Flacky failure message: result was 2.0"
@@ -898,8 +1308,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.9381256103515625 ms
-                          - value: 4.9381256103515625
+                        ▿ some: 0.5431175231933594 ms
+                          - value: 0.5431175231933594
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Flacky failure message: result was 2.0"
@@ -910,16 +1320,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 3.470182418823242 ms
-                    - value: 3.470182418823242
+                  ▿ duration: 4.804134368896484 ms
+                    - value: 4.804134368896484
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "flacky()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.470182418823242 ms
-                          - value: 3.470182418823242
+                        ▿ some: 4.804134368896484 ms
+                          - value: 4.804134368896484
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -929,16 +1339,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 2.4008750915527344 ms
-                    - value: 2.4008750915527344
+                  ▿ duration: 4.877805709838867 ms
+                    - value: 4.877805709838867
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "flacky()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.4008750915527344 ms
-                          - value: 2.4008750915527344
+                        ▿ some: 4.877805709838867 ms
+                          - value: 4.877805709838867
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -951,8 +1361,8 @@
               - name: "flackyParameterized(value:)"
               ▿ tests: 6 elements
                 ▿ Test
-                  ▿ duration: 5.274057388305664 ms
-                    - value: 5.274057388305664
+                  ▿ duration: 6.934165954589844 ms
+                    - value: 6.934165954589844
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -967,8 +1377,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 5.274057388305664 ms
-                          - value: 5.274057388305664
+                        ▿ some: 6.934165954589844 ms
+                          - value: 6.934165954589844
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -979,8 +1389,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 3.259897232055664 ms
-                    - value: 3.259897232055664
+                  ▿ duration: 4.770040512084961 ms
+                    - value: 4.770040512084961
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -995,8 +1405,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.259897232055664 ms
-                          - value: 3.259897232055664
+                        ▿ some: 4.770040512084961 ms
+                          - value: 4.770040512084961
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -1007,8 +1417,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.2868175506591797 ms
-                    - value: 0.2868175506591797
+                  ▿ duration: 4.75001335144043 ms
+                    - value: 4.75001335144043
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -1023,8 +1433,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.2868175506591797 ms
-                          - value: 0.2868175506591797
+                        ▿ some: 4.75001335144043 ms
+                          - value: 4.75001335144043
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -1035,8 +1445,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 4.6329498291015625 ms
-                    - value: 4.6329498291015625
+                  ▿ duration: 0.7128715515136719 ms
+                    - value: 0.7128715515136719
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "flackyParameterized(value:)"
@@ -1050,8 +1460,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.6329498291015625 ms
-                          - value: 4.6329498291015625
+                        ▿ some: 0.7128715515136719 ms
+                          - value: 0.7128715515136719
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -1061,8 +1471,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 3.1502246856689453 ms
-                    - value: 3.1502246856689453
+                  ▿ duration: 0.11992454528808594 ms
+                    - value: 0.11992454528808594
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "flackyParameterized(value:)"
@@ -1076,8 +1486,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.1502246856689453 ms
-                          - value: 3.1502246856689453
+                        ▿ some: 0.11992454528808594 ms
+                          - value: 0.11992454528808594
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -1087,8 +1497,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 0.1671314239501953 ms
-                    - value: 0.1671314239501953
+                  ▿ duration: 0.025987625122070312 ms
+                    - value: 0.025987625122070312
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "flackyParameterized(value:)"
@@ -1102,8 +1512,8 @@
                       - type: NodeType.arguments
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.1671314239501953 ms
-                          - value: 0.1671314239501953
+                        ▿ some: 0.025987625122070312 ms
+                          - value: 0.025987625122070312
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -1116,16 +1526,16 @@
               - name: "success()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 0.19788742065429688 ms
-                    - value: 0.19788742065429688
+                  ▿ duration: 0.8370876312255859 ms
+                    - value: 0.8370876312255859
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "success()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.19788742065429688 ms
-                          - value: 0.19788742065429688
+                        ▿ some: 0.8370876312255859 ms
+                          - value: 0.8370876312255859
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -1135,16 +1545,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 3.3998489379882812 ms
-                    - value: 3.3998489379882812
+                  ▿ duration: 4.72712516784668 ms
+                    - value: 4.72712516784668
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "success()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.3998489379882812 ms
-                          - value: 3.3998489379882812
+                        ▿ some: 4.72712516784668 ms
+                          - value: 4.72712516784668
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -1154,16 +1564,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 2.137899398803711 ms
-                    - value: 2.137899398803711
+                  ▿ duration: 5.06901741027832 ms
+                    - value: 5.06901741027832
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "success()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.137899398803711 ms
-                          - value: 2.137899398803711
+                        ▿ some: 5.06901741027832 ms
+                          - value: 5.06901741027832
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -1176,8 +1586,8 @@
               - name: "throwing()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 5.036115646362305 ms
-                    - value: 5.036115646362305
+                  ▿ duration: 0.6101131439208984 ms
+                    - value: 0.6101131439208984
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1185,8 +1595,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 5.036115646362305 ms
-                          - value: 5.036115646362305
+                        ▿ some: 0.6101131439208984 ms
+                          - value: 0.6101131439208984
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1197,8 +1607,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 3.899097442626953 ms
-                    - value: 3.899097442626953
+                  ▿ duration: 4.863977432250977 ms
+                    - value: 4.863977432250977
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1206,8 +1616,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.899097442626953 ms
-                          - value: 3.899097442626953
+                        ▿ some: 4.863977432250977 ms
+                          - value: 4.863977432250977
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1218,8 +1628,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 2.393960952758789 ms
-                    - value: 2.393960952758789
+                  ▿ duration: 5.0830841064453125 ms
+                    - value: 5.0830841064453125
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1227,8 +1637,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.393960952758789 ms
-                          - value: 2.393960952758789
+                        ▿ some: 5.0830841064453125 ms
+                          - value: 5.0830841064453125
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: Caught error: .divisionByZero"
@@ -1242,16 +1652,16 @@
               - name: "withAttachment()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 4.931211471557617 ms
-                    - value: 4.931211471557617
+                  ▿ duration: 0.8409023284912109 ms
+                    - value: 0.8409023284912109
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "withAttachment()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.931211471557617 ms
-                          - value: 4.931211471557617
+                        ▿ some: 0.8409023284912109 ms
+                          - value: 0.8409023284912109
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -1261,16 +1671,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 3.5049915313720703 ms
-                    - value: 3.5049915313720703
+                  ▿ duration: 4.903078079223633 ms
+                    - value: 4.903078079223633
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "withAttachment()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 3.5049915313720703 ms
-                          - value: 3.5049915313720703
+                        ▿ some: 4.903078079223633 ms
+                          - value: 4.903078079223633
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -1280,16 +1690,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 2.4809837341308594 ms
-                    - value: 2.4809837341308594
+                  ▿ duration: 5.089044570922852 ms
+                    - value: 5.089044570922852
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "withAttachment()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.4809837341308594 ms
-                          - value: 2.4809837341308594
+                        ▿ some: 5.089044570922852 ms
+                          - value: 5.089044570922852
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"

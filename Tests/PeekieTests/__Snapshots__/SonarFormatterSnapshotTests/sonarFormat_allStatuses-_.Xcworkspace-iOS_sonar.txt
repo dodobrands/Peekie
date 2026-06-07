@@ -1,41 +1,41 @@
 <testExecutions version="1">
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-iOS/ExampleSUITests.swift">
-        <testCase name="async()" duration="362" />
-        <testCase name="disabled()" duration="2">
+        <testCase name="async()" duration="38" />
+        <testCase name="disabled()" duration="0">
             <skipped message="Test skipped: Disabled reason" />
         </testCase>
-        <testCase name="expectedFailure()" duration="207" />
-        <testCase name="failure()" duration="207">
+        <testCase name="expectedFailure()" duration="15" />
+        <testCase name="failure()" duration="16">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="flacky()" duration="363" />
-        <testCase name="flackyParameterized(value:) [false]" duration="254">
+        <testCase name="flacky()" duration="15" />
+        <testCase name="flackyParameterized(value:) [false]" duration="14">
             <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
         </testCase>
-        <testCase name="flackyParameterized(value:) [true]" duration="157" />
-        <testCase name="success()" duration="265" />
-        <testCase name="throwing()" duration="364">
+        <testCase name="flackyParameterized(value:) [true]" duration="12" />
+        <testCase name="success()" duration="14" />
+        <testCase name="throwing()" duration="16">
             <failure message="SwiftTestingTests.swift:85: Caught error: .divisionByZero" />
         </testCase>
-        <testCase name="withAttachment()" duration="109" />
+        <testCase name="withAttachment()" duration="14" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-iOS/XCTestTests.swift">
-        <testCase name="test_async()" duration="13" />
-        <testCase name="test_asyncWithExpectation()" duration="11" />
-        <testCase name="test_expectedFailure()" duration="395" />
-        <testCase name="test_failure()" duration="2239">
+        <testCase name="test_async()" duration="12" />
+        <testCase name="test_asyncWithExpectation()" duration="12" />
+        <testCase name="test_expectedFailure()" duration="220" />
+        <testCase name="test_failure()" duration="57">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
         <testCase name="test_flacky()" duration="1" />
-        <testCase name="test_performance()" duration="267" />
-        <testCase name="test_skip()" duration="40">
+        <testCase name="test_performance()" duration="254" />
+        <testCase name="test_skip()" duration="5">
             <skipped message="Skip message" />
         </testCase>
         <testCase name="test_success()" duration="0" />
-        <testCase name="test_throwing()" duration="6">
+        <testCase name="test_throwing()" duration="4">
             <failure message="XCTestTests.swift:77: failed: caught error: &quot;divisionByZero&quot;" />
         </testCase>
-        <testCase name="test_withAttachment()" duration="0" />
+        <testCase name="test_withAttachment()" duration="2" />
         <testCase name="test_withWarning()" duration="0" />
     </file>
 </testExecutions>
