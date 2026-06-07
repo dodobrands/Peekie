@@ -52,9 +52,61 @@
         }
       ],
       "name" : "XcodeprojExample.app",
+      "rootLevelTests" : [
+        {
+          "durationMs" : 147.8731632232666,
+          "name" : "2 + 3 = 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 151.1080265045166,
+          "name" : "array[0] is nil?",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 150.55441856384277,
+          "name" : "divide(10, 2) \/ returns 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 148.26488494873047,
+          "name" : "root level with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 194.92292404174805,
+          "name" : "rootLevelAsync()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 134.35077667236328,
+          "message" : "Expected 5.0 but got 6.0",
+          "name" : "rootLevelFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 150.6330966949463,
+          "name" : "rootLevelSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 147.89104461669922,
+          "name" : "success 🎯",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 149.37901496887207,
+          "name" : "сложение работает",
+          "status" : "success"
+        }
+      ],
       "suites" : [
         {
+          "fullPath" : "ExampleSUITests",
           "name" : "ExampleSUITests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 187.75701522827148,
@@ -115,7 +167,49 @@
           ]
         },
         {
+          "fullPath" : "OuterSuite",
           "name" : "OuterSuite",
+          "nestedSuites" : [
+            {
+              "fullPath" : "OuterSuite \/ InnerSuite",
+              "name" : "InnerSuite",
+              "nestedSuites" : [
+                {
+                  "fullPath" : "OuterSuite \/ InnerSuite \/ DeeplyNestedSuite",
+                  "name" : "DeeplyNestedSuite",
+                  "nestedSuites" : [
+
+                  ],
+                  "tests" : [
+                    {
+                      "durationMs" : 17.81916618347168,
+                      "message" : "Deeply nested failure: result was 0.0",
+                      "name" : "deeplyNestedFailure()",
+                      "status" : "failure"
+                    },
+                    {
+                      "durationMs" : 12.443780899047852,
+                      "name" : "deeplyNestedSuccess()",
+                      "status" : "success"
+                    }
+                  ]
+                }
+              ],
+              "tests" : [
+                {
+                  "durationMs" : 18.955707550048828,
+                  "message" : "Inner suite failure: result was 12.0",
+                  "name" : "innerFailure()",
+                  "status" : "failure"
+                },
+                {
+                  "durationMs" : 2.6149749755859375,
+                  "name" : "innerSuccess()",
+                  "status" : "success"
+                }
+              ]
+            }
+          ],
           "tests" : [
             {
               "durationMs" : 133.53776931762695,
@@ -136,7 +230,11 @@
           ]
         },
         {
+          "fullPath" : "XCTestTests",
           "name" : "XCTestTests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 12.345075607299805,
@@ -337,6 +435,9 @@
         }
       ],
       "name" : "XcodeprojExampleFramework.framework",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]
@@ -486,6 +587,9 @@
         }
       ],
       "name" : "XcodeprojExampleTests.xctest",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]

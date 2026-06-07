@@ -11,6 +11,9 @@
 
       ],
       "name" : "Calculator",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]
@@ -330,9 +333,21 @@
         }
       ],
       "name" : "ExamplesTests",
+      "rootLevelTests" : [
+        {
+          "durationMs" : 25.02584457397461,
+          "message" : "Expected 5.0 but got 6.0",
+          "name" : "rootLevelFailure()",
+          "status" : "failure"
+        }
+      ],
       "suites" : [
         {
+          "fullPath" : "ExampleSUITests",
           "name" : "ExampleSUITests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 18.293142318725586,
@@ -349,7 +364,39 @@
           ]
         },
         {
+          "fullPath" : "OuterSuite",
           "name" : "OuterSuite",
+          "nestedSuites" : [
+            {
+              "fullPath" : "OuterSuite \/ InnerSuite",
+              "name" : "InnerSuite",
+              "nestedSuites" : [
+                {
+                  "fullPath" : "OuterSuite \/ InnerSuite \/ DeeplyNestedSuite",
+                  "name" : "DeeplyNestedSuite",
+                  "nestedSuites" : [
+
+                  ],
+                  "tests" : [
+                    {
+                      "durationMs" : 3.5970211029052734,
+                      "message" : "Deeply nested failure: result was 0.0",
+                      "name" : "deeplyNestedFailure()",
+                      "status" : "failure"
+                    }
+                  ]
+                }
+              ],
+              "tests" : [
+                {
+                  "durationMs" : 7.421016693115234,
+                  "message" : "Inner suite failure: result was 12.0",
+                  "name" : "innerFailure()",
+                  "status" : "failure"
+                }
+              ]
+            }
+          ],
           "tests" : [
             {
               "durationMs" : 20.42412757873535,
@@ -360,7 +407,11 @@
           ]
         },
         {
+          "fullPath" : "XCTestTests",
           "name" : "XCTestTests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 8.102893829345703,
@@ -383,6 +434,9 @@
 
       ],
       "name" : "StringUtils",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]

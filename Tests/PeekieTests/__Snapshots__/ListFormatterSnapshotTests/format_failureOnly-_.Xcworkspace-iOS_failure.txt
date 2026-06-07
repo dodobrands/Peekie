@@ -1,10 +1,19 @@
-ExampleSUITests
+XcodeprojExample.app / (no suite)
+❌ rootLevelFailure() (Expected 5.0 but got 6.0)
+
+XcodeprojExample.app / ExampleSUITests
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
 
-OuterSuite
+XcodeprojExample.app / OuterSuite
 ❌ outerFailure() (Outer suite failure: result was 200.0)
 
-XCTestTests
+XcodeprojExample.app / OuterSuite / InnerSuite
+❌ innerFailure() (Inner suite failure: result was 12.0)
+
+XcodeprojExample.app / OuterSuite / InnerSuite / DeeplyNestedSuite
+❌ deeplyNestedFailure() (Deeply nested failure: result was 0.0)
+
+XcodeprojExample.app / XCTestTests
 ❌ test_failure() (Expected 5.0 but got 6.0)
 ❌ test_throwing() (XCTestTests.swift:77: failed: caught error: "divisionByZero")

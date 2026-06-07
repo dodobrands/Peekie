@@ -43,6 +43,10 @@ struct SonarFormatterSnapshotTests {
 
     // MARK: Private
 
+    private static func flattenSuites(_ suite: Report.Module.Suite) -> [Report.Module.Suite] {
+        [suite] + suite.nestedSuites.flatMap { flattenSuites($0) }
+    }
+
     // MARK: - Helpers
 
     private func createTestDirectory(for report: Report, slug: String) throws -> URL {
@@ -57,10 +61,15 @@ struct SonarFormatterSnapshotTests {
         try FileManager.default.createDirectory(at: testDir, withIntermediateDirectories: true)
 
         // Generate mock Swift test files based on test suite names from the report
-        // Only include files that have tests (skip coverage-only files)
+        // Only include files that have tests (skip coverage-only files). Walk
+        // the full suite tree so nested suites (e.g. `InnerSuite` inside
+        // `OuterSuite`) also get a backing file for path resolution.
         let testSuites = Set(
             report.modules.flatMap {
-                $0.suites.filter { $0.repeatableTests.isEmpty == false }.map(\.name)
+                $0.suites
+                    .flatMap { Self.flattenSuites($0) }
+                    .filter { $0.repeatableTests.isEmpty == false }
+                    .map(\.name)
             }
         )
 

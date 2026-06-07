@@ -11,6 +11,9 @@
 
       ],
       "name" : "Calculator",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]
@@ -330,9 +333,61 @@
         }
       ],
       "name" : "ExamplesTests",
+      "rootLevelTests" : [
+        {
+          "durationMs" : 5.936861038208008,
+          "name" : "2 + 3 = 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 6.15382194519043,
+          "name" : "array[0] is nil?",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 6.681203842163086,
+          "name" : "divide(10, 2) \/ returns 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 6.836891174316406,
+          "name" : "root level with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 39.57366943359375,
+          "name" : "rootLevelAsync()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 9.5062255859375,
+          "message" : "Expected 5.0 but got 6.0",
+          "name" : "rootLevelFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 11.216163635253906,
+          "name" : "rootLevelSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 12.542247772216797,
+          "name" : "success 🎯",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 12.524127960205078,
+          "name" : "сложение работает",
+          "status" : "success"
+        }
+      ],
       "suites" : [
         {
+          "fullPath" : "ExampleSUITests",
           "name" : "ExampleSUITests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 37.470102310180664,
@@ -393,7 +448,49 @@
           ]
         },
         {
+          "fullPath" : "OuterSuite",
           "name" : "OuterSuite",
+          "nestedSuites" : [
+            {
+              "fullPath" : "OuterSuite \/ InnerSuite",
+              "name" : "InnerSuite",
+              "nestedSuites" : [
+                {
+                  "fullPath" : "OuterSuite \/ InnerSuite \/ DeeplyNestedSuite",
+                  "name" : "DeeplyNestedSuite",
+                  "nestedSuites" : [
+
+                  ],
+                  "tests" : [
+                    {
+                      "durationMs" : 2.3550987243652344,
+                      "message" : "Deeply nested failure: result was 0.0",
+                      "name" : "deeplyNestedFailure()",
+                      "status" : "failure"
+                    },
+                    {
+                      "durationMs" : 2.6962757110595703,
+                      "name" : "deeplyNestedSuccess()",
+                      "status" : "success"
+                    }
+                  ]
+                }
+              ],
+              "tests" : [
+                {
+                  "durationMs" : 4.83393669128418,
+                  "message" : "Inner suite failure: result was 12.0",
+                  "name" : "innerFailure()",
+                  "status" : "failure"
+                },
+                {
+                  "durationMs" : 5.117893218994141,
+                  "name" : "innerSuccess()",
+                  "status" : "success"
+                }
+              ]
+            }
+          ],
           "tests" : [
             {
               "durationMs" : 4.732370376586914,
@@ -414,7 +511,11 @@
           ]
         },
         {
+          "fullPath" : "XCTestTests",
           "name" : "XCTestTests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 13.998031616210938,
@@ -485,6 +586,9 @@
 
       ],
       "name" : "StringUtils",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]

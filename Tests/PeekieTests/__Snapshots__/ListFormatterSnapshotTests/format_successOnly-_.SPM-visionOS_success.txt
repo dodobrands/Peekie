@@ -1,13 +1,29 @@
-ExampleSUITests
+ExamplesTests / (no suite)
+✅ 2 + 3 = 5
+✅ array[0] is nil?
+✅ divide(10, 2) / returns 5
+✅ root level with spaces in name
+✅ rootLevelAsync()
+✅ rootLevelSuccess()
+✅ success 🎯
+✅ сложение работает
+
+ExamplesTests / ExampleSUITests
 ✅ async()
 ✅ success()
 ✅ withAttachment()
 
-OuterSuite
+ExamplesTests / OuterSuite
 ✅ outer with spaces in name
 ✅ outerSuccess()
 
-XCTestTests
+ExamplesTests / OuterSuite / InnerSuite
+✅ innerSuccess()
+
+ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
+✅ deeplyNestedSuccess()
+
+ExamplesTests / XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
 ✅ test_performance()
