@@ -18,6 +18,15 @@
           - name: "TextProcessor.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 13
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 13
               - message: "Some warning from StringUtils"
               - type: IssueType.swiftCompilerError
       - name: "XcodeprojExampleFramework.framework"
@@ -46,6 +55,15 @@
           - name: "Calculator.swift"
           ▿ warnings: 1 element
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 17
+                  ▿ endLine: Optional<Int>
+                    - some: 7
+                  ▿ startColumn: Optional<Int>
+                    - some: 17
+                  - startLine: 7
               - message: "Some warning from Calculator"
               - type: IssueType.swiftCompilerError
         ▿ File
@@ -78,15 +96,51 @@
           - name: "XCTestTests.swift"
           ▿ warnings: 4 elements
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 102
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 102
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 25
+                  ▿ endLine: Optional<Int>
+                    - some: 50
+                  ▿ startColumn: Optional<Int>
+                    - some: 25
+                  - startLine: 50
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 32
+                  ▿ endLine: Optional<Int>
+                    - some: 53
+                  ▿ startColumn: Optional<Int>
+                    - some: 32
+                  - startLine: 53
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 36
+                  ▿ endLine: Optional<Int>
+                    - some: 64
+                  ▿ startColumn: Optional<Int>
+                    - some: 36
+                  - startLine: 64
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
       - name: "XcodeprojExampleTests"
@@ -1057,12 +1111,39 @@
           - name: "SwiftTestingTests.swift"
           ▿ warnings: 3 elements
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 98
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 98
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 25
+                  ▿ endLine: Optional<Int>
+                    - some: 72
+                  ▿ startColumn: Optional<Int>
+                    - some: 25
+                  - startLine: 72
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 32
+                  ▿ endLine: Optional<Int>
+                    - some: 75
+                  ▿ startColumn: Optional<Int>
+                    - some: 32
+                  - startLine: 75
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
         ▿ File
@@ -1074,15 +1155,51 @@
           - name: "XCTestTests.swift"
           ▿ warnings: 4 elements
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 9
+                  ▿ endLine: Optional<Int>
+                    - some: 102
+                  ▿ startColumn: Optional<Int>
+                    - some: 9
+                  - startLine: 102
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 25
+                  ▿ endLine: Optional<Int>
+                    - some: 50
+                  ▿ startColumn: Optional<Int>
+                    - some: 25
+                  - startLine: 50
               - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 32
+                  ▿ endLine: Optional<Int>
+                    - some: 53
+                  ▿ startColumn: Optional<Int>
+                    - some: 32
+                  - startLine: 53
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
             ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 36
+                  ▿ endLine: Optional<Int>
+                    - some: 64
+                  ▿ startColumn: Optional<Int>
+                    - some: 36
+                  - startLine: 64
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
       - name: "XcodeprojExampleTests.xctest"
