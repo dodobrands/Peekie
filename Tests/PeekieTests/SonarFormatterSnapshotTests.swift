@@ -18,8 +18,13 @@ struct SonarFormatterSnapshotTests {
         }
         let report = try await Report(xcresultPath: reportPath)
 
-        // Create temporary test directory with mock test files
-        let testsPath = try createTestDirectory(for: report, functionName: #function)
+        // Create temporary test directory with mock test files.
+        // Include `fileName` in the path so parallel parameterized cases don't share
+        // (and thus race-delete) the same directory.
+        let testsPath = try createTestDirectory(
+            for: report,
+            slug: "\(#function)-\(snapshotName(from: fileName))"
+        )
         defer {
             try? FileManager.default.removeItem(at: testsPath)
         }
@@ -38,10 +43,10 @@ struct SonarFormatterSnapshotTests {
 
     // MARK: - Helpers
 
-    private func createTestDirectory(for report: Report, functionName: String) throws -> URL {
-        // Use function name in temporary directory for stable snapshot paths per test
+    private func createTestDirectory(for report: Report, slug: String) throws -> URL {
+        // Use slug (function + fixture) in temporary directory for stable snapshot paths per test
         let tempDir = FileManager.default.temporaryDirectory
-        let testDir = tempDir.appendingPathComponent("PeekieSonarTests-\(functionName)")
+        let testDir = tempDir.appendingPathComponent("PeekieSonarTests-\(slug)")
 
         // Remove existing directory if present to ensure clean state
         if FileManager.default.fileExists(atPath: testDir.path) {
