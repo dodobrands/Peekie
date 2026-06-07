@@ -1,0 +1,20 @@
+{
+  "name": "peekie",
+  "owner": {
+    "name": "Aleksey Berezka"
+  },
+  "metadata": {
+    "description": "Agent skill for the peekie CLI — parse Xcode .xcresult bundles",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "peekie",
+      "source": "./agent",
+      "description": "Teaches the agent when and how to reach for the peekie CLI (tests/warnings/errors/coverage subcommands)",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["xcresult", "xcode", "ci", "test-results", "coverage", "warnings", "swift"]
+    }
+  ]
+}
