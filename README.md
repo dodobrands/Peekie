@@ -117,7 +117,28 @@ peekie coverage Tests.xcresult --format list
 
 Peekie is intentionally shaped to be reachable by LLM coding agents. The four data-axis subcommands plus `--format json` are orthogonal so an agent can compose calls without inventing arguments.
 
-There's an official **Claude Code / Cursor skill** that teaches the agent when to reach for Peekie and which subcommand to use — see [#178](https://github.com/dodobrands/Peekie/issues/178) for status.
+This repo also ships as a **plugin marketplace**, so you can install the skill in one command.
+
+### Claude Code
+
+```bash
+/plugin marketplace add dodobrands/Peekie
+/plugin install peekie
+```
+
+### Cursor
+
+Teams / Enterprise: add as a team marketplace in settings.
+
+Individual: clone and symlink the rule into your project:
+
+```bash
+git clone https://github.com/dodobrands/Peekie.git ~/.peekie-plugin
+mkdir -p .cursor/rules
+ln -s ~/.peekie-plugin/agent/rules/peekie.mdc .cursor/rules/peekie.mdc
+```
+
+The skill lives in [`agent/`](agent/); the marketplace catalog is at [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
 
 ## Library (`PeekieSDK`)
 
