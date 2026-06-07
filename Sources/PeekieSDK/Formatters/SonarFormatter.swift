@@ -32,121 +32,59 @@ public final class SonarFormatter {
         -> String
     {
         let fsIndex = try FSIndex(path: testsPath)
+        let sonarFiles = collectFiles(report: report, fsIndex: fsIndex)
+        return try encode(TestExecutions(file: sonarFiles))
+    }
 
-        logger.debug(
-            "FSIndex created",
-            metadata: [
-                "testsPath": "\(testsPath.path)",
-                "classesCount": "\(fsIndex.classes.count)",
-            ]
-        )
+    // MARK: Private
 
-        // Group files by actual file path (multiple test suites can be in one file)
+    private func collectFiles(report: Report, fsIndex: FSIndex) -> [XMLFile] {
         var filesByPath = [String: [TestCase]]()
-        // Track paths by nodeIdentifierURL (full node identifier)
         var pathsByNode = [String: String]()
 
-        for file in report.modules.flatMap(\.suites).sorted(by: { $0.name < $1.name }) {
-            // Skip files that don't have any tests (coverage-only files)
-            guard file.repeatableTests.isEmpty == false else {
-                logger.debug(
-                    "Skipping Suite: no tests",
-                    metadata: [
-                        "suiteName": "\(file.name)",
-                        "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                    ]
-                )
+        for suite in report.modules.flatMap(\.suites).sorted(by: { $0.name < $1.name }) {
+            guard suite.repeatableTests.isEmpty == false else {
+                continue
+            }
+            guard let path = resolvePath(for: suite, fsIndex: fsIndex, cache: &pathsByNode) else {
                 continue
             }
 
-            // Extract class name from nodeIdentifierURL (lastPathComponent)
-            guard let url = URL(string: file.nodeIdentifierURL) else {
-                logger.debug(
-                    "Skipping Suite: cannot parse nodeIdentifierURL as URL",
-                    metadata: [
-                        "suiteName": "\(file.name)",
-                        "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                    ]
-                )
-                continue
-            }
-
-            let className = url.lastPathComponent
-
-            logger.debug(
-                "Looking up Suite in FSIndex",
-                metadata: [
-                    "suiteName": "\(file.name)",
-                    "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                    "className": "\(className)",
-                ]
-            )
-
-            // Check if we already have path for this nodeIdentifierURL
-            let path: String
-            if let cachedPath = pathsByNode[file.nodeIdentifierURL] {
-                path = cachedPath
-                logger.debug(
-                    "Using cached path for nodeIdentifierURL",
-                    metadata: [
-                        "suiteName": "\(file.name)",
-                        "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                        "path": "\(path)",
-                    ]
-                )
-            } else if let foundPath = fsIndex.classes[className] {
-                path = foundPath
-                pathsByNode[file.nodeIdentifierURL] = path
-                logger.debug(
-                    "Found Suite in FSIndex",
-                    metadata: [
-                        "suiteName": "\(file.name)",
-                        "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                        "className": "\(className)",
-                        "path": "\(path)",
-                    ]
-                )
-            } else {
-                logger.debug(
-                    "Skipping Suite: not found in FSIndex",
-                    metadata: [
-                        "suiteName": "\(file.name)",
-                        "nodeIdentifierURL": "\(file.nodeIdentifierURL)",
-                        "className": "\(className)",
-                        "availableClasses":
-                            "\(Array(fsIndex.classes.keys.sorted().prefix(10)).joined(separator: ", "))",
-                    ]
-                )
-                continue
-            }
-
-            // Extract test cases from this file
-            let testCases = TestCase.cases(from: file)
-
-            // Merge test cases by file path
-            if filesByPath[path] != nil {
-                filesByPath[path]?.append(contentsOf: testCases)
-            } else {
-                filesByPath[path] = testCases
-            }
+            let testCases = TestCase.cases(from: suite)
+            filesByPath[path, default: []].append(contentsOf: testCases)
         }
 
-        // Create file entries from grouped test cases
-        let sonarFiles = filesByPath.map { path, testCases in
-            XMLFile(path: path, testCase: testCases)
-        }
-        .sorted { $0.path < $1.path }
-        let dto = TestExecutions(file: sonarFiles)
+        return filesByPath
+            .map { path, testCases in XMLFile(path: path, testCase: testCases) }
+            .sorted { $0.path < $1.path }
+    }
 
+    private func resolvePath(
+        for suite: Report.Module.Suite,
+        fsIndex: FSIndex,
+        cache: inout [String: String]
+    )
+        -> String?
+    {
+        if let cached = cache[suite.nodeIdentifierURL] {
+            return cached
+        }
+        guard let url = URL(string: suite.nodeIdentifierURL),
+              let found = fsIndex.classes[url.lastPathComponent]
+        else {
+            return nil
+        }
+
+        cache[suite.nodeIdentifierURL] = found
+        return found
+    }
+
+    private func encode(_ dto: TestExecutions) throws -> String {
         let encoder = XMLEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try encoder.encode(dto, withRootKey: "testExecutions")
         return String(decoding: data, as: UTF8.self)
     }
-
-    // MARK: Private
-
-    private let logger: Logger = .init(label: "com.peekie.formatter.sonar")
 }
 
 // MARK: - TestExecutions

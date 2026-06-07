@@ -77,7 +77,7 @@ public final class ListFormatter {
 
     // MARK: Private
 
-    private let logger: Logger = .init(label: "com.peekie.formatter")
+    private let logger = Logger(label: "com.peekie.formatter")
 }
 
 extension Report.Module.Suite {

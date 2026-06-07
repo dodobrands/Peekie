@@ -2,7 +2,7 @@ import Foundation
 import Logging
 
 extension TestResultsDTO {
-    private static let logger: Logger = .init(label: "com.peekie.dto")
+    private static let logger = Logger(label: "com.peekie.dto")
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(
             "xcrun",
@@ -38,7 +38,7 @@ extension TestResultsDTO {
 }
 
 extension CoverageReportDTO {
-    private static let logger: Logger = .init(label: "com.peekie.dto")
+    private static let logger = Logger(label: "com.peekie.dto")
 
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(
@@ -69,7 +69,7 @@ extension CoverageReportDTO {
 }
 
 extension BuildResultsDTO {
-    private static let logger: Logger = .init(label: "com.peekie.dto")
+    private static let logger = Logger(label: "com.peekie.dto")
 
     init(from xcresultPath: URL) async throws {
         let output = try await Shell.execute(

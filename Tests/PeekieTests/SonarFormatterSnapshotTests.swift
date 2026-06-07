@@ -7,7 +7,7 @@ import Testing
 struct SonarFormatterSnapshotTests {
     // MARK: Internal
 
-    let formatter: SonarFormatter = .init()
+    let formatter = SonarFormatter()
 
     @Test(arguments: Constants.testsReportFileNames)
     func sonarFormat_allStatuses(_ fileName: String) async throws {

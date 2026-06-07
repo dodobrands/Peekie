@@ -15,7 +15,7 @@ public struct Tests: AsyncParsableCommand {
         case sonar
     }
 
-    public static let configuration: CommandConfiguration = .init(
+    public static let configuration = CommandConfiguration(
         commandName: "tests",
         abstract: "Print test results from an .xcresult bundle"
     )
@@ -24,7 +24,7 @@ public struct Tests: AsyncParsableCommand {
     public var xcresultPath: String
 
     @Option(help: "Output format: json, list, or sonar.")
-    public var format: Format = .list
+    public var format = Format.list
 
     @Option(help: "Comma-separated test statuses to include (success,failure,skipped,...).")
     public var include: String = Report.Module.Suite.RepeatableTest.Test.Status.allCases
@@ -32,13 +32,13 @@ public struct Tests: AsyncParsableCommand {
         .joined(separator: ",")
 
     @Option(help: "Include device information in test names (matters for matrix runs).")
-    public var includeDeviceDetails: Bool = false
+    public var includeDeviceDetails = false
 
     @Option(help: "Path to test sources (required with --format sonar).")
     public var testsPath: String?
 
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
-    public var verbose: Bool = false
+    public var verbose = false
 
     public func run() async throws {
         LoggingSetup.setup(verbose: verbose)

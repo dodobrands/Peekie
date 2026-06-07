@@ -199,8 +199,8 @@ type_name:
     error: 80
 
 function_body_length:
-  warning: 100
-  error: 150
+  warning: 50
+  error: 75
 
 function_parameter_count:
   warning: 6
@@ -215,17 +215,17 @@ nesting:
   function_level: 5
 
 type_body_length:
-  warning: 500
-  error: 700
+  warning: 250
+  error: 350
 
 file_length:
-  warning: 800
-  error: 1200
+  warning: 400
+  error: 600
   ignore_comment_only_lines: true
 
 closure_body_length:
-  warning: 40
-  error: 80
+  warning: 20
+  error: 40
 
 enum_case_associated_values_count:
   warning: 5

@@ -26,7 +26,7 @@ public struct Peekie: AsyncParsableCommand {
 
     // MARK: Public
 
-    public static let configuration: CommandConfiguration = .init(
+    public static let configuration = CommandConfiguration(
         commandName: "peekie",
         abstract: "Parse and format Xcode .xcresult files",
         subcommands: [Tests.self, Warnings.self, Errors.self, Coverage.self]

@@ -14,7 +14,7 @@ public struct Errors: AsyncParsableCommand {
         case list
     }
 
-    public static let configuration: CommandConfiguration = .init(
+    public static let configuration = CommandConfiguration(
         commandName: "errors",
         abstract: "Print build errors from an .xcresult bundle"
     )
@@ -23,10 +23,10 @@ public struct Errors: AsyncParsableCommand {
     public var xcresultPath: String
 
     @Option(help: "Output format: json or list.")
-    public var format: Format = .json
+    public var format = Format.json
 
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
-    public var verbose: Bool = false
+    public var verbose = false
 
     public func run() async throws {
         LoggingSetup.setup(verbose: verbose)

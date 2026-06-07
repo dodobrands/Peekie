@@ -50,7 +50,7 @@ public final class JSONFormatter {
 
     // MARK: Private
 
-    private let logger: Logger = .init(label: "com.peekie.formatter.json")
+    private let logger = Logger(label: "com.peekie.formatter.json")
 }
 
 // MARK: - JSONReport

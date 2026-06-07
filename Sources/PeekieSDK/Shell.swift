@@ -59,7 +59,7 @@ enum Shell {
 
     // MARK: Private
 
-    private static let logger: Logger = .init(label: "com.peekie.shell")
+    private static let logger = Logger(label: "com.peekie.shell")
 }
 
 // MARK: - ShellError
