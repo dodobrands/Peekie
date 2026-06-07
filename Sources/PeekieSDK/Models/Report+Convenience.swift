@@ -42,7 +42,7 @@ extension Report {
             errorsByFileName: errorsByFileName
         )
 
-        let suitesByModule = Self.suitesByCanonicalModule(
+        let testNodesByModule = Self.testNodesByCanonicalModule(
             testResultsDTO: testResultsDTO,
             coverageReportDTO: coverageReportDTO
         )
@@ -50,7 +50,7 @@ extension Report {
         self.files = files
         modules = Self.buildModules(
             files: files,
-            suitesByModule: suitesByModule,
+            testNodesByModule: testNodesByModule,
             coverageReportDTO: coverageReportDTO
         )
         coverage = Self.computeTotalCoverage(
@@ -76,25 +76,30 @@ extension Report {
         return (warnings, errors)
     }
 
-    /// Build suites grouped by their test bundle name; alias test-bundle names to
-    /// canonical coverage-target names so they project onto the same Module.
-    private static func suitesByCanonicalModule(
+    /// Build bundle test nodes (root-level tests + top-level suite trees) grouped
+    /// by their test bundle name; alias test-bundle names to canonical
+    /// coverage-target names so they project onto the same Module.
+    private static func testNodesByCanonicalModule(
         testResultsDTO: TestResultsDTO?,
         coverageReportDTO: CoverageReportDTO?
     )
-        -> [String: [Module.Suite]]
+        -> [String: BundleTestNodes]
     {
-        let suitesByBundle: [String: [Module.Suite]] =
+        let nodesByBundle: [String: BundleTestNodes] =
             testResultsDTO.map(buildSuites(from:)) ?? [:]
         let coverageTargetNames = Set(coverageReportDTO?.targets.map(\.name) ?? [])
         let aliasing = aliasTestBundlesToCoverageTargets(
-            testBundleNames: Set(suitesByBundle.keys),
+            testBundleNames: Set(nodesByBundle.keys),
             coverageTargetNames: coverageTargetNames
         )
-        var result = [String: [Module.Suite]]()
-        for (bundle, suites) in suitesByBundle {
+        var result = [String: BundleTestNodes]()
+        for (bundle, nodes) in nodesByBundle {
             let canonical = aliasing[bundle] ?? bundle
-            result[canonical, default: []].append(contentsOf: suites)
+            let existing = result[canonical] ?? BundleTestNodes(rootLevelTests: [], suites: [])
+            result[canonical] = BundleTestNodes(
+                rootLevelTests: existing.rootLevelTests.union(nodes.rootLevelTests),
+                suites: existing.suites + nodes.suites
+            )
         }
         return result
     }

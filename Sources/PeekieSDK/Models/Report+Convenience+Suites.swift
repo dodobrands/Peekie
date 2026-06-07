@@ -3,15 +3,24 @@ import Foundation
 extension Report {
     // MARK: - Suite parsing
 
-    /// Walks `testResultsDTO` and produces a `[testBundleName: [Suite]]` mapping. The
-    /// bundle name comes straight from the unit test bundle node — aliasing to a
-    /// coverage-target name (e.g. `PeekieTests` → `Peekie`) happens at the call site.
+    /// Result of walking one `Unit test bundle` node: any `@Test`s declared at the
+    /// bundle root (no enclosing `@Suite`), plus the top-level suites and their
+    /// nested-suite trees.
+    struct BundleTestNodes {
+        var rootLevelTests: Set<Module.Suite.RepeatableTest>
+        var suites: [Module.Suite]
+    }
+
+    /// Walks `testResultsDTO` and produces a `[testBundleName: BundleTestNodes]`
+    /// mapping. The bundle name comes straight from the unit test bundle node —
+    /// aliasing to a coverage-target name (e.g. `PeekieTests` → `Peekie`) happens
+    /// at the call site.
     static func buildSuites(
         from testResultsDTO: TestResultsDTO
     )
-        -> [String: [Module.Suite]]
+        -> [String: BundleTestNodes]
     {
-        var byBundle = [String: [Module.Suite]]()
+        var byBundle = [String: BundleTestNodes]()
 
         for rootNode in testResultsDTO.testNodes where rootNode.nodeType == .testPlan {
             guard let unitTestBundles = rootNode.children else {
@@ -20,57 +29,109 @@ extension Report {
 
             for testNode in unitTestBundles where testNode.nodeType == .unitTestBundle {
                 let bundleName = testNode.name
+                let bundleChildren = (testNode.children ?? []).filter { $0.isMetadata == false }
+
+                var rootLevelTests = Set<Module.Suite.RepeatableTest>()
                 var suites = [Module.Suite]()
-                for testSuite in testNode.children ?? [] where testSuite.nodeType == .testSuite {
-                    guard let nodeIdentifierURL = testSuite.nodeIdentifierURL else {
+
+                for child in bundleChildren {
+                    switch child.nodeType {
+                    case .testCase:
+                        // Root-level @Test function — no enclosing @Suite.
+                        rootLevelTests.insert(buildRepeatableTest(from: child))
+
+                    case .testSuite:
+                        suites.append(buildSuite(from: child, parentPath: nil))
+
+                    default:
                         continue
                     }
-
-                    let suite = buildSuite(
-                        from: testSuite,
-                        nodeIdentifierURL: nodeIdentifierURL
-                    )
-                    suites.append(suite)
                 }
-                byBundle[bundleName, default: []].append(contentsOf: suites)
+
+                let existing = byBundle[bundleName] ?? BundleTestNodes(
+                    rootLevelTests: [],
+                    suites: []
+                )
+                byBundle[bundleName] = BundleTestNodes(
+                    rootLevelTests: existing.rootLevelTests.union(rootLevelTests),
+                    suites: existing.suites + suites
+                )
             }
         }
 
         return byBundle
     }
 
+    /// Recursively builds a `Suite` from a `Test Suite` node. Walks both nested
+    /// `Test Suite` children (becoming `nestedSuites`) and `Test Case` children
+    /// (becoming `repeatableTests`). `parentPath` is the `" / "`-joined chain of
+    /// ancestor suite names from the bundle root; pass `nil` for top-level suites.
     private static func buildSuite(
         from testSuite: TestResultsDTO.TestNode,
-        nodeIdentifierURL: String
+        parentPath: String?
     )
         -> Module.Suite
     {
+        let fullPath = parentPath.map { "\($0) / \(testSuite.name)" } ?? testSuite.name
+
+        // Edge case: nested `Test Suite` nodes can legitimately carry a `null`
+        // `nodeIdentifierURL` in some xcresult outputs. We synthesize one from the
+        // parent's URL when available; otherwise fall back to a synthetic
+        // `test://` URL keyed on `fullPath` so the suite is still addressable
+        // downstream (e.g. for SonarFormatter caching) without dropping it.
+        let nodeIdentifierURL = testSuite.nodeIdentifierURL
+            ?? "test://com.apple.xcode/_synthesized/\(fullPath)"
+
         var repeatableTests = Set<Module.Suite.RepeatableTest>()
-        let filteredCases = (testSuite.children ?? []).filter { $0.isMetadata == false }
-        for testCase in filteredCases where testCase.nodeType == .testCase {
-            var repeatable = Module.Suite.RepeatableTest(name: testCase.name, tests: [])
+        var nestedSuites = [Module.Suite]()
 
-            let filteredChildren = (testCase.children ?? []).filter { $0.isMetadata == false }
-            for child in filteredChildren {
-                processTestNode(
-                    child,
-                    path: [],
-                    testCase: testCase,
-                    into: &repeatable
-                )
-            }
+        let filteredChildren = (testSuite.children ?? []).filter { $0.isMetadata == false }
+        for child in filteredChildren {
+            switch child.nodeType {
+            case .testCase:
+                repeatableTests.insert(buildRepeatableTest(from: child))
 
-            if repeatable.tests.isEmpty {
-                repeatable.tests.append(.init(from: testCase))
+            case .testSuite:
+                nestedSuites.append(buildSuite(from: child, parentPath: fullPath))
+
+            default:
+                continue
             }
-            repeatableTests.insert(repeatable)
         }
 
         return Module.Suite(
             name: testSuite.name,
             nodeIdentifierURL: nodeIdentifierURL,
-            repeatableTests: repeatableTests
+            fullPath: fullPath,
+            repeatableTests: repeatableTests,
+            nestedSuites: nestedSuites
         )
+    }
+
+    /// Converts a `Test Case` node into a `RepeatableTest`. Used both by top-level
+    /// bundle walking (root-level `@Test` cases) and by suite walking (cases inside
+    /// `@Suite` types and `XCTestCase` subclasses).
+    private static func buildRepeatableTest(
+        from testCase: TestResultsDTO.TestNode
+    )
+        -> Module.Suite.RepeatableTest
+    {
+        var repeatable = Module.Suite.RepeatableTest(name: testCase.name, tests: [])
+
+        let filteredChildren = (testCase.children ?? []).filter { $0.isMetadata == false }
+        for child in filteredChildren {
+            processTestNode(
+                child,
+                path: [],
+                testCase: testCase,
+                into: &repeatable
+            )
+        }
+
+        if repeatable.tests.isEmpty {
+            repeatable.tests.append(.init(from: testCase))
+        }
+        return repeatable
     }
 
     private static func processTestNode(
@@ -215,7 +276,7 @@ extension Report {
 
     static func buildModules(
         files: [File],
-        suitesByModule: [String: [Module.Suite]],
+        testNodesByModule: [String: BundleTestNodes],
         coverageReportDTO: CoverageReportDTO?
     )
         -> [Module]
@@ -224,32 +285,54 @@ extension Report {
         if let coverageReportDTO {
             moduleNames.formUnion(coverageReportDTO.targets.map(\.name))
         }
-        moduleNames.formUnion(suitesByModule.keys)
+        moduleNames.formUnion(testNodesByModule.keys)
 
         return moduleNames.sorted().map { name in
-            let moduleFiles = files.filter { $0.module == name }
-
-            let moduleCoverage: Coverage? =
-                if let target = coverageReportDTO?.targets
-                    .first(where: { $0.name == name }),
-                    target.executableLines > 0
-                {
-                    Coverage(
-                        coveredLines: target.coveredLines,
-                        totalLines: target.executableLines,
-                        coverage: target.lineCoverage
-                    )
-                } else {
-                    nil
-                }
-
-            return Module(
+            buildModule(
                 name: name,
-                files: moduleFiles,
-                coverage: moduleCoverage,
-                suites: suitesByModule[name] ?? []
+                files: files,
+                testNodes: testNodesByModule[name],
+                coverageReportDTO: coverageReportDTO
             )
         }
+    }
+
+    private static func buildModule(
+        name: String,
+        files: [File],
+        testNodes: BundleTestNodes?,
+        coverageReportDTO: CoverageReportDTO?
+    )
+        -> Module
+    {
+        let moduleFiles = files.filter { $0.module == name }
+        let moduleCoverage = moduleCoverage(for: name, coverageReportDTO: coverageReportDTO)
+        return Module(
+            name: name,
+            files: moduleFiles,
+            coverage: moduleCoverage,
+            rootLevelTests: testNodes?.rootLevelTests ?? [],
+            suites: testNodes?.suites ?? []
+        )
+    }
+
+    private static func moduleCoverage(
+        for name: String,
+        coverageReportDTO: CoverageReportDTO?
+    )
+        -> Coverage?
+    {
+        guard let target = coverageReportDTO?.targets.first(where: { $0.name == name }),
+              target.executableLines > 0
+        else {
+            return nil
+        }
+
+        return Coverage(
+            coveredLines: target.coveredLines,
+            totalLines: target.executableLines,
+            coverage: target.lineCoverage
+        )
     }
 
     // MARK: - Total coverage
