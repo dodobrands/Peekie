@@ -265,6 +265,7 @@ public extension Report.File {
             case swiftCompilerError
             case deprecatedDeclaration
             case noUsage
+            case actorIsolatedCall
             case unknown(String)
         }
 
@@ -291,6 +292,8 @@ public extension Report.File.Issue.IssueType {
             self = .deprecatedDeclaration
         case "No-usage":
             self = .noUsage
+        case "ActorIsolatedCall":
+            self = .actorIsolatedCall
         default:
             self = .unknown(rawValue)
         }
@@ -308,6 +311,8 @@ public extension Report.File.Issue.IssueType {
             "DeprecatedDeclaration"
         case .noUsage:
             "No-usage"
+        case .actorIsolatedCall:
+            "ActorIsolatedCall"
         case .unknown(let raw):
             raw
         }

@@ -5,6 +5,7 @@ ExamplesTests / (no suite)
 ✅ root level with spaces in name
 ✅ rootLevelAsync()
 ✅ rootLevelSuccess()
+✅ rootLevelWithAttachment()
 ✅ success 🎯
 ✅ сложение работает
 
@@ -12,6 +13,7 @@ ExamplesTests / ExampleSUITests
 ✅ async()
 ✅ success()
 ✅ withAttachment()
+✅ withMultipleAttachments()
 
 ExamplesTests / OuterSuite
 ✅ outer with spaces in name
@@ -22,11 +24,14 @@ ExamplesTests / OuterSuite / InnerSuite
 
 ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
 ✅ deeplyNestedSuccess()
+✅ deeplyNestedWithAttachment()
 
 ExamplesTests / XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
+✅ test_attachmentInsideActivity()
 ✅ test_performance()
 ✅ test_success()
 ✅ test_withAttachment()
+✅ test_withMultipleAttachments()
 ✅ test_withWarning()
