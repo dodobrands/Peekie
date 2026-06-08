@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.7372881355932204,
+  "coverage" : 0.7453798767967146,
   "modules" : [
     {
       "coverage" : {
@@ -73,61 +73,61 @@
       "name" : "XcodeprojExample.app",
       "tests" : [
         {
-          "durationMs" : 125.82898139953613,
+          "durationMs" : 27.76312828063965,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 129.04810905456543,
+          "durationMs" : 84.30624008178711,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 145.80106735229492,
+          "durationMs" : 35.04800796508789,
           "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 50.1561164855957,
+          "durationMs" : 10.71929931640625,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 65.673828125,
+          "durationMs" : 21.192073822021484,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 97.98121452331543,
+          "durationMs" : 25.5129337310791,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 168.53809356689453,
+          "durationMs" : 1595.7419872283936,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 5.807995796203613,
+          "durationMs" : 32.8679084777832,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 6.115078926086426,
+          "durationMs" : 5.862951278686523,
           "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 46.15211486816406,
+          "durationMs" : 37.07695007324219,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
           "status" : "failure"
@@ -275,16 +275,16 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 318,
-        "percentage" : 0.9665653495440729,
-        "totalLines" : 329
+        "coveredLines" : 333,
+        "percentage" : 0.9680232558139535,
+        "totalLines" : 344
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 168,
-            "percentage" : 0.9438202247191011,
-            "totalLines" : 178
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
           },
           "errors" : [
 
@@ -314,9 +314,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -324,9 +324,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -334,9 +334,9 @@
             {
               "location" : {
                 "endColumn" : 21,
-                "endLine" : 155,
+                "endLine" : 183,
                 "startColumn" : 21,
-                "startLine" : 155
+                "startLine" : 183
               },
               "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -344,9 +344,9 @@
             {
               "location" : {
                 "endColumn" : 28,
-                "endLine" : 157,
+                "endLine" : 185,
                 "startColumn" : 28,
-                "startLine" : 157
+                "startLine" : 185
               },
               "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -355,9 +355,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 150,
-            "percentage" : 0.9933774834437086,
-            "totalLines" : 151
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
           },
           "errors" : [
 
@@ -397,9 +397,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -407,9 +407,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"

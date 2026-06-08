@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6469500924214417,
+  "coverage" : 0.6564748201438849,
   "modules" : [
     {
       "coverage" : {
@@ -20,9 +20,9 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 334,
-        "percentage" : 0.767816091954023,
-        "totalLines" : 435
+        "coveredLines" : 349,
+        "percentage" : 0.7755555555555556,
+        "totalLines" : 450
       },
       "files" : [
         {
@@ -94,9 +94,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 168,
-            "percentage" : 0.9438202247191011,
-            "totalLines" : 178
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
           },
           "errors" : [
 
@@ -106,9 +106,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -116,9 +116,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -300,9 +300,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 150,
-            "percentage" : 0.9933774834437086,
-            "totalLines" : 151
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
           },
           "errors" : [
 
@@ -322,9 +322,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -332,9 +332,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -345,7 +345,7 @@
       "name" : "ExamplesTests",
       "rootLevelTests" : [
         {
-          "durationMs" : 20.086050033569336,
+          "durationMs" : 11.227846145629883,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
@@ -360,19 +360,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 8.080720901489258,
+              "durationMs" : 10.289669036865234,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 42993.00003051758,
+              "durationMs" : 42359.999895095825,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 17.709970474243164,
+              "durationMs" : 13.167142868041992,
               "message" : "Calculator.swift:26: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -395,7 +395,7 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 1.3661384582519531,
+                      "durationMs" : 1.497030258178711,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
@@ -405,7 +405,7 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 9.620904922485352,
+                  "durationMs" : 6.946325302124023,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
@@ -415,7 +415,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 11.087894439697266,
+              "durationMs" : 10.448932647705078,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
@@ -430,19 +430,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 11.5889310836792,
+              "durationMs" : 10.20801067352295,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 14.686942100524902,
+              "durationMs" : 20.12002468109131,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 11.664032936096191,
+              "durationMs" : 4.663825035095215,
               "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"

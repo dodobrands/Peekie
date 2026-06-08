@@ -23,6 +23,8 @@ ExamplesTests / ExampleSUITests
 ❌ throwing() (Calculator.swift:26: Caught error: .divisionByZero)
 ✅ withAttachment()
 ✅ withMultipleAttachments()
+✅ withPNGAttachment()
+✅ withRawBinaryAttachment()
 
 ExamplesTests / OuterSuite
 ✅ outer with spaces in name
@@ -52,4 +54,5 @@ ExamplesTests / XCTestTests
 ❌ test_throwing() (Calculator.swift:26: failed: caught error: "divisionByZero")
 ✅ test_withAttachment()
 ✅ test_withMultipleAttachments()
+✅ test_withPNGAttachment()
 ✅ test_withWarning()
