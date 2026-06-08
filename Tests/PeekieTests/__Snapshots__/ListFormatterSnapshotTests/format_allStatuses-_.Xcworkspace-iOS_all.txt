@@ -23,6 +23,8 @@ XcodeprojExample.app / ExampleSUITests
 ❌ throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
 ✅ withAttachment()
 ✅ withMultipleAttachments()
+✅ withPNGAttachment()
+✅ withRawBinaryAttachment()
 
 XcodeprojExample.app / OuterSuite
 ✅ outer with spaces in name
@@ -52,4 +54,5 @@ XcodeprojExample.app / XCTestTests
 ❌ test_throwing() (XCTestTests.swift:77: failed: caught error: "divisionByZero")
 ✅ test_withAttachment()
 ✅ test_withMultipleAttachments()
+✅ test_withPNGAttachment()
 ✅ test_withWarning()

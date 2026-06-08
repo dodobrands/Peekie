@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6469500924214417,
+  "coverage" : 0.6564748201438849,
   "modules" : [
     {
       "coverage" : {
@@ -17,9 +17,9 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 334,
-        "percentage" : 0.767816091954023,
-        "totalLines" : 435
+        "coveredLines" : 349,
+        "percentage" : 0.7755555555555556,
+        "totalLines" : 450
       },
       "files" : [
         {
@@ -91,9 +91,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 168,
-            "percentage" : 0.9438202247191011,
-            "totalLines" : 178
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
           },
           "errors" : [
 
@@ -103,9 +103,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -113,9 +113,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -297,9 +297,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 150,
-            "percentage" : 0.9933774834437086,
-            "totalLines" : 151
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
           },
           "errors" : [
 
@@ -319,9 +319,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -329,9 +329,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -342,239 +342,254 @@
       "name" : "ExamplesTests",
       "tests" : [
         {
-          "durationMs" : 7.63702392578125,
+          "durationMs" : 11.98720932006836,
           "qualifiedName" : "ExamplesTests \/ 2 + 3 = 5",
           "status" : "success"
         },
         {
-          "durationMs" : 43.10202598571777,
+          "durationMs" : 39.44706916809082,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ async()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.820159912109375,
+          "durationMs" : 0.26297569274902344,
           "message" : "Test skipped: Disabled reason",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ disabled()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 10.876655578613281,
+          "durationMs" : 10.912895202636719,
           "message" : "Failure is expected",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 8.080720901489258,
+          "durationMs" : 10.289669036865234,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 42993.00003051758,
+          "durationMs" : 42359.999895095825,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.143186569213867,
+          "durationMs" : 10.515928268432617,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 3.2269954681396484,
+          "durationMs" : 1.0502338409423828,
           "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.7371177673339844,
+          "durationMs" : 0.6530284881591797,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
           "status" : "success"
         },
         {
-          "durationMs" : 9.615898132324219,
+          "durationMs" : 7.107973098754883,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ success()",
           "status" : "success"
         },
         {
-          "durationMs" : 17.709970474243164,
+          "durationMs" : 13.167142868041992,
           "message" : "Calculator.swift:26: Caught error: .divisionByZero",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.342266082763672,
+          "durationMs" : 10.278940200805664,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 11.666297912597656,
+          "durationMs" : 9.82213020324707,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withMultipleAttachments()",
           "status" : "success"
         },
         {
-          "durationMs" : 1.3661384582519531,
+          "durationMs" : 9.718894958496094,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withPNGAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 7.266044616699219,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withRawBinaryAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 1.497030258178711,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 6.663084030151367,
+          "durationMs" : 1.5690326690673828,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 1.409769058227539,
+          "durationMs" : 1.7158985137939453,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 9.620904922485352,
+          "durationMs" : 6.946325302124023,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 7.47990608215332,
+          "durationMs" : 2.8128623962402344,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 5.417108535766602,
+          "durationMs" : 10.30588150024414,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outer with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 11.087894439697266,
+          "durationMs" : 10.448932647705078,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 11.476993560791016,
+          "durationMs" : 9.448051452636719,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 14.583945274353027,
+          "durationMs" : 14.685988426208496,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_async()",
           "status" : "success"
         },
         {
-          "durationMs" : 55.047035217285156,
+          "durationMs" : 60.45401096343994,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_asyncWithExpectation()",
           "status" : "success"
         },
         {
-          "durationMs" : 16.804933547973633,
+          "durationMs" : 19.047021865844727,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_attachmentInsideActivity()",
           "status" : "success"
         },
         {
-          "durationMs" : 449.5849609375,
+          "durationMs" : 611.5490198135376,
           "message" : "Failure is expected",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 11.5889310836792,
+          "durationMs" : 10.20801067352295,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 14.686942100524902,
+          "durationMs" : 20.12002468109131,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.262038230895996,
+          "durationMs" : 9.331941604614258,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 261.72494888305664,
+          "durationMs" : 257.5119733810425,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_performance()",
           "status" : "success"
         },
         {
-          "durationMs" : 10.403037071228027,
+          "durationMs" : 7.902026176452637,
           "message" : "Skip message",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_skip()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 0.9999275207519531,
+          "durationMs" : 0.4019737243652344,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_success()",
           "status" : "success"
         },
         {
-          "durationMs" : 11.664032936096191,
+          "durationMs" : 4.663825035095215,
           "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 0.825047492980957,
+          "durationMs" : 0.7480382919311523,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 1.443028450012207,
+          "durationMs" : 1.1419057846069336,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withMultipleAttachments()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.9229183197021484,
+          "durationMs" : 0.6650686264038086,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withPNGAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 0.6430149078369141,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withWarning()",
           "status" : "success"
         },
         {
-          "durationMs" : 14.611005783081055,
+          "durationMs" : 11.896133422851562,
           "qualifiedName" : "ExamplesTests \/ array[0] is nil?",
           "status" : "success"
         },
         {
-          "durationMs" : 14.232873916625977,
+          "durationMs" : 11.82699203491211,
           "qualifiedName" : "ExamplesTests \/ divide(10, 2) \/ returns 5",
           "status" : "success"
         },
         {
-          "durationMs" : 14.529705047607422,
+          "durationMs" : 10.057926177978516,
           "qualifiedName" : "ExamplesTests \/ root level with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 45.5777645111084,
+          "durationMs" : 42.12617874145508,
           "qualifiedName" : "ExamplesTests \/ rootLevelAsync()",
           "status" : "success"
         },
         {
-          "durationMs" : 20.086050033569336,
+          "durationMs" : 11.227846145629883,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ rootLevelFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.038759231567383,
+          "durationMs" : 11.343002319335938,
           "qualifiedName" : "ExamplesTests \/ rootLevelSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 14.488935470581055,
+          "durationMs" : 11.182069778442383,
           "qualifiedName" : "ExamplesTests \/ rootLevelWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 6.407976150512695,
+          "durationMs" : 9.640932083129883,
           "qualifiedName" : "ExamplesTests \/ success 🎯",
           "status" : "success"
         },
         {
-          "durationMs" : 18.897056579589844,
+          "durationMs" : 11.097192764282227,
           "qualifiedName" : "ExamplesTests \/ сложение работает",
           "status" : "success"
         }
