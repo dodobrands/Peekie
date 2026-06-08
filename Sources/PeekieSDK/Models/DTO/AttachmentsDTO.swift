@@ -11,7 +11,6 @@ typealias AttachmentsDTO = [AttachmentDetails]
 // MARK: - AttachmentDetails
 
 struct AttachmentDetails: Decodable {
-    let testIdentifier: String
     let testIdentifierURL: String
     let attachments: [Entry]
 }
@@ -26,7 +25,6 @@ extension AttachmentDetails {
     struct Entry: Decodable {
         let configurationName: String?
         let deviceID: String?
-        let deviceName: String?
         let exportedFileName: String
         let isAssociatedWithFailure: Bool
         let repetitionNumber: Int?

@@ -31,6 +31,11 @@ public enum AttachmentPolicy: Sendable {
 struct AttachmentLookupKey: Hashable {
     let testIdentifierURL: String
     let repetitionNumber: Int?
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(testIdentifierURL)
+        hasher.combine(repetitionNumber)
+    }
 }
 
 extension Report {
