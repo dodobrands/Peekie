@@ -13,14 +13,28 @@ public final class JSONFormatter {
 
     // MARK: Public
 
+    /// Controls how tests are grouped in the JSON output.
+    public enum Grouping {
+        /// Default nested shape: tests are split between `rootLevelTests` and
+        /// `suites[].nestedSuites[].repeatableTests[]`.
+        case bySuite
+
+        /// Flat shape: tests collapse into a single `tests` array per module,
+        /// with `qualifiedName` strings combining module, suite path, and test name.
+        case fullyQualified
+    }
+
     /// Encodes `report` to JSON.
     /// - Parameters:
     ///   - report: The parsed report.
+    ///   - grouping: How tests are grouped per module. Defaults to `.bySuite`
+    ///     for backward compatibility.
     ///   - include: Test statuses to surface (defaults to all).
     ///   - includeDeviceDetails: When `true`, device names appear in test names
     ///     (`[iPhone 15 Pro]`). Useful for matrix runs.
     public func format(
         _ report: Report,
+        grouping: Grouping = .bySuite,
         include: [Report.Module.Suite.RepeatableTest.Test.Status] = Report.Module
             .Suite.RepeatableTest.Test.Status.allCases,
         includeDeviceDetails: Bool = false
@@ -31,20 +45,33 @@ public final class JSONFormatter {
             "Formatting report as JSON",
             metadata: [
                 "modulesCount": "\(report.modules.count)",
+                "grouping": "\(grouping)",
                 "includeStatuses": "\(include.map(\.rawValue).joined(separator: ","))",
                 "includeDeviceDetails": "\(includeDeviceDetails)",
             ]
         )
 
-        let jsonReport = JSONReport(
-            from: report,
-            include: include,
-            includeDeviceDetails: includeDeviceDetails
-        )
-
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        let data = try encoder.encode(jsonReport)
+
+        let data: Data
+        switch grouping {
+        case .bySuite:
+            let jsonReport = JSONReport(
+                from: report,
+                include: include,
+                includeDeviceDetails: includeDeviceDetails
+            )
+            data = try encoder.encode(jsonReport)
+
+        case .fullyQualified:
+            let jsonReport = JSONReportFlat(
+                from: report,
+                include: include,
+                includeDeviceDetails: includeDeviceDetails
+            )
+            data = try encoder.encode(jsonReport)
+        }
         return String(decoding: data, as: UTF8.self)
     }
 
@@ -122,6 +149,145 @@ private struct JSONModule: Encodable {
     let name: String
     let rootLevelTests: [JSONTest]
     let suites: [JSONSuite]
+}
+
+// MARK: - JSONReportFlat
+
+private struct JSONReportFlat: Encodable {
+    // MARK: Lifecycle
+
+    init(
+        from report: Report,
+        include: [Report.Module.Suite.RepeatableTest.Test.Status],
+        includeDeviceDetails: Bool
+    ) {
+        coverage = report.coverage
+        modules = report.modules
+            .sorted { $0.name < $1.name }
+            .map {
+                JSONModuleFlat(
+                    from: $0,
+                    include: include,
+                    includeDeviceDetails: includeDeviceDetails
+                )
+            }
+    }
+
+    // MARK: Internal
+
+    let coverage: Double?
+    let modules: [JSONModuleFlat]
+}
+
+// MARK: - JSONModuleFlat
+
+private struct JSONModuleFlat: Encodable {
+    // MARK: Lifecycle
+
+    init(
+        from module: Report.Module,
+        include: [Report.Module.Suite.RepeatableTest.Test.Status],
+        includeDeviceDetails: Bool
+    ) {
+        name = module.name
+        coverage = module.coverage.map { JSONCoverage(from: $0) }
+        files = module.files
+            .sorted { $0.name < $1.name }
+            .map { JSONFile(from: $0) }
+
+        var collected = [JSONQualifiedTest]()
+
+        let rootLevelTests = module.rootLevelTests
+            .filtered(testResults: include)
+            .flatMap { repeatableTest in
+                repeatableTest.mergedTests(filterDevice: includeDeviceDetails == false)
+                    .filter { include.contains($0.status) }
+            }
+        for test in rootLevelTests {
+            collected.append(
+                JSONQualifiedTest(
+                    qualifiedName: "\(module.name) / \(test.name)",
+                    test: test
+                )
+            )
+        }
+
+        for suite in module.suites {
+            Self.collectTests(
+                from: suite,
+                modulePrefix: module.name,
+                include: include,
+                includeDeviceDetails: includeDeviceDetails,
+                into: &collected
+            )
+        }
+
+        tests = collected.sorted { $0.qualifiedName < $1.qualifiedName }
+    }
+
+    // MARK: Internal
+
+    let coverage: JSONCoverage?
+    let files: [JSONFile]
+    let name: String
+    let tests: [JSONQualifiedTest]
+
+    // MARK: Private
+
+    private static func collectTests(
+        from suite: Report.Module.Suite,
+        modulePrefix: String,
+        include: [Report.Module.Suite.RepeatableTest.Test.Status],
+        includeDeviceDetails: Bool,
+        into collected: inout [JSONQualifiedTest]
+    ) {
+        let suitePrefix = "\(modulePrefix) / \(suite.fullPath)"
+
+        let tests = suite.repeatableTests
+            .filtered(testResults: include)
+            .flatMap { repeatableTest in
+                repeatableTest.mergedTests(filterDevice: includeDeviceDetails == false)
+                    .filter { include.contains($0.status) }
+            }
+        for test in tests {
+            collected.append(
+                JSONQualifiedTest(
+                    qualifiedName: "\(suitePrefix) / \(test.name)",
+                    test: test
+                )
+            )
+        }
+
+        for nested in suite.nestedSuites {
+            collectTests(
+                from: nested,
+                modulePrefix: modulePrefix,
+                include: include,
+                includeDeviceDetails: includeDeviceDetails,
+                into: &collected
+            )
+        }
+    }
+}
+
+// MARK: - JSONQualifiedTest
+
+private struct JSONQualifiedTest: Encodable {
+    // MARK: Lifecycle
+
+    init(qualifiedName: String, test: Report.Module.Suite.RepeatableTest.Test) {
+        self.qualifiedName = qualifiedName
+        status = test.status.rawValue
+        durationMs = test.duration.converted(to: .milliseconds).value
+        message = test.message
+    }
+
+    // MARK: Internal
+
+    let durationMs: Double
+    let message: String?
+    let qualifiedName: String
+    let status: String
 }
 
 // MARK: - JSONCoverage

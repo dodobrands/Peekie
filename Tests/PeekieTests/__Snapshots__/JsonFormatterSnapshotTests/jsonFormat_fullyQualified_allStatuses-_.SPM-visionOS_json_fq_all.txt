@@ -1,0 +1,546 @@
+{
+  "coverage" : 0.5746102449888641,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 16,
+        "percentage" : 0.1509433962264151,
+        "totalLines" : 106
+      },
+      "files" : [
+
+      ],
+      "name" : "Calculator",
+      "tests" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 242,
+        "percentage" : 0.7055393586005831,
+        "totalLines" : 343
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
+            "totalLines" : 34
+          },
+          "errors" : [
+
+          ],
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 131,
+            "percentage" : 0.9290780141843972,
+            "totalLines" : 141
+          },
+          "errors" : [
+
+          ],
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 98,
+                "startColumn" : 9,
+                "startLine" : 98
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 98,
+                "startColumn" : 9,
+                "startLine" : 98
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "WarningsCatalog.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 95,
+            "percentage" : 0.9895833333333334,
+            "totalLines" : 96
+          },
+          "errors" : [
+
+          ],
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 102,
+                "startColumn" : 9,
+                "startLine" : 102
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 102,
+                "startColumn" : 9,
+                "startLine" : 102
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "ExamplesTests",
+      "tests" : [
+        {
+          "durationMs" : 13.487815856933594,
+          "qualifiedName" : "ExamplesTests \/ 2 + 3 = 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 38.59519958496094,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ async()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 0.33783912658691406,
+          "message" : "Test skipped: Disabled reason",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ disabled()",
+          "status" : "skipped"
+        },
+        {
+          "durationMs" : 10.680675506591797,
+          "message" : "Failure is expected",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ expectedFailure()",
+          "status" : "expectedFailure"
+        },
+        {
+          "durationMs" : 7.595062255859375,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 10.275125503540039,
+          "message" : "Flacky failure message: result was 2.0",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flacky()",
+          "status" : "mixed"
+        },
+        {
+          "durationMs" : 4.382848739624023,
+          "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 1.667022705078125,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.079788208007812,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ success()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 10.215044021606445,
+          "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ throwing()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 10.034799575805664,
+          "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 5.721092224121094,
+          "message" : "Deeply nested failure: result was 0.0",
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 4.171848297119141,
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.559009552001953,
+          "message" : "Inner suite failure: result was 12.0",
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 13.177633285522461,
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 12.932777404785156,
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outer with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 9.44972038269043,
+          "message" : "Outer suite failure: result was 200.0",
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 7.057905197143555,
+          "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 12.495994567871094,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_async()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 14.348983764648438,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_asyncWithExpectation()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 459.9419832229614,
+          "message" : "Failure is expected",
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_expectedFailure()",
+          "status" : "expectedFailure"
+        },
+        {
+          "durationMs" : 4.215121269226074,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 4.6340227127075195,
+          "message" : "Flacky failure message: result was 2.0",
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_flacky()",
+          "status" : "mixed"
+        },
+        {
+          "durationMs" : 257.90393352508545,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_performance()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.416077613830566,
+          "message" : "Skip message",
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_skip()",
+          "status" : "skipped"
+        },
+        {
+          "durationMs" : 1.3689994812011719,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_success()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 8.813023567199707,
+          "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_throwing()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 5.262017250061035,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 0.7530450820922852,
+          "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withWarning()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 12.493371963500977,
+          "qualifiedName" : "ExamplesTests \/ array[0] is nil?",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.94906234741211,
+          "qualifiedName" : "ExamplesTests \/ divide(10, 2) \/ returns 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.800050735473633,
+          "qualifiedName" : "ExamplesTests \/ root level with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 34.48796272277832,
+          "qualifiedName" : "ExamplesTests \/ rootLevelAsync()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 10.576248168945312,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "ExamplesTests \/ rootLevelFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 16.137361526489258,
+          "qualifiedName" : "ExamplesTests \/ rootLevelSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 16.204833984375,
+          "qualifiedName" : "ExamplesTests \/ success 🎯",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 6.053686141967773,
+          "qualifiedName" : "ExamplesTests \/ сложение работает",
+          "status" : "success"
+        }
+      ]
+    },
+    {
+      "files" : [
+
+      ],
+      "name" : "StringUtils",
+      "tests" : [
+
+      ]
+    }
+  ]
+}
