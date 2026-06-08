@@ -98,7 +98,8 @@ public extension Report.Module.Suite.RepeatableTest {
             duration: Measurement<UnitDuration>,
             path: [PathNode],
             failureMessage: String? = nil,
-            skipMessage: String? = nil
+            skipMessage: String? = nil,
+            attachments: [Attachment] = []
         ) {
             self.name = name
             self.status = status
@@ -106,6 +107,7 @@ public extension Report.Module.Suite.RepeatableTest {
             self.path = path
             self.failureMessage = failureMessage
             self.skipMessage = skipMessage
+            self.attachments = attachments
         }
 
         // MARK: Public
@@ -127,6 +129,10 @@ public extension Report.Module.Suite.RepeatableTest {
 
         /// Skip message if test was skipped
         public let skipMessage: String?
+
+        /// Attachments captured during this test execution. Empty unless the
+        /// `Report` was built with `attachments: .extractTo(_)`.
+        public internal(set) var attachments: [Attachment]
 
         /// Returns the appropriate message based on test status
         /// - For failures: returns failureMessage
@@ -222,8 +228,22 @@ public extension Report.Module.Suite.RepeatableTest {
             ),
             path: pathForResult,
             failureMessage: failureMessage(group: group, status: status),
-            skipMessage: skipMessage(group: group, status: status)
+            skipMessage: skipMessage(group: group, status: status),
+            attachments: mergedAttachments(group: group)
         )
+    }
+
+    private func mergedAttachments(group: [Test]) -> [Test.Attachment] {
+        var seen = Set<String>()
+        var result = [Test.Attachment]()
+        for test in group {
+            for attachment in test.attachments
+                where seen.insert(attachment.exportedFileName).inserted
+            {
+                result.append(attachment)
+            }
+        }
+        return result
     }
 
     private func filter(_ path: [PathNode], filterDevice: Bool) -> [PathNode] {

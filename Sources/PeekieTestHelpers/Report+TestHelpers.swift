@@ -188,7 +188,8 @@ public extension Report.Module.Suite.RepeatableTest.Test {
         duration: Measurement<UnitDuration> = .testMake(),
         path: [Report.Module.Suite.RepeatableTest.PathNode] = [],
         failureMessage: String? = nil,
-        skipMessage: String? = nil
+        skipMessage: String? = nil,
+        attachments: [Attachment] = []
     )
         -> Self
     {
@@ -198,7 +199,8 @@ public extension Report.Module.Suite.RepeatableTest.Test {
             duration: duration,
             path: path,
             failureMessage: failureMessage,
-            skipMessage: skipMessage
+            skipMessage: skipMessage,
+            attachments: attachments
         )
     }
 }

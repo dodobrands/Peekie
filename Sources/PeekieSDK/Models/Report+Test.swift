@@ -131,6 +131,7 @@ extension Report.Module.Suite.RepeatableTest.Test {
         // Fallback to testCase if repetition doesn't have messages (e.g., for expected failures)
         failureMessage = node.failureMessage ?? testCase?.failureMessage
         skipMessage = node.skipMessage ?? testCase?.skipMessage
+        attachments = []
     }
 
     /// Initializes from TestResultsDTO.TestNode (Arguments node) with path
@@ -162,6 +163,7 @@ extension Report.Module.Suite.RepeatableTest.Test {
                 self.path = path
                 failureMessage = nil
                 skipMessage = nil
+                attachments = []
                 return
             }
 
@@ -187,6 +189,7 @@ extension Report.Module.Suite.RepeatableTest.Test {
         // Extract messages from testCase metadata
         failureMessage = testCase.failureMessage
         skipMessage = testCase.skipMessage
+        attachments = []
     }
 
     /// Initializes from TestResultsDTO.TestNode (Test Case node) with empty path
@@ -199,6 +202,7 @@ extension Report.Module.Suite.RepeatableTest.Test {
             path = []
             failureMessage = nil
             skipMessage = nil
+            attachments = []
             return
         }
 
@@ -221,6 +225,7 @@ extension Report.Module.Suite.RepeatableTest.Test {
         // Extract messages from testCase metadata
         failureMessage = testCase.failureMessage
         skipMessage = testCase.skipMessage
+        attachments = []
     }
 
     enum Error: Swift.Error {
