@@ -1,7 +1,7 @@
 ▿ Report
   ▿ coverage: Optional<Double>
-    - some: 0.5746102449888641
-  ▿ files: 5 elements
+    - some: 0.6469500924214417
+  ▿ files: 6 elements
     ▿ File
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
@@ -284,9 +284,9 @@
     ▿ File
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
-          - coverage: 0.9290780141843972
-          - coveredLines: 131
-          - totalLines: 141
+          - coverage: 0.9438202247191011
+          - coveredLines: 168
+          - totalLines: 178
       - errors: 0 elements
       ▿ module: Optional<String>
         - some: "ExamplesTests"
@@ -300,10 +300,10 @@
               ▿ endColumn: Optional<Int>
                 - some: 9
               ▿ endLine: Optional<Int>
-                - some: 98
+                - some: 125
               ▿ startColumn: Optional<Int>
                 - some: 9
-              - startLine: 98
+              - startLine: 125
           - message: "Some warning from ExampleSUITests"
           - type: IssueType.swiftCompilerError
         ▿ Issue
@@ -312,24 +312,67 @@
               ▿ endColumn: Optional<Int>
                 - some: 9
               ▿ endLine: Optional<Int>
-                - some: 98
+                - some: 125
               ▿ startColumn: Optional<Int>
                 - some: 9
-              - startLine: 98
+              - startLine: 125
           - message: "Some warning from ExampleSUITests"
           - type: IssueType.swiftCompilerWarning
     ▿ File
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
-          - coverage: 0.9895833333333334
-          - coveredLines: 95
-          - totalLines: 96
+          - coverage: 0.9933774834437086
+          - coveredLines: 150
+          - totalLines: 151
       - errors: 0 elements
       ▿ module: Optional<String>
         - some: "ExamplesTests"
       - name: "XCTestTests.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
+      ▿ warnings: 3 elements
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 19
+              ▿ endLine: Optional<Int>
+                - some: 113
+              ▿ startColumn: Optional<Int>
+                - some: 19
+              - startLine: 113
+          - message: "Call to main actor-isolated class method \'runActivity(named:block:)\' in a synchronous nonisolated context"
+          - type: IssueType.actorIsolatedCall
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 148
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 148
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerError
+        ▿ Issue
+          ▿ location: Optional<Location>
+            ▿ some: Location
+              ▿ endColumn: Optional<Int>
+                - some: 9
+              ▿ endLine: Optional<Int>
+                - some: 148
+              ▿ startColumn: Optional<Int>
+                - some: 9
+              - startLine: 148
+          - message: "Some warning from ExampleSUITests"
+          - type: IssueType.swiftCompilerWarning
+    ▿ File
+      - coverage: Optional<Coverage>.none
+      - errors: 0 elements
+      - module: Optional<String>.none
+      - name: "TextProcessor.swift"
+      - path: Optional<String>.none
       ▿ warnings: 2 elements
         ▿ Issue
           ▿ location: Optional<Location>
@@ -337,11 +380,11 @@
               ▿ endColumn: Optional<Int>
                 - some: 9
               ▿ endLine: Optional<Int>
-                - some: 102
+                - some: 13
               ▿ startColumn: Optional<Int>
                 - some: 9
-              - startLine: 102
-          - message: "Some warning from ExampleSUITests"
+              - startLine: 13
+          - message: "Some warning from StringUtils"
           - type: IssueType.swiftCompilerError
         ▿ Issue
           ▿ location: Optional<Location>
@@ -349,11 +392,11 @@
               ▿ endColumn: Optional<Int>
                 - some: 9
               ▿ endLine: Optional<Int>
-                - some: 102
+                - some: 13
               ▿ startColumn: Optional<Int>
                 - some: 9
-              - startLine: 102
-          - message: "Some warning from ExampleSUITests"
+              - startLine: 13
+          - message: "Some warning from StringUtils"
           - type: IssueType.swiftCompilerWarning
   ▿ modules: 3 elements
     ▿ Module
@@ -369,9 +412,9 @@
     ▿ Module
       ▿ coverage: Optional<Coverage>
         ▿ some: Coverage
-          - coverage: 0.7055393586005831
-          - coveredLines: 242
-          - totalLines: 343
+          - coverage: 0.767816091954023
+          - coveredLines: 334
+          - totalLines: 435
       ▿ files: 5 elements
         ▿ File
           ▿ coverage: Optional<Coverage>
@@ -655,9 +698,9 @@
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
-              - coverage: 0.9290780141843972
-              - coveredLines: 131
-              - totalLines: 141
+              - coverage: 0.9438202247191011
+              - coveredLines: 168
+              - totalLines: 178
           - errors: 0 elements
           ▿ module: Optional<String>
             - some: "ExamplesTests"
@@ -671,10 +714,10 @@
                   ▿ endColumn: Optional<Int>
                     - some: 9
                   ▿ endLine: Optional<Int>
-                    - some: 98
+                    - some: 125
                   ▿ startColumn: Optional<Int>
                     - some: 9
-                  - startLine: 98
+                  - startLine: 125
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
             ▿ Issue
@@ -683,35 +726,47 @@
                   ▿ endColumn: Optional<Int>
                     - some: 9
                   ▿ endLine: Optional<Int>
-                    - some: 98
+                    - some: 125
                   ▿ startColumn: Optional<Int>
                     - some: 9
-                  - startLine: 98
+                  - startLine: 125
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerWarning
         ▿ File
           ▿ coverage: Optional<Coverage>
             ▿ some: Coverage
-              - coverage: 0.9895833333333334
-              - coveredLines: 95
-              - totalLines: 96
+              - coverage: 0.9933774834437086
+              - coveredLines: 150
+              - totalLines: 151
           - errors: 0 elements
           ▿ module: Optional<String>
             - some: "ExamplesTests"
           - name: "XCTestTests.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
-          ▿ warnings: 2 elements
+          ▿ warnings: 3 elements
+            ▿ Issue
+              ▿ location: Optional<Location>
+                ▿ some: Location
+                  ▿ endColumn: Optional<Int>
+                    - some: 19
+                  ▿ endLine: Optional<Int>
+                    - some: 113
+                  ▿ startColumn: Optional<Int>
+                    - some: 19
+                  - startLine: 113
+              - message: "Call to main actor-isolated class method \'runActivity(named:block:)\' in a synchronous nonisolated context"
+              - type: IssueType.actorIsolatedCall
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
                   ▿ endColumn: Optional<Int>
                     - some: 9
                   ▿ endLine: Optional<Int>
-                    - some: 102
+                    - some: 148
                   ▿ startColumn: Optional<Int>
                     - some: 9
-                  - startLine: 102
+                  - startLine: 148
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerError
             ▿ Issue
@@ -720,28 +775,28 @@
                   ▿ endColumn: Optional<Int>
                     - some: 9
                   ▿ endLine: Optional<Int>
-                    - some: 102
+                    - some: 148
                   ▿ startColumn: Optional<Int>
                     - some: 9
-                  - startLine: 102
+                  - startLine: 148
               - message: "Some warning from ExampleSUITests"
               - type: IssueType.swiftCompilerWarning
       - name: "ExamplesTests"
-      ▿ rootLevelTests: 9 members
+      ▿ rootLevelTests: 10 members
         ▿ RepeatableTest
           - name: "2 + 3 = 5"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 15.32888412475586 ms
-                - value: 15.32888412475586
+              ▿ duration: 1.1508464813232422 ms
+                - value: 1.1508464813232422
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "2 + 3 = 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 15.32888412475586 ms
-                      - value: 15.32888412475586
+                    ▿ some: 1.1508464813232422 ms
+                      - value: 1.1508464813232422
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -751,16 +806,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.515979766845703 ms
-                - value: 6.515979766845703
+              ▿ duration: 1.3189315795898438 ms
+                - value: 1.3189315795898438
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "2 + 3 = 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.515979766845703 ms
-                      - value: 6.515979766845703
+                    ▿ some: 1.3189315795898438 ms
+                      - value: 1.3189315795898438
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -770,16 +825,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 2.9909610748291016 ms
-                - value: 2.9909610748291016
+              ▿ duration: 0.9860992431640625 ms
+                - value: 0.9860992431640625
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "2 + 3 = 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 2.9909610748291016 ms
-                      - value: 2.9909610748291016
+                    ▿ some: 0.9860992431640625 ms
+                      - value: 0.9860992431640625
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -792,16 +847,16 @@
           - name: "array[0] is nil?"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 15.994071960449219 ms
-                - value: 15.994071960449219
+              ▿ duration: 1.0180473327636719 ms
+                - value: 1.0180473327636719
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "array[0] is nil?"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 15.994071960449219 ms
-                      - value: 15.994071960449219
+                    ▿ some: 1.0180473327636719 ms
+                      - value: 1.0180473327636719
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -811,16 +866,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.516933441162109 ms
-                - value: 6.516933441162109
+              ▿ duration: 0.6718635559082031 ms
+                - value: 0.6718635559082031
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "array[0] is nil?"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.516933441162109 ms
-                      - value: 6.516933441162109
+                    ▿ some: 0.6718635559082031 ms
+                      - value: 0.6718635559082031
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -830,16 +885,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 0.6420612335205078 ms
-                - value: 0.6420612335205078
+              ▿ duration: 0.7381439208984375 ms
+                - value: 0.7381439208984375
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "array[0] is nil?"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 0.6420612335205078 ms
-                      - value: 0.6420612335205078
+                    ▿ some: 0.7381439208984375 ms
+                      - value: 0.7381439208984375
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -852,16 +907,16 @@
           - name: "divide(10, 2) / returns 5"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 15.423059463500977 ms
-                - value: 15.423059463500977
+              ▿ duration: 1.0590553283691406 ms
+                - value: 1.0590553283691406
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "divide(10, 2) / returns 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 15.423059463500977 ms
-                      - value: 15.423059463500977
+                    ▿ some: 1.0590553283691406 ms
+                      - value: 1.0590553283691406
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -871,16 +926,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.5479278564453125 ms
-                - value: 6.5479278564453125
+              ▿ duration: 0.48923492431640625 ms
+                - value: 0.48923492431640625
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "divide(10, 2) / returns 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.5479278564453125 ms
-                      - value: 6.5479278564453125
+                    ▿ some: 0.48923492431640625 ms
+                      - value: 0.48923492431640625
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -890,16 +945,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 2.0351409912109375 ms
-                - value: 2.0351409912109375
+              ▿ duration: 0.6668567657470703 ms
+                - value: 0.6668567657470703
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "divide(10, 2) / returns 5"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 2.0351409912109375 ms
-                      - value: 2.0351409912109375
+                    ▿ some: 0.6668567657470703 ms
+                      - value: 0.6668567657470703
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -912,16 +967,16 @@
           - name: "root level with spaces in name"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 5.372047424316406 ms
-                - value: 5.372047424316406
+              ▿ duration: 1.1680126190185547 ms
+                - value: 1.1680126190185547
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "root level with spaces in name"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 5.372047424316406 ms
-                      - value: 5.372047424316406
+                    ▿ some: 1.1680126190185547 ms
+                      - value: 1.1680126190185547
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -931,16 +986,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 8.182048797607422 ms
-                - value: 8.182048797607422
+              ▿ duration: 1.0640621185302734 ms
+                - value: 1.0640621185302734
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "root level with spaces in name"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 8.182048797607422 ms
-                      - value: 8.182048797607422
+                    ▿ some: 1.0640621185302734 ms
+                      - value: 1.0640621185302734
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -950,16 +1005,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 1.7240047454833984 ms
-                - value: 1.7240047454833984
+              ▿ duration: 0.6399154663085938 ms
+                - value: 0.6399154663085938
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "root level with spaces in name"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 1.7240047454833984 ms
-                      - value: 1.7240047454833984
+                    ▿ some: 0.6399154663085938 ms
+                      - value: 0.6399154663085938
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -972,16 +1027,16 @@
           - name: "rootLevelAsync()"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 27.558088302612305 ms
-                - value: 27.558088302612305
+              ▿ duration: 13.182878494262695 ms
+                - value: 13.182878494262695
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelAsync()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 27.558088302612305 ms
-                      - value: 27.558088302612305
+                    ▿ some: 13.182878494262695 ms
+                      - value: 13.182878494262695
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -991,16 +1046,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 15.149831771850586 ms
-                - value: 15.149831771850586
+              ▿ duration: 11.108160018920898 ms
+                - value: 11.108160018920898
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelAsync()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 15.149831771850586 ms
-                      - value: 15.149831771850586
+                    ▿ some: 11.108160018920898 ms
+                      - value: 11.108160018920898
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -1010,16 +1065,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 11.337041854858398 ms
-                - value: 11.337041854858398
+              ▿ duration: 12.634038925170898 ms
+                - value: 12.634038925170898
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelAsync()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 11.337041854858398 ms
-                      - value: 11.337041854858398
+                    ▿ some: 12.634038925170898 ms
+                      - value: 12.634038925170898
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -1032,8 +1087,8 @@
           - name: "rootLevelFailure()"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 16.00193977355957 ms
-                - value: 16.00193977355957
+              ▿ duration: 8.001089096069336 ms
+                - value: 8.001089096069336
                 - unit: "ms"
               ▿ failureMessage: Optional<String>
                 - some: "Expected 5.0 but got 6.0"
@@ -1041,8 +1096,8 @@
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 16.00193977355957 ms
-                      - value: 16.00193977355957
+                    ▿ some: 8.001089096069336 ms
+                      - value: 8.001089096069336
                       - unit: "ms"
                   ▿ message: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1053,8 +1108,8 @@
               - skipMessage: Optional<String>.none
               - status: Status.failure
             ▿ Test
-              ▿ duration: 7.441997528076172 ms
-                - value: 7.441997528076172
+              ▿ duration: 1.1091232299804688 ms
+                - value: 1.1091232299804688
                 - unit: "ms"
               ▿ failureMessage: Optional<String>
                 - some: "Expected 5.0 but got 6.0"
@@ -1062,8 +1117,8 @@
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 7.441997528076172 ms
-                      - value: 7.441997528076172
+                    ▿ some: 1.1091232299804688 ms
+                      - value: 1.1091232299804688
                       - unit: "ms"
                   ▿ message: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1074,8 +1129,8 @@
               - skipMessage: Optional<String>.none
               - status: Status.failure
             ▿ Test
-              ▿ duration: 1.5819072723388672 ms
-                - value: 1.5819072723388672
+              ▿ duration: 0.6859302520751953 ms
+                - value: 0.6859302520751953
                 - unit: "ms"
               ▿ failureMessage: Optional<String>
                 - some: "Expected 5.0 but got 6.0"
@@ -1083,8 +1138,8 @@
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 1.5819072723388672 ms
-                      - value: 1.5819072723388672
+                    ▿ some: 0.6859302520751953 ms
+                      - value: 0.6859302520751953
                       - unit: "ms"
                   ▿ message: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1098,16 +1153,16 @@
           - name: "rootLevelSuccess()"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 15.708208084106445 ms
-                - value: 15.708208084106445
+              ▿ duration: 1.0981559753417969 ms
+                - value: 1.0981559753417969
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelSuccess()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 15.708208084106445 ms
-                      - value: 15.708208084106445
+                    ▿ some: 1.0981559753417969 ms
+                      - value: 1.0981559753417969
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -1117,16 +1172,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.406068801879883 ms
-                - value: 6.406068801879883
+              ▿ duration: 0.6659030914306641 ms
+                - value: 0.6659030914306641
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelSuccess()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.406068801879883 ms
-                      - value: 6.406068801879883
+                    ▿ some: 0.6659030914306641 ms
+                      - value: 0.6659030914306641
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -1136,16 +1191,76 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 1.1210441589355469 ms
-                - value: 1.1210441589355469
+              ▿ duration: 0.6389617919921875 ms
+                - value: 0.6389617919921875
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "rootLevelSuccess()"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 1.1210441589355469 ms
-                      - value: 1.1210441589355469
+                    ▿ some: 0.6389617919921875 ms
+                      - value: 0.6389617919921875
+                      - unit: "ms"
+                  - message: Optional<String>.none
+                  - name: "Retry 2"
+                  ▿ result: Optional<Status>
+                    - some: Status.success
+                  - type: NodeType.repetition
+              - skipMessage: Optional<String>.none
+              - status: Status.success
+        ▿ RepeatableTest
+          - name: "rootLevelWithAttachment()"
+          ▿ tests: 3 elements
+            ▿ Test
+              ▿ duration: 1.1439323425292969 ms
+                - value: 1.1439323425292969
+                - unit: "ms"
+              - failureMessage: Optional<String>.none
+              - name: "rootLevelWithAttachment()"
+              ▿ path: 1 element
+                ▿ PathNode
+                  ▿ duration: Optional<Measurement<NSUnitDuration>>
+                    ▿ some: 1.1439323425292969 ms
+                      - value: 1.1439323425292969
+                      - unit: "ms"
+                  - message: Optional<String>.none
+                  - name: "First Run"
+                  ▿ result: Optional<Status>
+                    - some: Status.success
+                  - type: NodeType.repetition
+              - skipMessage: Optional<String>.none
+              - status: Status.success
+            ▿ Test
+              ▿ duration: 1.0449886322021484 ms
+                - value: 1.0449886322021484
+                - unit: "ms"
+              - failureMessage: Optional<String>.none
+              - name: "rootLevelWithAttachment()"
+              ▿ path: 1 element
+                ▿ PathNode
+                  ▿ duration: Optional<Measurement<NSUnitDuration>>
+                    ▿ some: 1.0449886322021484 ms
+                      - value: 1.0449886322021484
+                      - unit: "ms"
+                  - message: Optional<String>.none
+                  - name: "Retry 1"
+                  ▿ result: Optional<Status>
+                    - some: Status.success
+                  - type: NodeType.repetition
+              - skipMessage: Optional<String>.none
+              - status: Status.success
+            ▿ Test
+              ▿ duration: 0.4589557647705078 ms
+                - value: 0.4589557647705078
+                - unit: "ms"
+              - failureMessage: Optional<String>.none
+              - name: "rootLevelWithAttachment()"
+              ▿ path: 1 element
+                ▿ PathNode
+                  ▿ duration: Optional<Measurement<NSUnitDuration>>
+                    ▿ some: 0.4589557647705078 ms
+                      - value: 0.4589557647705078
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -1158,16 +1273,16 @@
           - name: "success 🎯"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 16.284942626953125 ms
-                - value: 16.284942626953125
+              ▿ duration: 1.1289119720458984 ms
+                - value: 1.1289119720458984
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "success 🎯"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 16.284942626953125 ms
-                      - value: 16.284942626953125
+                    ▿ some: 1.1289119720458984 ms
+                      - value: 1.1289119720458984
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -1177,16 +1292,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.575822830200195 ms
-                - value: 6.575822830200195
+              ▿ duration: 0.4239082336425781 ms
+                - value: 0.4239082336425781
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "success 🎯"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.575822830200195 ms
-                      - value: 6.575822830200195
+                    ▿ some: 0.4239082336425781 ms
+                      - value: 0.4239082336425781
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -1196,16 +1311,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 3.164052963256836 ms
-                - value: 3.164052963256836
+              ▿ duration: 0.5600452423095703 ms
+                - value: 0.5600452423095703
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "success 🎯"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 3.164052963256836 ms
-                      - value: 3.164052963256836
+                    ▿ some: 0.5600452423095703 ms
+                      - value: 0.5600452423095703
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -1218,16 +1333,16 @@
           - name: "сложение работает"
           ▿ tests: 3 elements
             ▿ Test
-              ▿ duration: 5.033969879150391 ms
-                - value: 5.033969879150391
+              ▿ duration: 1.0638236999511719 ms
+                - value: 1.0638236999511719
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "сложение работает"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 5.033969879150391 ms
-                      - value: 5.033969879150391
+                    ▿ some: 1.0638236999511719 ms
+                      - value: 1.0638236999511719
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "First Run"
@@ -1237,16 +1352,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 6.829023361206055 ms
-                - value: 6.829023361206055
+              ▿ duration: 0.5598068237304688 ms
+                - value: 0.5598068237304688
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "сложение работает"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 6.829023361206055 ms
-                      - value: 6.829023361206055
+                    ▿ some: 0.5598068237304688 ms
+                      - value: 0.5598068237304688
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 1"
@@ -1256,16 +1371,16 @@
               - skipMessage: Optional<String>.none
               - status: Status.success
             ▿ Test
-              ▿ duration: 1.6219615936279297 ms
-                - value: 1.6219615936279297
+              ▿ duration: 0.720977783203125 ms
+                - value: 0.720977783203125
                 - unit: "ms"
               - failureMessage: Optional<String>.none
               - name: "сложение работает"
               ▿ path: 1 element
                 ▿ PathNode
                   ▿ duration: Optional<Measurement<NSUnitDuration>>
-                    ▿ some: 1.6219615936279297 ms
-                      - value: 1.6219615936279297
+                    ▿ some: 0.720977783203125 ms
+                      - value: 0.720977783203125
                       - unit: "ms"
                   - message: Optional<String>.none
                   - name: "Retry 2"
@@ -1280,13 +1395,13 @@
           - name: "XCTestTests"
           - nestedSuites: 0 elements
           - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/XCTestTests"
-          ▿ repeatableTests: 11 members
+          ▿ repeatableTests: 14 members
             ▿ RepeatableTest
               - name: "test_async()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 13.314962387084961 ms
-                    - value: 13.314962387084961
+                  ▿ duration: 13.332009315490723 ms
+                    - value: 13.332009315490723
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_async()"
@@ -1297,8 +1412,8 @@
               - name: "test_asyncWithExpectation()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 12.597918510437012 ms
-                    - value: 12.597918510437012
+                  ▿ duration: 12.14301586151123 ms
+                    - value: 12.14301586151123
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_asyncWithExpectation()"
@@ -1306,11 +1421,23 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
             ▿ RepeatableTest
+              - name: "test_attachmentInsideActivity()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 1.928091049194336 ms
+                    - value: 1.928091049194336
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_attachmentInsideActivity()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
               - name: "test_expectedFailure()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 1783.9689254760742 ms
-                    - value: 1783.9689254760742
+                  ▿ duration: 318.98295879364014 ms
+                    - value: 318.98295879364014
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Failure is expected"
@@ -1322,8 +1449,8 @@
               - name: "test_failure()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 4.083991050720215 ms
-                    - value: 4.083991050720215
+                  ▿ duration: 4.637956619262695 ms
+                    - value: 4.637956619262695
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1331,8 +1458,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 4.083991050720215 ms
-                          - value: 4.083991050720215
+                        ▿ some: 4.637956619262695 ms
+                          - value: 4.637956619262695
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -1343,8 +1470,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 2.4319887161254883 ms
-                    - value: 2.4319887161254883
+                  ▿ duration: 1.363992691040039 ms
+                    - value: 1.363992691040039
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1352,8 +1479,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.4319887161254883 ms
-                          - value: 2.4319887161254883
+                        ▿ some: 1.363992691040039 ms
+                          - value: 1.363992691040039
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -1364,8 +1491,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 1.5869140625 ms
-                    - value: 1.5869140625
+                  ▿ duration: 0.9820461273193359 ms
+                    - value: 0.9820461273193359
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Expected 5.0 but got 6.0"
@@ -1373,8 +1500,74 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.5869140625 ms
-                          - value: 1.5869140625
+                        ▿ some: 0.9820461273193359 ms
+                          - value: 0.9820461273193359
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "test_failureWithAttachment()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 1.273036003112793 ms
+                    - value: 1.273036003112793
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.273036003112793 ms
+                          - value: 1.273036003112793
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 3.1229257583618164 ms
+                    - value: 3.1229257583618164
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 3.1229257583618164 ms
+                          - value: 3.1229257583618164
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 1.374959945678711 ms
+                    - value: 1.374959945678711
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "test_failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.374959945678711 ms
+                          - value: 1.374959945678711
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Expected 5.0 but got 6.0"
@@ -1388,8 +1581,8 @@
               - name: "test_flacky()"
               ▿ tests: 2 elements
                 ▿ Test
-                  ▿ duration: 1.0069608688354492 ms
-                    - value: 1.0069608688354492
+                  ▿ duration: 1.0679960250854492 ms
+                    - value: 1.0679960250854492
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Flacky failure message: result was 2.0"
@@ -1397,8 +1590,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.0069608688354492 ms
-                          - value: 1.0069608688354492
+                        ▿ some: 1.0679960250854492 ms
+                          - value: 1.0679960250854492
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Flacky failure message: result was 2.0"
@@ -1409,16 +1602,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.4799365997314453 ms
-                    - value: 0.4799365997314453
+                  ▿ duration: 0.5129575729370117 ms
+                    - value: 0.5129575729370117
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_flacky()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.4799365997314453 ms
-                          - value: 0.4799365997314453
+                        ▿ some: 0.5129575729370117 ms
+                          - value: 0.5129575729370117
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -1431,8 +1624,8 @@
               - name: "test_performance()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 257.781982421875 ms
-                    - value: 257.781982421875
+                  ▿ duration: 256.8080425262451 ms
+                    - value: 256.8080425262451
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_performance()"
@@ -1443,8 +1636,8 @@
               - name: "test_skip()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 3.6089420318603516 ms
-                    - value: 3.6089420318603516
+                  ▿ duration: 6.645917892456055 ms
+                    - value: 6.645917892456055
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Test skipped - Skip message"
@@ -1457,8 +1650,8 @@
               - name: "test_success()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 0.4570484161376953 ms
-                    - value: 0.4570484161376953
+                  ▿ duration: 0.9229183197021484 ms
+                    - value: 0.9229183197021484
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_success()"
@@ -1469,8 +1662,8 @@
               - name: "test_throwing()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 2.068042755126953 ms
-                    - value: 2.068042755126953
+                  ▿ duration: 4.554986953735352 ms
+                    - value: 4.554986953735352
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1478,8 +1671,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.068042755126953 ms
-                          - value: 2.068042755126953
+                        ▿ some: 4.554986953735352 ms
+                          - value: 4.554986953735352
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1490,8 +1683,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 0.9230375289916992 ms
-                    - value: 0.9230375289916992
+                  ▿ duration: 1.8950700759887695 ms
+                    - value: 1.8950700759887695
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1499,8 +1692,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.9230375289916992 ms
-                          - value: 0.9230375289916992
+                        ▿ some: 1.8950700759887695 ms
+                          - value: 1.8950700759887695
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1511,8 +1704,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 1.0930299758911133 ms
-                    - value: 1.0930299758911133
+                  ▿ duration: 1.1630058288574219 ms
+                    - value: 1.1630058288574219
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1520,8 +1713,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.0930299758911133 ms
-                          - value: 1.0930299758911133
+                        ▿ some: 1.1630058288574219 ms
+                          - value: 1.1630058288574219
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
@@ -1535,8 +1728,8 @@
               - name: "test_withAttachment()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 0.74005126953125 ms
-                    - value: 0.74005126953125
+                  ▿ duration: 0.944972038269043 ms
+                    - value: 0.944972038269043
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_withAttachment()"
@@ -1544,689 +1737,27 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
             ▿ RepeatableTest
+              - name: "test_withMultipleAttachments()"
+              ▿ tests: 1 element
+                ▿ Test
+                  ▿ duration: 3.3159255981445312 ms
+                    - value: 3.3159255981445312
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "test_withMultipleAttachments()"
+                  - path: 0 elements
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
               - name: "test_withWarning()"
               ▿ tests: 1 element
                 ▿ Test
-                  ▿ duration: 0.3629922866821289 ms
-                    - value: 0.3629922866821289
+                  ▿ duration: 0.6189346313476562 ms
+                    - value: 0.6189346313476562
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "test_withWarning()"
                   - path: 0 elements
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-        ▿ Suite
-          - fullPath: "ExampleSUITests"
-          - name: "ExampleSUITests"
-          - nestedSuites: 0 elements
-          - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/ExampleSUITests"
-          ▿ repeatableTests: 9 members
-            ▿ RepeatableTest
-              - name: "async()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 21.511077880859375 ms
-                    - value: 21.511077880859375
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "async()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 21.511077880859375 ms
-                          - value: 21.511077880859375
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 14.867782592773438 ms
-                    - value: 14.867782592773438
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "async()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 14.867782592773438 ms
-                          - value: 14.867782592773438
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 11.128902435302734 ms
-                    - value: 11.128902435302734
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "async()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 11.128902435302734 ms
-                          - value: 11.128902435302734
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "disabled()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 0.06914138793945312 ms
-                    - value: 0.06914138793945312
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - name: "disabled()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.06914138793945312 ms
-                          - value: 0.06914138793945312
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Test skipped: Disabled reason"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.skipped
-                      - type: NodeType.repetition
-                  ▿ skipMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - status: Status.skipped
-                ▿ Test
-                  ▿ duration: 2.151966094970703 ms
-                    - value: 2.151966094970703
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - name: "disabled()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.151966094970703 ms
-                          - value: 2.151966094970703
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Test skipped: Disabled reason"
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.skipped
-                      - type: NodeType.repetition
-                  ▿ skipMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - status: Status.skipped
-                ▿ Test
-                  ▿ duration: 0.03910064697265625 ms
-                    - value: 0.03910064697265625
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - name: "disabled()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.03910064697265625 ms
-                          - value: 0.03910064697265625
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Test skipped: Disabled reason"
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.skipped
-                      - type: NodeType.repetition
-                  ▿ skipMessage: Optional<String>
-                    - some: "Test skipped: Disabled reason"
-                  - status: Status.skipped
-            ▿ RepeatableTest
-              - name: "expectedFailure()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 11.530160903930664 ms
-                    - value: 11.530160903930664
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "expectedFailure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 11.530160903930664 ms
-                          - value: 11.530160903930664
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.expectedFailure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.expectedFailure
-                ▿ Test
-                  ▿ duration: 7.178068161010742 ms
-                    - value: 7.178068161010742
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "expectedFailure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.178068161010742 ms
-                          - value: 7.178068161010742
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.expectedFailure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.expectedFailure
-                ▿ Test
-                  ▿ duration: 2.2249221801757812 ms
-                    - value: 2.2249221801757812
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "expectedFailure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.2249221801757812 ms
-                          - value: 2.2249221801757812
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.expectedFailure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.expectedFailure
-            ▿ RepeatableTest
-              - name: "failure()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 9.52911376953125 ms
-                    - value: 9.52911376953125
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 9.52911376953125 ms
-                          - value: 9.52911376953125
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 6.711006164550781 ms
-                    - value: 6.711006164550781
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 6.711006164550781 ms
-                          - value: 6.711006164550781
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 2.0530223846435547 ms
-                    - value: 2.0530223846435547
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Expected 5.0 but got 6.0"
-                  - name: "failure()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.0530223846435547 ms
-                          - value: 2.0530223846435547
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Expected 5.0 but got 6.0"
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-            ▿ RepeatableTest
-              - name: "flacky()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 10.416030883789062 ms
-                    - value: 10.416030883789062
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Flacky failure message: result was 2.0"
-                  - name: "flacky()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 10.416030883789062 ms
-                          - value: 10.416030883789062
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Flacky failure message: result was 2.0"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 7.187128067016602 ms
-                    - value: 7.187128067016602
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "flacky()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.187128067016602 ms
-                          - value: 7.187128067016602
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 2.6619434356689453 ms
-                    - value: 2.6619434356689453
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "flacky()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.6619434356689453 ms
-                          - value: 2.6619434356689453
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "flackyParameterized(value:)"
-              ▿ tests: 6 elements
-                ▿ Test
-                  ▿ duration: 1.344919204711914 ms
-                    - value: 1.344919204711914
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "false"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.344919204711914 ms
-                          - value: 1.344919204711914
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 0.3390312194824219 ms
-                    - value: 0.3390312194824219
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "false"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.3390312194824219 ms
-                          - value: 0.3390312194824219
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 0.1270771026611328 ms
-                    - value: 0.1270771026611328
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "false"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.1270771026611328 ms
-                          - value: 0.1270771026611328
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 0.45299530029296875 ms
-                    - value: 0.45299530029296875
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "true"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.45299530029296875 ms
-                          - value: 0.45299530029296875
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 0.4057884216308594 ms
-                    - value: 0.4057884216308594
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "true"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.4057884216308594 ms
-                          - value: 0.4057884216308594
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 0.67901611328125 ms
-                    - value: 0.67901611328125
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "flackyParameterized(value:)"
-                  ▿ path: 2 elements
-                    ▿ PathNode
-                      - duration: Optional<Measurement<NSUnitDuration>>.none
-                      - message: Optional<String>.none
-                      - name: "true"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.arguments
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.67901611328125 ms
-                          - value: 0.67901611328125
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "success()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 1.0600090026855469 ms
-                    - value: 1.0600090026855469
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "success()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.0600090026855469 ms
-                          - value: 1.0600090026855469
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 7.606029510498047 ms
-                    - value: 7.606029510498047
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "success()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.606029510498047 ms
-                          - value: 7.606029510498047
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 1.544952392578125 ms
-                    - value: 1.544952392578125
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "success()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.544952392578125 ms
-                          - value: 1.544952392578125
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-            ▿ RepeatableTest
-              - name: "throwing()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 11.99197769165039 ms
-                    - value: 11.99197769165039
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                  - name: "throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 11.99197769165039 ms
-                          - value: 11.99197769165039
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 7.39598274230957 ms
-                    - value: 7.39598274230957
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                  - name: "throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.39598274230957 ms
-                          - value: 7.39598274230957
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-                ▿ Test
-                  ▿ duration: 2.834796905517578 ms
-                    - value: 2.834796905517578
-                    - unit: "ms"
-                  ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                  - name: "throwing()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.834796905517578 ms
-                          - value: 2.834796905517578
-                          - unit: "ms"
-                      ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.failure
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.failure
-            ▿ RepeatableTest
-              - name: "withAttachment()"
-              ▿ tests: 3 elements
-                ▿ Test
-                  ▿ duration: 10.228157043457031 ms
-                    - value: 10.228157043457031
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "withAttachment()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 10.228157043457031 ms
-                          - value: 10.228157043457031
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "First Run"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 8.404970169067383 ms
-                    - value: 8.404970169067383
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "withAttachment()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 8.404970169067383 ms
-                          - value: 8.404970169067383
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 1"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
-                  - skipMessage: Optional<String>.none
-                  - status: Status.success
-                ▿ Test
-                  ▿ duration: 0.9710788726806641 ms
-                    - value: 0.9710788726806641
-                    - unit: "ms"
-                  - failureMessage: Optional<String>.none
-                  - name: "withAttachment()"
-                  ▿ path: 1 element
-                    ▿ PathNode
-                      ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.9710788726806641 ms
-                          - value: 0.9710788726806641
-                          - unit: "ms"
-                      - message: Optional<String>.none
-                      - name: "Retry 2"
-                      ▿ result: Optional<Status>
-                        - some: Status.success
-                      - type: NodeType.repetition
                   - skipMessage: Optional<String>.none
                   - status: Status.success
         ▿ Suite
@@ -2242,13 +1773,13 @@
                   - name: "DeeplyNestedSuite"
                   - nestedSuites: 0 elements
                   - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/OuterSuite/InnerSuite/DeeplyNestedSuite"
-                  ▿ repeatableTests: 2 members
+                  ▿ repeatableTests: 3 members
                     ▿ RepeatableTest
                       - name: "deeplyNestedFailure()"
                       ▿ tests: 3 elements
                         ▿ Test
-                          ▿ duration: 0.6759166717529297 ms
-                            - value: 0.6759166717529297
+                          ▿ duration: 2.995014190673828 ms
+                            - value: 2.995014190673828
                             - unit: "ms"
                           ▿ failureMessage: Optional<String>
                             - some: "Deeply nested failure: result was 0.0"
@@ -2256,8 +1787,8 @@
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 0.6759166717529297 ms
-                                  - value: 0.6759166717529297
+                                ▿ some: 2.995014190673828 ms
+                                  - value: 2.995014190673828
                                   - unit: "ms"
                               ▿ message: Optional<String>
                                 - some: "Deeply nested failure: result was 0.0"
@@ -2268,8 +1799,8 @@
                           - skipMessage: Optional<String>.none
                           - status: Status.failure
                         ▿ Test
-                          ▿ duration: 1.3179779052734375 ms
-                            - value: 1.3179779052734375
+                          ▿ duration: 0.5419254302978516 ms
+                            - value: 0.5419254302978516
                             - unit: "ms"
                           ▿ failureMessage: Optional<String>
                             - some: "Deeply nested failure: result was 0.0"
@@ -2277,8 +1808,8 @@
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 1.3179779052734375 ms
-                                  - value: 1.3179779052734375
+                                ▿ some: 0.5419254302978516 ms
+                                  - value: 0.5419254302978516
                                   - unit: "ms"
                               ▿ message: Optional<String>
                                 - some: "Deeply nested failure: result was 0.0"
@@ -2289,8 +1820,8 @@
                           - skipMessage: Optional<String>.none
                           - status: Status.failure
                         ▿ Test
-                          ▿ duration: 1.6031265258789062 ms
-                            - value: 1.6031265258789062
+                          ▿ duration: 0.3261566162109375 ms
+                            - value: 0.3261566162109375
                             - unit: "ms"
                           ▿ failureMessage: Optional<String>
                             - some: "Deeply nested failure: result was 0.0"
@@ -2298,8 +1829,8 @@
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 1.6031265258789062 ms
-                                  - value: 1.6031265258789062
+                                ▿ some: 0.3261566162109375 ms
+                                  - value: 0.3261566162109375
                                   - unit: "ms"
                               ▿ message: Optional<String>
                                 - some: "Deeply nested failure: result was 0.0"
@@ -2313,16 +1844,16 @@
                       - name: "deeplyNestedSuccess()"
                       ▿ tests: 3 elements
                         ▿ Test
-                          ▿ duration: 1.2378692626953125 ms
-                            - value: 1.2378692626953125
+                          ▿ duration: 2.6040077209472656 ms
+                            - value: 2.6040077209472656
                             - unit: "ms"
                           - failureMessage: Optional<String>.none
                           - name: "deeplyNestedSuccess()"
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 1.2378692626953125 ms
-                                  - value: 1.2378692626953125
+                                ▿ some: 2.6040077209472656 ms
+                                  - value: 2.6040077209472656
                                   - unit: "ms"
                               - message: Optional<String>.none
                               - name: "First Run"
@@ -2332,16 +1863,16 @@
                           - skipMessage: Optional<String>.none
                           - status: Status.success
                         ▿ Test
-                          ▿ duration: 1.0080337524414062 ms
-                            - value: 1.0080337524414062
+                          ▿ duration: 0.34809112548828125 ms
+                            - value: 0.34809112548828125
                             - unit: "ms"
                           - failureMessage: Optional<String>.none
                           - name: "deeplyNestedSuccess()"
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 1.0080337524414062 ms
-                                  - value: 1.0080337524414062
+                                ▿ some: 0.34809112548828125 ms
+                                  - value: 0.34809112548828125
                                   - unit: "ms"
                               - message: Optional<String>.none
                               - name: "Retry 1"
@@ -2351,16 +1882,76 @@
                           - skipMessage: Optional<String>.none
                           - status: Status.success
                         ▿ Test
-                          ▿ duration: 1.9850730895996094 ms
-                            - value: 1.9850730895996094
+                          ▿ duration: 0.30994415283203125 ms
+                            - value: 0.30994415283203125
                             - unit: "ms"
                           - failureMessage: Optional<String>.none
                           - name: "deeplyNestedSuccess()"
                           ▿ path: 1 element
                             ▿ PathNode
                               ▿ duration: Optional<Measurement<NSUnitDuration>>
-                                ▿ some: 1.9850730895996094 ms
-                                  - value: 1.9850730895996094
+                                ▿ some: 0.30994415283203125 ms
+                                  - value: 0.30994415283203125
+                                  - unit: "ms"
+                              - message: Optional<String>.none
+                              - name: "Retry 2"
+                              ▿ result: Optional<Status>
+                                - some: Status.success
+                              - type: NodeType.repetition
+                          - skipMessage: Optional<String>.none
+                          - status: Status.success
+                    ▿ RepeatableTest
+                      - name: "deeplyNestedWithAttachment()"
+                      ▿ tests: 3 elements
+                        ▿ Test
+                          ▿ duration: 1.4081001281738281 ms
+                            - value: 1.4081001281738281
+                            - unit: "ms"
+                          - failureMessage: Optional<String>.none
+                          - name: "deeplyNestedWithAttachment()"
+                          ▿ path: 1 element
+                            ▿ PathNode
+                              ▿ duration: Optional<Measurement<NSUnitDuration>>
+                                ▿ some: 1.4081001281738281 ms
+                                  - value: 1.4081001281738281
+                                  - unit: "ms"
+                              - message: Optional<String>.none
+                              - name: "First Run"
+                              ▿ result: Optional<Status>
+                                - some: Status.success
+                              - type: NodeType.repetition
+                          - skipMessage: Optional<String>.none
+                          - status: Status.success
+                        ▿ Test
+                          ▿ duration: 0.4849433898925781 ms
+                            - value: 0.4849433898925781
+                            - unit: "ms"
+                          - failureMessage: Optional<String>.none
+                          - name: "deeplyNestedWithAttachment()"
+                          ▿ path: 1 element
+                            ▿ PathNode
+                              ▿ duration: Optional<Measurement<NSUnitDuration>>
+                                ▿ some: 0.4849433898925781 ms
+                                  - value: 0.4849433898925781
+                                  - unit: "ms"
+                              - message: Optional<String>.none
+                              - name: "Retry 1"
+                              ▿ result: Optional<Status>
+                                - some: Status.success
+                              - type: NodeType.repetition
+                          - skipMessage: Optional<String>.none
+                          - status: Status.success
+                        ▿ Test
+                          ▿ duration: 0.27298927307128906 ms
+                            - value: 0.27298927307128906
+                            - unit: "ms"
+                          - failureMessage: Optional<String>.none
+                          - name: "deeplyNestedWithAttachment()"
+                          ▿ path: 1 element
+                            ▿ PathNode
+                              ▿ duration: Optional<Measurement<NSUnitDuration>>
+                                ▿ some: 0.27298927307128906 ms
+                                  - value: 0.27298927307128906
                                   - unit: "ms"
                               - message: Optional<String>.none
                               - name: "Retry 2"
@@ -2375,8 +1966,8 @@
                   - name: "innerFailure()"
                   ▿ tests: 3 elements
                     ▿ Test
-                      ▿ duration: 0.7228851318359375 ms
-                        - value: 0.7228851318359375
+                      ▿ duration: 7.079124450683594 ms
+                        - value: 7.079124450683594
                         - unit: "ms"
                       ▿ failureMessage: Optional<String>
                         - some: "Inner suite failure: result was 12.0"
@@ -2384,8 +1975,8 @@
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 0.7228851318359375 ms
-                              - value: 0.7228851318359375
+                            ▿ some: 7.079124450683594 ms
+                              - value: 7.079124450683594
                               - unit: "ms"
                           ▿ message: Optional<String>
                             - some: "Inner suite failure: result was 12.0"
@@ -2396,8 +1987,8 @@
                       - skipMessage: Optional<String>.none
                       - status: Status.failure
                     ▿ Test
-                      ▿ duration: 5.233049392700195 ms
-                        - value: 5.233049392700195
+                      ▿ duration: 0.7050037384033203 ms
+                        - value: 0.7050037384033203
                         - unit: "ms"
                       ▿ failureMessage: Optional<String>
                         - some: "Inner suite failure: result was 12.0"
@@ -2405,8 +1996,8 @@
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 5.233049392700195 ms
-                              - value: 5.233049392700195
+                            ▿ some: 0.7050037384033203 ms
+                              - value: 0.7050037384033203
                               - unit: "ms"
                           ▿ message: Optional<String>
                             - some: "Inner suite failure: result was 12.0"
@@ -2417,8 +2008,8 @@
                       - skipMessage: Optional<String>.none
                       - status: Status.failure
                     ▿ Test
-                      ▿ duration: 1.4650821685791016 ms
-                        - value: 1.4650821685791016
+                      ▿ duration: 0.5469322204589844 ms
+                        - value: 0.5469322204589844
                         - unit: "ms"
                       ▿ failureMessage: Optional<String>
                         - some: "Inner suite failure: result was 12.0"
@@ -2426,8 +2017,8 @@
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 1.4650821685791016 ms
-                              - value: 1.4650821685791016
+                            ▿ some: 0.5469322204589844 ms
+                              - value: 0.5469322204589844
                               - unit: "ms"
                           ▿ message: Optional<String>
                             - some: "Inner suite failure: result was 12.0"
@@ -2441,16 +2032,16 @@
                   - name: "innerSuccess()"
                   ▿ tests: 3 elements
                     ▿ Test
-                      ▿ duration: 1.1179447174072266 ms
-                        - value: 1.1179447174072266
+                      ▿ duration: 2.5930404663085938 ms
+                        - value: 2.5930404663085938
                         - unit: "ms"
                       - failureMessage: Optional<String>.none
                       - name: "innerSuccess()"
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 1.1179447174072266 ms
-                              - value: 1.1179447174072266
+                            ▿ some: 2.5930404663085938 ms
+                              - value: 2.5930404663085938
                               - unit: "ms"
                           - message: Optional<String>.none
                           - name: "First Run"
@@ -2460,16 +2051,16 @@
                       - skipMessage: Optional<String>.none
                       - status: Status.success
                     ▿ Test
-                      ▿ duration: 5.712985992431641 ms
-                        - value: 5.712985992431641
+                      ▿ duration: 0.8318424224853516 ms
+                        - value: 0.8318424224853516
                         - unit: "ms"
                       - failureMessage: Optional<String>.none
                       - name: "innerSuccess()"
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 5.712985992431641 ms
-                              - value: 5.712985992431641
+                            ▿ some: 0.8318424224853516 ms
+                              - value: 0.8318424224853516
                               - unit: "ms"
                           - message: Optional<String>.none
                           - name: "Retry 1"
@@ -2479,16 +2070,16 @@
                       - skipMessage: Optional<String>.none
                       - status: Status.success
                     ▿ Test
-                      ▿ duration: 1.661062240600586 ms
-                        - value: 1.661062240600586
+                      ▿ duration: 0.5469322204589844 ms
+                        - value: 0.5469322204589844
                         - unit: "ms"
                       - failureMessage: Optional<String>.none
                       - name: "innerSuccess()"
                       ▿ path: 1 element
                         ▿ PathNode
                           ▿ duration: Optional<Measurement<NSUnitDuration>>
-                            ▿ some: 1.661062240600586 ms
-                              - value: 1.661062240600586
+                            ▿ some: 0.5469322204589844 ms
+                              - value: 0.5469322204589844
                               - unit: "ms"
                           - message: Optional<String>.none
                           - name: "Retry 2"
@@ -2503,16 +2094,16 @@
               - name: "outer with spaces in name"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 0.7128715515136719 ms
-                    - value: 0.7128715515136719
+                  ▿ duration: 7.472991943359375 ms
+                    - value: 7.472991943359375
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outer with spaces in name"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.7128715515136719 ms
-                          - value: 0.7128715515136719
+                        ▿ some: 7.472991943359375 ms
+                          - value: 7.472991943359375
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -2522,16 +2113,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 7.333040237426758 ms
-                    - value: 7.333040237426758
+                  ▿ duration: 0.5810260772705078 ms
+                    - value: 0.5810260772705078
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outer with spaces in name"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.333040237426758 ms
-                          - value: 7.333040237426758
+                        ▿ some: 0.5810260772705078 ms
+                          - value: 0.5810260772705078
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -2541,16 +2132,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 2.552032470703125 ms
-                    - value: 2.552032470703125
+                  ▿ duration: 0.6690025329589844 ms
+                    - value: 0.6690025329589844
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outer with spaces in name"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.552032470703125 ms
-                          - value: 2.552032470703125
+                        ▿ some: 0.6690025329589844 ms
+                          - value: 0.6690025329589844
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"
@@ -2563,8 +2154,8 @@
               - name: "outerFailure()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 10.695934295654297 ms
-                    - value: 10.695934295654297
+                  ▿ duration: 2.9218196868896484 ms
+                    - value: 2.9218196868896484
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Outer suite failure: result was 200.0"
@@ -2572,8 +2163,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 10.695934295654297 ms
-                          - value: 10.695934295654297
+                        ▿ some: 2.9218196868896484 ms
+                          - value: 2.9218196868896484
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Outer suite failure: result was 200.0"
@@ -2584,8 +2175,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 7.507085800170898 ms
-                    - value: 7.507085800170898
+                  ▿ duration: 0.5979537963867188 ms
+                    - value: 0.5979537963867188
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Outer suite failure: result was 200.0"
@@ -2593,8 +2184,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 7.507085800170898 ms
-                          - value: 7.507085800170898
+                        ▿ some: 0.5979537963867188 ms
+                          - value: 0.5979537963867188
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Outer suite failure: result was 200.0"
@@ -2605,8 +2196,8 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.failure
                 ▿ Test
-                  ▿ duration: 2.2211074829101562 ms
-                    - value: 2.2211074829101562
+                  ▿ duration: 0.9329319000244141 ms
+                    - value: 0.9329319000244141
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
                     - some: "Outer suite failure: result was 200.0"
@@ -2614,8 +2205,8 @@
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 2.2211074829101562 ms
-                          - value: 2.2211074829101562
+                        ▿ some: 0.9329319000244141 ms
+                          - value: 0.9329319000244141
                           - unit: "ms"
                       ▿ message: Optional<String>
                         - some: "Outer suite failure: result was 200.0"
@@ -2629,16 +2220,16 @@
               - name: "outerSuccess()"
               ▿ tests: 3 elements
                 ▿ Test
-                  ▿ duration: 0.7898807525634766 ms
-                    - value: 0.7898807525634766
+                  ▿ duration: 2.9959678649902344 ms
+                    - value: 2.9959678649902344
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outerSuccess()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 0.7898807525634766 ms
-                          - value: 0.7898807525634766
+                        ▿ some: 2.9959678649902344 ms
+                          - value: 2.9959678649902344
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "First Run"
@@ -2648,16 +2239,16 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 8.332967758178711 ms
-                    - value: 8.332967758178711
+                  ▿ duration: 0.7739067077636719 ms
+                    - value: 0.7739067077636719
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outerSuccess()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 8.332967758178711 ms
-                          - value: 8.332967758178711
+                        ▿ some: 0.7739067077636719 ms
+                          - value: 0.7739067077636719
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 1"
@@ -2667,16 +2258,816 @@
                   - skipMessage: Optional<String>.none
                   - status: Status.success
                 ▿ Test
-                  ▿ duration: 1.8711090087890625 ms
-                    - value: 1.8711090087890625
+                  ▿ duration: 0.8199214935302734 ms
+                    - value: 0.8199214935302734
                     - unit: "ms"
                   - failureMessage: Optional<String>.none
                   - name: "outerSuccess()"
                   ▿ path: 1 element
                     ▿ PathNode
                       ▿ duration: Optional<Measurement<NSUnitDuration>>
-                        ▿ some: 1.8711090087890625 ms
-                          - value: 1.8711090087890625
+                        ▿ some: 0.8199214935302734 ms
+                          - value: 0.8199214935302734
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+        ▿ Suite
+          - fullPath: "ExampleSUITests"
+          - name: "ExampleSUITests"
+          - nestedSuites: 0 elements
+          - nodeIdentifierURL: "test://com.apple.xcode/Examples/ExamplesTests/ExampleSUITests"
+          ▿ repeatableTests: 11 members
+            ▿ RepeatableTest
+              - name: "async()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 12.132883071899414 ms
+                    - value: 12.132883071899414
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "async()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 12.132883071899414 ms
+                          - value: 12.132883071899414
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 10.933876037597656 ms
+                    - value: 10.933876037597656
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "async()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 10.933876037597656 ms
+                          - value: 10.933876037597656
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 12.372016906738281 ms
+                    - value: 12.372016906738281
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "async()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 12.372016906738281 ms
+                          - value: 12.372016906738281
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "disabled()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 2.170085906982422 ms
+                    - value: 2.170085906982422
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - name: "disabled()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2.170085906982422 ms
+                          - value: 2.170085906982422
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Test skipped: Disabled reason"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.skipped
+                      - type: NodeType.repetition
+                  ▿ skipMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - status: Status.skipped
+                ▿ Test
+                  ▿ duration: 0.06198883056640625 ms
+                    - value: 0.06198883056640625
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - name: "disabled()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.06198883056640625 ms
+                          - value: 0.06198883056640625
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Test skipped: Disabled reason"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.skipped
+                      - type: NodeType.repetition
+                  ▿ skipMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - status: Status.skipped
+                ▿ Test
+                  ▿ duration: 0.07605552673339844 ms
+                    - value: 0.07605552673339844
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - name: "disabled()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.07605552673339844 ms
+                          - value: 0.07605552673339844
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Test skipped: Disabled reason"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.skipped
+                      - type: NodeType.repetition
+                  ▿ skipMessage: Optional<String>
+                    - some: "Test skipped: Disabled reason"
+                  - status: Status.skipped
+            ▿ RepeatableTest
+              - name: "expectedFailure()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 3.4890174865722656 ms
+                    - value: 3.4890174865722656
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "expectedFailure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 3.4890174865722656 ms
+                          - value: 3.4890174865722656
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.expectedFailure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.expectedFailure
+                ▿ Test
+                  ▿ duration: 0.8299350738525391 ms
+                    - value: 0.8299350738525391
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "expectedFailure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.8299350738525391 ms
+                          - value: 0.8299350738525391
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.expectedFailure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.expectedFailure
+                ▿ Test
+                  ▿ duration: 0.7739067077636719 ms
+                    - value: 0.7739067077636719
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "expectedFailure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.7739067077636719 ms
+                          - value: 0.7739067077636719
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.expectedFailure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.expectedFailure
+            ▿ RepeatableTest
+              - name: "failure()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 2.9180049896240234 ms
+                    - value: 2.9180049896240234
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2.9180049896240234 ms
+                          - value: 2.9180049896240234
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 1.0368824005126953 ms
+                    - value: 1.0368824005126953
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.0368824005126953 ms
+                          - value: 1.0368824005126953
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.6299018859863281 ms
+                    - value: 0.6299018859863281
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failure()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.6299018859863281 ms
+                          - value: 0.6299018859863281
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "failureWithAttachment()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 2071.9997882843018 ms
+                    - value: 2071.9997882843018
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2071.9997882843018 ms
+                          - value: 2071.9997882843018
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 2578.000068664551 ms
+                    - value: 2578.000068664551
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2578.000068664551 ms
+                          - value: 2578.000068664551
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 2638.000011444092 ms
+                    - value: 2638.000011444092
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Expected 5.0 but got 6.0"
+                  - name: "failureWithAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2638.000011444092 ms
+                          - value: 2638.000011444092
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Expected 5.0 but got 6.0"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "flacky()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 2.49481201171875 ms
+                    - value: 2.49481201171875
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Flacky failure message: result was 2.0"
+                  - name: "flacky()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2.49481201171875 ms
+                          - value: 2.49481201171875
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Flacky failure message: result was 2.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.720977783203125 ms
+                    - value: 0.720977783203125
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "flacky()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.720977783203125 ms
+                          - value: 0.720977783203125
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.6380081176757812 ms
+                    - value: 0.6380081176757812
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "flacky()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.6380081176757812 ms
+                          - value: 0.6380081176757812
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "flackyParameterized(value:)"
+              ▿ tests: 6 elements
+                ▿ Test
+                  ▿ duration: 1.119852066040039 ms
+                    - value: 1.119852066040039
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "false"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 1.119852066040039 ms
+                          - value: 1.119852066040039
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.1220703125 ms
+                    - value: 0.1220703125
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "false"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.1220703125 ms
+                          - value: 0.1220703125
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.1571178436279297 ms
+                    - value: 0.1571178436279297
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "false"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.1571178436279297 ms
+                          - value: 0.1571178436279297
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.4420280456542969 ms
+                    - value: 0.4420280456542969
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "true"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.4420280456542969 ms
+                          - value: 0.4420280456542969
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.08511543273925781 ms
+                    - value: 0.08511543273925781
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "true"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.08511543273925781 ms
+                          - value: 0.08511543273925781
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.13113021850585938 ms
+                    - value: 0.13113021850585938
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "flackyParameterized(value:)"
+                  ▿ path: 2 elements
+                    ▿ PathNode
+                      - duration: Optional<Measurement<NSUnitDuration>>.none
+                      - message: Optional<String>.none
+                      - name: "true"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.arguments
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.13113021850585938 ms
+                          - value: 0.13113021850585938
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "success()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 2.418994903564453 ms
+                    - value: 2.418994903564453
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "success()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 2.418994903564453 ms
+                          - value: 2.418994903564453
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.6248950958251953 ms
+                    - value: 0.6248950958251953
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "success()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.6248950958251953 ms
+                          - value: 0.6248950958251953
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.4730224609375 ms
+                    - value: 0.4730224609375
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "success()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.4730224609375 ms
+                          - value: 0.4730224609375
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "throwing()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 6.704807281494141 ms
+                    - value: 6.704807281494141
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                  - name: "throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 6.704807281494141 ms
+                          - value: 6.704807281494141
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.9579658508300781 ms
+                    - value: 0.9579658508300781
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                  - name: "throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.9579658508300781 ms
+                          - value: 0.9579658508300781
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+                ▿ Test
+                  ▿ duration: 0.5719661712646484 ms
+                    - value: 0.5719661712646484
+                    - unit: "ms"
+                  ▿ failureMessage: Optional<String>
+                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                  - name: "throwing()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.5719661712646484 ms
+                          - value: 0.5719661712646484
+                          - unit: "ms"
+                      ▿ message: Optional<String>
+                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.failure
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.failure
+            ▿ RepeatableTest
+              - name: "withAttachment()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 3.041982650756836 ms
+                    - value: 3.041982650756836
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 3.041982650756836 ms
+                          - value: 3.041982650756836
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.7169246673583984 ms
+                    - value: 0.7169246673583984
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.7169246673583984 ms
+                          - value: 0.7169246673583984
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.7870197296142578 ms
+                    - value: 0.7870197296142578
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withAttachment()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.7870197296142578 ms
+                          - value: 0.7870197296142578
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 2"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+            ▿ RepeatableTest
+              - name: "withMultipleAttachments()"
+              ▿ tests: 3 elements
+                ▿ Test
+                  ▿ duration: 7.010936737060547 ms
+                    - value: 7.010936737060547
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withMultipleAttachments()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 7.010936737060547 ms
+                          - value: 7.010936737060547
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "First Run"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.8819103240966797 ms
+                    - value: 0.8819103240966797
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withMultipleAttachments()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.8819103240966797 ms
+                          - value: 0.8819103240966797
+                          - unit: "ms"
+                      - message: Optional<String>.none
+                      - name: "Retry 1"
+                      ▿ result: Optional<Status>
+                        - some: Status.success
+                      - type: NodeType.repetition
+                  - skipMessage: Optional<String>.none
+                  - status: Status.success
+                ▿ Test
+                  ▿ duration: 0.7479190826416016 ms
+                    - value: 0.7479190826416016
+                    - unit: "ms"
+                  - failureMessage: Optional<String>.none
+                  - name: "withMultipleAttachments()"
+                  ▿ path: 1 element
+                    ▿ PathNode
+                      ▿ duration: Optional<Measurement<NSUnitDuration>>
+                        ▿ some: 0.7479190826416016 ms
+                          - value: 0.7479190826416016
                           - unit: "ms"
                       - message: Optional<String>.none
                       - name: "Retry 2"

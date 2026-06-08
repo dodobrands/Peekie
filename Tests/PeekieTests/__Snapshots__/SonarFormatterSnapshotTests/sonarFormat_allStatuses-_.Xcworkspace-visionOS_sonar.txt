@@ -1,60 +1,70 @@
 <testExecutions version="1">
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-visionOS/DeeplyNestedSuite.swift">
-        <testCase name="OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedFailure()" duration="8">
+        <testCase name="OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedFailure()" duration="50">
             <failure message="Deeply nested failure: result was 0.0" />
         </testCase>
-        <testCase name="OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedSuccess()" duration="4" />
+        <testCase name="OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedSuccess()" duration="48" />
+        <testCase name="OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedWithAttachment()" duration="49" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-visionOS/ExampleSUITests.swift">
-        <testCase name="ExampleSUITests / async()" duration="94" />
-        <testCase name="ExampleSUITests / disabled()" duration="1">
+        <testCase name="ExampleSUITests / async()" duration="139" />
+        <testCase name="ExampleSUITests / disabled()" duration="0">
             <skipped message="Test skipped: Disabled reason" />
         </testCase>
-        <testCase name="ExampleSUITests / expectedFailure()" duration="69" />
-        <testCase name="ExampleSUITests / failure()" duration="68">
+        <testCase name="ExampleSUITests / expectedFailure()" duration="98" />
+        <testCase name="ExampleSUITests / failure()" duration="125">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="ExampleSUITests / flacky()" duration="68" />
-        <testCase name="ExampleSUITests / flackyParameterized(value:) [false]" duration="9">
+        <testCase name="ExampleSUITests / failureWithAttachment()" duration="129">
+            <failure message="Expected 5.0 but got 6.0" />
+        </testCase>
+        <testCase name="ExampleSUITests / flacky()" duration="82" />
+        <testCase name="ExampleSUITests / flackyParameterized(value:) [false]" duration="20">
             <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
         </testCase>
-        <testCase name="ExampleSUITests / flackyParameterized(value:) [true]" duration="6" />
-        <testCase name="ExampleSUITests / success()" duration="58" />
-        <testCase name="ExampleSUITests / throwing()" duration="69">
+        <testCase name="ExampleSUITests / flackyParameterized(value:) [true]" duration="2" />
+        <testCase name="ExampleSUITests / success()" duration="124" />
+        <testCase name="ExampleSUITests / throwing()" duration="145">
             <failure message="SwiftTestingTests.swift:85: Caught error: .divisionByZero" />
         </testCase>
-        <testCase name="ExampleSUITests / withAttachment()" duration="62" />
+        <testCase name="ExampleSUITests / withAttachment()" duration="127" />
+        <testCase name="ExampleSUITests / withMultipleAttachments()" duration="111" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-visionOS/InnerSuite.swift">
-        <testCase name="OuterSuite / InnerSuite / innerFailure()" duration="67">
+        <testCase name="OuterSuite / InnerSuite / innerFailure()" duration="65">
             <failure message="Inner suite failure: result was 12.0" />
         </testCase>
-        <testCase name="OuterSuite / InnerSuite / innerSuccess()" duration="61" />
+        <testCase name="OuterSuite / InnerSuite / innerSuccess()" duration="65" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-visionOS/OuterSuite.swift">
-        <testCase name="OuterSuite / outer with spaces in name" duration="62" />
-        <testCase name="OuterSuite / outerFailure()" duration="66">
+        <testCase name="OuterSuite / outer with spaces in name" duration="122" />
+        <testCase name="OuterSuite / outerFailure()" duration="97">
             <failure message="Outer suite failure: result was 200.0" />
         </testCase>
-        <testCase name="OuterSuite / outerSuccess()" duration="63" />
+        <testCase name="OuterSuite / outerSuccess()" duration="79" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-Xcworkspace-visionOS/XCTestTests.swift">
-        <testCase name="XCTestTests / test_async()" duration="14" />
+        <testCase name="XCTestTests / test_async()" duration="114" />
         <testCase name="XCTestTests / test_asyncWithExpectation()" duration="11" />
-        <testCase name="XCTestTests / test_expectedFailure()" duration="699" />
-        <testCase name="XCTestTests / test_failure()" duration="1373">
+        <testCase name="XCTestTests / test_attachmentInsideActivity()" duration="0" />
+        <testCase name="XCTestTests / test_expectedFailure()" duration="513" />
+        <testCase name="XCTestTests / test_failure()" duration="168">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="XCTestTests / test_flacky()" duration="4" />
-        <testCase name="XCTestTests / test_performance()" duration="294" />
-        <testCase name="XCTestTests / test_skip()" duration="51">
+        <testCase name="XCTestTests / test_failureWithAttachment()" duration="5">
+            <failure message="Expected 5.0 but got 6.0" />
+        </testCase>
+        <testCase name="XCTestTests / test_flacky()" duration="1" />
+        <testCase name="XCTestTests / test_performance()" duration="255" />
+        <testCase name="XCTestTests / test_skip()" duration="36">
             <skipped message="Skip message" />
         </testCase>
-        <testCase name="XCTestTests / test_success()" duration="0" />
+        <testCase name="XCTestTests / test_success()" duration="1" />
         <testCase name="XCTestTests / test_throwing()" duration="6">
             <failure message="XCTestTests.swift:77: failed: caught error: &quot;divisionByZero&quot;" />
         </testCase>
-        <testCase name="XCTestTests / test_withAttachment()" duration="3" />
+        <testCase name="XCTestTests / test_withAttachment()" duration="0" />
+        <testCase name="XCTestTests / test_withMultipleAttachments()" duration="0" />
         <testCase name="XCTestTests / test_withWarning()" duration="0" />
     </file>
 </testExecutions>

@@ -5,6 +5,7 @@ XcodeprojExample.app / (no suite)
 ✅ root level with spaces in name
 ✅ rootLevelAsync()
 ✅ rootLevelSuccess()
+✅ rootLevelWithAttachment()
 ✅ success 🎯
 ✅ сложение работает
 
@@ -12,6 +13,7 @@ XcodeprojExample.app / ExampleSUITests
 ✅ async()
 ✅ success()
 ✅ withAttachment()
+✅ withMultipleAttachments()
 
 XcodeprojExample.app / OuterSuite
 ✅ outer with spaces in name
@@ -22,11 +24,14 @@ XcodeprojExample.app / OuterSuite / InnerSuite
 
 XcodeprojExample.app / OuterSuite / InnerSuite / DeeplyNestedSuite
 ✅ deeplyNestedSuccess()
+✅ deeplyNestedWithAttachment()
 
 XcodeprojExample.app / XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
+✅ test_attachmentInsideActivity()
 ✅ test_performance()
 ✅ test_success()
 ✅ test_withAttachment()
+✅ test_withMultipleAttachments()
 ✅ test_withWarning()

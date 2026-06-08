@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6736842105263158,
+  "coverage" : 0.7372881355932204,
   "modules" : [
     {
       "coverage" : {
@@ -19,7 +19,26 @@
           ],
           "name" : "Calculator.swift",
           "warnings" : [
-
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
           ]
         },
         {
@@ -54,202 +73,239 @@
       "name" : "XcodeprojExample.app",
       "tests" : [
         {
-          "durationMs" : 147.8731632232666,
+          "durationMs" : 61.721086502075195,
           "qualifiedName" : "XcodeprojExample.app \/ 2 + 3 = 5",
           "status" : "success"
         },
         {
-          "durationMs" : 187.75701522827148,
+          "durationMs" : 183.84194374084473,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ async()",
           "status" : "success"
         },
         {
-          "durationMs" : 3.2601356506347656,
+          "durationMs" : 0.7669925689697266,
           "message" : "Test skipped: Disabled reason",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ disabled()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 132.8129768371582,
+          "durationMs" : 117.15221405029297,
           "message" : "Failure is expected",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 134.09423828125,
+          "durationMs" : 106.99987411499023,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 132.3678493499756,
+          "durationMs" : 117.18201637268066,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 93.57380867004395,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 3.3521652221679688,
+          "durationMs" : 52.77085304260254,
           "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.0411739349365234,
+          "durationMs" : 41.5956974029541,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
           "status" : "success"
         },
         {
-          "durationMs" : 133.23497772216797,
+          "durationMs" : 108.31499099731445,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ success()",
           "status" : "success"
         },
         {
-          "durationMs" : 134.01412963867188,
+          "durationMs" : 104.84027862548828,
           "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 132.8878402709961,
+          "durationMs" : 101.53579711914062,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 17.81916618347168,
+          "durationMs" : 104.72488403320312,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withMultipleAttachments()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 92.52595901489258,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 12.443780899047852,
+          "durationMs" : 13.709783554077148,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 18.955707550048828,
+          "durationMs" : 25.728225708007812,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedWithAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 63.558101654052734,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 2.6149749755859375,
+          "durationMs" : 63.27199935913086,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 133.53776931762695,
+          "durationMs" : 107.15603828430176,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outer with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 132.3409080505371,
+          "durationMs" : 105.81707954406738,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 131.75034523010254,
+          "durationMs" : 106.7972183227539,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 12.345075607299805,
+          "durationMs" : 13.357996940612793,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_async()",
           "status" : "success"
         },
         {
-          "durationMs" : 19.181013107299805,
+          "durationMs" : 11.715054512023926,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_asyncWithExpectation()",
           "status" : "success"
         },
         {
-          "durationMs" : 303.96008491516113,
+          "durationMs" : 0.8119344711303711,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_attachmentInsideActivity()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 509.2639923095703,
           "message" : "Failure is expected",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 1544.7980165481567,
+          "durationMs" : 2159.0678691864014,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.2320280075073242,
+          "durationMs" : 47.13797569274902,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 1.6970634460449219,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 253.97896766662598,
+          "durationMs" : 255.545973777771,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_performance()",
           "status" : "success"
         },
         {
-          "durationMs" : 5.0830841064453125,
+          "durationMs" : 16.18492603302002,
           "message" : "Skip message",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_skip()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 0.7590055465698242,
+          "durationMs" : 0.3870725631713867,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_success()",
           "status" : "success"
         },
         {
-          "durationMs" : 4.733920097351074,
+          "durationMs" : 5.650997161865234,
           "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 0.8759498596191406,
+          "durationMs" : 1.6199350357055664,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.4750490188598633,
+          "durationMs" : 1.8470287322998047,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withMultipleAttachments()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 0.800013542175293,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withWarning()",
           "status" : "success"
         },
         {
-          "durationMs" : 151.1080265045166,
+          "durationMs" : 109.82108116149902,
           "qualifiedName" : "XcodeprojExample.app \/ array[0] is nil?",
           "status" : "success"
         },
         {
-          "durationMs" : 150.55441856384277,
+          "durationMs" : 108.73603820800781,
           "qualifiedName" : "XcodeprojExample.app \/ divide(10, 2) \/ returns 5",
           "status" : "success"
         },
         {
-          "durationMs" : 148.26488494873047,
+          "durationMs" : 61.688899993896484,
           "qualifiedName" : "XcodeprojExample.app \/ root level with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 194.92292404174805,
+          "durationMs" : 134.19818878173828,
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelAsync()",
           "status" : "success"
         },
         {
-          "durationMs" : 134.35077667236328,
+          "durationMs" : 66.20383262634277,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 150.6330966949463,
+          "durationMs" : 20.18284797668457,
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 147.89104461669922,
+          "durationMs" : 61.85507774353027,
+          "qualifiedName" : "XcodeprojExample.app \/ rootLevelWithAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 110.0766658782959,
           "qualifiedName" : "XcodeprojExample.app \/ success 🎯",
           "status" : "success"
         },
         {
-          "durationMs" : 149.37901496887207,
+          "durationMs" : 109.26985740661621,
           "qualifiedName" : "XcodeprojExample.app \/ сложение работает",
           "status" : "success"
         }
@@ -396,16 +452,16 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 226,
-        "percentage" : 0.9535864978902954,
-        "totalLines" : 237
+        "coveredLines" : 318,
+        "percentage" : 0.9665653495440729,
+        "totalLines" : 329
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 131,
-            "percentage" : 0.9290780141843972,
-            "totalLines" : 141
+            "coveredLines" : 168,
+            "percentage" : 0.9438202247191011,
+            "totalLines" : 178
           },
           "errors" : [
 
@@ -435,9 +491,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 98,
+                "endLine" : 125,
                 "startColumn" : 9,
-                "startLine" : 98
+                "startLine" : 125
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -445,9 +501,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 98,
+                "endLine" : 125,
                 "startColumn" : 9,
-                "startLine" : 98
+                "startLine" : 125
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -455,9 +511,9 @@
             {
               "location" : {
                 "endColumn" : 21,
-                "endLine" : 128,
+                "endLine" : 155,
                 "startColumn" : 21,
-                "startLine" : 128
+                "startLine" : 155
               },
               "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -465,9 +521,9 @@
             {
               "location" : {
                 "endColumn" : 28,
-                "endLine" : 130,
+                "endLine" : 157,
                 "startColumn" : 28,
-                "startLine" : 130
+                "startLine" : 157
               },
               "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -476,9 +532,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 95,
-            "percentage" : 0.9895833333333334,
-            "totalLines" : 96
+            "coveredLines" : 150,
+            "percentage" : 0.9933774834437086,
+            "totalLines" : 151
           },
           "errors" : [
 
@@ -518,9 +574,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 102,
+                "endLine" : 148,
                 "startColumn" : 9,
-                "startLine" : 102
+                "startLine" : 148
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -528,9 +584,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 102,
+                "endLine" : 148,
                 "startColumn" : 9,
-                "startLine" : 102
+                "startLine" : 148
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"

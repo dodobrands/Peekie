@@ -6,6 +6,7 @@ ExamplesTests / (no suite)
 ✅ rootLevelAsync()
 ❌ rootLevelFailure() (Expected 5.0 but got 6.0)
 ✅ rootLevelSuccess()
+✅ rootLevelWithAttachment()
 ✅ success 🎯
 ✅ сложение работает
 
@@ -14,12 +15,14 @@ ExamplesTests / ExampleSUITests
 ⏭️ disabled() (Test skipped: Disabled reason)
 🤡 expectedFailure() (Failure is expected)
 ❌ failure() (Expected 5.0 but got 6.0)
+❌ failureWithAttachment() (Expected 5.0 but got 6.0)
 ⚠️ flacky() (Flacky failure message: result was 2.0)
 ❌ flackyParameterized(value:) [false] (SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0)
 ✅ flackyParameterized(value:) [true]
 ✅ success()
 ❌ throwing() (Calculator.swift:26: Caught error: .divisionByZero)
 ✅ withAttachment()
+✅ withMultipleAttachments()
 
 ExamplesTests / OuterSuite
 ✅ outer with spaces in name
@@ -33,16 +36,20 @@ ExamplesTests / OuterSuite / InnerSuite
 ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
 ❌ deeplyNestedFailure() (Deeply nested failure: result was 0.0)
 ✅ deeplyNestedSuccess()
+✅ deeplyNestedWithAttachment()
 
 ExamplesTests / XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
+✅ test_attachmentInsideActivity()
 🤡 test_expectedFailure() (Failure is expected)
 ❌ test_failure() (Expected 5.0 but got 6.0)
+❌ test_failureWithAttachment() (Expected 5.0 but got 6.0)
 ⚠️ test_flacky() (Flacky failure message: result was 2.0)
 ✅ test_performance()
 ⏭️ test_skip() (Skip message)
 ✅ test_success()
 ❌ test_throwing() (Calculator.swift:26: failed: caught error: "divisionByZero")
 ✅ test_withAttachment()
+✅ test_withMultipleAttachments()
 ✅ test_withWarning()

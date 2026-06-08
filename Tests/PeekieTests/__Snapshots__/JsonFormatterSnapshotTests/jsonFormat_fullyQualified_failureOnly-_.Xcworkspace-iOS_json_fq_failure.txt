@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6736842105263158,
+  "coverage" : 0.7372881355932204,
   "modules" : [
     {
       "coverage" : {
@@ -19,7 +19,26 @@
           ],
           "name" : "Calculator.swift",
           "warnings" : [
-
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
           ]
         },
         {
@@ -54,49 +73,61 @@
       "name" : "XcodeprojExample.app",
       "tests" : [
         {
-          "durationMs" : 134.09423828125,
+          "durationMs" : 106.99987411499023,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 134.01412963867188,
+          "durationMs" : 117.18201637268066,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 104.84027862548828,
           "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 17.81916618347168,
+          "durationMs" : 92.52595901489258,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 18.955707550048828,
+          "durationMs" : 63.558101654052734,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 132.3409080505371,
+          "durationMs" : 105.81707954406738,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 1544.7980165481567,
+          "durationMs" : 2159.0678691864014,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 4.733920097351074,
+          "durationMs" : 47.13797569274902,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 5.650997161865234,
           "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 134.35077667236328,
+          "durationMs" : 66.20383262634277,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
           "status" : "failure"
@@ -244,16 +275,16 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 226,
-        "percentage" : 0.9535864978902954,
-        "totalLines" : 237
+        "coveredLines" : 318,
+        "percentage" : 0.9665653495440729,
+        "totalLines" : 329
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 131,
-            "percentage" : 0.9290780141843972,
-            "totalLines" : 141
+            "coveredLines" : 168,
+            "percentage" : 0.9438202247191011,
+            "totalLines" : 178
           },
           "errors" : [
 
@@ -283,9 +314,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 98,
+                "endLine" : 125,
                 "startColumn" : 9,
-                "startLine" : 98
+                "startLine" : 125
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -293,9 +324,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 98,
+                "endLine" : 125,
                 "startColumn" : 9,
-                "startLine" : 98
+                "startLine" : 125
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -303,9 +334,9 @@
             {
               "location" : {
                 "endColumn" : 21,
-                "endLine" : 128,
+                "endLine" : 155,
                 "startColumn" : 21,
-                "startLine" : 128
+                "startLine" : 155
               },
               "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -313,9 +344,9 @@
             {
               "location" : {
                 "endColumn" : 28,
-                "endLine" : 130,
+                "endLine" : 157,
                 "startColumn" : 28,
-                "startLine" : 130
+                "startLine" : 157
               },
               "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
@@ -324,9 +355,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 95,
-            "percentage" : 0.9895833333333334,
-            "totalLines" : 96
+            "coveredLines" : 150,
+            "percentage" : 0.9933774834437086,
+            "totalLines" : 151
           },
           "errors" : [
 
@@ -366,9 +397,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 102,
+                "endLine" : 148,
                 "startColumn" : 9,
-                "startLine" : 102
+                "startLine" : 148
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -376,9 +407,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 102,
+                "endLine" : 148,
                 "startColumn" : 9,
-                "startLine" : 102
+                "startLine" : 148
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
