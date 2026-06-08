@@ -10,6 +10,11 @@ ExampleSUITests
 ❌ throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
 ✅ withAttachment()
 
+OuterSuite
+✅ outer with spaces in name
+❌ outerFailure() (Outer suite failure: result was 200.0)
+✅ outerSuccess()
+
 XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
