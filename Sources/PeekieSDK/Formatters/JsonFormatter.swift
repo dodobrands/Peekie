@@ -63,6 +63,7 @@ public final class JSONFormatter {
                 includeDeviceDetails: includeDeviceDetails
             )
             data = try encoder.encode(jsonReport)
+
         case .fullyQualified:
             let jsonReport = JSONReportFlat(
                 from: report,
@@ -194,7 +195,7 @@ private struct JSONModuleFlat: Encodable {
             .sorted { $0.name < $1.name }
             .map { JSONFile(from: $0) }
 
-        var collected: [JSONQualifiedTest] = []
+        var collected = [JSONQualifiedTest]()
 
         let rootLevelTests = module.rootLevelTests
             .filtered(testResults: include)
