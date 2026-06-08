@@ -15,6 +15,11 @@ public struct Tests: AsyncParsableCommand {
         case sonar
     }
 
+    public enum AttachmentsMode: String, ExpressibleByArgument, CaseIterable {
+        case skip
+        case export
+    }
+
     public static let configuration = CommandConfiguration(
         commandName: "tests",
         abstract: "Print test results from an .xcresult bundle"
@@ -37,6 +42,15 @@ public struct Tests: AsyncParsableCommand {
     @Option(help: "Path to test sources (required with --format sonar).")
     public var testsPath: String?
 
+    @Option(help: "Attachments handling: skip (default) or export.")
+    public var attachments = AttachmentsMode.skip
+
+    @Option(
+        name: .customLong("attachments-to"),
+        help: "Output directory for exported attachments. Required with --attachments export."
+    )
+    public var attachmentsTo: String?
+
     @Flag(name: .shortAndLong, help: "Enable verbose logging (debug level)")
     public var verbose = false
 
@@ -44,11 +58,24 @@ public struct Tests: AsyncParsableCommand {
         LoggingSetup.setup(verbose: verbose)
         let xcresultPath = URL(fileURLWithPath: xcresultPath)
 
+        let attachmentsPolicy: AttachmentPolicy
+        switch attachments {
+        case .skip:
+            attachmentsPolicy = .skip
+        case .export:
+            guard let attachmentsTo else {
+                throw ValidationError("--attachments-to is required when --attachments export")
+            }
+
+            attachmentsPolicy = .extractTo(URL(fileURLWithPath: attachmentsTo))
+        }
+
         let report = try await Report(
             xcresultPath: xcresultPath,
             includeCoverage: false,
             includeWarnings: false,
-            includeTests: true
+            includeTests: true,
+            attachments: attachmentsPolicy
         )
 
         let statuses = include.split(separator: ",")
