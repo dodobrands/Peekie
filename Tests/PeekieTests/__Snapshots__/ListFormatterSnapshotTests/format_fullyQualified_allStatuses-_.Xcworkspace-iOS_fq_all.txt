@@ -1,0 +1,37 @@
+⏭️ XcodeprojExample.app / ExampleSUITests / disabled() (Test skipped: Disabled reason)
+⏭️ XcodeprojExample.app / XCTestTests / test_skip() (Skip message)
+⚠️ XcodeprojExample.app / ExampleSUITests / flacky() (Flacky failure message: result was 2.0)
+⚠️ XcodeprojExample.app / XCTestTests / test_flacky() (Flacky failure message: result was 2.0)
+✅ XcodeprojExample.app / 2 + 3 = 5
+✅ XcodeprojExample.app / ExampleSUITests / async()
+✅ XcodeprojExample.app / ExampleSUITests / flackyParameterized(value:) [true]
+✅ XcodeprojExample.app / ExampleSUITests / success()
+✅ XcodeprojExample.app / ExampleSUITests / withAttachment()
+✅ XcodeprojExample.app / OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedSuccess()
+✅ XcodeprojExample.app / OuterSuite / InnerSuite / innerSuccess()
+✅ XcodeprojExample.app / OuterSuite / outer with spaces in name
+✅ XcodeprojExample.app / OuterSuite / outerSuccess()
+✅ XcodeprojExample.app / XCTestTests / test_async()
+✅ XcodeprojExample.app / XCTestTests / test_asyncWithExpectation()
+✅ XcodeprojExample.app / XCTestTests / test_performance()
+✅ XcodeprojExample.app / XCTestTests / test_success()
+✅ XcodeprojExample.app / XCTestTests / test_withAttachment()
+✅ XcodeprojExample.app / XCTestTests / test_withWarning()
+✅ XcodeprojExample.app / array[0] is nil?
+✅ XcodeprojExample.app / divide(10, 2) / returns 5
+✅ XcodeprojExample.app / root level with spaces in name
+✅ XcodeprojExample.app / rootLevelAsync()
+✅ XcodeprojExample.app / rootLevelSuccess()
+✅ XcodeprojExample.app / success 🎯
+✅ XcodeprojExample.app / сложение работает
+❌ XcodeprojExample.app / ExampleSUITests / failure() (Expected 5.0 but got 6.0)
+❌ XcodeprojExample.app / ExampleSUITests / flackyParameterized(value:) [false] (SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0)
+❌ XcodeprojExample.app / ExampleSUITests / throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
+❌ XcodeprojExample.app / OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedFailure() (Deeply nested failure: result was 0.0)
+❌ XcodeprojExample.app / OuterSuite / InnerSuite / innerFailure() (Inner suite failure: result was 12.0)
+❌ XcodeprojExample.app / OuterSuite / outerFailure() (Outer suite failure: result was 200.0)
+❌ XcodeprojExample.app / XCTestTests / test_failure() (Expected 5.0 but got 6.0)
+❌ XcodeprojExample.app / XCTestTests / test_throwing() (XCTestTests.swift:77: failed: caught error: "divisionByZero")
+❌ XcodeprojExample.app / rootLevelFailure() (Expected 5.0 but got 6.0)
+🤡 XcodeprojExample.app / ExampleSUITests / expectedFailure() (Failure is expected)
+🤡 XcodeprojExample.app / XCTestTests / test_expectedFailure() (Failure is expected)

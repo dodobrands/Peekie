@@ -15,7 +15,7 @@ struct ListFormatterSnapshotTests {
             try? FileManager.default.removeItem(at: reportPath)
         }
         let report = try await Report(xcresultPath: reportPath)
-        let formatted = formatter.format(report)
+        let formatted = formatter.format(report, grouping: .bySuite)
 
         assertSnapshot(
             of: formatted,
@@ -34,7 +34,8 @@ struct ListFormatterSnapshotTests {
         let report = try await Report(xcresultPath: reportPath)
         let formatted = formatter.format(
             report,
-            include: [.success]
+            include: [.success],
+            grouping: .bySuite
         )
 
         assertSnapshot(
@@ -54,7 +55,8 @@ struct ListFormatterSnapshotTests {
         let report = try await Report(xcresultPath: reportPath)
         let formatted = formatter.format(
             report,
-            include: [.failure]
+            include: [.failure],
+            grouping: .bySuite
         )
 
         assertSnapshot(
@@ -74,13 +76,52 @@ struct ListFormatterSnapshotTests {
         let report = try await Report(xcresultPath: reportPath)
         let formatted = formatter.format(
             report,
-            include: [.skipped]
+            include: [.skipped],
+            grouping: .bySuite
         )
 
         assertSnapshot(
             of: formatted,
             as: .lines,
             named: "\(snapshotName(from: fileName))_skipped"
+        )
+    }
+
+    @Test(arguments: Constants.testsReportFileNames)
+    func format_fullyQualified_allStatuses(_ fileName: String) async throws {
+        let originalPath = try Constants.url(for: fileName)
+        let reportPath = try Constants.copyXcresultToTemporaryDirectory(originalPath)
+        defer {
+            try? FileManager.default.removeItem(at: reportPath)
+        }
+        let report = try await Report(xcresultPath: reportPath)
+        let formatted = formatter.format(report, grouping: .fullyQualified)
+
+        assertSnapshot(
+            of: formatted,
+            as: .lines,
+            named: "\(snapshotName(from: fileName))_fq_all"
+        )
+    }
+
+    @Test(arguments: Constants.testsReportFileNames)
+    func format_fullyQualified_failureOnly(_ fileName: String) async throws {
+        let originalPath = try Constants.url(for: fileName)
+        let reportPath = try Constants.copyXcresultToTemporaryDirectory(originalPath)
+        defer {
+            try? FileManager.default.removeItem(at: reportPath)
+        }
+        let report = try await Report(xcresultPath: reportPath)
+        let formatted = formatter.format(
+            report,
+            include: [.failure],
+            grouping: .fullyQualified
+        )
+
+        assertSnapshot(
+            of: formatted,
+            as: .lines,
+            named: "\(snapshotName(from: fileName))_fq_failure"
         )
     }
 }
