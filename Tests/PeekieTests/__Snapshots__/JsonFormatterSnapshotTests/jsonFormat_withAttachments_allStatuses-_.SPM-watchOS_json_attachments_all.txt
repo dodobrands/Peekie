@@ -1,0 +1,906 @@
+{
+  "coverage" : 0.6564748201438849,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 16,
+        "percentage" : 0.1509433962264151,
+        "totalLines" : 106
+      },
+      "files" : [
+
+      ],
+      "name" : "Calculator",
+      "rootLevelTests" : [
+
+      ],
+      "suites" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 349,
+        "percentage" : 0.7755555555555556,
+        "totalLines" : 450
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
+            "totalLines" : 34
+          },
+          "errors" : [
+
+          ],
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
+          },
+          "errors" : [
+
+          ],
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 140,
+                "startColumn" : 9,
+                "startLine" : 140
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 140,
+                "startColumn" : 9,
+                "startLine" : 140
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "WarningsCatalog.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
+          },
+          "errors" : [
+
+          ],
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 19,
+                "endLine" : 113,
+                "startColumn" : 19,
+                "startLine" : 113
+              },
+              "message" : "Call to main actor-isolated class method 'runActivity(named:block:)' in a synchronous nonisolated context",
+              "type" : "ActorIsolatedCall"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 173,
+                "startColumn" : 9,
+                "startLine" : 173
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 173,
+                "startColumn" : 9,
+                "startLine" : 173
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "ExamplesTests",
+      "rootLevelTests" : [
+        {
+          "durationMs" : 4.665851593017578,
+          "name" : "2 + 3 = 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 5.050182342529297,
+          "name" : "array[0] is nil?",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 7.227659225463867,
+          "name" : "divide(10, 2) \/ returns 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 3.6809444427490234,
+          "name" : "root level with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 38.22183609008789,
+          "name" : "rootLevelAsync()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 8.236885070800781,
+          "message" : "Expected 5.0 but got 6.0",
+          "name" : "rootLevelFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 4.675865173339844,
+          "name" : "rootLevelSuccess()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "41421F38-F912-4438-BD35-BFD815D01062.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Root attachment_0_33C0629A-DAB7-4B8E-8334-88F03A80497E.txt",
+              "path" : "<ATTACHMENTS_DIR>\/41421F38-F912-4438-BD35-BFD815D01062.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "FFA175FD-F040-4FAA-8D22-CBFBB92CF8AD.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Root attachment_0_ADFDD8F7-AB0D-4B1B-92D8-7C6514A63D16.txt",
+              "path" : "<ATTACHMENTS_DIR>\/FFA175FD-F040-4FAA-8D22-CBFBB92CF8AD.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 7.865190505981445,
+          "name" : "rootLevelWithAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 3.4530162811279297,
+          "name" : "success 🎯",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 3.910064697265625,
+          "name" : "сложение работает",
+          "status" : "success"
+        }
+      ],
+      "suites" : [
+        {
+          "fullPath" : "ExampleSUITests",
+          "name" : "ExampleSUITests",
+          "nestedSuites" : [
+
+          ],
+          "tests" : [
+            {
+              "durationMs" : 37.44029998779297,
+              "name" : "async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0.3046989440917969,
+              "message" : "Test skipped: Disabled reason",
+              "name" : "disabled()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 6.888151168823242,
+              "message" : "Failure is expected",
+              "name" : "expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 5.24592399597168,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failure()",
+              "status" : "failure"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "E18A3567-2F9D-42AE-904F-26302F6E6C70.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Failure context_0_397370AD-BAED-43BB-A428-AFFB849E10F1.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/E18A3567-2F9D-42AE-904F-26302F6E6C70.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "C790DF75-CD87-499A-998C-085CAB1F5B6F.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Failure context_0_802166B7-213F-4656-AEBD-E054E501F2BD.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/C790DF75-CD87-499A-998C-085CAB1F5B6F.txt",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 6449.999809265137,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "failureWithAttachment()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 6.655216217041016,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 3.3931732177734375,
+              "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+              "name" : "flackyParameterized(value:) [false]",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 1.0020732879638672,
+              "name" : "flackyParameterized(value:) [true]",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 5.273103713989258,
+              "name" : "success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 7.562875747680664,
+              "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+              "name" : "throwing()",
+              "status" : "failure"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "91F0252F-5970-484D-8F29-131AE25789E7.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Calculation Result_0_D6BBC4A8-A216-4A13-BC37-C9D52B2A3474.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/91F0252F-5970-484D-8F29-131AE25789E7.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "50B104DB-EF53-4A7C-8A92-AA1F9905B3AC.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Calculation Result_0_4542712B-0304-49DC-A92F-BA2A233FBEE7.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/50B104DB-EF53-4A7C-8A92-AA1F9905B3AC.txt",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 6.825923919677734,
+              "name" : "withAttachment()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "59ED79AD-6A91-406D-8887-07B29A4DEEC2.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Operands_0_B1B90959-5AAE-44AC-90F5-689A254D4639.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/59ED79AD-6A91-406D-8887-07B29A4DEEC2.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "C3C3D558-F338-497B-A0E8-43C276BEA971.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Product result_0_11A5D0AA-46D1-4C4D-91C6-A5CE69BFF894.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/C3C3D558-F338-497B-A0E8-43C276BEA971.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "FF74F890-C15B-4141-A269-C8907ABA65AE.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Sum result_0_4C895E54-3F48-4F4E-8BF3-28F9E9AC9588.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/FF74F890-C15B-4141-A269-C8907ABA65AE.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "6E4DF8FC-3AC4-4AD4-8F25-1BA533D4901C.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Operands_0_DAAEC13E-6EF2-4561-9080-5CEACB51272A.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/6E4DF8FC-3AC4-4AD4-8F25-1BA533D4901C.txt",
+                  "repetitionNumber" : 2
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "EE54C007-B499-4CD6-888F-CD91CD47C84B.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Product result_0_AB91B891-BA43-45DE-9D18-C13E07EC3356.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/EE54C007-B499-4CD6-888F-CD91CD47C84B.txt",
+                  "repetitionNumber" : 2
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "6EA0E19A-BE56-4C53-A7CB-EA99E78D54A7.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Sum result_0_300EFC0B-FF79-4DF1-9A9E-E9A1E2153A46.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/6EA0E19A-BE56-4C53-A7CB-EA99E78D54A7.txt",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 5.336761474609375,
+              "name" : "withMultipleAttachments()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "image\/png",
+                  "exportedFileName" : "AC04FB93-9ABC-4B8E-A8B3-F831DEC270EF.png",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Pixel_0_4725590E-8BFA-4304-84A3-2D451B72B7D2.png",
+                  "path" : "<ATTACHMENTS_DIR>\/AC04FB93-9ABC-4B8E-A8B3-F831DEC270EF.png",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "image\/png",
+                  "exportedFileName" : "6EBEE1B1-E347-4889-83F8-A532BD5C3010.png",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Pixel_0_C099E144-EC1E-4A47-A8D3-39992B00A817.png",
+                  "path" : "<ATTACHMENTS_DIR>\/6EBEE1B1-E347-4889-83F8-A532BD5C3010.png",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 5.557060241699219,
+              "name" : "withPNGAttachment()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "exportedFileName" : "B4F7FBFF-35D0-4CC2-8008-242F9047D279",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Raw binary blob_0_A6EC5D77-F1EE-4747-B1A4-D164EC41913A",
+                  "path" : "<ATTACHMENTS_DIR>\/B4F7FBFF-35D0-4CC2-8008-242F9047D279",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "exportedFileName" : "57B645FC-D87F-44DF-A014-81EC9A3621A2",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Raw binary blob_0_8135C61F-8AA2-4FCB-B069-C1623B97EF1E",
+                  "path" : "<ATTACHMENTS_DIR>\/57B645FC-D87F-44DF-A014-81EC9A3621A2",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 7.3699951171875,
+              "name" : "withRawBinaryAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "fullPath" : "OuterSuite",
+          "name" : "OuterSuite",
+          "nestedSuites" : [
+            {
+              "fullPath" : "OuterSuite \/ InnerSuite",
+              "name" : "InnerSuite",
+              "nestedSuites" : [
+                {
+                  "fullPath" : "OuterSuite \/ InnerSuite \/ DeeplyNestedSuite",
+                  "name" : "DeeplyNestedSuite",
+                  "nestedSuites" : [
+
+                  ],
+                  "tests" : [
+                    {
+                      "durationMs" : 1.5108585357666016,
+                      "message" : "Deeply nested failure: result was 0.0",
+                      "name" : "deeplyNestedFailure()",
+                      "status" : "failure"
+                    },
+                    {
+                      "durationMs" : 1.2180805206298828,
+                      "name" : "deeplyNestedSuccess()",
+                      "status" : "success"
+                    },
+                    {
+                      "attachments" : [
+                        {
+                          "configurationName" : "Test Scheme Action",
+                          "contentType" : "text\/plain",
+                          "exportedFileName" : "31CCE38B-1595-4BCC-A9A5-A8FA5D948333.txt",
+                          "isAssociatedWithFailure" : false,
+                          "name" : "Deeply nested attachment_0_C9D35DAA-B370-4C52-8F58-927D347A9873.txt",
+                          "path" : "<ATTACHMENTS_DIR>\/31CCE38B-1595-4BCC-A9A5-A8FA5D948333.txt",
+                          "repetitionNumber" : 1
+                        },
+                        {
+                          "configurationName" : "Test Scheme Action",
+                          "contentType" : "text\/plain",
+                          "exportedFileName" : "CD098D5E-2732-4358-B661-E43EF0417CB3.txt",
+                          "isAssociatedWithFailure" : false,
+                          "name" : "Deeply nested attachment_0_D0858AC1-9C7D-42DF-AAA0-19731FB21C59.txt",
+                          "path" : "<ATTACHMENTS_DIR>\/CD098D5E-2732-4358-B661-E43EF0417CB3.txt",
+                          "repetitionNumber" : 2
+                        }
+                      ],
+                      "durationMs" : 1.2989044189453125,
+                      "name" : "deeplyNestedWithAttachment()",
+                      "status" : "success"
+                    }
+                  ]
+                }
+              ],
+              "tests" : [
+                {
+                  "durationMs" : 4.4651031494140625,
+                  "message" : "Inner suite failure: result was 12.0",
+                  "name" : "innerFailure()",
+                  "status" : "failure"
+                },
+                {
+                  "durationMs" : 4.267215728759766,
+                  "name" : "innerSuccess()",
+                  "status" : "success"
+                }
+              ]
+            }
+          ],
+          "tests" : [
+            {
+              "durationMs" : 6.522893905639648,
+              "name" : "outer with spaces in name",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 7.071018218994141,
+              "message" : "Outer suite failure: result was 200.0",
+              "name" : "outerFailure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 7.05409049987793,
+              "name" : "outerSuccess()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "fullPath" : "XCTestTests",
+          "name" : "XCTestTests",
+          "nestedSuites" : [
+
+          ],
+          "tests" : [
+            {
+              "durationMs" : 12.59005069732666,
+              "name" : "test_async()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 12.165069580078125,
+              "name" : "test_asyncWithExpectation()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "C6228CCD-B6DC-4B1A-8C1B-DDF9BE232023.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Activity attachment_0_84B7E7D0-564B-4A37-A7CB-09178EEF4881.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/C6228CCD-B6DC-4B1A-8C1B-DDF9BE232023.txt",
+                  "repetitionNumber" : 1
+                }
+              ],
+              "durationMs" : 1.0939836502075195,
+              "name" : "test_attachmentInsideActivity()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 686.6929531097412,
+              "message" : "Failure is expected",
+              "name" : "test_expectedFailure()",
+              "status" : "expectedFailure"
+            },
+            {
+              "durationMs" : 6.266117095947266,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failure()",
+              "status" : "failure"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "192DCE63-AC19-46BA-861D-9F703F9FC0BE.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Failure context_0_0B5ADCE4-CC54-498D-86C3-639CF088F085.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/192DCE63-AC19-46BA-861D-9F703F9FC0BE.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "A94192FE-9139-4704-BF5D-6D88B0CE028E.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Failure context_0_78131F97-DF2F-46DA-AD5C-C3C5C9E8D294.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/A94192FE-9139-4704-BF5D-6D88B0CE028E.txt",
+                  "repetitionNumber" : 2
+                }
+              ],
+              "durationMs" : 7.771968841552734,
+              "message" : "Expected 5.0 but got 6.0",
+              "name" : "test_failureWithAttachment()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 1.5709400177001953,
+              "message" : "Flacky failure message: result was 2.0",
+              "name" : "test_flacky()",
+              "status" : "mixed"
+            },
+            {
+              "durationMs" : 258.0139636993408,
+              "name" : "test_performance()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 3.6499500274658203,
+              "message" : "Skip message",
+              "name" : "test_skip()",
+              "status" : "skipped"
+            },
+            {
+              "durationMs" : 0.41604042053222656,
+              "name" : "test_success()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 3.937959671020508,
+              "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+              "name" : "test_throwing()",
+              "status" : "failure"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "2CE0D42A-FCFB-41A1-BF3B-718DCAA81088.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Calculation Result_0_999FEB55-63B3-48E9-94EE-A2FAB35405FB.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/2CE0D42A-FCFB-41A1-BF3B-718DCAA81088.txt",
+                  "repetitionNumber" : 1
+                }
+              ],
+              "durationMs" : 0.6619691848754883,
+              "name" : "test_withAttachment()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "161590DA-DCF7-4D00-9291-53EA168487A6.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Product result_0_485AAD84-8211-4637-AF08-F134D561AA9E.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/161590DA-DCF7-4D00-9291-53EA168487A6.txt",
+                  "repetitionNumber" : 1
+                },
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "text\/plain",
+                  "exportedFileName" : "1E1E245B-D0E6-4111-8E89-8C734FD56BD8.txt",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Sum result_0_423487A6-D9CE-4F48-BFC9-059E181BF241.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/1E1E245B-D0E6-4111-8E89-8C734FD56BD8.txt",
+                  "repetitionNumber" : 1
+                }
+              ],
+              "durationMs" : 0.9239912033081055,
+              "name" : "test_withMultipleAttachments()",
+              "status" : "success"
+            },
+            {
+              "attachments" : [
+                {
+                  "configurationName" : "Test Scheme Action",
+                  "contentType" : "image\/png",
+                  "exportedFileName" : "D635B0D0-7326-431B-9EDE-FE24661D283F.png",
+                  "isAssociatedWithFailure" : false,
+                  "name" : "Pixel_0_C3F77DE8-51AC-4D5F-B202-1DE6BDDDB1C0.png",
+                  "path" : "<ATTACHMENTS_DIR>\/D635B0D0-7326-431B-9EDE-FE24661D283F.png",
+                  "repetitionNumber" : 1
+                }
+              ],
+              "durationMs" : 0.7179975509643555,
+              "name" : "test_withPNGAttachment()",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 0.3839731216430664,
+              "name" : "test_withWarning()",
+              "status" : "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "files" : [
+
+      ],
+      "name" : "StringUtils",
+      "rootLevelTests" : [
+
+      ],
+      "suites" : [
+
+      ]
+    }
+  ]
+}

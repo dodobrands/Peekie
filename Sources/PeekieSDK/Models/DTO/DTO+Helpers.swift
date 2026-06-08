@@ -68,6 +68,67 @@ extension CoverageReportDTO {
     }
 }
 
+extension AttachmentsDTO {
+    private static let logger = Logger(label: "com.peekie.dto")
+
+    /// Runs `xcrun xcresulttool export attachments` into `outputDirectory`, then
+    /// decodes the generated `manifest.json`.
+    /// - Parameters:
+    ///   - xcresultPath: Source `.xcresult` bundle.
+    ///   - outputDirectory: Directory the CLI will populate with attachment files
+    ///     plus `manifest.json`. Caller owns lifetime.
+    ///   - onlyFailures: When `true`, passes `--only-failures` to skip
+    ///     attachments not linked to a failure.
+    ///   - testID: When non-nil, passes `--test-id <value>` to limit export
+    ///     to a single test identifier or identifier URL.
+    init(
+        from xcresultPath: URL,
+        outputDirectory: URL,
+        onlyFailures: Bool = false,
+        testID: String? = nil
+    ) async throws {
+        var args = [
+            "xcresulttool", "export", "attachments",
+            "--path", xcresultPath.path,
+            "--output-path", outputDirectory.path,
+        ]
+        if onlyFailures {
+            args.append("--only-failures")
+        }
+        if let testID {
+            args.append(contentsOf: ["--test-id", testID])
+        }
+
+        Self.logger.debug(
+            "Exporting attachments",
+            metadata: [
+                "xcresultPath": "\(xcresultPath.path)",
+                "outputDirectory": "\(outputDirectory.path)",
+                "onlyFailures": "\(onlyFailures)",
+                "testID": "\(testID ?? "<all>")",
+            ]
+        )
+
+        _ = try await Shell.execute("xcrun", arguments: args)
+        let manifestPath = outputDirectory.appending(path: "manifest.json")
+        let data = try Data(contentsOf: manifestPath)
+
+        Self.logger.debug(
+            "Parsing AttachmentsDTO",
+            metadata: [
+                "dataSize": "\(data.count)",
+            ]
+        )
+        self = try JSONDecoder().decode(AttachmentsDTO.self, from: data)
+        Self.logger.debug(
+            "AttachmentsDTO parsed successfully",
+            metadata: [
+                "testsWithAttachments": "\(count)",
+            ]
+        )
+    }
+}
+
 extension BuildResultsDTO {
     private static let logger = Logger(label: "com.peekie.dto")
 

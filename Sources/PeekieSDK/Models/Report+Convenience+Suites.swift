@@ -16,7 +16,8 @@ extension Report {
     /// aliasing to a coverage-target name (e.g. `PeekieTests` → `Peekie`) happens
     /// at the call site.
     static func buildSuites(
-        from testResultsDTO: TestResultsDTO
+        from testResultsDTO: TestResultsDTO,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]] = [:]
     )
         -> [String: BundleTestNodes]
     {
@@ -38,10 +39,18 @@ extension Report {
                     switch child.nodeType {
                     case .testCase:
                         // Root-level @Test function — no enclosing @Suite.
-                        rootLevelTests.insert(buildRepeatableTest(from: child))
+                        rootLevelTests.insert(
+                            buildRepeatableTest(from: child, attachmentLookup: attachmentLookup)
+                        )
 
                     case .testSuite:
-                        suites.append(buildSuite(from: child, parentPath: nil))
+                        suites.append(
+                            buildSuite(
+                                from: child,
+                                parentPath: nil,
+                                attachmentLookup: attachmentLookup
+                            )
+                        )
 
                     default:
                         continue
@@ -68,7 +77,8 @@ extension Report {
     /// ancestor suite names from the bundle root; pass `nil` for top-level suites.
     private static func buildSuite(
         from testSuite: TestResultsDTO.TestNode,
-        parentPath: String?
+        parentPath: String?,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]] = [:]
     )
         -> Module.Suite
     {
@@ -89,10 +99,18 @@ extension Report {
         for child in filteredChildren {
             switch child.nodeType {
             case .testCase:
-                repeatableTests.insert(buildRepeatableTest(from: child))
+                repeatableTests.insert(
+                    buildRepeatableTest(from: child, attachmentLookup: attachmentLookup)
+                )
 
             case .testSuite:
-                nestedSuites.append(buildSuite(from: child, parentPath: fullPath))
+                nestedSuites.append(
+                    buildSuite(
+                        from: child,
+                        parentPath: fullPath,
+                        attachmentLookup: attachmentLookup
+                    )
+                )
 
             default:
                 continue
@@ -112,7 +130,8 @@ extension Report {
     /// bundle walking (root-level `@Test` cases) and by suite walking (cases inside
     /// `@Suite` types and `XCTestCase` subclasses).
     private static func buildRepeatableTest(
-        from testCase: TestResultsDTO.TestNode
+        from testCase: TestResultsDTO.TestNode,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]] = [:]
     )
         -> Module.Suite.RepeatableTest
     {
@@ -124,12 +143,19 @@ extension Report {
                 child,
                 path: [],
                 testCase: testCase,
+                attachmentLookup: attachmentLookup,
                 into: &repeatable
             )
         }
 
         if repeatable.tests.isEmpty {
-            repeatable.tests.append(.init(from: testCase))
+            var test = Module.Suite.RepeatableTest.Test(from: testCase)
+            test.attachments = lookupAttachments(
+                for: testCase,
+                repetition: nil,
+                lookup: attachmentLookup
+            )
+            repeatable.tests.append(test)
         }
         return repeatable
     }
@@ -138,6 +164,7 @@ extension Report {
         _ node: TestResultsDTO.TestNode,
         path: [Module.Suite.RepeatableTest.PathNode],
         testCase: TestResultsDTO.TestNode,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
         into repeatable: inout Module.Suite.RepeatableTest
     ) {
         var newPath = path
@@ -146,50 +173,133 @@ extension Report {
         }
 
         if node.nodeType == .repetition {
-            do {
-                let test = try Module.Suite.RepeatableTest.Test(
-                    from: node,
-                    path: newPath,
-                    testCaseName: testCase.name,
-                    testCase: testCase
-                )
-                repeatable.tests.append(test)
-            } catch {
-                // Skip malformed repetition node; we surface what we can.
-            }
+            appendRepetitionTest(
+                node: node,
+                path: newPath,
+                testCase: testCase,
+                attachmentLookup: attachmentLookup,
+                into: &repeatable
+            )
             return
         }
 
-        guard let nodeChildren = node.children else {
-            if node.nodeType == .arguments {
-                let test = Module.Suite.RepeatableTest.Test(
-                    from: node,
-                    path: newPath,
-                    testCase: testCase
-                )
-                repeatable.tests.append(test)
-            }
-            return
-        }
-
-        let filteredChildren = nodeChildren.filter { $0.isMetadata == false }
+        let filteredChildren = (node.children ?? []).filter { $0.isMetadata == false }
 
         if node.nodeType == .arguments {
             let hasRepetitions = filteredChildren.contains { $0.nodeType == .repetition }
             if hasRepetitions == false {
-                let test = Module.Suite.RepeatableTest.Test(
-                    from: node,
+                appendArgumentsTest(
+                    node: node,
                     path: newPath,
-                    testCase: testCase
+                    testCase: testCase,
+                    attachmentLookup: attachmentLookup,
+                    into: &repeatable
                 )
-                repeatable.tests.append(test)
                 return
             }
         }
 
         for child in filteredChildren {
-            processTestNode(child, path: newPath, testCase: testCase, into: &repeatable)
+            processTestNode(
+                child,
+                path: newPath,
+                testCase: testCase,
+                attachmentLookup: attachmentLookup,
+                into: &repeatable
+            )
         }
+    }
+
+    private static func appendRepetitionTest(
+        node: TestResultsDTO.TestNode,
+        path: [Module.Suite.RepeatableTest.PathNode],
+        testCase: TestResultsDTO.TestNode,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        into repeatable: inout Module.Suite.RepeatableTest
+    ) {
+        do {
+            var test = try Module.Suite.RepeatableTest.Test(
+                from: node,
+                path: path,
+                testCaseName: testCase.name,
+                testCase: testCase
+            )
+            test.attachments = lookupAttachments(
+                for: testCase,
+                repetition: repetitionNumber(from: node.name),
+                lookup: attachmentLookup
+            )
+            repeatable.tests.append(test)
+        } catch {
+            // Skip malformed repetition node; we surface what we can.
+        }
+    }
+
+    private static func appendArgumentsTest(
+        node: TestResultsDTO.TestNode,
+        path: [Module.Suite.RepeatableTest.PathNode],
+        testCase: TestResultsDTO.TestNode,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        into repeatable: inout Module.Suite.RepeatableTest
+    ) {
+        var test = Module.Suite.RepeatableTest.Test(
+            from: node,
+            path: path,
+            testCase: testCase
+        )
+        test.attachments = lookupAttachments(
+            for: testCase,
+            repetition: nil,
+            lookup: attachmentLookup
+        )
+        repeatable.tests.append(test)
+    }
+
+    /// Joins a parsed `testCase` node + optional repetition number against the
+    /// flat manifest lookup. When the test ran without retries, falls back to
+    /// any entries the manifest emitted with `repetitionNumber == nil`.
+    private static func lookupAttachments(
+        for testCase: TestResultsDTO.TestNode,
+        repetition: Int?,
+        lookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+    )
+        -> [Module.Suite.RepeatableTest.Test.Attachment]
+    {
+        guard let testIdentifierURL = testCase.nodeIdentifierURL,
+              lookup.isEmpty == false
+        else {
+            return []
+        }
+
+        let key = AttachmentLookupKey(
+            testIdentifierURL: testIdentifierURL,
+            repetitionNumber: repetition
+        )
+        if let exact = lookup[key] {
+            return exact
+        }
+        // Fallback: a test that the parser sees as a single run may still have
+        // manifest entries tagged with `repetitionNumber: 1`. Surface those so
+        // we don't drop attachments for one-shot tests.
+        if repetition == nil {
+            let oneShotKey = AttachmentLookupKey(
+                testIdentifierURL: testIdentifierURL,
+                repetitionNumber: 1
+            )
+            if let fallback = lookup[oneShotKey] {
+                return fallback
+            }
+        }
+        return []
+    }
+
+    /// Parses a repetition number out of a `Repetition` node name (e.g.
+    /// `"Repetition 2"` → `2`). Returns `nil` when no trailing integer is found.
+    private static func repetitionNumber(from name: String) -> Int? {
+        let scanner = Scanner(string: name)
+        scanner.charactersToBeSkipped = .whitespaces
+        _ = scanner.scanCharacters(from: .letters)
+        return scanner.scanInt()
     }
 
     // MARK: - Module projection

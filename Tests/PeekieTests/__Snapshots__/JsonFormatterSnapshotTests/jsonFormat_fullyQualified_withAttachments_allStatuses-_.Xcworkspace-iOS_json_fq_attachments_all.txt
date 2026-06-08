@@ -1,0 +1,865 @@
+{
+  "coverage" : 0.7453798767967146,
+  "modules" : [
+    {
+      "coverage" : {
+        "coveredLines" : 30,
+        "percentage" : 0.35714285714285715,
+        "totalLines" : 84
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
+            "totalLines" : 34
+          },
+          "errors" : [
+
+          ],
+          "name" : "Calculator.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 17,
+                "endLine" : 7,
+                "startColumn" : 17,
+                "startLine" : 7
+              },
+              "message" : "Some warning from Calculator",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "NumberHelper.swift",
+          "warnings" : [
+
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 14,
+            "percentage" : 1,
+            "totalLines" : 14
+          },
+          "errors" : [
+
+          ],
+          "name" : "XcodeprojExampleApp.swift",
+          "warnings" : [
+
+          ]
+        }
+      ],
+      "name" : "XcodeprojExample.app",
+      "tests" : [
+        {
+          "durationMs" : 78.60994338989258,
+          "qualifiedName" : "XcodeprojExample.app \/ 2 + 3 = 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 111.95611953735352,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ async()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 4.276037216186523,
+          "message" : "Test skipped: Disabled reason",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ disabled()",
+          "status" : "skipped"
+        },
+        {
+          "durationMs" : 88.78707885742188,
+          "message" : "Failure is expected",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ expectedFailure()",
+          "status" : "expectedFailure"
+        },
+        {
+          "durationMs" : 86.12704277038574,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
+          "status" : "failure"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "E25FD111-A641-415B-9764-8D3F5095FBAD.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Failure context_0_77103BC3-3DFB-4884-A0D8-BF543BED1415.txt",
+              "path" : "<ATTACHMENTS_DIR>\/E25FD111-A641-415B-9764-8D3F5095FBAD.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "9AACFFFC-1890-4DDA-9069-C14A0E1FEFE7.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Failure context_0_603409CB-9F39-4868-A309-89A9F64EB149.txt",
+              "path" : "<ATTACHMENTS_DIR>\/9AACFFFC-1890-4DDA-9069-C14A0E1FEFE7.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 87.81695365905762,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 102.94508934020996,
+          "message" : "Flacky failure message: result was 2.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flacky()",
+          "status" : "mixed"
+        },
+        {
+          "durationMs" : 78.5970687866211,
+          "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 0.7762908935546875,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 85.11710166931152,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ success()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 113.23308944702148,
+          "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
+          "status" : "failure"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "EAD9360D-95C3-48E5-9E3D-B07CA9519554.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Calculation Result_0_894697A0-0006-4B60-9219-4D569ECC5EEF.txt",
+              "path" : "<ATTACHMENTS_DIR>\/EAD9360D-95C3-48E5-9E3D-B07CA9519554.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "7B338EF8-3FF8-44B3-9E00-8C5B6C2D7CA9.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Calculation Result_0_5B5283E1-0EB5-4BA2-A8AA-FCEAF35E0504.txt",
+              "path" : "<ATTACHMENTS_DIR>\/7B338EF8-3FF8-44B3-9E00-8C5B6C2D7CA9.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 80.43718338012695,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withAttachment()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "D41A5E33-73CA-4D9B-8B28-F7FE3FFD2BF3.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Operands_0_E9B601C6-CC94-436B-92BB-9142FA83CB31.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D41A5E33-73CA-4D9B-8B28-F7FE3FFD2BF3.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "A5C2C0AB-755F-45F3-9B3D-0158DFD45A14.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Product result_0_C6222C52-B78A-4BB2-8CD1-D3AEA6436347.txt",
+              "path" : "<ATTACHMENTS_DIR>\/A5C2C0AB-755F-45F3-9B3D-0158DFD45A14.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "1F2BE964-2BD5-43E6-AC48-41C07C744D43.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Sum result_0_D6C5C6D9-B3B1-41E9-8E43-811211FD9FF7.txt",
+              "path" : "<ATTACHMENTS_DIR>\/1F2BE964-2BD5-43E6-AC48-41C07C744D43.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "463F8541-F49A-46DC-A1CB-046029D38FD7.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Operands_0_94A9D160-0B5D-4D72-B8CB-14D89CA2C366.txt",
+              "path" : "<ATTACHMENTS_DIR>\/463F8541-F49A-46DC-A1CB-046029D38FD7.txt",
+              "repetitionNumber" : 2
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "475C6C94-C313-45AA-8DFD-C95F6C0DA56D.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Product result_0_B508BAD0-C876-4261-BE0A-48C888F88D07.txt",
+              "path" : "<ATTACHMENTS_DIR>\/475C6C94-C313-45AA-8DFD-C95F6C0DA56D.txt",
+              "repetitionNumber" : 2
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "30C30CA5-753F-4178-A0FE-68F850416063.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Sum result_0_57699D0F-FB8F-428B-9B32-FF1010368025.txt",
+              "path" : "<ATTACHMENTS_DIR>\/30C30CA5-753F-4178-A0FE-68F850416063.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 85.82520484924316,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withMultipleAttachments()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "image\/png",
+              "exportedFileName" : "AD25EFF3-2048-4FBA-BA42-AAAED15631B2.png",
+              "isAssociatedWithFailure" : false,
+              "name" : "Pixel_0_A3ADEFB8-2EBC-4429-BB38-0C33B54881FB.png",
+              "path" : "<ATTACHMENTS_DIR>\/AD25EFF3-2048-4FBA-BA42-AAAED15631B2.png",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "image\/png",
+              "exportedFileName" : "717927C1-B855-4676-938E-137C233FA509.png",
+              "isAssociatedWithFailure" : false,
+              "name" : "Pixel_0_B617CB05-BAD1-4EB5-A514-7FEB046D5111.png",
+              "path" : "<ATTACHMENTS_DIR>\/717927C1-B855-4676-938E-137C233FA509.png",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 86.05623245239258,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withPNGAttachment()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "exportedFileName" : "D2810F99-F38A-44F2-B803-A3550772B0C4",
+              "isAssociatedWithFailure" : false,
+              "name" : "Raw binary blob_0_B59E6F4A-4B09-42C1-8FFC-5F5F4C3B62A4",
+              "path" : "<ATTACHMENTS_DIR>\/D2810F99-F38A-44F2-B803-A3550772B0C4",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "exportedFileName" : "86B4B828-20F9-42D3-8F1A-2C958895C875",
+              "isAssociatedWithFailure" : false,
+              "name" : "Raw binary blob_0_3EE4C0EF-40B7-48C1-9CE0-EFDE37A107ED",
+              "path" : "<ATTACHMENTS_DIR>\/86B4B828-20F9-42D3-8F1A-2C958895C875",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 81.12621307373047,
+          "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withRawBinaryAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 4.866838455200195,
+          "message" : "Deeply nested failure: result was 0.0",
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 4.761934280395508,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "D76D10BD-91F7-4522-9E84-8818C97B16C8.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Deeply nested attachment_0_FF657860-6E54-40A8-A664-C0B86BD580F5.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D76D10BD-91F7-4522-9E84-8818C97B16C8.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "F54510C3-7E9A-4267-8E1A-ED4D11A48CD8.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Deeply nested attachment_0_BFE152C5-9E50-4870-A7F7-E7498361AC3A.txt",
+              "path" : "<ATTACHMENTS_DIR>\/F54510C3-7E9A-4267-8E1A-ED4D11A48CD8.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 4.631280899047852,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedWithAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 85.37483215332031,
+          "message" : "Inner suite failure: result was 12.0",
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 84.52582359313965,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 149.44696426391602,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outer with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 155.99513053894043,
+          "message" : "Outer suite failure: result was 200.0",
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 150.68507194519043,
+          "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerSuccess()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 13.279914855957031,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_async()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 11.767029762268066,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_asyncWithExpectation()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "56A69B2B-96B7-4975-B10B-A84EE50CE0BC.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Activity attachment_0_01A7C45F-82AE-4CB8-BDF5-C56DEBBD01D3.txt",
+              "path" : "<ATTACHMENTS_DIR>\/56A69B2B-96B7-4975-B10B-A84EE50CE0BC.txt",
+              "repetitionNumber" : 1
+            }
+          ],
+          "durationMs" : 1.2019872665405273,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_attachmentInsideActivity()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 286.7230176925659,
+          "message" : "Failure is expected",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_expectedFailure()",
+          "status" : "expectedFailure"
+        },
+        {
+          "durationMs" : 1789.3640995025635,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
+          "status" : "failure"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "2C0C0C07-24EF-43F4-81C7-5C16AECA70DA.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Failure context_0_E3845D30-A4B9-4260-A130-D7469CD4C364.txt",
+              "path" : "<ATTACHMENTS_DIR>\/2C0C0C07-24EF-43F4-81C7-5C16AECA70DA.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "B7875393-9C05-46D5-BF07-8FDCF5234755.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Failure context_0_B60BE6AF-3F57-4E74-9DE3-A84F1D3BE87D.txt",
+              "path" : "<ATTACHMENTS_DIR>\/B7875393-9C05-46D5-BF07-8FDCF5234755.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 28.028011322021484,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 17.980098724365234,
+          "message" : "Flacky failure message: result was 2.0",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_flacky()",
+          "status" : "mixed"
+        },
+        {
+          "durationMs" : 253.98194789886475,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_performance()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 4.907965660095215,
+          "message" : "Skip message",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_skip()",
+          "status" : "skipped"
+        },
+        {
+          "durationMs" : 0.5099773406982422,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_success()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 4.804015159606934,
+          "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
+          "status" : "failure"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "91E6611E-B30F-4D88-9E02-EB3E38901FD8.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Calculation Result_0_C3E2B53F-86B7-46F2-9FD8-522FE8CF8EF7.txt",
+              "path" : "<ATTACHMENTS_DIR>\/91E6611E-B30F-4D88-9E02-EB3E38901FD8.txt",
+              "repetitionNumber" : 1
+            }
+          ],
+          "durationMs" : 0.6949901580810547,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withAttachment()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "6E2EE22D-2D83-4983-9988-8FFEB4CD0430.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Product result_0_2AD660FC-5ACD-4F3A-B11F-CFAB75489C13.txt",
+              "path" : "<ATTACHMENTS_DIR>\/6E2EE22D-2D83-4983-9988-8FFEB4CD0430.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "52D793BF-A969-4A19-899F-AE5074D5335B.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Sum result_0_0A62A487-E0F1-439D-A7A2-17A306DB7F15.txt",
+              "path" : "<ATTACHMENTS_DIR>\/52D793BF-A969-4A19-899F-AE5074D5335B.txt",
+              "repetitionNumber" : 1
+            }
+          ],
+          "durationMs" : 1.1419057846069336,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withMultipleAttachments()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "image\/png",
+              "exportedFileName" : "41BAB4E6-DDC7-49C4-8953-2BFB3DAE9D3C.png",
+              "isAssociatedWithFailure" : false,
+              "name" : "Pixel_0_C95E41FB-82DF-4D5B-8AF0-77E0A6120CEA.png",
+              "path" : "<ATTACHMENTS_DIR>\/41BAB4E6-DDC7-49C4-8953-2BFB3DAE9D3C.png",
+              "repetitionNumber" : 1
+            }
+          ],
+          "durationMs" : 0.7280111312866211,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withPNGAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 0.41794776916503906,
+          "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withWarning()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 79.25605773925781,
+          "qualifiedName" : "XcodeprojExample.app \/ array[0] is nil?",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 76.70927047729492,
+          "qualifiedName" : "XcodeprojExample.app \/ divide(10, 2) \/ returns 5",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 79.33998107910156,
+          "qualifiedName" : "XcodeprojExample.app \/ root level with spaces in name",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 172.24597930908203,
+          "qualifiedName" : "XcodeprojExample.app \/ rootLevelAsync()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 86.71808242797852,
+          "message" : "Expected 5.0 but got 6.0",
+          "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
+          "status" : "failure"
+        },
+        {
+          "durationMs" : 80.33037185668945,
+          "qualifiedName" : "XcodeprojExample.app \/ rootLevelSuccess()",
+          "status" : "success"
+        },
+        {
+          "attachments" : [
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "73AD1265-C38D-44E6-8B4C-6CFB5F54B1BE.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Root attachment_0_A6838F2C-5922-444F-BEB4-EBA305C1FB6F.txt",
+              "path" : "<ATTACHMENTS_DIR>\/73AD1265-C38D-44E6-8B4C-6CFB5F54B1BE.txt",
+              "repetitionNumber" : 1
+            },
+            {
+              "configurationName" : "Test Scheme Action",
+              "contentType" : "text\/plain",
+              "exportedFileName" : "CA8B057F-BC8E-43DC-A8F2-B4B6FC4EEFEB.txt",
+              "isAssociatedWithFailure" : false,
+              "name" : "Root attachment_0_57067A80-20BC-447A-8AF3-94F17031E6E6.txt",
+              "path" : "<ATTACHMENTS_DIR>\/CA8B057F-BC8E-43DC-A8F2-B4B6FC4EEFEB.txt",
+              "repetitionNumber" : 2
+            }
+          ],
+          "durationMs" : 79.53190803527832,
+          "qualifiedName" : "XcodeprojExample.app \/ rootLevelWithAttachment()",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 76.33709907531738,
+          "qualifiedName" : "XcodeprojExample.app \/ success 🎯",
+          "status" : "success"
+        },
+        {
+          "durationMs" : 148.74529838562012,
+          "qualifiedName" : "XcodeprojExample.app \/ сложение работает",
+          "status" : "success"
+        }
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 0,
+        "percentage" : 0,
+        "totalLines" : 59
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 23
+          },
+          "errors" : [
+
+          ],
+          "name" : "TextProcessor.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 13,
+                "startColumn" : 9,
+                "startLine" : 13
+              },
+              "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 13,
+                "startColumn" : 9,
+                "startLine" : 13
+              },
+              "message" : "Some warning from StringUtils",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 0,
+            "percentage" : 0,
+            "totalLines" : 36
+          },
+          "errors" : [
+
+          ],
+          "name" : "WarningsCatalog.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 22,
+                "startColumn" : 26,
+                "startLine" : 22
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 23,
+                "startColumn" : 26,
+                "startLine" : 23
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 26,
+                "endLine" : 24,
+                "startColumn" : 26,
+                "startLine" : 24
+              },
+              "message" : "'oldFoo()' is deprecated: use newFoo()",
+              "type" : "DeprecatedDeclaration"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 40,
+                "startColumn" : 4,
+                "startLine" : 40
+              },
+              "message" : "Code after 'return' will never be executed",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 4,
+                "endLine" : 49,
+                "startColumn" : 4,
+                "startLine" : 49
+              },
+              "message" : "Result of call to 'unusedResultProducer()' is unused",
+              "type" : "No-usage"
+            },
+            {
+              "location" : {
+                "endColumn" : 14,
+                "endLine" : 56,
+                "startColumn" : 14,
+                "startLine" : 56
+              },
+              "message" : "String interpolation produces a debug description for an optional value; did you mean to make this explicit?",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 13,
+                "endLine" : 65,
+                "startColumn" : 13,
+                "startLine" : 65
+              },
+              "message" : "Conditional cast from 'Bar' to 'Foo' always succeeds",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 8,
+                "endLine" : 89,
+                "startColumn" : 8,
+                "startLine" : 89
+              },
+              "message" : "No calls to throwing functions occur within 'try' expression",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleFramework.framework",
+      "tests" : [
+
+      ]
+    },
+    {
+      "coverage" : {
+        "coveredLines" : 333,
+        "percentage" : 0.9680232558139535,
+        "totalLines" : 344
+      },
+      "files" : [
+        {
+          "coverage" : {
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
+          },
+          "errors" : [
+
+          ],
+          "name" : "SwiftTestingTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 25,
+                "endLine" : 72,
+                "startColumn" : 25,
+                "startLine" : 72
+              },
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 32,
+                "endLine" : 75,
+                "startColumn" : 32,
+                "startLine" : 75
+              },
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 140,
+                "startColumn" : 9,
+                "startLine" : 140
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 140,
+                "startColumn" : 9,
+                "startLine" : 140
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 21,
+                "endLine" : 183,
+                "startColumn" : 21,
+                "startLine" : 183
+              },
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 28,
+                "endLine" : 185,
+                "startColumn" : 28,
+                "startLine" : 185
+              },
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        },
+        {
+          "coverage" : {
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
+          },
+          "errors" : [
+
+          ],
+          "name" : "XCTestTests.swift",
+          "warnings" : [
+            {
+              "location" : {
+                "endColumn" : 25,
+                "endLine" : 50,
+                "startColumn" : 25,
+                "startLine" : 50
+              },
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 32,
+                "endLine" : 53,
+                "startColumn" : 32,
+                "startLine" : 53
+              },
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 36,
+                "endLine" : 64,
+                "startColumn" : 36,
+                "startLine" : 64
+              },
+              "message" : "Main actor-isolated instance method 'multiply' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 173,
+                "startColumn" : 9,
+                "startLine" : 173
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Error"
+            },
+            {
+              "location" : {
+                "endColumn" : 9,
+                "endLine" : 173,
+                "startColumn" : 9,
+                "startLine" : 173
+              },
+              "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            }
+          ]
+        }
+      ],
+      "name" : "XcodeprojExampleTests.xctest",
+      "tests" : [
+
+      ]
+    }
+  ]
+}

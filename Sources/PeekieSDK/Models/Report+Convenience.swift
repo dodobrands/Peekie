@@ -1,5 +1,42 @@
 import Foundation
 import Logging
+#if canImport(UniformTypeIdentifiers)
+import UniformTypeIdentifiers
+#endif
+
+// MARK: - AttachmentPolicy
+
+/// Controls whether `Report` exports and surfaces test attachments.
+///
+/// `xcresulttool export attachments` writes binary attachment files plus a
+/// `manifest.json` to a directory. With `.skip` (default), nothing is exported
+/// and `Report.Module.Suite.RepeatableTest.Test.attachments` is empty
+/// everywhere. With `.extractTo(url)`, files are written under `url` and each
+/// matching test gets its attachments wired up.
+public enum AttachmentPolicy: Sendable {
+    /// Do not run `xcresulttool export attachments`; tests carry no attachments.
+    case skip
+
+    /// Export attachments into the supplied directory. Caller owns the directory
+    /// lifetime (create + cleanup).
+    case extractTo(URL)
+}
+
+// MARK: - AttachmentLookupKey
+
+/// Lookup key used to join `AttachmentsDTO` entries back to the parser-built
+/// `Test` instances. Matches `testIdentifierURL` (from the manifest) against the
+/// owning test-case node's `nodeIdentifierURL`, refined by `repetitionNumber`
+/// when the test ran with retries.
+struct AttachmentLookupKey: Hashable {
+    let testIdentifierURL: String
+    let repetitionNumber: Int?
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(testIdentifierURL)
+        hasher.combine(repetitionNumber)
+    }
+}
 
 extension Report {
     /// Initializes a new instance of the `Report` using the provided `xcresultPath`.
@@ -19,12 +56,17 @@ extension Report {
     ///     Defaults to `true`. Disabling skips the slowest `xcresulttool` call and is
     ///     useful for warnings-only flows; in that case `Module.suites` is empty but
     ///     `files`, `Module.files`, and warnings/errors remain populated.
+    ///   - attachments: Whether to extract test attachments to disk and surface them
+    ///     on `Test.attachments`. Defaults to `.skip`. Implies `includeTests == true`
+    ///     to have anything to attach to; passing `.extractTo(_)` with
+    ///     `includeTests: false` is allowed but results in zero attachments.
     /// - Throws: An error if the `.xcresult` file cannot be parsed.
     public init(
         xcresultPath: URL,
         includeCoverage: Bool = true,
         includeWarnings: Bool = true,
-        includeTests: Bool = true
+        includeTests: Bool = true,
+        attachments: AttachmentPolicy = .skip
     ) async throws {
         let testResultsDTO: TestResultsDTO? =
             includeTests ? try await TestResultsDTO(from: xcresultPath) : nil
@@ -32,6 +74,24 @@ extension Report {
             includeWarnings ? try await BuildResultsDTO(from: xcresultPath) : nil
         let coverageReportDTO: CoverageReportDTO? =
             includeCoverage ? try await CoverageReportDTO(from: xcresultPath) : nil
+
+        let attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+        if includeTests, case .extractTo(let outputDirectory) = attachments {
+            try FileManager.default.createDirectory(
+                at: outputDirectory,
+                withIntermediateDirectories: true
+            )
+            let dto = try await AttachmentsDTO(
+                from: xcresultPath,
+                outputDirectory: outputDirectory
+            )
+            attachmentLookup = Self.buildAttachmentLookup(
+                dto: dto,
+                outputDirectory: outputDirectory
+            )
+        } else {
+            attachmentLookup = [:]
+        }
 
         let (warningsByFileName, errorsByFileName) = await Self
             .parseIssueMaps(from: buildResultsDTO)
@@ -44,7 +104,8 @@ extension Report {
 
         let testNodesByModule = Self.testNodesByCanonicalModule(
             testResultsDTO: testResultsDTO,
-            coverageReportDTO: coverageReportDTO
+            coverageReportDTO: coverageReportDTO,
+            attachmentLookup: attachmentLookup
         )
 
         self.files = files
@@ -58,6 +119,57 @@ extension Report {
             coverageReportDTO: coverageReportDTO,
             files: files
         )
+    }
+
+    // MARK: - Attachment lookup
+
+    /// Folds the flat manifest from `xcresulttool export attachments` into a
+    /// `(testIdentifierURL, repetitionNumber) → [Attachment]` map. Entries
+    /// whose `repetitionNumber` is `nil` participate as the catch-all bucket
+    /// for tests that ran without retries.
+    static func buildAttachmentLookup(
+        dto: AttachmentsDTO,
+        outputDirectory: URL
+    )
+        -> [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+    {
+        var result = [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]()
+        for entry in dto {
+            for raw in entry.attachments {
+                let key = AttachmentLookupKey(
+                    testIdentifierURL: entry.testIdentifierURL,
+                    repetitionNumber: raw.repetitionNumber
+                )
+                let attachment = Module.Suite.RepeatableTest.Test.Attachment(
+                    name: raw.suggestedHumanReadableName,
+                    exportedFileName: raw.exportedFileName,
+                    path: outputDirectory.appending(path: raw.exportedFileName),
+                    contentType: mimeType(forFileName: raw.exportedFileName),
+                    isAssociatedWithFailure: raw.isAssociatedWithFailure,
+                    repetitionNumber: raw.repetitionNumber,
+                    timestamp: raw.timestamp.map { Date(timeIntervalSince1970: $0) },
+                    deviceID: raw.deviceID,
+                    configurationName: raw.configurationName
+                )
+                result[key, default: []].append(attachment)
+            }
+        }
+        return result
+    }
+
+    /// Infers a MIME type from a filename via `UTType`. Returns `nil` when no
+    /// extension or no mapping is available.
+    private static func mimeType(forFileName fileName: String) -> String? {
+        let ext = (fileName as NSString).pathExtension
+        guard ext.isEmpty == false else {
+            return nil
+        }
+
+        #if canImport(UniformTypeIdentifiers)
+        return UTType(filenameExtension: ext)?.preferredMIMEType
+        #else
+        return nil
+        #endif
     }
 
     // MARK: - Helpers used by init
@@ -81,12 +193,13 @@ extension Report {
     /// coverage-target names so they project onto the same Module.
     private static func testNodesByCanonicalModule(
         testResultsDTO: TestResultsDTO?,
-        coverageReportDTO: CoverageReportDTO?
+        coverageReportDTO: CoverageReportDTO?,
+        attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]] = [:]
     )
         -> [String: BundleTestNodes]
     {
         let nodesByBundle: [String: BundleTestNodes] =
-            testResultsDTO.map(buildSuites(from:)) ?? [:]
+            testResultsDTO.map { buildSuites(from: $0, attachmentLookup: attachmentLookup) } ?? [:]
         let coverageTargetNames = Set(coverageReportDTO?.targets.map(\.name) ?? [])
         let aliasing = aliasTestBundlesToCoverageTargets(
             testBundleNames: Set(nodesByBundle.keys),

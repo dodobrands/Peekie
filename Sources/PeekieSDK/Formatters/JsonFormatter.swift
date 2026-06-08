@@ -281,14 +281,46 @@ private struct JSONQualifiedTest: Encodable {
         status = test.status.rawValue
         durationMs = test.duration.converted(to: .milliseconds).value
         message = test.message
+        attachments = test.attachments.isEmpty
+            ? nil
+            : test.attachments.map { JSONAttachment(from: $0) }
     }
 
     // MARK: Internal
 
+    let attachments: [JSONAttachment]?
     let durationMs: Double
     let message: String?
     let qualifiedName: String
     let status: String
+}
+
+// MARK: - JSONAttachment
+
+private struct JSONAttachment: Encodable {
+    // MARK: Lifecycle
+
+    init(from attachment: Report.Module.Suite.RepeatableTest.Test.Attachment) {
+        name = attachment.name
+        exportedFileName = attachment.exportedFileName
+        path = attachment.path.path
+        contentType = attachment.contentType
+        isAssociatedWithFailure = attachment.isAssociatedWithFailure
+        repetitionNumber = attachment.repetitionNumber
+        deviceID = attachment.deviceID
+        configurationName = attachment.configurationName
+    }
+
+    // MARK: Internal
+
+    let configurationName: String?
+    let contentType: String?
+    let deviceID: String?
+    let exportedFileName: String
+    let isAssociatedWithFailure: Bool
+    let name: String
+    let path: String
+    let repetitionNumber: Int?
 }
 
 // MARK: - JSONCoverage
@@ -401,10 +433,14 @@ private struct JSONTest: Encodable {
         status = test.status.rawValue
         durationMs = test.duration.converted(to: .milliseconds).value
         message = test.message
+        attachments = test.attachments.isEmpty
+            ? nil
+            : test.attachments.map { JSONAttachment(from: $0) }
     }
 
     // MARK: Internal
 
+    let attachments: [JSONAttachment]?
     let durationMs: Double
     let message: String?
     let name: String
