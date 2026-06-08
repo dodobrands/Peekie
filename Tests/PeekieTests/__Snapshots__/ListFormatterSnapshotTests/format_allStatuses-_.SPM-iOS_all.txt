@@ -1,4 +1,15 @@
-ExampleSUITests
+ExamplesTests / (no suite)
+✅ 2 + 3 = 5
+✅ array[0] is nil?
+✅ divide(10, 2) / returns 5
+✅ root level with spaces in name
+✅ rootLevelAsync()
+❌ rootLevelFailure() (Expected 5.0 but got 6.0)
+✅ rootLevelSuccess()
+✅ success 🎯
+✅ сложение работает
+
+ExamplesTests / ExampleSUITests
 ✅ async()
 ⏭️ disabled() (Test skipped: Disabled reason)
 🤡 expectedFailure() (Failure is expected)
@@ -10,12 +21,20 @@ ExampleSUITests
 ❌ throwing() (Calculator.swift:26: Caught error: .divisionByZero)
 ✅ withAttachment()
 
-OuterSuite
+ExamplesTests / OuterSuite
 ✅ outer with spaces in name
 ❌ outerFailure() (Outer suite failure: result was 200.0)
 ✅ outerSuccess()
 
-XCTestTests
+ExamplesTests / OuterSuite / InnerSuite
+❌ innerFailure() (Inner suite failure: result was 12.0)
+✅ innerSuccess()
+
+ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
+❌ deeplyNestedFailure() (Deeply nested failure: result was 0.0)
+✅ deeplyNestedSuccess()
+
+ExamplesTests / XCTestTests
 ✅ test_async()
 ✅ test_asyncWithExpectation()
 🤡 test_expectedFailure() (Failure is expected)

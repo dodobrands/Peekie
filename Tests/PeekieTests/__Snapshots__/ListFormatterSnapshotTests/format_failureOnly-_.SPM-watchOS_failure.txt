@@ -1,10 +1,19 @@
-ExampleSUITests
+ExamplesTests / (no suite)
+❌ rootLevelFailure() (Expected 5.0 but got 6.0)
+
+ExamplesTests / ExampleSUITests
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ throwing() (Calculator.swift:26: Caught error: .divisionByZero)
 
-OuterSuite
+ExamplesTests / OuterSuite
 ❌ outerFailure() (Outer suite failure: result was 200.0)
 
-XCTestTests
+ExamplesTests / OuterSuite / InnerSuite
+❌ innerFailure() (Inner suite failure: result was 12.0)
+
+ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
+❌ deeplyNestedFailure() (Deeply nested failure: result was 0.0)
+
+ExamplesTests / XCTestTests
 ❌ test_failure() (Expected 5.0 but got 6.0)
 ❌ test_throwing() (Calculator.swift:26: failed: caught error: "divisionByZero")

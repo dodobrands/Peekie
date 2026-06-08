@@ -42,11 +42,18 @@ public extension Report.Module {
         name: String = "",
         files: [Report.File] = [],
         coverage: Report.Coverage? = nil,
+        rootLevelTests: Set<Suite.RepeatableTest> = [],
         suites: [Suite] = []
     )
         -> Self
     {
-        .init(name: name, files: files, coverage: coverage, suites: suites)
+        .init(
+            name: name,
+            files: files,
+            coverage: coverage,
+            rootLevelTests: rootLevelTests,
+            suites: suites
+        )
     }
 }
 
@@ -92,14 +99,18 @@ public extension Report.Module.Suite {
     static func testMake(
         name: String = "",
         nodeIdentifierURL: String = "",
-        repeatableTests: Set<RepeatableTest> = []
+        fullPath: String? = nil,
+        repeatableTests: Set<RepeatableTest> = [],
+        nestedSuites: [Self] = []
     )
         -> Self
     {
         .init(
             name: name,
             nodeIdentifierURL: nodeIdentifierURL,
-            repeatableTests: repeatableTests
+            fullPath: fullPath,
+            repeatableTests: repeatableTests,
+            nestedSuites: nestedSuites
         )
     }
 }

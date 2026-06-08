@@ -52,9 +52,21 @@
         }
       ],
       "name" : "XcodeprojExample.app",
+      "rootLevelTests" : [
+        {
+          "durationMs" : 81.07686042785645,
+          "message" : "Expected 5.0 but got 6.0",
+          "name" : "rootLevelFailure()",
+          "status" : "failure"
+        }
+      ],
       "suites" : [
         {
+          "fullPath" : "ExampleSUITests",
           "name" : "ExampleSUITests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 68.94230842590332,
@@ -71,7 +83,39 @@
           ]
         },
         {
+          "fullPath" : "OuterSuite",
           "name" : "OuterSuite",
+          "nestedSuites" : [
+            {
+              "fullPath" : "OuterSuite \/ InnerSuite",
+              "name" : "InnerSuite",
+              "nestedSuites" : [
+                {
+                  "fullPath" : "OuterSuite \/ InnerSuite \/ DeeplyNestedSuite",
+                  "name" : "DeeplyNestedSuite",
+                  "nestedSuites" : [
+
+                  ],
+                  "tests" : [
+                    {
+                      "durationMs" : 8.196353912353516,
+                      "message" : "Deeply nested failure: result was 0.0",
+                      "name" : "deeplyNestedFailure()",
+                      "status" : "failure"
+                    }
+                  ]
+                }
+              ],
+              "tests" : [
+                {
+                  "durationMs" : 67.53802299499512,
+                  "message" : "Inner suite failure: result was 12.0",
+                  "name" : "innerFailure()",
+                  "status" : "failure"
+                }
+              ]
+            }
+          ],
           "tests" : [
             {
               "durationMs" : 66.36381149291992,
@@ -82,7 +126,11 @@
           ]
         },
         {
+          "fullPath" : "XCTestTests",
           "name" : "XCTestTests",
+          "nestedSuites" : [
+
+          ],
           "tests" : [
             {
               "durationMs" : 1373.3559846878052,
@@ -235,6 +283,9 @@
         }
       ],
       "name" : "XcodeprojExampleFramework.framework",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]
@@ -384,6 +435,9 @@
         }
       ],
       "name" : "XcodeprojExampleTests.xctest",
+      "rootLevelTests" : [
+
+      ],
       "suites" : [
 
       ]
