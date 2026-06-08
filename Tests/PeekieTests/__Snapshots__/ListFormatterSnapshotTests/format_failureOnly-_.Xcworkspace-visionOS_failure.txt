@@ -2,6 +2,9 @@ ExampleSUITests
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
 
+OuterSuite
+❌ outerFailure() (Outer suite failure: result was 200.0)
+
 XCTestTests
 ❌ test_failure() (Expected 5.0 but got 6.0)
 ❌ test_throwing() (XCTestTests.swift:77: failed: caught error: "divisionByZero")

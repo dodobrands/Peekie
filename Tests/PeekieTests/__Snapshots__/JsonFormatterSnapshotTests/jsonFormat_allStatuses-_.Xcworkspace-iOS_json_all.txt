@@ -1,17 +1,17 @@
 {
-  "coverage" : 0.5915032679738562,
+  "coverage" : 0.6736842105263158,
   "modules" : [
     {
       "coverage" : {
-        "coveredLines" : 29,
-        "percentage" : 0.34523809523809523,
+        "coveredLines" : 30,
+        "percentage" : 0.35714285714285715,
         "totalLines" : 84
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 15,
-            "percentage" : 0.4411764705882353,
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
             "totalLines" : 34
           },
           "errors" : [
@@ -19,26 +19,7 @@
           ],
           "name" : "Calculator.swift",
           "warnings" : [
-            {
-              "location" : {
-                "endColumn" : 17,
-                "endLine" : 7,
-                "startColumn" : 17,
-                "startLine" : 7
-              },
-              "message" : "Some warning from Calculator",
-              "type" : "Swift Compiler Error"
-            },
-            {
-              "location" : {
-                "endColumn" : 17,
-                "endLine" : 7,
-                "startColumn" : 17,
-                "startLine" : 7
-              },
-              "message" : "Some warning from Calculator",
-              "type" : "Swift Compiler Warning"
-            }
+
           ]
         },
         {
@@ -76,59 +57,80 @@
           "name" : "ExampleSUITests",
           "tests" : [
             {
-              "durationMs" : 38.15007209777832,
+              "durationMs" : 187.75701522827148,
               "name" : "async()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.2617835998535156,
+              "durationMs" : 3.2601356506347656,
               "message" : "Test skipped: Disabled reason",
               "name" : "disabled()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 15.507936477661133,
+              "durationMs" : 132.8129768371582,
               "message" : "Failure is expected",
               "name" : "expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 16.636133193969727,
+              "durationMs" : 134.09423828125,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 15.70892333984375,
+              "durationMs" : 132.3678493499756,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 14.829635620117188,
+              "durationMs" : 3.3521652221679688,
               "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
               "name" : "flackyParameterized(value:) [false]",
               "status" : "failure"
             },
             {
-              "durationMs" : 12.534141540527344,
+              "durationMs" : 1.0411739349365234,
               "name" : "flackyParameterized(value:) [true]",
               "status" : "success"
             },
             {
-              "durationMs" : 14.275789260864258,
+              "durationMs" : 133.23497772216797,
               "name" : "success()",
               "status" : "success"
             },
             {
-              "durationMs" : 16.064882278442383,
+              "durationMs" : 134.01412963867188,
               "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 14.00899887084961,
+              "durationMs" : 132.8878402709961,
               "name" : "withAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "name" : "OuterSuite",
+          "tests" : [
+            {
+              "durationMs" : 133.53776931762695,
+              "name" : "outer with spaces in name",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 132.3409080505371,
+              "message" : "Outer suite failure: result was 200.0",
+              "name" : "outerFailure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 131.75034523010254,
+              "name" : "outerSuccess()",
               "status" : "success"
             }
           ]
@@ -137,62 +139,62 @@
           "name" : "XCTestTests",
           "tests" : [
             {
-              "durationMs" : 12.004971504211426,
+              "durationMs" : 12.345075607299805,
               "name" : "test_async()",
               "status" : "success"
             },
             {
-              "durationMs" : 12.769103050231934,
+              "durationMs" : 19.181013107299805,
               "name" : "test_asyncWithExpectation()",
               "status" : "success"
             },
             {
-              "durationMs" : 220.93093395233154,
+              "durationMs" : 303.96008491516113,
               "message" : "Failure is expected",
               "name" : "test_expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 57.03091621398926,
+              "durationMs" : 1544.7980165481567,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 1.207113265991211,
+              "durationMs" : 1.2320280075073242,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "test_flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 254.05406951904297,
+              "durationMs" : 253.97896766662598,
               "name" : "test_performance()",
               "status" : "success"
             },
             {
-              "durationMs" : 5.296945571899414,
+              "durationMs" : 5.0830841064453125,
               "message" : "Skip message",
               "name" : "test_skip()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 0.5140304565429688,
+              "durationMs" : 0.7590055465698242,
               "name" : "test_success()",
               "status" : "success"
             },
             {
-              "durationMs" : 4.715085029602051,
+              "durationMs" : 4.733920097351074,
               "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 2.0170211791992188,
+              "durationMs" : 0.8759498596191406,
               "name" : "test_withAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.34999847412109375,
+              "durationMs" : 0.4750490188598633,
               "name" : "test_withWarning()",
               "status" : "success"
             }
@@ -341,16 +343,16 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 152,
-        "percentage" : 0.9325153374233128,
-        "totalLines" : 163
+        "coveredLines" : 226,
+        "percentage" : 0.9535864978902954,
+        "totalLines" : 237
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 57,
-            "percentage" : 0.8507462686567164,
-            "totalLines" : 67
+            "coveredLines" : 131,
+            "percentage" : 0.9290780141843972,
+            "totalLines" : 141
           },
           "errors" : [
 
@@ -395,6 +397,26 @@
                 "startLine" : 98
               },
               "message" : "Some warning from ExampleSUITests",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 21,
+                "endLine" : 128,
+                "startColumn" : 21,
+                "startLine" : 128
+              },
+              "message" : "Main actor-isolated initializer 'init()' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
+              "type" : "Swift Compiler Warning"
+            },
+            {
+              "location" : {
+                "endColumn" : 28,
+                "endLine" : 130,
+                "startColumn" : 28,
+                "startLine" : 130
+              },
+              "message" : "Main actor-isolated instance method 'add' cannot be called from outside of the actor; this is an error in the Swift 6 language mode",
               "type" : "Swift Compiler Warning"
             }
           ]

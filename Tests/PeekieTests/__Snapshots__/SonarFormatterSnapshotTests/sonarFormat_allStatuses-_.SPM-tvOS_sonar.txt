@@ -1,33 +1,40 @@
 <testExecutions version="1">
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-SPM-tvOS/ExampleSUITests.swift">
-        <testCase name="async()" duration="36" />
+        <testCase name="async()" duration="39" />
         <testCase name="disabled()" duration="0">
             <skipped message="Test skipped: Disabled reason" />
         </testCase>
-        <testCase name="expectedFailure()" duration="6" />
-        <testCase name="failure()" duration="6">
+        <testCase name="expectedFailure()" duration="10" />
+        <testCase name="failure()" duration="9">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
-        <testCase name="flacky()" duration="6" />
-        <testCase name="flackyParameterized(value:) [false]" duration="6">
+        <testCase name="flacky()" duration="9" />
+        <testCase name="flackyParameterized(value:) [false]" duration="8">
             <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
         </testCase>
-        <testCase name="flackyParameterized(value:) [true]" duration="0" />
-        <testCase name="success()" duration="1" />
-        <testCase name="throwing()" duration="6">
+        <testCase name="flackyParameterized(value:) [true]" duration="1" />
+        <testCase name="success()" duration="9" />
+        <testCase name="throwing()" duration="10">
             <failure message="Calculator.swift:26: Caught error: .divisionByZero" />
         </testCase>
-        <testCase name="withAttachment()" duration="0" />
+        <testCase name="withAttachment()" duration="9" />
+    </file>
+    <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-SPM-tvOS/OuterSuite.swift">
+        <testCase name="outer with spaces in name" duration="7" />
+        <testCase name="outerFailure()" duration="10">
+            <failure message="Outer suite failure: result was 200.0" />
+        </testCase>
+        <testCase name="outerSuccess()" duration="8" />
     </file>
     <file path="{TEMP_DIR}/sonarFormat_allStatuses(_:)-SPM-tvOS/XCTestTests.swift">
-        <testCase name="test_async()" duration="11" />
-        <testCase name="test_asyncWithExpectation()" duration="13" />
-        <testCase name="test_expectedFailure()" duration="374" />
-        <testCase name="test_failure()" duration="4">
+        <testCase name="test_async()" duration="12" />
+        <testCase name="test_asyncWithExpectation()" duration="12" />
+        <testCase name="test_expectedFailure()" duration="404" />
+        <testCase name="test_failure()" duration="5">
             <failure message="Expected 5.0 but got 6.0" />
         </testCase>
         <testCase name="test_flacky()" duration="2" />
-        <testCase name="test_performance()" duration="257" />
+        <testCase name="test_performance()" duration="256" />
         <testCase name="test_skip()" duration="3">
             <skipped message="Skip message" />
         </testCase>

@@ -1,10 +1,10 @@
 {
-  "coverage" : 0.48533333333333334,
+  "coverage" : 0.5746102449888641,
   "modules" : [
     {
       "coverage" : {
-        "coveredLines" : 15,
-        "percentage" : 0.14150943396226415,
+        "coveredLines" : 16,
+        "percentage" : 0.1509433962264151,
         "totalLines" : 106
       },
       "files" : [
@@ -17,15 +17,15 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 167,
-        "percentage" : 0.620817843866171,
-        "totalLines" : 269
+        "coveredLines" : 242,
+        "percentage" : 0.7055393586005831,
+        "totalLines" : 343
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 15,
-            "percentage" : 0.4411764705882353,
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
             "totalLines" : 34
           },
           "errors" : [
@@ -91,9 +91,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 57,
-            "percentage" : 0.8507462686567164,
-            "totalLines" : 67
+            "coveredLines" : 131,
+            "percentage" : 0.9290780141843972,
+            "totalLines" : 141
           },
           "errors" : [
 
@@ -335,15 +335,26 @@
           "name" : "ExampleSUITests",
           "tests" : [
             {
-              "durationMs" : 6.883144378662109,
+              "durationMs" : 7.595062255859375,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 6.891965866088867,
+              "durationMs" : 10.215044021606445,
               "message" : "Calculator.swift:26: Caught error: .divisionByZero",
               "name" : "throwing()",
+              "status" : "failure"
+            }
+          ]
+        },
+        {
+          "name" : "OuterSuite",
+          "tests" : [
+            {
+              "durationMs" : 9.44972038269043,
+              "message" : "Outer suite failure: result was 200.0",
+              "name" : "outerFailure()",
               "status" : "failure"
             }
           ]
@@ -352,13 +363,13 @@
           "name" : "XCTestTests",
           "tests" : [
             {
-              "durationMs" : 5.118131637573242,
+              "durationMs" : 4.215121269226074,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 5.363941192626953,
+              "durationMs" : 8.813023567199707,
               "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"

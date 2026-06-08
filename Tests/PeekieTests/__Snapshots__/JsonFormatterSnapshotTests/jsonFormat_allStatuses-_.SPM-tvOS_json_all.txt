@@ -1,10 +1,10 @@
 {
-  "coverage" : 0.48533333333333334,
+  "coverage" : 0.5746102449888641,
   "modules" : [
     {
       "coverage" : {
-        "coveredLines" : 15,
-        "percentage" : 0.14150943396226415,
+        "coveredLines" : 16,
+        "percentage" : 0.1509433962264151,
         "totalLines" : 106
       },
       "files" : [
@@ -17,15 +17,15 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 167,
-        "percentage" : 0.620817843866171,
-        "totalLines" : 269
+        "coveredLines" : 242,
+        "percentage" : 0.7055393586005831,
+        "totalLines" : 343
       },
       "files" : [
         {
           "coverage" : {
-            "coveredLines" : 15,
-            "percentage" : 0.4411764705882353,
+            "coveredLines" : 16,
+            "percentage" : 0.47058823529411764,
             "totalLines" : 34
           },
           "errors" : [
@@ -91,9 +91,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 57,
-            "percentage" : 0.8507462686567164,
-            "totalLines" : 67
+            "coveredLines" : 131,
+            "percentage" : 0.9290780141843972,
+            "totalLines" : 141
           },
           "errors" : [
 
@@ -335,59 +335,80 @@
           "name" : "ExampleSUITests",
           "tests" : [
             {
-              "durationMs" : 36.53407096862793,
+              "durationMs" : 39.85905647277832,
               "name" : "async()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.1690387725830078,
+              "durationMs" : 0.3399848937988281,
               "message" : "Test skipped: Disabled reason",
               "name" : "disabled()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 6.731986999511719,
+              "durationMs" : 10.509729385375977,
               "message" : "Failure is expected",
               "name" : "expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 6.804943084716797,
+              "durationMs" : 9.336233139038086,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 6.485223770141602,
+              "durationMs" : 9.531021118164062,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 6.058931350708008,
+              "durationMs" : 8.844137191772461,
               "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0",
               "name" : "flackyParameterized(value:) [false]",
               "status" : "failure"
             },
             {
-              "durationMs" : 0.44608116149902344,
+              "durationMs" : 1.0559558868408203,
               "name" : "flackyParameterized(value:) [true]",
               "status" : "success"
             },
             {
-              "durationMs" : 1.0521411895751953,
+              "durationMs" : 9.785890579223633,
               "name" : "success()",
               "status" : "success"
             },
             {
-              "durationMs" : 6.766319274902344,
+              "durationMs" : 10.107994079589844,
               "message" : "Calculator.swift:26: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 0.9677410125732422,
+              "durationMs" : 9.122133255004883,
               "name" : "withAttachment()",
+              "status" : "success"
+            }
+          ]
+        },
+        {
+          "name" : "OuterSuite",
+          "tests" : [
+            {
+              "durationMs" : 7.92694091796875,
+              "name" : "outer with spaces in name",
+              "status" : "success"
+            },
+            {
+              "durationMs" : 10.738849639892578,
+              "message" : "Outer suite failure: result was 200.0",
+              "name" : "outerFailure()",
+              "status" : "failure"
+            },
+            {
+              "durationMs" : 8.40306282043457,
+              "name" : "outerSuccess()",
               "status" : "success"
             }
           ]
@@ -396,62 +417,62 @@
           "name" : "XCTestTests",
           "tests" : [
             {
-              "durationMs" : 11.09004020690918,
+              "durationMs" : 12.018918991088867,
               "name" : "test_async()",
               "status" : "success"
             },
             {
-              "durationMs" : 13.302922248840332,
+              "durationMs" : 12.779951095581055,
               "name" : "test_asyncWithExpectation()",
               "status" : "success"
             },
             {
-              "durationMs" : 374.6720552444458,
+              "durationMs" : 404.15799617767334,
               "message" : "Failure is expected",
               "name" : "test_expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 4.049062728881836,
+              "durationMs" : 5.89299201965332,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 2.435922622680664,
+              "durationMs" : 2.612948417663574,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "test_flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 257.5420141220093,
+              "durationMs" : 256.9739818572998,
               "name" : "test_performance()",
               "status" : "success"
             },
             {
-              "durationMs" : 3.8139820098876953,
+              "durationMs" : 3.7610530853271484,
               "message" : "Skip message",
               "name" : "test_skip()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 0.43404102325439453,
+              "durationMs" : 0.3930330276489258,
               "name" : "test_success()",
               "status" : "success"
             },
             {
-              "durationMs" : 3.909945487976074,
+              "durationMs" : 3.8728713989257812,
               "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 0.7159709930419922,
+              "durationMs" : 0.7020235061645508,
               "name" : "test_withAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.4349946975708008,
+              "durationMs" : 0.35202503204345703,
               "name" : "test_withWarning()",
               "status" : "success"
             }
