@@ -1,5 +1,5 @@
 {
-  "coverage" : 0.6469500924214417,
+  "coverage" : 0.6564748201438849,
   "modules" : [
     {
       "coverage" : {
@@ -20,9 +20,9 @@
     },
     {
       "coverage" : {
-        "coveredLines" : 334,
-        "percentage" : 0.767816091954023,
-        "totalLines" : 435
+        "coveredLines" : 349,
+        "percentage" : 0.7755555555555556,
+        "totalLines" : 450
       },
       "files" : [
         {
@@ -94,9 +94,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 168,
-            "percentage" : 0.9438202247191011,
-            "totalLines" : 178
+            "coveredLines" : 174,
+            "percentage" : 0.9456521739130435,
+            "totalLines" : 184
           },
           "errors" : [
 
@@ -106,9 +106,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -116,9 +116,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 125,
+                "endLine" : 140,
                 "startColumn" : 9,
-                "startLine" : 125
+                "startLine" : 140
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -300,9 +300,9 @@
         },
         {
           "coverage" : {
-            "coveredLines" : 150,
-            "percentage" : 0.9933774834437086,
-            "totalLines" : 151
+            "coveredLines" : 159,
+            "percentage" : 0.99375,
+            "totalLines" : 160
           },
           "errors" : [
 
@@ -322,9 +322,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Error"
@@ -332,9 +332,9 @@
             {
               "location" : {
                 "endColumn" : 9,
-                "endLine" : 148,
+                "endLine" : 173,
                 "startColumn" : 9,
-                "startLine" : 148
+                "startLine" : 173
               },
               "message" : "Some warning from ExampleSUITests",
               "type" : "Swift Compiler Warning"
@@ -345,7 +345,7 @@
       "name" : "ExamplesTests",
       "rootLevelTests" : [
         {
-          "durationMs" : 5.625009536743164,
+          "durationMs" : 5.087614059448242,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
@@ -360,7 +360,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 4.515647888183594,
+              "durationMs" : 4.10008430480957,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
@@ -370,29 +370,29 @@
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "51412FA8-9757-4799-AE5F-1D6CD6227EFE.txt",
+                  "exportedFileName" : "FF81BDF6-385B-4E46-9086-9F827C92D751.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_E8298823-11E5-45B8-B870-E0120ECA716F.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/51412FA8-9757-4799-AE5F-1D6CD6227EFE.txt",
+                  "name" : "Failure context_0_AA1DC4A4-174E-4818-8894-9AEA5DBBAEF1.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/FF81BDF6-385B-4E46-9086-9F827C92D751.txt",
                   "repetitionNumber" : 1
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "08229334-399D-4348-895B-EAEFC1017D38.txt",
+                  "exportedFileName" : "2340F052-CE7A-403B-8C07-A17B24E9AFEE.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_31875E9D-314B-4DD2-87A4-4AD5775F4DFE.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/08229334-399D-4348-895B-EAEFC1017D38.txt",
+                  "name" : "Failure context_0_5F0A5D67-E366-4BE7-8E38-D870DF02CD25.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/2340F052-CE7A-403B-8C07-A17B24E9AFEE.txt",
                   "repetitionNumber" : 2
                 }
               ],
-              "durationMs" : 4503.000020980835,
+              "durationMs" : 1309.999942779541,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.529237747192383,
+              "durationMs" : 5.090236663818359,
               "message" : "Calculator.swift:26: Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -415,7 +415,7 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 1.0941028594970703,
+                      "durationMs" : 2.2432804107666016,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
@@ -425,7 +425,7 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 1.7406940460205078,
+                  "durationMs" : 3.3440589904785156,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
@@ -435,7 +435,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 4.247188568115234,
+              "durationMs" : 4.762172698974609,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
@@ -450,7 +450,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 9.489059448242188,
+              "durationMs" : 3.6330223083496094,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
@@ -460,29 +460,29 @@
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "6B3B8566-91A8-4670-BB5F-CC9267641B81.txt",
+                  "exportedFileName" : "D9EDDC5F-8066-46C9-A2D5-6203211FD406.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_7D543753-C720-4793-8176-31D446731612.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/6B3B8566-91A8-4670-BB5F-CC9267641B81.txt",
+                  "name" : "Failure context_0_8A762F19-A5F2-4984-806F-872BC86B3393.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/D9EDDC5F-8066-46C9-A2D5-6203211FD406.txt",
                   "repetitionNumber" : 1
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "A6EE2F91-2C72-45EF-B0D7-44C235AD3F72.txt",
+                  "exportedFileName" : "04F32345-2DCF-43B3-8F80-F1F2A151F7A6.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_839C560D-597F-44D3-9E72-6B813CE13CF2.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/A6EE2F91-2C72-45EF-B0D7-44C235AD3F72.txt",
+                  "name" : "Failure context_0_D4251E53-9B64-46E9-A0B4-5ADDC2B8C766.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/04F32345-2DCF-43B3-8F80-F1F2A151F7A6.txt",
                   "repetitionNumber" : 2
                 }
               ],
-              "durationMs" : 19.772887229919434,
+              "durationMs" : 15.62488079071045,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.958033561706543,
+              "durationMs" : 4.658937454223633,
               "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
