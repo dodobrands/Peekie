@@ -15,7 +15,7 @@ struct JSONFormatterSnapshotTests {
             try? FileManager.default.removeItem(at: reportPath)
         }
         let report = try await Report(xcresultPath: reportPath)
-        let formatted = try formatter.format(report)
+        let formatted = try formatter.format(report, grouping: .bySuite)
 
         assertSnapshot(
             of: formatted,
@@ -34,6 +34,7 @@ struct JSONFormatterSnapshotTests {
         let report = try await Report(xcresultPath: reportPath)
         let formatted = try formatter.format(
             report,
+            grouping: .bySuite,
             include: [.failure]
         )
 

@@ -1,0 +1,37 @@
+⏭️ ExamplesTests / ExampleSUITests / disabled() (Test skipped: Disabled reason)
+⏭️ ExamplesTests / XCTestTests / test_skip() (Skip message)
+⚠️ ExamplesTests / ExampleSUITests / flacky() (Flacky failure message: result was 2.0)
+⚠️ ExamplesTests / XCTestTests / test_flacky() (Flacky failure message: result was 2.0)
+✅ ExamplesTests / 2 + 3 = 5
+✅ ExamplesTests / ExampleSUITests / async()
+✅ ExamplesTests / ExampleSUITests / flackyParameterized(value:) [true]
+✅ ExamplesTests / ExampleSUITests / success()
+✅ ExamplesTests / ExampleSUITests / withAttachment()
+✅ ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedSuccess()
+✅ ExamplesTests / OuterSuite / InnerSuite / innerSuccess()
+✅ ExamplesTests / OuterSuite / outer with spaces in name
+✅ ExamplesTests / OuterSuite / outerSuccess()
+✅ ExamplesTests / XCTestTests / test_async()
+✅ ExamplesTests / XCTestTests / test_asyncWithExpectation()
+✅ ExamplesTests / XCTestTests / test_performance()
+✅ ExamplesTests / XCTestTests / test_success()
+✅ ExamplesTests / XCTestTests / test_withAttachment()
+✅ ExamplesTests / XCTestTests / test_withWarning()
+✅ ExamplesTests / array[0] is nil?
+✅ ExamplesTests / divide(10, 2) / returns 5
+✅ ExamplesTests / root level with spaces in name
+✅ ExamplesTests / rootLevelAsync()
+✅ ExamplesTests / rootLevelSuccess()
+✅ ExamplesTests / success 🎯
+✅ ExamplesTests / сложение работает
+❌ ExamplesTests / ExampleSUITests / failure() (Expected 5.0 but got 6.0)
+❌ ExamplesTests / ExampleSUITests / flackyParameterized(value:) [false] (SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0)
+❌ ExamplesTests / ExampleSUITests / throwing() (Calculator.swift:26: Caught error: .divisionByZero)
+❌ ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedFailure() (Deeply nested failure: result was 0.0)
+❌ ExamplesTests / OuterSuite / InnerSuite / innerFailure() (Inner suite failure: result was 12.0)
+❌ ExamplesTests / OuterSuite / outerFailure() (Outer suite failure: result was 200.0)
+❌ ExamplesTests / XCTestTests / test_failure() (Expected 5.0 but got 6.0)
+❌ ExamplesTests / XCTestTests / test_throwing() (Calculator.swift:26: failed: caught error: "divisionByZero")
+❌ ExamplesTests / rootLevelFailure() (Expected 5.0 but got 6.0)
+🤡 ExamplesTests / ExampleSUITests / expectedFailure() (Failure is expected)
+🤡 ExamplesTests / XCTestTests / test_expectedFailure() (Failure is expected)

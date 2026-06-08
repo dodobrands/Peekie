@@ -63,7 +63,7 @@ public final class ListFormatter {
         include: [Report.Module.Suite.RepeatableTest.Test.Status] = Report.Module
             .Suite.RepeatableTest.Test.Status.allCases,
         includeDeviceDetails: Bool = false,
-        grouping: Grouping = .bySuite
+        grouping: Grouping = .fullyQualified
     )
         -> String
     {

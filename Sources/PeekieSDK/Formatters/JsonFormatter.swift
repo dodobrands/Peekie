@@ -27,14 +27,15 @@ public final class JSONFormatter {
     /// Encodes `report` to JSON.
     /// - Parameters:
     ///   - report: The parsed report.
-    ///   - grouping: How tests are grouped per module. Defaults to `.bySuite`
-    ///     for backward compatibility.
+    ///   - grouping: How tests are grouped per module. Defaults to
+    ///     `.fullyQualified` (flat per-module `tests` array). Pass
+    ///     `.bySuite` for the nested tree shape.
     ///   - include: Test statuses to surface (defaults to all).
     ///   - includeDeviceDetails: When `true`, device names appear in test names
     ///     (`[iPhone 15 Pro]`). Useful for matrix runs.
     public func format(
         _ report: Report,
-        grouping: Grouping = .bySuite,
+        grouping: Grouping = .fullyQualified,
         include: [Report.Module.Suite.RepeatableTest.Test.Status] = Report.Module
             .Suite.RepeatableTest.Test.Status.allCases,
         includeDeviceDetails: Bool = false
