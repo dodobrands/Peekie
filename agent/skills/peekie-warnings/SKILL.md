@@ -33,7 +33,7 @@ Flat sorted array, one entry per warning:
 [
   {"file": "Foo.swift", "line": 42, "column": 8, "type": "DeprecatedDeclaration", "message": "'oldFoo()' is deprecated: use bar()"},
   {"file": "Bar.swift", "line": 12, "column": 4, "type": "ActorIsolatedCall", "message": "Main actor-isolated initializer cannot be called from outside the actor"},
-  {"file": "Baz.swift", "line": null, "column": null, "type": "Swift Compiler Error", "message": "TODO: remove this stub before shipping #warning(\"TODO: remove this stub before shipping\")"}
+  {"file": "Calculator.swift", "line": 7, "column": 17, "type": "Swift Compiler Error", "message": "Some warning from Calculator"}
 ]
 ```
 
@@ -46,15 +46,17 @@ One line per warning, grouped by file.
 
 ## The `#warning(...)` quirk — important
 
-**Xcode mis-tags `#warning(...)` directives as `type: "Swift Compiler Error"`** even though they're warnings and appear in `peekie warnings` output (not `peekie errors`). When you see `Swift Compiler Error` entries here, skim the messages — anything matching `…#warning("…")…` is a developer-left TODO marker, not a defect to fix.
+**Xcode mis-tags `#warning("text")` directives as `type: "Swift Compiler Error"`** even though they're warnings and appear in `peekie warnings` output (not `peekie errors`).
 
-Worth calling out separately when interpreting "what kinds of warnings does my build have" — otherwise the count overstates real defects:
+The `message` for a `#warning("Some text")` directive is **just the bare string** passed to the directive — `"Some text"` — with no `#warning` wrapper, no quote marks, no syntactic giveaway. Don't try to detect them by grepping the message for `#warning`; the substring isn't there.
+
+**Default assumption: every entry with `type == "Swift Compiler Error"` in `peekie warnings` output is a `#warning(...)` developer marker, not a real defect.** Real compiler errors land in `peekie errors`, not here. Treat the count of `Swift Compiler Error` entries as "TODO markers left in the source"; treat the other types as defects worth prioritizing.
+
+If you absolutely need to confirm, open the source file at `file:line:column` — the line will literally start with `#warning(...)`.
 
 ```bash
-peekie warnings Build.xcresult | jq '
-  map(select(.type == "Swift Compiler Error" and (.message | test("#warning"))))
-  | length
-'
+# Count of #warning markers (since all Swift Compiler Error entries are markers)
+peekie warnings Build.xcresult | jq 'map(select(.type == "Swift Compiler Error")) | length'
 ```
 
 ## Recipes
