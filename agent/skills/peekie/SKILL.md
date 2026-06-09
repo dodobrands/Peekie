@@ -111,10 +111,26 @@ Flat, sorted by `qualifiedName`. `contentType` is derived from the filename exte
 
 ### Flags
 
-- `--include <statuses>` — comma-separated test statuses. `--include failure` is special: it pushes down to `xcresulttool --only-failures` for efficiency. Other status combinations are filtered client-side.
-- `--test-id <id>` — extract attachments for just one test (matches either the bare identifier or full `test://com.apple.xcode/...` URL).
+- `--include <statuses>` — comma-separated test statuses. **Filters the JSON / list output only — does NOT filter files written to `--output-dir`.** The underlying `xcrun xcresulttool export attachments` always materializes every attachment in the bundle on disk; peekie then filters the manifest it prints. If the user wants the directory itself to contain only attachments from failing (or otherwise filtered) tests, see the recipe below.
+- `--test-id <id>` — extract attachments for just one test. Accepts either the bare identifier (`ExampleSUITests/foo()`) or the full `test://com.apple.xcode/...` URL. **Unlike `--include`, this DOES filter files on disk** — `xcresulttool` only extracts attachments belonging to that single test.
 - `--format list` — human-readable grouping (one section per test, one line per attachment).
 - `--verbose` — debug logging.
+
+### Recipe: clean per-failure attachments on disk
+
+`--include failure` alone leaves every attachment from every test in `--output-dir`. To make the directory contain only failure-test attachments, iterate over failing test IDs and call `peekie attachments --test-id <id>` per test:
+
+```bash
+OUT=/tmp/failed-attachments
+mkdir -p "$OUT"
+peekie tests Tests.xcresult --format json --include failure \
+  | jq -r '.modules[].tests[] | .qualifiedName | sub(" / "; "/"; "g")' \
+  | while read -r id; do
+      peekie attachments Tests.xcresult --output-dir "$OUT" --test-id "$id" --format json
+    done
+```
+
+Apple's own `xcresulttool export attachments --only-failures` looks like it should solve this, but it filters on `isAssociatedWithFailure` — a field that's frequently `false` even on attachments recorded inside a failing test (only set by `XCTAttachment.lifetime = .deleteOnSuccess` or the equivalent explicit hint). So `--only-failures` often returns an empty manifest. The per-test-id loop above is what actually surfaces "attachments belonging to failing tests".
 
 ## `peekie warnings`
 
@@ -209,11 +225,19 @@ peekie tests Tests.xcresult --include failure,mixed --format json | jq '.modules
 
 ### Save failure attachments as CI artifacts
 
+The naive form `peekie attachments Build.xcresult --output-dir <dir> --include failure` leaves every attachment in the directory (not only those from failing tests) — `--include` is a manifest filter, not a disk filter. For a clean per-failure directory, loop per failing test ID:
+
 ```bash
-peekie attachments Build.xcresult --output-dir "$CI_ARTIFACTS/failed-attachments" --include failure
+OUT="$CI_ARTIFACTS/failed-attachments"
+mkdir -p "$OUT"
+peekie tests Build.xcresult --format json --include failure \
+  | jq -r '.modules[].tests[].qualifiedName | sub(" / "; "/"; "g")' \
+  | while read -r id; do
+      peekie attachments Build.xcresult --output-dir "$OUT" --test-id "$id" --format json >/dev/null
+    done
 ```
 
-Only attachments from failing tests land on disk. Other statuses are skipped both in the manifest and on the filesystem.
+Each `peekie attachments --test-id <id>` only materializes attachments for that single test.
 
 ### Test results JSON with attachments inlined
 
@@ -249,3 +273,4 @@ Or download a binary from [Releases](https://github.com/dodobrands/Peekie/releas
 - Don't write `jq` queries against a nested `suites` / `rootLevelTests` / `nestedSuites` JSON shape — that's the older `JSONFormatter.Grouping.bySuite` SDK output, not what the CLI emits. CLI `peekie tests --format json` is always the flat `tests[]` shape with `qualifiedName`.
 - Don't pass `--output-dir` to `peekie attachments` and expect it to be optional — it's required, and `xcresulttool` will always materialize files there.
 - Don't try to filter `peekie warnings` / `peekie errors` / `peekie coverage` with `--include` — that flag only exists on `tests` and `attachments`. Filter with `jq` instead.
+- Don't trust `peekie attachments --include failure` to keep the `--output-dir` clean. `--include` only filters the JSON / list output; the directory still gets every attachment in the bundle. For a clean per-failure directory, loop with `--test-id` (see recipe above).
