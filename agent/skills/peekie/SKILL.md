@@ -112,7 +112,7 @@ Flat, sorted by `qualifiedName`. `contentType` is derived from the filename exte
 ### Flags
 
 - `--include <statuses>` — comma-separated test statuses. **Filters the JSON / list output only — does NOT filter files written to `--output-dir`.** The underlying `xcrun xcresulttool export attachments` always materializes every attachment in the bundle on disk; peekie then filters the manifest it prints. If the user wants the directory itself to contain only attachments from failing (or otherwise filtered) tests, see the recipe below.
-- `--test-id <id>` — extract attachments for just one test. Accepts either the bare identifier (`ExampleSUITests/foo()`) or the full `test://com.apple.xcode/...` URL. **Unlike `--include`, this DOES filter files on disk** — `xcresulttool` only extracts attachments belonging to that single test.
+- `--test-id <id>` — extract attachments for just one test. Accepts either the bare identifier (`ExampleSUITests/foo()`) or the full `test://com.apple.xcode/...` URL. **Unlike `--include`, this DOES filter files on disk** — `xcresulttool export attachments --test-id <id>` only writes that single test's attachment files, regardless of how many other tests in the bundle had attachments. Verified empirically against fixture bundles. This is the building block for the per-failure recipe below.
 - `--format list` — human-readable grouping (one section per test, one line per attachment).
 - `--verbose` — debug logging.
 
