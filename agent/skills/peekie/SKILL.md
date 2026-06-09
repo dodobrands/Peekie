@@ -63,19 +63,22 @@ fi
 
 ### Save failure attachments as CI artifacts
 
-The naive `peekie attachments … --include failure` leaves every attachment from every test in `--output-dir` — `--include` filters the printed manifest, not files on disk. For a clean per-failure directory, loop with `--test-id` (one xcresulttool invocation per failing test materializes only that test's attachments):
+The naive `peekie attachments … --include failure` leaves every attachment from every test in `--output-dir` — `--include` filters the printed manifest, not files on disk. For a clean per-failure directory, use `peekie tests --include failure --attachments export` to a staging dir and cherry-pick the file paths via `jq`:
 
 ```bash
+STAGING=/tmp/peekie-staging
 OUT="$CI_ARTIFACTS/failed-attachments"
-mkdir -p "$OUT"
+mkdir -p "$STAGING" "$OUT"
+
 peekie tests Build.xcresult --format json --include failure \
-  | jq -r '.modules[].tests[].qualifiedName | split(" / ") | .[1:] | join("/")' \
-  | while read -r id; do
-      peekie attachments Build.xcresult --output-dir "$OUT" --test-id "$id" --format json >/dev/null
-    done
+  --attachments export --attachments-to "$STAGING" \
+  | jq -r '.modules[].tests[] | select(.attachments) | .attachments[].path' \
+  | while read -r p; do mv "$p" "$OUT/"; done
+
+rm -rf "$STAGING"
 ```
 
-See `peekie-tests` and `peekie-attachments` for the details.
+See `peekie-attachments` for why this shape rather than `peekie attachments --test-id` (the `--test-id` CLI flag is currently a no-op on disk).
 
 ### Single CI artifact directory with everything
 
