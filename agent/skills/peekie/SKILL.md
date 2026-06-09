@@ -69,7 +69,7 @@ The naive `peekie attachments … --include failure` leaves every attachment fro
 OUT="$CI_ARTIFACTS/failed-attachments"
 mkdir -p "$OUT"
 peekie tests Build.xcresult --format json --include failure \
-  | jq -r '.modules[].tests[].qualifiedName | sub(" / "; "/"; "g")' \
+  | jq -r '.modules[].tests[].qualifiedName | split(" / ") | .[1:] | join("/")' \
   | while read -r id; do
       peekie attachments Build.xcresult --output-dir "$OUT" --test-id "$id" --format json >/dev/null
     done

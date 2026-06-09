@@ -85,11 +85,13 @@ peekie attachments Tests.xcresult --output-dir "$CI_ARTIFACTS/attachments"
 OUT=/tmp/failed-attachments
 mkdir -p "$OUT"
 peekie tests Tests.xcresult --format json --include failure \
-  | jq -r '.modules[].tests[] | .qualifiedName | sub(" / "; "/"; "g")' \
+  | jq -r '.modules[].tests[].qualifiedName | split(" / ") | .[1:] | join("/")' \
   | while read -r id; do
       peekie attachments Tests.xcresult --output-dir "$OUT" --test-id "$id" --format json
     done
 ```
+
+The `jq` expression drops the leading module segment from each `qualifiedName` — `xcresulttool --test-id` expects the bare suite-path identifier (e.g. `ExampleSUITests/failureWithAttachment()`), NOT the module-prefixed full path (`ExamplesTests / ExampleSUITests / failureWithAttachment()`). Passing the prefixed form returns `Error: Failed to find test with the provided identifier`. Verified empirically.
 
 Apple's own `xcresulttool export attachments --only-failures` looks like it should solve this, but it filters on `isAssociatedWithFailure` — a field that's frequently `false` even for attachments recorded inside a failing test (only set by `XCTAttachment.lifetime = .deleteOnSuccess` or the equivalent explicit hint). So `--only-failures` often returns an empty manifest. The per-`--test-id` loop above is what actually surfaces "attachments belonging to failing tests".
 
