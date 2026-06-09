@@ -1,0 +1,35 @@
+{
+  "skill_name": "peekie",
+  "evals": [
+    {
+      "id": 0,
+      "name": "tests-failure-summary",
+      "prompt": "I just ran our iOS test suite and it produced a result bundle at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`. Quick smoke check — did everything pass or were there failures? If there were failures, dump the test names and any failure messages so I can scan them.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "attachments-from-failures",
+      "prompt": "ok so one of our snapshot tests is doing something weird — I need the screenshots and any other attached debug files from just the failing tests. The xcresult is at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`. Pull only the failure attachments into `/tmp/peekie-eval-failed-attachments/` and tell me what landed there.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "warnings-by-type-count",
+      "prompt": "trying to figure out which kinds of compiler warnings our build is emitting — want a count grouped by warning type so we know what to prioritize fixing. The build bundle is at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "coverage-bare-number",
+      "prompt": "Whats the overall test coverage % for this xcresult, just give me the single number rounded to one decimal. Path: `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "sonar-report-generation",
+      "prompt": "Need to upload test results to our SonarQube instance. We've got the xcresult at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult` and the test sources live under `Tests/`. Generate the sonar-compatible test report file and save it to `/tmp/peekie-eval-sonar.xml` so I can sonar-scanner it.",
+      "files": []
+    }
+  ]
+}

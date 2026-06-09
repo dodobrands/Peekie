@@ -1,126 +1,42 @@
 ---
 name: peekie
-description: Parse Xcode `.xcresult` bundles via the `peekie` CLI. Use when the user gives you a path to an `.xcresult` (or asks about test failures / build warnings / coverage and one is on disk) and you need structured data instead of grepping `xcrun xcresulttool` output by hand.
+description: Route Xcode `.xcresult` parsing work to the right `peekie` subcommand. Trigger on broad bundle intent — e.g. "look at this xcresult: /tmp/Build.xcresult", "parse this test bundle", "what's in this build artifact?", "can you summarize this `.xcresult`?", "I have an xcresult from CI, what should I do with it?". Five dedicated sub-skills (`peekie-tests`, `peekie-warnings`, `peekie-errors`, `peekie-coverage`, `peekie-attachments`) cover the data axes; this umbrella picks the right one.
 ---
 
-# Peekie skill
+# Peekie skill (umbrella)
 
-`peekie` is a CLI for Xcode `.xcresult` bundles. Four data-axis subcommands, each emitting JSON (or list / sonar). Reach for it before composing `xcrun xcresulttool` calls — Peekie is faster, terser, and runs only the `xcresulttool` invocations its subcommand needs.
+`peekie` is a CLI for Xcode `.xcresult` bundles. Five data-axis subcommands, each with its own dedicated skill. Reach for one of those instead of composing `xcrun xcresulttool` by hand.
 
-## Subcommands
+<!-- Last verified: 2026-06 against peekie post-#195 (attachments). Fixtures regenerated on Xcode 26.5. -->
 
-```
-peekie tests     <xcresult>  [--format json|list|sonar]  default: list
-peekie warnings  <xcresult>  [--format json|list]        default: json
-peekie errors    <xcresult>  [--format json|list]        default: json
-peekie coverage  <xcresult>  [--format json|list]        default: json
-```
+## Subcommand → skill map
 
-Each subcommand is single-purpose. To get both warnings and coverage, run two commands and pipe / merge their outputs.
-
-## When to use which
-
-| User goal | Subcommand |
+| User intent | Sub-skill |
 |---|---|
-| "Did the tests pass?" / "What failed?" | `peekie tests` |
-| "What warnings are in this build?" | `peekie warnings` |
-| "Why is the build broken?" / "Show me errors" | `peekie errors` |
-| "What's the coverage?" / "Coverage per module" | `peekie coverage` |
-| "Generate SonarQube test report" | `peekie tests --format sonar --tests-path …` |
+| Test results, failures, smoke checks, "did the tests pass?" | `peekie-tests` |
+| Build warnings, deprecations, `#warning(...)` markers | `peekie-warnings` |
+| Build errors, "why is the build broken?" | `peekie-errors` |
+| Code coverage, "what's the coverage?" | `peekie-coverage` |
+| Test attachments — screenshots, logs, blobs | `peekie-attachments` |
+| SonarQube generic-test report | `peekie-tests` (uses `--format sonar --tests-path …`) |
 
-## Output shapes
+If the user asks for a combination (e.g. "show me failures and their attachments", "fail CI on errors and warnings"), pull recipes from each relevant sub-skill and chain them.
 
-### `peekie tests --format json`
+## At a glance
 
-```json
-{
-  "coverage": null,
-  "modules": [
-    {
-      "name": "Calculator",
-      "suites": [
-        {"name": "CalculatorTests", "tests": [{"name": "testAdd()", "status": "success", "durationMs": 12.5, "message": null}]}
-      ],
-      "files": []
-    }
-  ]
-}
+```
+peekie tests        <xcresult>  [--format json|list|sonar]  default: list
+peekie warnings     <xcresult>  [--format json|list]        default: json
+peekie errors       <xcresult>  [--format json|list]        default: json
+peekie coverage     <xcresult>  [--format json|list]        default: json
+peekie attachments  <xcresult>  --output-dir <dir>  [--format json|list]  default: json
 ```
 
-`files` and top-level `coverage` are empty/null because `peekie tests` doesn't fetch coverage data. Use `peekie coverage` for that.
-
-### `peekie warnings` (default JSON)
-
-```json
-[
-  {"file": "Foo.swift", "line": 42, "column": 8, "type": "DeprecatedDeclaration", "message": "'oldFoo()' is deprecated: use bar"},
-  {"file": "Foo.swift", "line": 51, "column": 8, "type": "DeprecatedDeclaration", "message": "'oldFoo()' is deprecated: use bar"}
-]
-```
-
-Flat sorted array. `line` / `column` are `null` when xcresult didn't emit them. Type values are the raw Apple `issueType` strings (`Swift Compiler Warning`, `Swift Compiler Error`, `DeprecatedDeclaration`, `No-usage`, plus anything new Apple adds).
-
-### `peekie errors` (default JSON)
-
-Same shape as `peekie warnings`.
-
-### `peekie coverage` (default JSON)
-
-```json
-{
-  "coverage": 0.6234,
-  "modules": [
-    {
-      "name": "Calculator",
-      "coverage": 0.71,
-      "coveredLines": 167,
-      "totalLines": 233,
-      "files": [
-        {"name": "Calculator.swift", "path": "/…/Calculator.swift", "coverage": 0.71, "coveredLines": 167, "totalLines": 233}
-      ]
-    }
-  ]
-}
-```
-
-## Recipes
-
-### CI gate: fail when there are build errors
-
-```bash
-errors=$(peekie errors Build.xcresult | jq 'length')
-if [ "$errors" -gt 0 ]; then
-  peekie errors Build.xcresult --format list
-  exit 1
-fi
-```
-
-### Coverage badge value
-
-```bash
-peekie coverage Tests.xcresult | jq '.coverage * 100 | floor'
-```
-
-### Group warnings by type
-
-```bash
-peekie warnings Build.xcresult | jq 'group_by(.type) | map({type: .[0].type, count: length})'
-```
-
-### Send only failures to a chat
-
-```bash
-peekie tests Tests.xcresult --include failure,mixed --format json | …
-```
-
-## Filtering
-
-- `peekie tests --include …` — comma-separated statuses (`success,failure,skipped,expectedFailure,mixed,unknown`). Default: all.
-- `peekie warnings` / `peekie errors` have **no `--include` flag**. Filter the JSON output with `jq` or grep the list output.
+Every subcommand also accepts `-v` / `--verbose` for debug logging. Each subcommand is single-purpose — to get both warnings and coverage, run two commands and merge their outputs.
 
 ## Installation
 
-If `peekie` is not on `$PATH`, suggest the user run:
+If `peekie` is not on `$PATH`, suggest:
 
 ```bash
 mise use github:dodobrands/peekie
@@ -128,8 +44,56 @@ mise use github:dodobrands/peekie
 
 Or download a binary from [Releases](https://github.com/dodobrands/Peekie/releases). Do **not** suggest `swift run peekie …` — that's the contributor flow, not the user flow.
 
+## Cross-subcommand recipes
+
+### Fail CI on build errors, surface warnings, report coverage
+
+```bash
+errors=$(peekie errors Build.xcresult | jq 'length')
+warnings=$(peekie warnings Build.xcresult | jq 'length')
+coverage=$(peekie coverage Build.xcresult | jq '.coverage * 100 | floor')
+
+echo "errors=$errors warnings=$warnings coverage=${coverage}%"
+
+if [ "$errors" -gt 0 ]; then
+  peekie errors Build.xcresult --format list
+  exit 1
+fi
+```
+
+### Save failure attachments as CI artifacts
+
+The naive `peekie attachments … --include failure` leaves every attachment from every test in `--output-dir` — `--include` filters the printed manifest, not files on disk. For a clean per-failure directory, use `peekie tests --include failure --attachments export` to a staging dir and cherry-pick the file paths via `jq`:
+
+```bash
+STAGING=/tmp/peekie-staging
+OUT="$CI_ARTIFACTS/failed-attachments"
+mkdir -p "$STAGING" "$OUT"
+
+peekie tests Build.xcresult --format json --include failure \
+  --attachments export --attachments-to "$STAGING" \
+  | jq -r '.modules[].tests[] | select(.attachments) | .attachments[].path' \
+  | while read -r p; do mv "$p" "$OUT/"; done
+
+rm -rf "$STAGING"
+```
+
+See `peekie-attachments` for why this shape rather than `peekie attachments --test-id` (the `--test-id` CLI flag is currently a no-op on disk).
+
+### Single CI artifact directory with everything
+
+```bash
+ARTIFACTS=$CI_ARTIFACTS
+peekie tests      Build.xcresult --format json > "$ARTIFACTS/tests.json"
+peekie warnings   Build.xcresult --format json > "$ARTIFACTS/warnings.json"
+peekie errors     Build.xcresult --format json > "$ARTIFACTS/errors.json"
+peekie coverage   Build.xcresult --format json > "$ARTIFACTS/coverage.json"
+peekie attachments Build.xcresult --output-dir "$ARTIFACTS/attachments" --format json > "$ARTIFACTS/attachments.json"
+```
+
 ## Don't
 
-- Don't invent `--include-coverage` / `--include-warnings` / `--include-tests` flags on the CLI. They exist on the SDK; on the CLI the subcommand itself determines what gets fetched.
-- Don't reach for `xcrun xcresulttool` directly when one of the four subcommands gives you the same data. `peekie warnings` runs **one** `xcresulttool` call; the equivalent hand-rolled pipeline runs three.
-- Don't expect `peekie tests` to print coverage or `peekie coverage` to print suites — each subcommand is single-purpose by design.
+- Don't reach for `xcrun xcresulttool` directly when one of the five subcommands gives you the same data. Each subcommand runs only the minimum invocations needed.
+- Don't expect `--include` to work the same way across subcommands — only `peekie tests` and `peekie attachments` have it; on `attachments` it filters the manifest, not files on disk. `warnings`, `errors`, `coverage` have no `--include`; pipe to `jq` instead.
+- Don't mix subcommands in one invocation — each is single-purpose by design. Run multiple commands and merge with `jq`.
+- Don't suggest `swift run peekie …` to end-users — that's the contributor flow. Use `mise use github:dodobrands/peekie` or a release binary.
