@@ -52,7 +52,7 @@ public struct Attachments: AsyncParsableCommand {
             includeCoverage: false,
             includeWarnings: false,
             includeTests: true,
-            attachments: .extractTo(outputURL)
+            attachments: .extractTo(outputURL, testID: testID)
         )
 
         let formatter = AttachmentsFormatter()
