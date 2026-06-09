@@ -1,0 +1,8 @@
+{
+  "expectations": [
+    {"text": "groups-by-warning-type", "passed": true, "evidence": "Table with 5 type rows + total. Counts per type, plus a Notes column adding context."},
+    {"text": "uses-peekie-warnings", "passed": true, "evidence": "Output uses `peekie warnings` (counts match); correctly flags the 4 'Swift Compiler Error' entries as #warning(...) markers per the skill's new note."},
+    {"text": "actionable-prioritization-context", "passed": true, "evidence": "Trailing interpretation: 13 of 17 are real warnings worth prioritizing; #warning markers triaged separately as backlog notes. Same depth as the baseline-without-skill agent caught in iter-1."}
+  ],
+  "summary": {"pass_rate": 1.0, "passed": 3, "failed": 0, "total": 3}
+}

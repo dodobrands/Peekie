@@ -1,0 +1,25 @@
+{
+  "expectations": [
+    {
+      "text": "answer-is-a-percentage",
+      "passed": true,
+      "evidence": "Output is '65.6%' \u2014 includes percent sign as the user implied with '%'."
+    },
+    {
+      "text": "rounded-to-one-decimal",
+      "passed": true,
+      "evidence": "Single decimal place."
+    },
+    {
+      "text": "terse-no-bloat",
+      "passed": true,
+      "evidence": "Single-line answer."
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 3,
+    "failed": 0,
+    "total": 3
+  }
+}

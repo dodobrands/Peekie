@@ -1,0 +1,9 @@
+{
+  "expectations": [
+    {"text": "files-landed-in-requested-directory", "passed": true, "evidence": "ls -la confirms /tmp/peekie-eval-failed-attachments/ contains 4 attachment files."},
+    {"text": "only-failure-attachments", "passed": true, "evidence": "All 4 files belong to the 2 failing tests with attachments (ExampleSUITests.failureWithAttachment + XCTestTests.test_failureWithAttachment, 2 repetitions each). No leak."},
+    {"text": "tells-user-what-landed", "passed": true, "evidence": "Markdown table maps the 2 failing-with-attachment tests + their reps, plus full ls -la output."},
+    {"text": "no-non-failure-attachments-leaked", "passed": true, "evidence": "Directory is clean (4 files only, all from failing tests)."}
+  ],
+  "summary": {"pass_rate": 1.0, "passed": 4, "failed": 0, "total": 4}
+}

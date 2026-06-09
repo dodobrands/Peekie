@@ -1,0 +1,19 @@
+{
+  "eval_id": 3,
+  "eval_name": "coverage-bare-number",
+  "prompt": "Whats the overall test coverage % for this xcresult, just give me the single number rounded to one decimal. Path: `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`",
+  "assertions": [
+    {
+      "name": "answer-is-a-percentage",
+      "description": "Output is a percentage value (e.g. \"62.3%\" or \"62.3\") — has a clear numeric percent."
+    },
+    {
+      "name": "rounded-to-one-decimal",
+      "description": "The number has exactly one decimal place as the user requested."
+    },
+    {
+      "name": "terse-no-bloat",
+      "description": "Output is terse (under ~50 words). The user explicitly asked for just-the-number — output should respect that."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "eval_id": 0,
+  "eval_name": "tests-failure-summary",
+  "prompt": "I just ran our iOS test suite and it produced a result bundle at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`. Quick smoke check — did everything pass or were there failures? If there were failures, dump the test names and any failure messages so I can scan them.",
+  "assertions": [
+    {
+      "name": "answers-whether-tests-passed",
+      "description": "The reply explicitly answers the smoke check (pass/fail/mixed status) in the first 2-3 lines, before listing details."
+    },
+    {
+      "name": "lists-failing-test-names",
+      "description": "Output names at least 3 specific failing test identifiers (e.g. ExampleSUITests/failure(), XCTestTests/test_throwing(), etc.)."
+    },
+    {
+      "name": "surfaces-failure-messages",
+      "description": "Output includes the actual failure messages (e.g. \"Expected 5.0 but got 6.0\", \"divisionByZero\") so the user can scan without opening the bundle."
+    },
+    {
+      "name": "concise-not-a-dump",
+      "description": "Output is presented as a structured summary (table / list), not a wall of raw JSON from xcresulttool."
+    }
+  ]
+}

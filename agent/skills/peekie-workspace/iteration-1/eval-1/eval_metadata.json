@@ -1,0 +1,23 @@
+{
+  "eval_id": 1,
+  "eval_name": "attachments-from-failures",
+  "prompt": "ok so one of our snapshot tests is doing something weird — I need the screenshots and any other attached debug files from just the failing tests. The xcresult is at `Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult`. Pull only the failure attachments into `/tmp/peekie-eval-failed-attachments/` and tell me what landed there.",
+  "assertions": [
+    {
+      "name": "files-landed-in-requested-directory",
+      "description": "The target directory (`/tmp/peekie-eval-failed-attachments/` for with_skill, `/tmp/peekie-eval-failed-attachments-baseline/` for baseline) actually exists and contains at least one attachment file."
+    },
+    {
+      "name": "only-failure-attachments",
+      "description": "Only attachments associated with failing tests landed — at minimum verified by mentioning the `--include failure` filter or `--only-failures` pushdown, or by inspection showing the filenames correspond to failure tests (e.g. failureWithAttachment-related)."
+    },
+    {
+      "name": "tells-user-what-landed",
+      "description": "Answer enumerates the files (count + filenames or a directory listing) so the user can verify without ls'ing themselves."
+    },
+    {
+      "name": "no-non-failure-attachments-leaked",
+      "description": "No attachments from passing/success/skipped tests are in the directory."
+    }
+  ]
+}
