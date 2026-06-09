@@ -149,6 +149,7 @@ Flat sorted array, one entry per warning:
 
 - `line` / `column` are `null` when xcresult didn't emit them.
 - `type` values are the raw Apple `issueType` strings: `Swift Compiler Warning`, `Swift Compiler Error`, `DeprecatedDeclaration`, `No-usage`, `ActorIsolatedCall`, plus anything new Apple adds.
+- **Xcode mis-tags `#warning(...)` directives as `type: "Swift Compiler Error"`** even though they're warnings and appear in `peekie warnings` output (not `peekie errors`). When you see `Swift Compiler Error` entries in the warnings array, skim the messages — anything matching `…#warning("…")…` is a developer-left TODO marker, not a defect to fix. Worth calling out separately when interpreting "what kinds of warnings does my build have" — otherwise the count is misleading.
 - `--verbose` for debug logging.
 
 `peekie warnings` does not have an `--include` flag — pipe to `jq` if you need to filter by type.
@@ -216,6 +217,14 @@ peekie coverage Tests.xcresult | jq '.coverage * 100 | floor'
 ```bash
 peekie warnings Build.xcresult | jq 'group_by(.type) | map({type: .[0].type, count: length})'
 ```
+
+If the breakdown is going into a triage / prioritization summary, also peek at the messages — `Swift Compiler Error` rows in the warnings array are usually `#warning(...)` developer markers (see the issue-type note above), so a raw count over-states "real defects". A quick scan:
+
+```bash
+peekie warnings Build.xcresult | jq 'map(select(.type == "Swift Compiler Error")) | length, (.[0].message)'
+```
+
+tells you how many are `#warning` markers and gives one example to confirm.
 
 ### Send only failures to a chat
 
