@@ -90,3 +90,9 @@ fastlane/test_output
 iOSInjectionProject/
 .DS_Store
 .swiftpm
+
+# Peekie skill-creator workspace (eval runtime output)
+agent/skills/*-workspace/
+
+# xcresulttool side-effect (per-test database, not part of bundle state)
+Tests/PeekieTests/Resources/*.xcresult/database.sqlite3
