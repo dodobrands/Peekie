@@ -96,3 +96,6 @@ agent/skills/*-workspace/
 
 # xcresulttool side-effect (per-test database, not part of bundle state)
 Tests/PeekieTests/Resources/*.xcresult/database.sqlite3
+
+# Local benchmark fixtures and outputs (multi-hundred-MB xcresult bundles)
+bench/

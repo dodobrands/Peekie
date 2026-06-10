@@ -7,8 +7,17 @@ import Subprocess
 enum Shell {
     // MARK: Internal
 
+    /// Runs `executable` with `arguments` and returns stdout as raw bytes.
+    ///
+    /// Uses `.bytes(limit: .max)` so stdout is delivered as `[UInt8]` and wrapped
+    /// in `Data`, never materialized as a Swift `String`. The previous
+    /// `.string(limit: .max)` path decoded every byte through `LazyMapSequence`
+    /// → metadata-cache lookups, which dominated wall-clock on the multi-hundred-MB
+    /// JSON `xcresulttool`/`xccov` emit on real `.xcresult` bundles.
+    ///
+    /// stderr stays a `String` — it's small and surfaced in `ShellError`.
     @discardableResult
-    static func execute(_ executable: String, arguments: [String] = []) async throws -> String {
+    static func execute(_ executable: String, arguments: [String] = []) async throws -> Data {
         logger.debug(
             "Executing command",
             metadata: [
@@ -20,7 +29,7 @@ enum Shell {
         let result = try await run(
             .name(executable),
             arguments: .init(arguments),
-            output: .string(limit: .max),
+            output: .bytes(limit: .max),
             error: .string(limit: .max)
         )
 
@@ -44,17 +53,15 @@ enum Shell {
             throw ShellError.processFailed(exitCode: result.terminationStatus, error: errorOutput)
         }
 
-        let output =
-            result.standardOutput?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                ?? ""
+        let data = Data(result.standardOutput)
         logger.debug(
             "Command completed successfully",
             metadata: [
                 "executable": "\(executable)",
-                "outputLength": "\(output.count)",
+                "outputLength": "\(data.count)",
             ]
         )
-        return output
+        return data
     }
 
     // MARK: Private
