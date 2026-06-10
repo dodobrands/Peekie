@@ -116,7 +116,16 @@ git checkout -b your-branch-name
 
 ### Language Requirements
 
-**All issues and pull requests must be written in English.** This includes titles, descriptions, and comments. This ensures consistency and accessibility for all contributors.
+**Everything inside this repository must be written in English.** This covers:
+
+- Source code identifiers (types, methods, properties, parameters, locals).
+- Code comments and documentation comments (`///`).
+- Commit messages — both subject lines and bodies.
+- Pull request titles, descriptions, and review comments.
+- Issue titles, descriptions, and comments.
+- Markdown files committed to the repo (READMEs, plans, design notes).
+
+This ensures consistency and accessibility for all contributors and tooling (search, code review bots, static analysis).
 
 ### Using GitHub CLI (`gh`)
 
