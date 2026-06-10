@@ -14,19 +14,7 @@
       - name: "Calculator.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExample/Calculator.swift"
-      ▿ warnings: 2 elements
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 17
-              ▿ endLine: Optional<Int>
-                - some: 7
-              ▿ startColumn: Optional<Int>
-                - some: 17
-              - startLine: 7
-          - message: "Some warning from Calculator"
-          - type: IssueType.swiftCompilerError
+      ▿ warnings: 1 element
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -77,7 +65,7 @@
       - name: "SwiftTestingTests.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/SwiftTestingTests.swift"
-      ▿ warnings: 6 elements
+      ▿ warnings: 5 elements
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -102,18 +90,6 @@
               - startLine: 75
           - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
           - type: IssueType.swiftCompilerWarning
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 140
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 140
-          - message: "Some warning from ExampleSUITests"
-          - type: IssueType.swiftCompilerError
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -162,7 +138,7 @@
       - name: "XCTestTests.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/XCTestTests.swift"
-      ▿ warnings: 5 elements
+      ▿ warnings: 4 elements
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -210,18 +186,6 @@
                 - some: 9
               - startLine: 173
           - message: "Some warning from ExampleSUITests"
-          - type: IssueType.swiftCompilerError
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 173
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 173
-          - message: "Some warning from ExampleSUITests"
           - type: IssueType.swiftCompilerWarning
     ▿ File
       ▿ coverage: Optional<Coverage>
@@ -235,19 +199,7 @@
       - name: "TextProcessor.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExampleFramework/XcodeprojExampleFramework/TextProcessor.swift"
-      ▿ warnings: 2 elements
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 13
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 13
-          - message: "Some warning from StringUtils"
-          - type: IssueType.swiftCompilerError
+      ▿ warnings: 1 element
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -389,19 +341,7 @@
           - name: "Calculator.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExample/Calculator.swift"
-          ▿ warnings: 2 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 17
-                  ▿ endLine: Optional<Int>
-                    - some: 7
-                  ▿ startColumn: Optional<Int>
-                    - some: 17
-                  - startLine: 7
-              - message: "Some warning from Calculator"
-              - type: IssueType.swiftCompilerError
+          ▿ warnings: 1 element
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -2886,19 +2826,7 @@
           - name: "TextProcessor.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExampleFramework/XcodeprojExampleFramework/TextProcessor.swift"
-          ▿ warnings: 2 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 13
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 13
-              - message: "Some warning from StringUtils"
-              - type: IssueType.swiftCompilerError
+          ▿ warnings: 1 element
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -3042,7 +2970,7 @@
           - name: "SwiftTestingTests.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/SwiftTestingTests.swift"
-          ▿ warnings: 6 elements
+          ▿ warnings: 5 elements
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -3067,18 +2995,6 @@
                   - startLine: 75
               - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 140
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 140
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerError
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -3127,7 +3043,7 @@
           - name: "XCTestTests.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/XCTestTests.swift"
-          ▿ warnings: 5 elements
+          ▿ warnings: 4 elements
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -3164,18 +3080,6 @@
                   - startLine: 64
               - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
               - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 173
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 173
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerError
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
