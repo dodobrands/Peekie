@@ -124,20 +124,13 @@ extension Report {
         -> [File.Issue]
     {
         var result = [File.Issue]()
-        var indexByKey = [TwinKey: Int]()
+        var indexByKey = [String: Int]()
         for issue in issues {
-            guard let loc = issue.location else {
+            guard let key = twinKey(for: issue) else {
                 result.append(issue)
                 continue
             }
 
-            let key = TwinKey(
-                startLine: loc.startLine,
-                startColumn: loc.startColumn,
-                endLine: loc.endLine,
-                endColumn: loc.endColumn,
-                message: issue.message
-            )
             if let existingIdx = indexByKey[key] {
                 let existing = result[existingIdx]
                 if existing.type != preferredType, issue.type == preferredType {
@@ -151,15 +144,30 @@ extension Report {
         return result
     }
 
-    /// Hashable key for ``dedupTwins(_:preferring:)`` covering the four
+    /// String key for ``dedupTwins(_:preferring:)`` covering the four
     /// `Location` coordinates plus the normalized message. Path is implicit:
-    /// this struct is keyed inside `mapValues` over a per-file group.
-    private struct TwinKey: Hashable {
-        let startLine: Int
-        let startColumn: Int?
-        let endLine: Int?
-        let endColumn: Int?
-        let message: String
+    /// this helper is called inside `mapValues` over a per-file group.
+    ///
+    /// Returns `nil` for issues without a `Location` — those records are
+    /// not dedup-eligible (see `dedupTwins`).
+    ///
+    /// Concatenated `String` is used instead of a custom `Hashable` struct
+    /// to avoid the cross-tool dance between SwiftLint's
+    /// `unused_declaration`, Periphery, and SwiftFormat's
+    /// `redundantEquatable` when stored properties exist solely as Hashable
+    /// inputs.
+    private static func twinKey(for issue: File.Issue) -> String? {
+        guard let loc = issue.location else {
+            return nil
+        }
+
+        return [
+            String(loc.startLine),
+            loc.startColumn.map(String.init) ?? "_",
+            loc.endLine.map(String.init) ?? "_",
+            loc.endColumn.map(String.init) ?? "_",
+            issue.message,
+        ].joined(separator: "\u{1F}")
     }
 
     /// Normalizes a warning message by removing duplicate patterns and cleaning up formatting
