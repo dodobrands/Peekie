@@ -127,7 +127,7 @@ public final class ListFormatter {
             // Root-level @Tests first (so the bundle's loose tests stay above the
             // suite hierarchy in the human-readable view).
             let rootTests = mergedTests(
-                from: module.rootLevelTests,
+                from: report.rootLevelTests(in: module),
                 include: include,
                 includeDeviceDetails: includeDeviceDetails
             )
@@ -139,7 +139,7 @@ public final class ListFormatter {
                 ))
             }
 
-            let suiteSections = module.suites
+            let suiteSections = report.suites(in: module)
                 .flatMap { collectSuiteSections(
                     suite: $0,
                     moduleName: module.name,

@@ -54,7 +54,7 @@ public final class SonarFormatter {
             // these tests in the XML output. They still appear in the List/JSON
             // formatters which don't require path resolution.
 
-            let flatSuites = module.suites.flatMap { Self.flatten($0) }
+            let flatSuites = report.suites(in: module).flatMap { Self.flatten($0) }
             for suite in flatSuites.sorted(by: { $0.fullPath < $1.fullPath }) {
                 guard suite.repeatableTests.isEmpty == false else {
                     continue

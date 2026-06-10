@@ -182,3 +182,87 @@ If you snapshot-test against `Report` or any formatter output downstream, all sn
 | [#176](https://github.com/dodobrands/Peekie/pull/176) | [#168](https://github.com/dodobrands/Peekie/issues/168) | File-primary model |
 | [#179](https://github.com/dodobrands/Peekie/pull/179) | [#167](https://github.com/dodobrands/Peekie/issues/167) | CLI data-axis restructure |
 | [#183](https://github.com/dodobrands/Peekie/pull/183) | [#163](https://github.com/dodobrands/Peekie/issues/163), [#164](https://github.com/dodobrands/Peekie/issues/164) | Regenerated fixtures + regression asserts + normalizer audit |
+
+---
+
+# Migration Guide: 5.x → 6.0
+
+6.0 keeps the CLI surface and most of the SDK shape introduced in 5.0. The single break is on `Report.Module`: it collapses to a thin handle (`{ name }`) and all module-scoped data moves onto `Report` itself, reached via `…(in:)` lookups. The 5.x design materialized `Module.files` as a stored array, which duplicated `File` values across `Report.files` and `Module.files`, made `report.warnings + modules.flatMap(\.warnings)` double-count, and burdened snapshots with two copies of every file's issues.
+
+## SDK — Module is a thin handle
+
+In 5.x, `Module` carried the projection inline:
+
+```swift
+public struct Module {
+    public let name: String
+    public let files: [File]
+    public let coverage: Coverage?
+    public let rootLevelTests: Set<Suite.RepeatableTest>
+    public let suites: [Suite]
+    public var warnings: [File.Issue] { files.flatMap(\.warnings) }
+    public var errors: [File.Issue] { files.flatMap(\.errors) }
+}
+```
+
+In 6.0, `Module` is just an identity:
+
+```swift
+public struct Module: Hashable {
+    public init(name: String)
+    public let name: String
+}
+```
+
+Module-scoped data lives on `Report`:
+
+```swift
+public struct Report {
+    // existing 5.x storage…
+    public let files: [File]
+    public let modules: [Module]
+    public let coverage: Double?
+
+    // new 6.0 storage — keyed by Module.name
+    public let coverageByModule: [String: Coverage]
+    public let suitesByModule: [String: [Module.Suite]]
+    public let rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>]
+
+    // new 6.0 lookups
+    public func files(in module: Module) -> [File]
+    public func coverage(of module: Module) -> Coverage?
+    public func suites(in module: Module) -> [Module.Suite]
+    public func rootLevelTests(in module: Module) -> Set<Module.Suite.RepeatableTest>
+    public func warnings(in module: Module) -> [File.Issue]
+    public func errors(in module: Module) -> [File.Issue]
+}
+```
+
+### Migration table
+
+| 5.x | 6.0 |
+|---|---|
+| `module.files` | `report.files(in: module)` |
+| `module.coverage` | `report.coverage(of: module)` |
+| `module.suites` | `report.suites(in: module)` |
+| `module.rootLevelTests` | `report.rootLevelTests(in: module)` |
+| `module.warnings` | `report.warnings(in: module)` |
+| `module.errors` | `report.errors(in: module)` |
+| `Module(name:, files:, coverage:, rootLevelTests:, suites:)` (5.x init) | `Module(name:)` — projection is on `Report` |
+
+`Module.Suite`, `Module.Suite.RepeatableTest`, and the rest of the nested test types keep their names and layout; only the outer `Module` shrinks.
+
+### Test helpers
+
+`Report.Module.testMake` collapses to `Report.Module.testMake(name:)`. `Report.testMake` gains optional `coverageByModule`, `suitesByModule`, `rootLevelTestsByModule` parameters; the prior memberwise call with `files / modules / coverage` continues to work.
+
+### Why
+
+`report.warnings.count` and `report.modules.flatMap(\.warnings).count` could diverge in 5.x — modules excluded files with `File.module == nil`, but had their own copy of warnings for files they did own. Adding the two without thinking double-counted. With 6.0 the `File` values live in exactly one place (`Report.files`); module-scoped views are pure projections.
+
+## Related landed PRs
+
+| PR | Issue | Summary |
+|---|---|---|
+| [#204](https://github.com/dodobrands/Peekie/pull/204) | n/a | Fix `pathsByBasename` dup-append when a file lives in multiple coverage targets (drops the multiplier on per-file warning/error counts) |
+| [#205](https://github.com/dodobrands/Peekie/pull/205) | n/a | Dedup Apple-emitted `#warning` twins inside `warnings[]` / `errors[]` (collapses paired records to the bucket-matching `IssueType`) |

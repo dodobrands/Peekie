@@ -90,7 +90,7 @@ public final class AttachmentsFormatter {
     {
         var rows = [AttachmentRow]()
         for module in report.modules.sorted(by: { $0.name < $1.name }) {
-            let rootLevelTests = module.rootLevelTests
+            let rootLevelTests = report.rootLevelTests(in: module)
                 .filtered(testResults: include)
                 .flatMap { repeatableTest in
                     repeatableTest.mergedTests()
@@ -103,7 +103,7 @@ public final class AttachmentsFormatter {
                     into: &rows
                 )
             }
-            for suite in module.suites {
+            for suite in report.suites(in: module) {
                 collectRows(
                     from: suite,
                     modulePrefix: module.name,

@@ -17,7 +17,7 @@ struct ReportIncludeTestsFlagTests {
             includeTests: false
         )
 
-        let suitesTotal = report.modules.reduce(0) { $0 + $1.suites.count }
+        let suitesTotal = report.modules.reduce(0) { $0 + report.suites(in: $1).count }
         #expect(suitesTotal == 0, "expected zero suites when includeTests is false")
 
         // For fixtures that have coverage data, modules and files are still populated.
@@ -40,8 +40,8 @@ struct ReportIncludeTestsFlagTests {
         // Coverage is nil
         #expect(report.coverage == nil)
         // Modules with suites are absent (no tests parsed)
-        // swiftformat:disable:next preferKeyPath
-        #expect(report.modules.allSatisfy { $0.suites.isEmpty })
+        let suitesEmpty = report.suitesByModule.values.allSatisfy(\.isEmpty)
+        #expect(suitesEmpty)
         // Files only show up if the fixture has build warnings; not all fixtures do,
         // but the call must succeed and return a well-formed Report.
         _ = report.files

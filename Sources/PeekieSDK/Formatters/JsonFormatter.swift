@@ -97,6 +97,7 @@ private struct JSONReport: Encodable {
             .map {
                 JSONModule(
                     from: $0,
+                    in: report,
                     include: include,
                     includeDeviceDetails: includeDeviceDetails
                 )
@@ -116,15 +117,16 @@ private struct JSONModule: Encodable {
 
     init(
         from module: Report.Module,
+        in report: Report,
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
         name = module.name
-        coverage = module.coverage.map { JSONCoverage(from: $0) }
-        files = module.files
+        coverage = report.coverage(of: module).map { JSONCoverage(from: $0) }
+        files = report.files(in: module)
             .sorted { $0.name < $1.name }
             .map { JSONFile(from: $0) }
-        rootLevelTests = module.rootLevelTests
+        rootLevelTests = report.rootLevelTests(in: module)
             .filtered(testResults: include)
             .sorted { $0.name < $1.name }
             .flatMap { repeatableTest in
@@ -132,7 +134,7 @@ private struct JSONModule: Encodable {
                     .filter { include.contains($0.status) }
                     .map { JSONTest(from: $0) }
             }
-        suites = module.suites
+        suites = report.suites(in: module)
             .sorted { $0.fullPath < $1.fullPath }
             .map {
                 JSONSuite(
@@ -168,6 +170,7 @@ private struct JSONReportFlat: Encodable {
             .map {
                 JSONModuleFlat(
                     from: $0,
+                    in: report,
                     include: include,
                     includeDeviceDetails: includeDeviceDetails
                 )
@@ -187,18 +190,19 @@ private struct JSONModuleFlat: Encodable {
 
     init(
         from module: Report.Module,
+        in report: Report,
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
         name = module.name
-        coverage = module.coverage.map { JSONCoverage(from: $0) }
-        files = module.files
+        coverage = report.coverage(of: module).map { JSONCoverage(from: $0) }
+        files = report.files(in: module)
             .sorted { $0.name < $1.name }
             .map { JSONFile(from: $0) }
 
         var collected = [JSONQualifiedTest]()
 
-        let rootLevelTests = module.rootLevelTests
+        let rootLevelTests = report.rootLevelTests(in: module)
             .filtered(testResults: include)
             .flatMap { repeatableTest in
                 repeatableTest.mergedTests(filterDevice: includeDeviceDetails == false)
@@ -213,7 +217,7 @@ private struct JSONModuleFlat: Encodable {
             )
         }
 
-        for suite in module.suites {
+        for suite in report.suites(in: module) {
             Self.collectTests(
                 from: suite,
                 modulePrefix: module.name,

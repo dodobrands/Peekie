@@ -25,7 +25,7 @@ public final class CoverageFormatter {
     public func list(_ report: Report) -> String {
         let rows = report.modules
             .compactMap { module -> Row? in
-                guard let coverage = module.coverage else {
+                guard let coverage = report.coverage(of: module) else {
                     return nil
                 }
 
@@ -71,7 +71,7 @@ public final class CoverageFormatter {
             coverage = report.coverage
             modules = report.modules
                 .sorted { $0.name < $1.name }
-                .map(ModuleSnapshot.init)
+                .map { ModuleSnapshot($0, in: report) }
         }
 
         // MARK: Internal
@@ -83,12 +83,13 @@ public final class CoverageFormatter {
     private struct ModuleSnapshot: Encodable {
         // MARK: Lifecycle
 
-        init(_ module: Report.Module) {
+        init(_ module: Report.Module, in report: Report) {
+            let moduleCoverage = report.coverage(of: module)
             name = module.name
-            coverage = module.coverage?.coverage
-            coveredLines = module.coverage?.coveredLines
-            totalLines = module.coverage?.totalLines
-            files = module.files
+            coverage = moduleCoverage?.coverage
+            coveredLines = moduleCoverage?.coveredLines
+            totalLines = moduleCoverage?.totalLines
+            files = report.files(in: module)
                 .sorted { $0.name < $1.name }
                 .compactMap { file -> FileSnapshot? in
                     guard let coverage = file.coverage else {

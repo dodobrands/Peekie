@@ -6,11 +6,13 @@ import Foundation
 ///
 /// `files` is the primary index — every file we have any signal about (coverage,
 /// warnings, errors) lives here exactly once, regardless of which target it
-/// belongs to. `modules` is a projection over `files` for the subset where a
-/// target name is known. Build issues with no module signal (`xcresulttool`
-/// doesn't currently surface `producingTarget` for them) still surface — they
-/// appear in `files` with `File.module == nil` and are reachable via
-/// `Report.warnings` / `Report.errors`.
+/// belongs to. `modules` is a thin handle list: one ``Module`` per identifiable
+/// target name. Module-scoped data (files, coverage, suites, root-level tests)
+/// lives on `Report` keyed by target name and is reached via the `…(in:)`
+/// lookups. Build issues with no module signal (`xcresulttool` doesn't currently
+/// surface `producingTarget` for them) still surface — they appear in `files`
+/// with `File.module == nil` and are reachable via `Report.warnings` /
+/// `Report.errors`.
 public struct Report {
     // MARK: Lifecycle
 
@@ -20,11 +22,17 @@ public struct Report {
     public init(
         files: [File],
         modules: [Module],
-        coverage: Double?
+        coverage: Double?,
+        coverageByModule: [String: Coverage] = [:],
+        suitesByModule: [String: [Module.Suite]] = [:],
+        rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>] = [:]
     ) {
         self.files = files
         self.modules = modules
         self.coverage = coverage
+        self.coverageByModule = coverageByModule
+        self.suitesByModule = suitesByModule
+        self.rootLevelTestsByModule = rootLevelTestsByModule
     }
 
     // MARK: Public
@@ -32,14 +40,29 @@ public struct Report {
     /// Every file the bundle has any signal about (coverage, warnings, errors).
     public let files: [File]
 
-    /// Module projection — one entry per target name we could identify
-    /// (from coverage or from tests). Files whose target is unknown are
-    /// **not** represented here; reach them via `files`.
+    /// One handle per identifiable target name (from coverage or from tests).
+    /// Files whose target is unknown are **not** represented here; reach them
+    /// via `files`. Module-scoped data is on `Report` — see ``files(in:)``,
+    /// ``coverage(of:)``, ``suites(in:)``, ``rootLevelTests(in:)``.
     public let modules: [Module]
 
     /// Total code coverage percentage (0.0 to 1.0).
     /// - Note: Read directly from xcresult coverage data (not calculated from files).
     public let coverage: Double?
+
+    /// Target-level aggregate coverage keyed by ``Module/name``. Empty entries
+    /// are omitted (a target with `executableLines == 0` is dropped at parse
+    /// time, matching the legacy `Module.coverage == nil` shape).
+    public let coverageByModule: [String: Coverage]
+
+    /// Top-level test suites keyed by ``Module/name``. Empty list = the target
+    /// had no tests (or `includeTests: false` at parse time).
+    public let suitesByModule: [String: [Module.Suite]]
+
+    /// Swift Testing root-level `@Test` functions keyed by ``Module/name``.
+    /// Empty set = no `@Test`s declared outside `@Suite` types (or
+    /// `includeTests: false`).
+    public let rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>]
 
     /// All warnings from all files in this report.
     public var warnings: [File.Issue] {
@@ -49,6 +72,46 @@ public struct Report {
     /// All errors from all files in this report.
     public var errors: [File.Issue] {
         files.flatMap(\.errors)
+    }
+
+    /// Files whose ``File/module`` matches the given module's `name`.
+    /// Order matches `files` (sorted by path-or-name at parse time).
+    public func files(in module: Module) -> [File] {
+        files.filter { $0.module == module.name }
+    }
+
+    /// Target-level aggregate coverage for the given module, when xcresult
+    /// reported one. Returns `nil` for targets with no executable lines, or
+    /// for handles whose name isn't in the report (callers shouldn't see
+    /// orphan handles in practice — `modules` is built only from names we
+    /// observe).
+    public func coverage(of module: Module) -> Coverage? {
+        coverageByModule[module.name]
+    }
+
+    /// Top-level test suites this target ran. Nested suites live inside their
+    /// parents via ``Module/Suite/nestedSuites`` — only the outermost suites
+    /// appear here.
+    public func suites(in module: Module) -> [Module.Suite] {
+        suitesByModule[module.name] ?? []
+    }
+
+    /// Swift Testing `@Test` functions declared at the bundle root, i.e.
+    /// outside any `@Suite` type. Empty for legacy `XCTest`-only bundles,
+    /// where every test is wrapped in an `XCTestCase` subclass that surfaces
+    /// as a `Test Suite` node.
+    public func rootLevelTests(in module: Module) -> Set<Module.Suite.RepeatableTest> {
+        rootLevelTestsByModule[module.name] ?? []
+    }
+
+    /// All warnings from files belonging to the given module.
+    public func warnings(in module: Module) -> [File.Issue] {
+        files(in: module).flatMap(\.warnings)
+    }
+
+    /// All errors from files belonging to the given module.
+    public func errors(in module: Module) -> [File.Issue] {
+        files(in: module).flatMap(\.errors)
     }
 }
 
@@ -110,64 +173,31 @@ public extension Report {
         }
     }
 
-    /// Projection over `Report.files` grouped by target name.
+    /// Thin handle to a target named by xcresult (coverage or test bundle).
     ///
-    /// `Module` is built from coverage targets and test bundles — the two data
-    /// sources xcresult emits that name a target. A module's `files` slice is
-    /// every `Report.files` entry whose `File.module` matches; `suites` is the
-    /// tests xcresult reported for that target.
+    /// `Module` carries only the target name. File listings, target-level
+    /// coverage, suites and root-level tests live on ``Report`` as dictionaries
+    /// keyed by `name`. Use the report-side lookups to reach them:
+    /// ``Report/files(in:)``, ``Report/coverage(of:)``, ``Report/suites(in:)``,
+    /// ``Report/rootLevelTests(in:)``, ``Report/warnings(in:)``,
+    /// ``Report/errors(in:)``.
+    ///
+    /// This shape replaces the 5.x `Module` that materialized `files` etc. as
+    /// stored properties — that design duplicated `File` values across
+    /// `Report.files` and `Module.files`, made `report.warnings +
+    /// modules.flatMap(\.warnings)` double-count, and burdened snapshots with
+    /// two copies of every file's issues.
     struct Module: Hashable {
         // MARK: Lifecycle
 
-        public init(
-            name: String,
-            files: [File] = [],
-            coverage: Coverage? = nil,
-            rootLevelTests: Set<Suite.RepeatableTest> = [],
-            suites: [Suite] = []
-        ) {
+        public init(name: String) {
             self.name = name
-            self.files = files
-            self.coverage = coverage
-            self.rootLevelTests = rootLevelTests
-            self.suites = suites
         }
 
         // MARK: Public
 
         /// Target name (e.g., "Bonuses", "PeekieTests").
         public let name: String
-
-        /// Files in this report whose `File.module == self.name`.
-        public let files: [File]
-
-        /// Target-level coverage when xcresult reported one.
-        public let coverage: Coverage?
-
-        /// Swift Testing `@Test` functions declared at the bundle root, i.e. outside
-        /// any `@Suite` type. These appear in xcresult JSON as `Test Case` nodes
-        /// directly under the `Unit test bundle` node. Empty for legacy `XCTest`-only
-        /// bundles, where every test is wrapped in an `XCTestCase` subclass that
-        /// surfaces as a `Test Suite` node.
-        public let rootLevelTests: Set<Suite.RepeatableTest>
-
-        /// Top-level test suites this target ran. Nested suites live inside their
-        /// parents via `Suite.nestedSuites` — only the outermost suites appear here.
-        public let suites: [Suite]
-
-        /// All warnings from all files in this module.
-        public var warnings: [File.Issue] {
-            files.flatMap(\.warnings)
-        }
-
-        /// All errors from all files in this module.
-        public var errors: [File.Issue] {
-            files.flatMap(\.errors)
-        }
-
-        public static func ==(lhs: Self, rhs: Self) -> Bool {
-            lhs.name == rhs.name
-        }
 
         public func hash(into hasher: inout Hasher) {
             hasher.combine(name)

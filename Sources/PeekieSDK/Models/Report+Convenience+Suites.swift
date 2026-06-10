@@ -384,65 +384,54 @@ extension Report {
         return aliases
     }
 
-    static func buildModules(
-        files: [File],
+    /// Collects every target name we have any signal about (coverage targets
+    /// + test-bundle names from `testNodesByModule`). Returns the union in
+    /// stable lexicographic order — this drives `Report.modules` order.
+    static func moduleNames(
+        files _: [File],
         testNodesByModule: [String: BundleTestNodes],
         coverageReportDTO: CoverageReportDTO?
     )
-        -> [Module]
+        -> [String]
     {
-        var moduleNames = Set<String>()
+        var names = Set<String>()
         if let coverageReportDTO {
-            moduleNames.formUnion(coverageReportDTO.targets.map(\.name))
+            names.formUnion(coverageReportDTO.targets.map(\.name))
         }
-        moduleNames.formUnion(testNodesByModule.keys)
+        names.formUnion(testNodesByModule.keys)
+        return names.sorted()
+    }
 
-        return moduleNames.sorted().map { name in
-            buildModule(
-                name: name,
-                files: files,
-                testNodes: testNodesByModule[name],
-                coverageReportDTO: coverageReportDTO
+    /// Builds `[targetName: Module.Coverage]` from the coverage DTO, dropping
+    /// targets with `executableLines == 0` to match the legacy
+    /// `Module.coverage == nil` shape. Only names listed in `moduleNames` are
+    /// considered — orphan coverage targets aren't expected since
+    /// ``moduleNames(files:testNodesByModule:coverageReportDTO:)`` already
+    /// unions them in.
+    static func coverageByModule(
+        for moduleNames: [String],
+        coverageReportDTO: CoverageReportDTO?
+    )
+        -> [String: Coverage]
+    {
+        guard let coverageReportDTO else {
+            return [:]
+        }
+
+        let nameSet = Set(moduleNames)
+        var result = [String: Coverage]()
+        for target in coverageReportDTO.targets where nameSet.contains(target.name) {
+            guard target.executableLines > 0 else {
+                continue
+            }
+
+            result[target.name] = Coverage(
+                coveredLines: target.coveredLines,
+                totalLines: target.executableLines,
+                coverage: target.lineCoverage
             )
         }
-    }
-
-    private static func buildModule(
-        name: String,
-        files: [File],
-        testNodes: BundleTestNodes?,
-        coverageReportDTO: CoverageReportDTO?
-    )
-        -> Module
-    {
-        let moduleFiles = files.filter { $0.module == name }
-        let moduleCoverage = moduleCoverage(for: name, coverageReportDTO: coverageReportDTO)
-        return Module(
-            name: name,
-            files: moduleFiles,
-            coverage: moduleCoverage,
-            rootLevelTests: testNodes?.rootLevelTests ?? [],
-            suites: testNodes?.suites ?? []
-        )
-    }
-
-    private static func moduleCoverage(
-        for name: String,
-        coverageReportDTO: CoverageReportDTO?
-    )
-        -> Coverage?
-    {
-        guard let target = coverageReportDTO?.targets.first(where: { $0.name == name }),
-              target.executableLines > 0
-        else {
-            return nil
-        }
-
-        return Coverage(
-            coveredLines: target.coveredLines,
-            totalLines: target.executableLines,
-            coverage: target.lineCoverage
-        )
+        return result
     }
 
     // MARK: - Total coverage

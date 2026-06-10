@@ -1,6 +1,25 @@
 ▿ Report
   ▿ coverage: Optional<Double>
     - some: 0.7453798767967146
+  ▿ coverageByModule: 3 key/value pairs
+    ▿ (2 elements)
+      - key: "XcodeprojExample.app"
+      ▿ value: Coverage
+        - coverage: 0.35714285714285715
+        - coveredLines: 30
+        - totalLines: 84
+    ▿ (2 elements)
+      - key: "XcodeprojExampleFramework.framework"
+      ▿ value: Coverage
+        - coverage: 0.0
+        - coveredLines: 0
+        - totalLines: 59
+    ▿ (2 elements)
+      - key: "XcodeprojExampleTests.xctest"
+      ▿ value: Coverage
+        - coverage: 0.9680232558139535
+        - coveredLines: 333
+        - totalLines: 344
   ▿ files: 7 elements
     ▿ File
       ▿ coverage: Optional<Coverage>
@@ -323,65 +342,15 @@
           - type: IssueType.swiftCompilerWarning
   ▿ modules: 3 elements
     ▿ Module
-      ▿ coverage: Optional<Coverage>
-        ▿ some: Coverage
-          - coverage: 0.35714285714285715
-          - coveredLines: 30
-          - totalLines: 84
-      ▿ files: 3 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.47058823529411764
-              - coveredLines: 16
-              - totalLines: 34
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExample.app"
-          - name: "Calculator.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExample/Calculator.swift"
-          ▿ warnings: 1 element
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 17
-                  ▿ endLine: Optional<Int>
-                    - some: 7
-                  ▿ startColumn: Optional<Int>
-                    - some: 17
-                  - startLine: 7
-              - message: "Some warning from Calculator"
-              - type: IssueType.swiftCompilerWarning
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.0
-              - coveredLines: 0
-              - totalLines: 36
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExample.app"
-          - name: "NumberHelper.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExample/NumberHelper.swift"
-          - warnings: 0 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 1.0
-              - coveredLines: 14
-              - totalLines: 14
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExample.app"
-          - name: "XcodeprojExampleApp.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExample/XcodeprojExampleApp.swift"
-          - warnings: 0 elements
       - name: "XcodeprojExample.app"
-      ▿ rootLevelTests: 10 members
+    ▿ Module
+      - name: "XcodeprojExampleFramework.framework"
+    ▿ Module
+      - name: "XcodeprojExampleTests.xctest"
+  ▿ rootLevelTestsByModule: 1 key/value pair
+    ▿ (2 elements)
+      - key: "XcodeprojExample.app"
+      ▿ value: 10 members
         ▿ RepeatableTest
           - name: "2 + 3 = 5"
           ▿ tests: 3 elements
@@ -988,7 +957,10 @@
                   - type: NodeType.repetition
               - skipMessage: Optional<String>.none
               - status: Status.success
-      ▿ suites: 3 elements
+  ▿ suitesByModule: 1 key/value pair
+    ▿ (2 elements)
+      - key: "XcodeprojExample.app"
+      ▿ value: 3 elements
         ▿ Suite
           - fullPath: "XCTestTests"
           - name: "XCTestTests"
@@ -2807,291 +2779,3 @@
                       - type: NodeType.repetition
                   - skipMessage: Optional<String>.none
                   - status: Status.success
-    ▿ Module
-      ▿ coverage: Optional<Coverage>
-        ▿ some: Coverage
-          - coverage: 0.0
-          - coveredLines: 0
-          - totalLines: 59
-      ▿ files: 2 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.0
-              - coveredLines: 0
-              - totalLines: 23
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExampleFramework.framework"
-          - name: "TextProcessor.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExampleFramework/XcodeprojExampleFramework/TextProcessor.swift"
-          ▿ warnings: 1 element
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 13
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 13
-              - message: "Some warning from StringUtils"
-              - type: IssueType.swiftCompilerWarning
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.0
-              - coveredLines: 0
-              - totalLines: 36
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExampleFramework.framework"
-          - name: "WarningsCatalog.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExampleFramework/XcodeprojExampleFramework/WarningsCatalog.swift"
-          ▿ warnings: 8 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 26
-                  ▿ endLine: Optional<Int>
-                    - some: 22
-                  ▿ startColumn: Optional<Int>
-                    - some: 26
-                  - startLine: 22
-              - message: "\'oldFoo()\' is deprecated: use newFoo()"
-              - type: IssueType.deprecatedDeclaration
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 26
-                  ▿ endLine: Optional<Int>
-                    - some: 23
-                  ▿ startColumn: Optional<Int>
-                    - some: 26
-                  - startLine: 23
-              - message: "\'oldFoo()\' is deprecated: use newFoo()"
-              - type: IssueType.deprecatedDeclaration
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 26
-                  ▿ endLine: Optional<Int>
-                    - some: 24
-                  ▿ startColumn: Optional<Int>
-                    - some: 26
-                  - startLine: 24
-              - message: "\'oldFoo()\' is deprecated: use newFoo()"
-              - type: IssueType.deprecatedDeclaration
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 4
-                  ▿ endLine: Optional<Int>
-                    - some: 40
-                  ▿ startColumn: Optional<Int>
-                    - some: 4
-                  - startLine: 40
-              - message: "Code after \'return\' will never be executed"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 4
-                  ▿ endLine: Optional<Int>
-                    - some: 49
-                  ▿ startColumn: Optional<Int>
-                    - some: 4
-                  - startLine: 49
-              - message: "Result of call to \'unusedResultProducer()\' is unused"
-              - type: IssueType.noUsage
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 14
-                  ▿ endLine: Optional<Int>
-                    - some: 56
-                  ▿ startColumn: Optional<Int>
-                    - some: 14
-                  - startLine: 56
-              - message: "String interpolation produces a debug description for an optional value; did you mean to make this explicit?"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 13
-                  ▿ endLine: Optional<Int>
-                    - some: 65
-                  ▿ startColumn: Optional<Int>
-                    - some: 13
-                  - startLine: 65
-              - message: "Conditional cast from \'Bar\' to \'Foo\' always succeeds"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 8
-                  ▿ endLine: Optional<Int>
-                    - some: 89
-                  ▿ startColumn: Optional<Int>
-                    - some: 8
-                  - startLine: 89
-              - message: "No calls to throwing functions occur within \'try\' expression"
-              - type: IssueType.swiftCompilerWarning
-      - name: "XcodeprojExampleFramework.framework"
-      - rootLevelTests: 0 members
-      - suites: 0 elements
-    ▿ Module
-      ▿ coverage: Optional<Coverage>
-        ▿ some: Coverage
-          - coverage: 0.9680232558139535
-          - coveredLines: 333
-          - totalLines: 344
-      ▿ files: 2 elements
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.9456521739130435
-              - coveredLines: 174
-              - totalLines: 184
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExampleTests.xctest"
-          - name: "SwiftTestingTests.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/SwiftTestingTests.swift"
-          ▿ warnings: 5 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 25
-                  ▿ endLine: Optional<Int>
-                    - some: 72
-                  ▿ startColumn: Optional<Int>
-                    - some: 25
-                  - startLine: 72
-              - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 32
-                  ▿ endLine: Optional<Int>
-                    - some: 75
-                  ▿ startColumn: Optional<Int>
-                    - some: 32
-                  - startLine: 75
-              - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 140
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 140
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 21
-                  ▿ endLine: Optional<Int>
-                    - some: 183
-                  ▿ startColumn: Optional<Int>
-                    - some: 21
-                  - startLine: 183
-              - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 28
-                  ▿ endLine: Optional<Int>
-                    - some: 185
-                  ▿ startColumn: Optional<Int>
-                    - some: 28
-                  - startLine: 185
-              - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-        ▿ File
-          ▿ coverage: Optional<Coverage>
-            ▿ some: Coverage
-              - coverage: 0.99375
-              - coveredLines: 159
-              - totalLines: 160
-          - errors: 0 elements
-          ▿ module: Optional<String>
-            - some: "XcodeprojExampleTests.xctest"
-          - name: "XCTestTests.swift"
-          ▿ path: Optional<String>
-            - some: "/Users/alldmeat/Developer/swift-tests-example/Xcworkspace/XcodeprojExample/XcodeprojExampleTests/XCTestTests.swift"
-          ▿ warnings: 4 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 25
-                  ▿ endLine: Optional<Int>
-                    - some: 50
-                  ▿ startColumn: Optional<Int>
-                    - some: 25
-                  - startLine: 50
-              - message: "Main actor-isolated initializer \'init()\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 32
-                  ▿ endLine: Optional<Int>
-                    - some: 53
-                  ▿ startColumn: Optional<Int>
-                    - some: 32
-                  - startLine: 53
-              - message: "Main actor-isolated instance method \'add\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 36
-                  ▿ endLine: Optional<Int>
-                    - some: 64
-                  ▿ startColumn: Optional<Int>
-                    - some: 36
-                  - startLine: 64
-              - message: "Main actor-isolated instance method \'multiply\' cannot be called from outside of the actor; this is an error in the Swift 6 language mode"
-              - type: IssueType.swiftCompilerWarning
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 173
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 173
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerWarning
-      - name: "XcodeprojExampleTests.xctest"
-      - rootLevelTests: 0 members
-      - suites: 0 elements

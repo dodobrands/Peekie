@@ -7,7 +7,10 @@ public extension Report {
     static func testMake(
         files: [File] = [],
         modules: [Module] = [],
-        coverage: Double? = nil
+        coverage: Double? = nil,
+        coverageByModule: [String: Coverage] = [:],
+        suitesByModule: [String: [Module.Suite]] = [:],
+        rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>] = [:]
     )
         -> Self
     {
@@ -32,28 +35,17 @@ public extension Report {
         return .init(
             files: files,
             modules: modules,
-            coverage: calculatedCoverage
+            coverage: calculatedCoverage,
+            coverageByModule: coverageByModule,
+            suitesByModule: suitesByModule,
+            rootLevelTestsByModule: rootLevelTestsByModule
         )
     }
 }
 
 public extension Report.Module {
-    static func testMake(
-        name: String = "",
-        files: [Report.File] = [],
-        coverage: Report.Coverage? = nil,
-        rootLevelTests: Set<Suite.RepeatableTest> = [],
-        suites: [Suite] = []
-    )
-        -> Self
-    {
-        .init(
-            name: name,
-            files: files,
-            coverage: coverage,
-            rootLevelTests: rootLevelTests,
-            suites: suites
-        )
+    static func testMake(name: String = "") -> Self {
+        .init(name: name)
     }
 }
 

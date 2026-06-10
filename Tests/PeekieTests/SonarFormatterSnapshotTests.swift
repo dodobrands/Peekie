@@ -65,8 +65,8 @@ struct SonarFormatterSnapshotTests {
         // the full suite tree so nested suites (e.g. `InnerSuite` inside
         // `OuterSuite`) also get a backing file for path resolution.
         let testSuites = Set(
-            report.modules.flatMap {
-                $0.suites
+            report.modules.flatMap { module in
+                report.suites(in: module)
                     .flatMap { Self.flattenSuites($0) }
                     .filter { $0.repeatableTests.isEmpty == false }
                     .map(\.name)
