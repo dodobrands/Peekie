@@ -82,10 +82,12 @@ peekie warnings Build.xcresult \
 
 ### Triage `#warning(...)` markers separately from real warnings
 
+`type == "Swift Compiler Error"` IS the proxy for `#warning(...)` directives here (see the quirk above) — filter on `type` directly, the `#warning` substring is not in `.message`:
+
 ```bash
 peekie warnings Build.xcresult | jq '
-  group_by(.type == "Swift Compiler Error" and (.message | test("#warning")))
-  | map({kind: (if .[0].type == "Swift Compiler Error" and (.[0].message | test("#warning")) then "#warning markers" else "real warnings" end), count: length})
+  group_by(.type == "Swift Compiler Error")
+  | map({kind: (if .[0].type == "Swift Compiler Error" then "#warning markers" else "real warnings" end), count: length})
 '
 ```
 

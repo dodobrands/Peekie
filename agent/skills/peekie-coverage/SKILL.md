@@ -70,15 +70,25 @@ Human-readable, indented by module → file. Good for terminal, not for piping.
 peekie coverage Tests.xcresult | jq '.coverage * 100 | floor'
 ```
 
+### Overall coverage with one decimal place
+
+```bash
+peekie coverage Tests.xcresult | jq '(.coverage * 1000 | floor) / 10'
+```
+
+`(.coverage * 1000 | floor) / 10` keeps it pure jq — no `bc`, no `printf`. For two decimals, use `* 10000 | floor) / 100`.
+
 ### Gate CI on a coverage threshold (≥ 70%)
 
 ```bash
-cov=$(peekie coverage Tests.xcresult | jq '.coverage')
-awk -v c="$cov" 'BEGIN { exit !(c >= 0.70) }' || {
-  echo "Coverage below 70% (got $(printf '%.1f' "$(echo "$cov * 100" | bc -l)")%)"
+if ! peekie coverage Tests.xcresult | jq -e '.coverage >= 0.70' >/dev/null; then
+  cov=$(peekie coverage Tests.xcresult | jq -r '(.coverage * 1000 | floor) / 10')
+  echo "Coverage below 70% (got ${cov}%)" >&2
   exit 1
-}
+fi
 ```
+
+`jq -e` exits non-zero when the expression is `false` — no `awk` / `bc` needed.
 
 ### Per-module summary table
 

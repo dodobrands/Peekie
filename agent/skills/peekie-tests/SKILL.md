@@ -61,6 +61,16 @@ Human-readable. One line per test, grouped by module. Good for terminal scanning
 
 SonarQube generic-test report (XML). Requires `--tests-path`. Use only when feeding SonarQube directly.
 
+If the output is `<testExecutions version="1" />` (empty root, no `<file>` entries), Sonar's file-correlation matched nothing — `--tests-path` doesn't cover where the xcresult's source files actually live.
+
+Diagnose: peek at the suite class names with
+
+```bash
+peekie tests <xcresult> --format json | jq -r '.modules[].tests[].qualifiedName' | head
+```
+
+and `find` for a matching `<SuiteName>.swift` — point `--tests-path` at the directory that contains it.
+
 ### `--attachments export` JSON addition
 
 ```bash

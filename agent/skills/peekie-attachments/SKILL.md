@@ -79,7 +79,13 @@ peekie attachments Tests.xcresult --output-dir "$CI_ARTIFACTS/attachments"
 
 ### Per-failure clean directory (the canonical recipe)
 
-`--include failure` on its own leaves every attachment from every test in `--output-dir`. To make the directory contain only failure-test attachments, iterate over failing test IDs and let `--test-id` scope each extraction:
+`--include failure` on its own leaves every attachment from every test in `--output-dir`. To get a directory tree where each failing test has its own subdir of attachments, use the bundled helper script:
+
+```bash
+scripts/extract-failure-attachments.sh Tests.xcresult /tmp/failed-attachments
+```
+
+The script (in this skill's `scripts/` directory) iterates over failing test IDs, sanitizes each into a safe directory name, and runs `peekie attachments --test-id` per failure into its own subdirectory. Inline equivalent — useful if you want to inspect or adapt the loop:
 
 ```bash
 OUT=/tmp/failed-attachments
@@ -88,11 +94,16 @@ mkdir -p "$OUT"
 peekie tests Tests.xcresult --format json --include failure \
   | jq -r '.modules[].tests[].qualifiedName | split(" / ") | .[1:] | join("/")' \
   | while read -r id; do
-      peekie attachments Tests.xcresult --output-dir "$OUT" --test-id "$id" --format json >/dev/null
+      slug=$(printf '%s' "$id" | tr '/()' '___' | tr -s '_')
+      mkdir -p "$OUT/$slug"
+      peekie attachments Tests.xcresult --output-dir "$OUT/$slug" --test-id "$id" --format json >/dev/null
     done
 ```
 
-The `jq` expression drops the leading module segment from each `qualifiedName` — `xcresulttool --test-id` (which `peekie attachments` invokes under the hood) expects the bare suite-path identifier (e.g. `ExampleSUITests/failureWithAttachment()`), not the module-prefixed full path. Passing the prefixed form returns `Error: Failed to find test with the provided identifier`.
+Two non-obvious bits:
+
+- The `jq` expression drops the leading module segment from each `qualifiedName`. `xcresulttool --test-id` (which `peekie attachments` invokes under the hood) expects the bare suite-path identifier (e.g. `ExampleSUITests/failureWithAttachment()`), not the module-prefixed full path. Passing the prefixed form returns `Error: Failed to find test with the provided identifier`.
+- Each iteration writes its own `manifest.json` directly into `--output-dir`. Reusing one shared `$OUT` across iterations fails on the second `--test-id` with `Failed to generate manifest.json: file already exists` — that's why both the script and the inline loop create a per-test subdirectory.
 
 Apple's own `xcresulttool export attachments --only-failures` looks like it should solve this, but it filters on `isAssociatedWithFailure` — a field that's frequently `false` even for attachments recorded inside a failing test (only set by `XCTAttachment.lifetime = .deleteOnSuccess` or the equivalent explicit hint). So `--only-failures` often returns an empty manifest. The per-`--test-id` loop above is what actually surfaces "attachments belonging to failing tests".
 
