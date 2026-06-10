@@ -74,12 +74,29 @@ extension Report {
         includeTests: Bool = true,
         attachments: AttachmentPolicy = .skip
     ) async throws {
-        let testResultsDTO: TestResultsDTO? =
-            includeTests ? try await TestResultsDTO(from: xcresultPath) : nil
-        let buildResultsDTO: BuildResultsDTO? =
-            includeWarnings ? try await BuildResultsDTO(from: xcresultPath) : nil
-        let coverageReportDTO: CoverageReportDTO? =
-            includeCoverage ? try await CoverageReportDTO(from: xcresultPath) : nil
+        // Fire the three read-only `xcrun` subprocesses concurrently — each
+        // independently reads the same .xcresult bundle. The dominant cost
+        // (>90% wall-clock on real fixtures) lives in those processes, so
+        // overlapping them is the largest remaining win after Shell switched
+        // to `bytes(limit:)`.
+        //
+        // `xcresulttool export attachments` is sequenced AFTER `get
+        // test-results`: both commands mutate the bundle's internal
+        // sqlite cache and Apple's tool conflicts with itself when two
+        // instances race for the same xcresult (database.sqlite3 → bundle
+        // copy). The conflict is reproducible by parallel snapshot tests.
+        // Sequencing only this pair loses ~0.2-0.5s on the attachments path
+        // but keeps coverage/warnings overlap intact.
+        async let testResultsTask: TestResultsDTO? =
+            includeTests ? TestResultsDTO(from: xcresultPath) : nil
+        async let buildResultsTask: BuildResultsDTO? =
+            includeWarnings ? BuildResultsDTO(from: xcresultPath) : nil
+        async let coverageReportTask: CoverageReportDTO? =
+            includeCoverage ? CoverageReportDTO(from: xcresultPath) : nil
+
+        let testResultsDTO = try await testResultsTask
+        let buildResultsDTO = try await buildResultsTask
+        let coverageReportDTO = try await coverageReportTask
 
         let attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
         if includeTests, case .extractTo(let outputDirectory, let testID) = attachments {
