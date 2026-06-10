@@ -49,11 +49,12 @@ extension Report {
     /// Initializes a new instance of the `Report` using the provided `xcresultPath`.
     ///
     /// `files` is built as the primary index — every file the bundle has any signal about
-    /// (coverage, warnings, errors) appears exactly once. `modules` is a projection: one
-    /// entry per known target name, files filtered by `File.module`, test suites
-    /// attached by target. Files belonging to test-less targets or to project-level
-    /// build issues with no module signal still appear in `files` (with `module == nil`),
-    /// so their warnings/errors are not silently lost.
+    /// (coverage, warnings, errors) appears exactly once. `modules` is a list of thin
+    /// handles — one entry per known target name. Module-scoped data (files, coverage,
+    /// suites, root-level tests) lives on the `Report` itself keyed by target name and
+    /// is reached via the `…(in:)` lookups. Files belonging to test-less targets or to
+    /// project-level build issues with no module signal still appear in `files` (with
+    /// `module == nil`), so their warnings/errors are not silently lost.
     ///
     /// - Parameters:
     ///   - xcresultPath: The file URL of the `.xcresult` file to parse.
@@ -61,8 +62,9 @@ extension Report {
     ///   - includeWarnings: Whether to parse and include build warnings/errors. Defaults to `true`.
     ///   - includeTests: Whether to parse and include test results (suites/cases).
     ///     Defaults to `true`. Disabling skips the slowest `xcresulttool` call and is
-    ///     useful for warnings-only flows; in that case `Module.suites` is empty but
-    ///     `files`, `Module.files`, and warnings/errors remain populated.
+    ///     useful for warnings-only flows; in that case `suitesByModule` /
+    ///     `rootLevelTestsByModule` are empty but `files`, per-module file lookups,
+    ///     and warnings/errors remain populated.
     ///   - attachments: Whether to extract test attachments to disk and surface them
     ///     on `Test.attachments`. Defaults to `.skip`. Implies `includeTests == true`
     ///     to have anything to attach to; passing `.extractTo(_)` with
@@ -75,48 +77,21 @@ extension Report {
         includeTests: Bool = true,
         attachments: AttachmentPolicy = .skip
     ) async throws {
-        // Fire the three read-only `xcrun` subprocesses concurrently — each
-        // independently reads the same .xcresult bundle. The dominant cost
-        // (>90% wall-clock on real fixtures) lives in those processes, so
-        // overlapping them is the largest remaining win after Shell switched
-        // to `bytes(limit:)`.
-        //
-        // `xcresulttool export attachments` is sequenced AFTER `get
-        // test-results`: both commands mutate the bundle's internal
-        // sqlite cache and Apple's tool conflicts with itself when two
-        // instances race for the same xcresult (database.sqlite3 → bundle
-        // copy). The conflict is reproducible by parallel snapshot tests.
-        // Sequencing only this pair loses ~0.2-0.5s on the attachments path
-        // but keeps coverage/warnings overlap intact.
-        async let testResultsTask: TestResultsDTO? =
-            includeTests ? TestResultsDTO(from: xcresultPath) : nil
-        async let buildResultsTask: BuildResultsDTO? =
-            includeWarnings ? BuildResultsDTO(from: xcresultPath) : nil
-        async let coverageReportTask: CoverageReportDTO? =
-            includeCoverage ? CoverageReportDTO(from: xcresultPath) : nil
+        let dtos = try await Self.loadDTOs(
+            xcresultPath: xcresultPath,
+            includeTests: includeTests,
+            includeWarnings: includeWarnings,
+            includeCoverage: includeCoverage
+        )
+        let testResultsDTO = dtos.testResults
+        let buildResultsDTO = dtos.buildResults
+        let coverageReportDTO = dtos.coverage
 
-        let testResultsDTO = try await testResultsTask
-        let buildResultsDTO = try await buildResultsTask
-        let coverageReportDTO = try await coverageReportTask
-
-        let attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
-        if includeTests, case .extractTo(let outputDirectory, let testID) = attachments {
-            try FileManager.default.createDirectory(
-                at: outputDirectory,
-                withIntermediateDirectories: true
-            )
-            let dto = try await AttachmentsDTO(
-                from: xcresultPath,
-                outputDirectory: outputDirectory,
-                testID: testID
-            )
-            attachmentLookup = Self.buildAttachmentLookup(
-                dto: dto,
-                outputDirectory: outputDirectory
-            )
-        } else {
-            attachmentLookup = [:]
-        }
+        let attachmentLookup = try await Self.resolveAttachmentLookup(
+            xcresultPath: xcresultPath,
+            includeTests: includeTests,
+            attachments: attachments
+        )
 
         let (warningsByFileName, errorsByFileName) = await Self
             .parseIssueMaps(from: buildResultsDTO)
@@ -134,11 +109,18 @@ extension Report {
         )
 
         self.files = files
-        modules = Self.buildModules(
+        let moduleNames = Self.moduleNames(
             files: files,
             testNodesByModule: testNodesByModule,
             coverageReportDTO: coverageReportDTO
         )
+        modules = moduleNames.map { Module(name: $0) }
+        coverageByModule = Self.coverageByModule(
+            for: moduleNames,
+            coverageReportDTO: coverageReportDTO
+        )
+        suitesByModule = testNodesByModule.mapValues(\.suites)
+        rootLevelTestsByModule = testNodesByModule.mapValues(\.rootLevelTests)
         coverage = Self.computeTotalCoverage(
             includeCoverage: includeCoverage,
             coverageReportDTO: coverageReportDTO,
@@ -146,7 +128,82 @@ extension Report {
         )
     }
 
+    // MARK: - DTO loading
+
+    /// Loads the three read-only `xcrun` outputs concurrently. Each subprocess
+    /// independently reads the same `.xcresult` bundle, and the dominant cost
+    /// (>90% wall-clock on real fixtures) lives in those processes — so
+    /// overlapping them is the largest remaining win after `Shell` switched to
+    /// `bytes(limit:)`. `xcresulttool export attachments` is sequenced AFTER
+    /// `get test-results` separately in
+    /// ``resolveAttachmentLookup(xcresultPath:includeTests:attachments:)``:
+    /// both commands mutate the bundle's internal `sqlite` cache and Apple's
+    /// tool conflicts with itself when two instances race for the same
+    /// xcresult (`database.sqlite3` → bundle copy). Sequencing only that pair
+    /// loses 0.2-0.5s on the attachments path but keeps coverage/warnings
+    /// overlap intact.
+    private struct LoadedDTOs {
+        let testResults: TestResultsDTO?
+        let buildResults: BuildResultsDTO?
+        let coverage: CoverageReportDTO?
+    }
+
+    private static func loadDTOs(
+        xcresultPath: URL,
+        includeTests: Bool,
+        includeWarnings: Bool,
+        includeCoverage: Bool
+    ) async throws
+        -> LoadedDTOs
+    {
+        async let testResultsTask: TestResultsDTO? =
+            includeTests ? TestResultsDTO(from: xcresultPath) : nil
+        async let buildResultsTask: BuildResultsDTO? =
+            includeWarnings ? BuildResultsDTO(from: xcresultPath) : nil
+        async let coverageReportTask: CoverageReportDTO? =
+            includeCoverage ? CoverageReportDTO(from: xcresultPath) : nil
+
+        return try await LoadedDTOs(
+            testResults: testResultsTask,
+            buildResults: buildResultsTask,
+            coverage: coverageReportTask
+        )
+    }
+
     // MARK: - Attachment lookup
+
+    /// Resolves the `(testIdentifierURL, repetitionNumber) → [Attachment]` map
+    /// the rest of the parse joins against. Returns an empty map when the
+    /// caller chose `.skip` or `includeTests == false`; otherwise creates the
+    /// output directory, runs `xcresulttool export attachments`, and folds the
+    /// manifest via ``buildAttachmentLookup(dto:outputDirectory:)``.
+    private static func resolveAttachmentLookup(
+        xcresultPath: URL,
+        includeTests: Bool,
+        attachments: AttachmentPolicy
+    ) async throws
+        -> [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+    {
+        guard includeTests,
+              case .extractTo(let outputDirectory, let testID) = attachments
+        else {
+            return [:]
+        }
+
+        try FileManager.default.createDirectory(
+            at: outputDirectory,
+            withIntermediateDirectories: true
+        )
+        let dto = try await AttachmentsDTO(
+            from: xcresultPath,
+            outputDirectory: outputDirectory,
+            testID: testID
+        )
+        return buildAttachmentLookup(
+            dto: dto,
+            outputDirectory: outputDirectory
+        )
+    }
 
     /// Folds the flat manifest from `xcresulttool export attachments` into a
     /// `(testIdentifierURL, repetitionNumber) → [Attachment]` map. Entries
