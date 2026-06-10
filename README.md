@@ -7,7 +7,7 @@
 [![](https://img.shields.io/badge/Swift%20Testing-Supported-success)](https://developer.apple.com/xcode/swift-testing/)
 
 <p align="center">
-  <img width="128" height="128" alt="Peekie Logo" src="https://github.com/user-attachments/assets/df9d5117-ba56-465d-8607-96302e638f4e" />
+  <img width="128" height="128" alt="Peekie Logo" src=".github/peekie-logo.png" />
 </p>
 
 **Peekie** is a CLI for Xcode `.xcresult` bundles. One subcommand per data type — `tests`, `warnings`, `errors`, `coverage` — each emitting machine-readable JSON (or a human-readable list, or SonarQube XML). Designed to be reached from CI scripts and **LLM coding agents** (Claude Code, Cursor) without re-explaining how `xcresulttool` works every time.
