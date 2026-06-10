@@ -1,5 +1,6 @@
 import Foundation
 import Logging
+import OrderedCollections
 #if canImport(UniformTypeIdentifiers)
 import UniformTypeIdentifiers
 #endif
@@ -312,8 +313,12 @@ extension Report {
         /// path → builder
         private var byPath = [String: FileBuilder]()
         /// basename → set of paths (for issue attribution); a basename can map to several
-        /// distinct files (e.g. helper file in two targets).
-        private var pathsByBasename = [String: [String]]()
+        /// distinct files (e.g. helper file in two targets). `OrderedSet` keeps insertion
+        /// order while preventing the same path from being recorded twice — a coverage
+        /// target reporting the same file across multiple test bundles (e.g. `Foo` plus
+        /// `FooTests` via `@testable import Foo`) would otherwise multiply attached
+        /// warnings by the number of target appearances.
+        private var pathsByBasename = [String: OrderedSet<String>]()
         /// files known only from build issues: keyed by basename (no path).
         private var byBasename = [String: FileBuilder]()
 

@@ -61,6 +61,10 @@ let package = Package(
             url: "https://github.com/apple/swift-log.git",
             .upToNextMajor(from: "1.6.0")
         ),
+        .package(
+            url: "https://github.com/apple/swift-collections.git",
+            .upToNextMajor(from: "1.1.0")
+        ),
     ],
     targets: [
         .target(
@@ -81,6 +85,10 @@ let package = Package(
                 .product(
                     name: "Logging",
                     package: "swift-log"
+                ),
+                .product(
+                    name: "OrderedCollections",
+                    package: "swift-collections"
                 ),
             ],
             path: "Sources/PeekieSDK",
