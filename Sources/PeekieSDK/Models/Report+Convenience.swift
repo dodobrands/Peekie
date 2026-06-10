@@ -19,7 +19,13 @@ public enum AttachmentPolicy: Sendable {
 
     /// Export attachments into the supplied directory. Caller owns the directory
     /// lifetime (create + cleanup).
-    case extractTo(URL)
+    ///
+    /// When `testID` is non-nil, `xcresulttool` is invoked with
+    /// `--test-id <id>`, scoping both the manifest and the on-disk file set
+    /// to that single test's attachments. The id is the bare suite-path
+    /// identifier as accepted by `xcresulttool` (e.g.
+    /// `"ExampleSUITests/foo()"`), without the module prefix.
+    case extractTo(URL, testID: String? = nil)
 }
 
 // MARK: - AttachmentLookupKey
@@ -76,14 +82,15 @@ extension Report {
             includeCoverage ? try await CoverageReportDTO(from: xcresultPath) : nil
 
         let attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
-        if includeTests, case .extractTo(let outputDirectory) = attachments {
+        if includeTests, case .extractTo(let outputDirectory, let testID) = attachments {
             try FileManager.default.createDirectory(
                 at: outputDirectory,
                 withIntermediateDirectories: true
             )
             let dto = try await AttachmentsDTO(
                 from: xcresultPath,
-                outputDirectory: outputDirectory
+                outputDirectory: outputDirectory,
+                testID: testID
             )
             attachmentLookup = Self.buildAttachmentLookup(
                 dto: dto,
