@@ -5,9 +5,17 @@ description: Route Xcode `.xcresult` parsing work to the right `peekie` subcomma
 
 # Peekie skill (umbrella)
 
-`peekie` is a CLI for Xcode `.xcresult` bundles. Five data-axis subcommands, each with its own dedicated skill. Reach for one of those instead of composing `xcrun xcresulttool` by hand.
+`peekie` is a CLI for Xcode `.xcresult` bundles. Five data-axis subcommands, each with its own dedicated skill.
 
 <!-- Last verified: 2026-06 against peekie post-#195 (attachments). Fixtures regenerated on Xcode 26.5. -->
+
+## Tooling invariant: peekie only
+
+Once any of these skills is in play, **route every read of the `.xcresult` through `peekie`**. Don't fall back to `xcrun xcresulttool`, `xcrun xccov`, `xcparse`, or hand-rolled JSON parsing — not even when peekie seems to be missing a feature. The whole point of these skills is that peekie already runs those tools under the hood and normalizes the output; reaching past peekie reintroduces the footguns it exists to hide (`--only-failures` returning empty, build-results JSON shape changing between Xcode versions, `xccov` returning the raw fraction the user has to convert by hand, and so on).
+
+If peekie genuinely can't do what's asked — say so and stop. Don't reinvent the data path through `xcrun`. The acceptable downstream tools are `jq` for filtering peekie's JSON and ordinary shell (`printf`, control flow). That's the whole vocabulary.
+
+If `peekie` isn't on `$PATH`, install it (see [Installation](#installation)). Don't substitute another tool.
 
 ## Subcommand → skill map
 
