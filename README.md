@@ -22,6 +22,7 @@
   - [`peekie warnings`](#peekie-warnings)
   - [`peekie errors`](#peekie-errors)
   - [`peekie coverage`](#peekie-coverage)
+  - [`peekie attachments`](#peekie-attachments)
 - [Agent integration](#agent-integration)
 - [Library (PeekieSDK)](#library-peekiesdk)
 - [License](#license)
@@ -38,13 +39,14 @@ Other options: [Homebrew tap](https://github.com/dodobrands/homebrew-tap) (comin
 
 ## CLI
 
-Four data-axis subcommands. Each runs only the `xcrun` calls it needs.
+Five data-axis subcommands. Each runs only the `xcrun` calls it needs.
 
 ```
-peekie tests     <xcresult>  [--format json|list|sonar]  default: list
-peekie warnings  <xcresult>  [--format json|list]        default: json
-peekie errors    <xcresult>  [--format json|list]        default: json
-peekie coverage  <xcresult>  [--format json|list]        default: json
+peekie tests        <xcresult>  [--format json|list|sonar]  default: list
+peekie warnings     <xcresult>  [--format json|list]        default: json
+peekie errors       <xcresult>  [--format json|list]        default: json
+peekie coverage     <xcresult>  [--format json|list]        default: json
+peekie attachments  <xcresult>  --output-dir <dir> [--format json|list]  default: json
 ```
 
 ### `peekie tests`
@@ -65,7 +67,7 @@ peekie tests Tests.xcresult --format json > tests.json
 peekie tests Tests.xcresult --format sonar --tests-path Tests > sonar-tests.xml
 ```
 
-**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`).
+**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`), `--attachments skip|export` + `--attachments-to <dir>` (embeds attachment metadata into each test in the JSON output; required together when exporting).
 
 ### `peekie warnings`
 
@@ -112,6 +114,40 @@ peekie coverage Tests.xcresult --format list
 # StringUtils      84.0%  (42/50)
 # total            62.3%
 ```
+
+### `peekie attachments`
+
+Exports `XCTAttachment` / Swift Testing `Attachment.record(...)` payloads to a directory and emits a flat JSON array describing each one (which test it came from, suggested filename, MIME type, whether it's tied to a failure).
+
+```bash
+# Export every attachment in the bundle
+peekie attachments Tests.xcresult --output-dir ./attachments
+# [
+#   {
+#     "qualifiedName": "ExamplesTests / ExampleSUITests / withAttachment()",
+#     "name": "Calculation Result_0_<uuid>.txt",
+#     "exportedFileName": "<uuid>.txt",
+#     "path": "./attachments/<uuid>.txt",
+#     "contentType": "text/plain",
+#     "isAssociatedWithFailure": false,
+#     "repetitionNumber": 1
+#   },
+#   ...
+# ]
+
+# Only attachments from failing tests
+peekie attachments Tests.xcresult --output-dir ./attachments --include failure
+
+# A single test by identifier
+peekie attachments Tests.xcresult --output-dir ./attachments --test-id "ExamplesTests/ExampleSUITests/withAttachment()"
+
+# Human-readable
+peekie attachments Tests.xcresult --output-dir ./attachments --format list
+```
+
+**Options:** `--output-dir` (required), `--test-id`, `--include` (comma-separated statuses), `--format json|list`.
+
+Need the attachments embedded into each test (instead of a flat list)? Use `peekie tests --attachments export --attachments-to <dir> --format json` — each test gains an `attachments[]` array in its JSON node.
 
 ## Agent integration
 
