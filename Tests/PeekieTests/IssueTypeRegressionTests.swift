@@ -32,10 +32,14 @@ struct IssueTypeRegressionTests {
             warnings.contains { $0.type == .swiftCompilerWarning },
             "expected at least one .swiftCompilerWarning"
         )
-        #expect(
-            warnings.contains { $0.type == .swiftCompilerError },
-            "expected at least one .swiftCompilerError (from #warning(\"…\") caret)"
-        )
+        // `.swiftCompilerError` no longer appears inside the warnings bucket:
+        // xcresulttool used to double-emit `#warning(...)` directives — once
+        // with `issueType: "Swift Compiler Error"` and once with `"Swift
+        // Compiler Warning"`. Both shared the same Location and message. We
+        // now collapse such twins to a single record with the bucket-matching
+        // severity (`.swiftCompilerWarning` in `warnings[]`). The
+        // `.swiftCompilerError` rawValue is still mapped correctly — see
+        // `IssueTypeTests` for the unit-level proof.
         #expect(
             warnings.contains { $0.type == .deprecatedDeclaration },
             "expected at least one .deprecatedDeclaration (from @available(*, deprecated))"

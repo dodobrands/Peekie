@@ -14,19 +14,7 @@
       - name: "Calculator.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/Calculator.swift"
-      ▿ warnings: 2 elements
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 17
-              ▿ endLine: Optional<Int>
-                - some: 7
-              ▿ startColumn: Optional<Int>
-                - some: 17
-              - startLine: 7
-          - message: "Some warning from Calculator"
-          - type: IssueType.swiftCompilerError
+      ▿ warnings: 1 element
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -173,19 +161,7 @@
       - name: "SwiftTestingTests.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/SwiftTestingTests.swift"
-      ▿ warnings: 2 elements
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 140
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 140
-          - message: "Some warning from ExampleSUITests"
-          - type: IssueType.swiftCompilerError
+      ▿ warnings: 1 element
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -210,7 +186,7 @@
       - name: "XCTestTests.swift"
       ▿ path: Optional<String>
         - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
-      ▿ warnings: 3 elements
+      ▿ warnings: 2 elements
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -234,18 +210,6 @@
                 - some: 9
               - startLine: 173
           - message: "Some warning from ExampleSUITests"
-          - type: IssueType.swiftCompilerError
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 173
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 173
-          - message: "Some warning from ExampleSUITests"
           - type: IssueType.swiftCompilerWarning
     ▿ File
       - coverage: Optional<Coverage>.none
@@ -253,19 +217,7 @@
       - module: Optional<String>.none
       - name: "TextProcessor.swift"
       - path: Optional<String>.none
-      ▿ warnings: 2 elements
-        ▿ Issue
-          ▿ location: Optional<Location>
-            ▿ some: Location
-              ▿ endColumn: Optional<Int>
-                - some: 9
-              ▿ endLine: Optional<Int>
-                - some: 13
-              ▿ startColumn: Optional<Int>
-                - some: 9
-              - startLine: 13
-          - message: "Some warning from StringUtils"
-          - type: IssueType.swiftCompilerError
+      ▿ warnings: 1 element
         ▿ Issue
           ▿ location: Optional<Location>
             ▿ some: Location
@@ -308,19 +260,7 @@
           - name: "Calculator.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Sources/Calculator/Calculator.swift"
-          ▿ warnings: 2 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 17
-                  ▿ endLine: Optional<Int>
-                    - some: 7
-                  ▿ startColumn: Optional<Int>
-                    - some: 17
-                  - startLine: 7
-              - message: "Some warning from Calculator"
-              - type: IssueType.swiftCompilerError
+          ▿ warnings: 1 element
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -467,19 +407,7 @@
           - name: "SwiftTestingTests.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/SwiftTestingTests.swift"
-          ▿ warnings: 2 elements
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 140
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 140
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerError
+          ▿ warnings: 1 element
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -504,7 +432,7 @@
           - name: "XCTestTests.swift"
           ▿ path: Optional<String>
             - some: "/Users/alldmeat/Developer/swift-tests-example/SPM/Tests/ExamplesTests/XCTestTests.swift"
-          ▿ warnings: 3 elements
+          ▿ warnings: 2 elements
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
@@ -517,18 +445,6 @@
                   - startLine: 113
               - message: "Call to main actor-isolated class method \'runActivity(named:block:)\' in a synchronous nonisolated context"
               - type: IssueType.actorIsolatedCall
-            ▿ Issue
-              ▿ location: Optional<Location>
-                ▿ some: Location
-                  ▿ endColumn: Optional<Int>
-                    - some: 9
-                  ▿ endLine: Optional<Int>
-                    - some: 173
-                  ▿ startColumn: Optional<Int>
-                    - some: 9
-                  - startLine: 173
-              - message: "Some warning from ExampleSUITests"
-              - type: IssueType.swiftCompilerError
             ▿ Issue
               ▿ location: Optional<Location>
                 ▿ some: Location
