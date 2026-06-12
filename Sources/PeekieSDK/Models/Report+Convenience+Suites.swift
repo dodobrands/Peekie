@@ -139,6 +139,16 @@ extension Report {
     {
         var repeatable = Module.Suite.RepeatableTest(name: testCase.name, tests: [])
 
+        // xcresulttool's attachment manifest tags each entry with a 1-indexed
+        // `repetitionNumber` that maps to the DFS-order encounter of a
+        // `Repetition` node under a test case (First Run = 1, Retry 1 = 2, …).
+        // Pre-walk the test case to compute that mapping by name, so we can
+        // join attachments by position rather than by parsing names like
+        // "First Run" — which `repetitionNumber(from:)` could not resolve and
+        // collapsed onto its rep=1 fallback, leaking the last retry's
+        // attachments and double-counting the first one.
+        let repetitionPositions = repetitionPositionsByName(in: testCase)
+
         let filteredChildren = (testCase.children ?? []).filter { $0.isMetadata == false }
         for child in filteredChildren {
             processTestNode(
@@ -146,6 +156,7 @@ extension Report {
                 path: [],
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
         }
@@ -162,11 +173,42 @@ extension Report {
         return repeatable
     }
 
+    /// Pre-computes the 1-indexed DFS position of each `Repetition` node under
+    /// a test case. Keyed by `TestNode.name`, which Apple guarantees unique
+    /// within a single test case (`"First Run"`, `"Retry 1"`, `"Retry 2"`, …
+    /// for retry-on-failure; `"Repetition 1"`, `"Repetition 2"`, … for
+    /// explicit per-test repeat counts).
+    private static func repetitionPositionsByName(
+        in testCase: TestResultsDTO.TestNode
+    )
+        -> [String: Int]
+    {
+        var positions: [String: Int] = [:]
+        var counter = 1
+        func walk(_ node: TestResultsDTO.TestNode) {
+            if node.nodeType == .repetition {
+                if positions[node.name] == nil {
+                    positions[node.name] = counter
+                    counter += 1
+                }
+                return
+            }
+            for child in node.children ?? [] {
+                walk(child)
+            }
+        }
+        for child in testCase.children ?? [] {
+            walk(child)
+        }
+        return positions
+    }
+
     private static func processTestNode(
         _ node: TestResultsDTO.TestNode,
         path: [Module.Suite.RepeatableTest.PathNode],
         testCase: TestResultsDTO.TestNode,
         attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        repetitionPositions: [String: Int],
         into repeatable: inout Module.Suite.RepeatableTest
     ) {
         var newPath = path
@@ -180,6 +222,7 @@ extension Report {
                 path: newPath,
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
             return
@@ -207,6 +250,7 @@ extension Report {
                 path: newPath,
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
         }
@@ -217,6 +261,7 @@ extension Report {
         path: [Module.Suite.RepeatableTest.PathNode],
         testCase: TestResultsDTO.TestNode,
         attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        repetitionPositions: [String: Int],
         into repeatable: inout Module.Suite.RepeatableTest
     ) {
         do {
@@ -228,7 +273,8 @@ extension Report {
             )
             test.attachments = lookupAttachments(
                 for: testCase,
-                repetition: repetitionNumber(from: node.name),
+                repetition: repetitionPositions[node.name]
+                    ?? repetitionNumber(from: node.name),
                 lookup: attachmentLookup
             )
             repeatable.tests.append(test)
