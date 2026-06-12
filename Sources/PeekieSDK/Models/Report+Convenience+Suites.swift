@@ -183,7 +183,7 @@ extension Report {
     )
         -> [String: Int]
     {
-        var positions: [String: Int] = [:]
+        var positions = [String: Int]()
         var counter = 1
         func walk(_ node: TestResultsDTO.TestNode) {
             if node.nodeType == .repetition {
