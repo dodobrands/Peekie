@@ -3,9 +3,9 @@ import Foundation
 extension Report {
     // MARK: - Suite parsing
 
-    /// Result of walking one `Unit test bundle` node: any `@Test`s declared at the
-    /// bundle root (no enclosing `@Suite`), plus the top-level suites and their
-    /// nested-suite trees.
+    /// Result of walking one `Unit test bundle` or `UI test bundle` node: any
+    /// `@Test`s declared at the bundle root (no enclosing `@Suite`), plus the
+    /// top-level suites and their nested-suite trees.
     struct BundleTestNodes {
         var rootLevelTests: Set<Module.Suite.RepeatableTest>
         var suites: [Module.Suite]
@@ -24,11 +24,13 @@ extension Report {
         var byBundle = [String: BundleTestNodes]()
 
         for rootNode in testResultsDTO.testNodes where rootNode.nodeType == .testPlan {
-            guard let unitTestBundles = rootNode.children else {
+            guard let testBundles = rootNode.children else {
                 continue
             }
 
-            for testNode in unitTestBundles where testNode.nodeType == .unitTestBundle {
+            for testNode in testBundles
+                where testNode.nodeType == .unitTestBundle || testNode.nodeType == .uiTestBundle
+            {
                 let bundleName = testNode.name
                 let bundleChildren = (testNode.children ?? []).filter { $0.isMetadata == false }
 

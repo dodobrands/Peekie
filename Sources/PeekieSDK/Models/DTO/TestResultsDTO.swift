@@ -103,6 +103,7 @@ extension TestResultsDTO.TestNode {
         case testCase
         case testSuite
         case unitTestBundle
+        case uiTestBundle
         case repetition
         case failureMessage
         case testPlan
@@ -124,6 +125,8 @@ extension TestResultsDTO.TestNode {
                 self = .testSuite
             case "Unit test bundle":
                 self = .unitTestBundle
+            case "UI test bundle":
+                self = .uiTestBundle
             case "Repetition":
                 self = .repetition
             case "Failure Message":
@@ -148,6 +151,7 @@ extension TestResultsDTO.TestNode {
             case (.testCase, .testCase),
                  (.testSuite, .testSuite),
                  (.unitTestBundle, .unitTestBundle),
+                 (.uiTestBundle, .uiTestBundle),
                  (.repetition, .repetition),
                  (.failureMessage, .failureMessage),
                  (.testPlan, .testPlan),
