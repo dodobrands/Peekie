@@ -3,9 +3,9 @@ import Foundation
 extension Report {
     // MARK: - Suite parsing
 
-    /// Result of walking one `Unit test bundle` node: any `@Test`s declared at the
-    /// bundle root (no enclosing `@Suite`), plus the top-level suites and their
-    /// nested-suite trees.
+    /// Result of walking one `Unit test bundle` or `UI test bundle` node: any
+    /// `@Test`s declared at the bundle root (no enclosing `@Suite`), plus the
+    /// top-level suites and their nested-suite trees.
     struct BundleTestNodes {
         var rootLevelTests: Set<Module.Suite.RepeatableTest>
         var suites: [Module.Suite]
@@ -24,11 +24,13 @@ extension Report {
         var byBundle = [String: BundleTestNodes]()
 
         for rootNode in testResultsDTO.testNodes where rootNode.nodeType == .testPlan {
-            guard let unitTestBundles = rootNode.children else {
+            guard let testBundles = rootNode.children else {
                 continue
             }
 
-            for testNode in unitTestBundles where testNode.nodeType == .unitTestBundle {
+            for testNode in testBundles
+                where testNode.nodeType == .unitTestBundle || testNode.nodeType == .uiTestBundle
+            {
                 let bundleName = testNode.name
                 let bundleChildren = (testNode.children ?? []).filter { $0.isMetadata == false }
 
@@ -137,6 +139,16 @@ extension Report {
     {
         var repeatable = Module.Suite.RepeatableTest(name: testCase.name, tests: [])
 
+        // xcresulttool's attachment manifest tags each entry with a 1-indexed
+        // `repetitionNumber` that maps to the DFS-order encounter of a
+        // `Repetition` node under a test case (First Run = 1, Retry 1 = 2, …).
+        // Pre-walk the test case to compute that mapping by name, so we can
+        // join attachments by position rather than by parsing names like
+        // "First Run" — which `repetitionNumber(from:)` could not resolve and
+        // collapsed onto its rep=1 fallback, leaking the last retry's
+        // attachments and double-counting the first one.
+        let repetitionPositions = repetitionPositionsByName(in: testCase)
+
         let filteredChildren = (testCase.children ?? []).filter { $0.isMetadata == false }
         for child in filteredChildren {
             processTestNode(
@@ -144,6 +156,7 @@ extension Report {
                 path: [],
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
         }
@@ -165,6 +178,7 @@ extension Report {
         path: [Module.Suite.RepeatableTest.PathNode],
         testCase: TestResultsDTO.TestNode,
         attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        repetitionPositions: [String: Int],
         into repeatable: inout Module.Suite.RepeatableTest
     ) {
         var newPath = path
@@ -178,6 +192,7 @@ extension Report {
                 path: newPath,
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
             return
@@ -205,6 +220,7 @@ extension Report {
                 path: newPath,
                 testCase: testCase,
                 attachmentLookup: attachmentLookup,
+                repetitionPositions: repetitionPositions,
                 into: &repeatable
             )
         }
@@ -215,6 +231,7 @@ extension Report {
         path: [Module.Suite.RepeatableTest.PathNode],
         testCase: TestResultsDTO.TestNode,
         attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+        repetitionPositions: [String: Int],
         into repeatable: inout Module.Suite.RepeatableTest
     ) {
         do {
@@ -226,7 +243,8 @@ extension Report {
             )
             test.attachments = lookupAttachments(
                 for: testCase,
-                repetition: repetitionNumber(from: node.name),
+                repetition: repetitionPositions[node.name]
+                    ?? repetitionNumber(from: node.name),
                 lookup: attachmentLookup
             )
             repeatable.tests.append(test)
