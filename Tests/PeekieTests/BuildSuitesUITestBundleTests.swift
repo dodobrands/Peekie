@@ -8,7 +8,7 @@ struct BuildSuitesUITestBundleTests {
         // `"UI test bundle"` is the raw value xcresulttool emits for UI test bundles
         // (alongside `"Unit test bundle"` for unit-test ones). Both must decode to
         // dedicated cases so the bundleMapping filter can include them.
-        let data = "\"UI test bundle\"".data(using: .utf8)!
+        let data = Data("\"UI test bundle\"".utf8)
         let decoded = try JSONDecoder().decode(TestResultsDTO.TestNode.NodeType.self, from: data)
         #expect(decoded == .uiTestBundle)
     }
