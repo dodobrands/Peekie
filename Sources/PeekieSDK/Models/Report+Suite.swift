@@ -6,12 +6,31 @@ public extension Report.Module.Suite {
     /// A test that can be run multiple times (e.g., with retries, different devices, or
     /// parameterized inputs)
     struct RepeatableTest: Hashable {
+        // MARK: Lifecycle
+
+        init(name: String, tests: [Test], nodeIdentifier: String? = nil) {
+            self.name = name
+            self.tests = tests
+            self.nodeIdentifier = nodeIdentifier
+        }
+
+        // MARK: Public
+
         /// Name of the test (e.g., "test_example()")
         public let name: String
 
         /// Array of test executions (multiple entries if test was retried or run with different
         /// parameters)
         public internal(set) var tests: [Test]
+
+        /// Canonical test identifier from the test-case node in xcresult JSON, e.g.
+        /// `"SuiteTests/test_example()"` or ``"SuiteTests/`display name`()"``.
+        /// Unlike `name` (a display name for Swift Testing tests), the identifier is
+        /// stable — for parameterized tests it is the function signature
+        /// (`getValue(input:expected:)`), which no display-name heuristic can
+        /// reconstruct. Exporters that need stable test identity (e.g.
+        /// ``AllureFormatter``) rely on it.
+        public let nodeIdentifier: String?
 
         public static func ==(lhs: Self, rhs: Self) -> Bool {
             lhs.name == rhs.name
@@ -20,6 +39,23 @@ public extension Report.Module.Suite {
         public func hash(into hasher: inout Hasher) {
             hasher.combine(name)
         }
+    }
+}
+
+// MARK: - Report.Module.Suite.RepeatableTest + CustomReflectable
+
+extension Report.Module.Suite.RepeatableTest: CustomReflectable {
+    /// Omits `nodeIdentifier` from `Mirror`-based dumps (e.g. `swift-snapshot-testing`'s
+    /// `.dump` strategy). The identifier is exporter plumbing that duplicates `name`
+    /// for most tests; hiding it keeps snapshots recorded before the field existed
+    /// byte-for-byte stable, so adding it is non-breaking for downstream consumers
+    /// that snapshot `Report`.
+    public var customMirror: Mirror {
+        let children: [Mirror.Child] = [
+            ("name", name),
+            ("tests", tests),
+        ]
+        return Mirror(self, children: children, displayStyle: .struct)
     }
 }
 

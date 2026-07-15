@@ -8,9 +8,32 @@ struct TestResultsDTO: Decodable {
 
 extension TestResultsDTO {
     struct TestNode: Decodable {
+        // MARK: Lifecycle
+
+        init(
+            children: [Self]?,
+            durationInSeconds: Double?,
+            name: String,
+            nodeIdentifierURL: String?,
+            nodeType: NodeType,
+            result: Result?,
+            nodeIdentifier: String? = nil
+        ) {
+            self.children = children
+            self.durationInSeconds = durationInSeconds
+            self.name = name
+            self.nodeIdentifier = nodeIdentifier
+            self.nodeIdentifierURL = nodeIdentifierURL
+            self.nodeType = nodeType
+            self.result = result
+        }
+
+        // MARK: Internal
+
         let children: [Self]?
         let durationInSeconds: Double?
         let name: String
+        let nodeIdentifier: String?
         let nodeIdentifierURL: String?
         let nodeType: NodeType
         let result: Result?

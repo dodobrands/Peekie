@@ -137,7 +137,11 @@ extension Report {
     )
         -> Module.Suite.RepeatableTest
     {
-        var repeatable = Module.Suite.RepeatableTest(name: testCase.name, tests: [])
+        var repeatable = Module.Suite.RepeatableTest(
+            name: testCase.name,
+            tests: [],
+            nodeIdentifier: testCase.nodeIdentifier
+        )
 
         // xcresulttool's attachment manifest tags each entry with a 1-indexed
         // `repetitionNumber` that maps to the DFS-order encounter of a
