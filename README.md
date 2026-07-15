@@ -42,7 +42,7 @@ Other options: [Homebrew tap](https://github.com/dodobrands/homebrew-tap) (comin
 Five data-axis subcommands. Each runs only the `xcrun` calls it needs.
 
 ```
-peekie tests        <xcresult>  [--format json|list|sonar]  default: list
+peekie tests        <xcresult>  [--format json|list|sonar|allure]  default: list
 peekie warnings     <xcresult>  [--format json|list]        default: json
 peekie errors       <xcresult>  [--format json|list]        default: json
 peekie coverage     <xcresult>  [--format json|list]        default: json
@@ -51,7 +51,7 @@ peekie attachments  <xcresult>  --output-dir <dir> [--format json|list]  default
 
 ### `peekie tests`
 
-Test results, with status filtering and SonarQube export.
+Test results, with status filtering, SonarQube and Allure export.
 
 ```bash
 # Human-readable, all statuses
@@ -65,9 +65,12 @@ peekie tests Tests.xcresult --format json > tests.json
 
 # SonarQube generic test execution XML
 peekie tests Tests.xcresult --format sonar --tests-path Tests > sonar-tests.xml
+
+# Allure 2 results directory, ready for `allurectl upload` / `allure generate`
+peekie tests Tests.xcresult --format allure --output-dir allure-results
 ```
 
-**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`), `--attachments skip|export` + `--attachments-to <dir>` (embeds attachment metadata into each test in the JSON output; required together when exporting).
+**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`), `--output-dir` (required with `--format allure`), `--attachments skip|export` + `--attachments-to <dir>` (embeds attachment metadata into each test in the JSON output; required together when exporting).
 
 ### `peekie warnings`
 

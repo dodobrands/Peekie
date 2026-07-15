@@ -13,6 +13,7 @@ public struct Tests: AsyncParsableCommand {
         case json
         case list
         case sonar
+        case allure
     }
 
     public enum AttachmentsMode: String, ExpressibleByArgument, CaseIterable {
@@ -42,6 +43,12 @@ public struct Tests: AsyncParsableCommand {
     @Option(help: "Path to test sources (required with --format sonar).")
     public var testsPath: String?
 
+    @Option(
+        name: .customLong("output-dir"),
+        help: "Output directory for Allure results. Required with --format allure."
+    )
+    public var outputDir: String?
+
     @Option(help: "Attachments handling: skip (default) or export.")
     public var attachments = AttachmentsMode.skip
 
@@ -58,16 +65,11 @@ public struct Tests: AsyncParsableCommand {
         LoggingSetup.setup(verbose: verbose)
         let xcresultPath = URL(fileURLWithPath: xcresultPath)
 
-        let attachmentsPolicy: AttachmentPolicy
-        switch attachments {
-        case .skip:
-            attachmentsPolicy = .skip
-        case .export:
-            guard let attachmentsTo else {
-                throw ValidationError("--attachments-to is required when --attachments export")
+        let (attachmentsPolicy, temporaryAttachmentsDirectory) = try makeAttachmentsPolicy()
+        defer {
+            if let temporaryAttachmentsDirectory {
+                try? FileManager.default.removeItem(at: temporaryAttachmentsDirectory)
             }
-
-            attachmentsPolicy = .extractTo(URL(fileURLWithPath: attachmentsTo))
         }
 
         let report = try await Report(
@@ -109,6 +111,56 @@ public struct Tests: AsyncParsableCommand {
                     report: report, testsPath: URL(fileURLWithPath: testsPath)
                 )
             )
+
+        case .allure:
+            guard let outputDir else {
+                throw ValidationError("--output-dir is required when --format allure")
+            }
+
+            try exportAllure(report: report, outputDir: outputDir)
         }
+    }
+
+    // MARK: Private
+
+    /// Resolves the attachment extraction policy from the CLI flags. The Allure
+    /// format needs attachment files even when the user didn't ask for them
+    /// explicitly, so it falls back to a temporary directory — returned as the
+    /// second tuple element for the caller to clean up.
+    private func makeAttachmentsPolicy() throws -> (AttachmentPolicy, URL?) {
+        switch attachments {
+        case .skip:
+            guard format == .allure else {
+                return (.skip, nil)
+            }
+
+            let directory = FileManager.default
+                .temporaryDirectory
+                .appendingPathComponent("peekie-allure-attachments-\(UUID().uuidString)")
+            return (.extractTo(directory), directory)
+
+        case .export:
+            guard let attachmentsTo else {
+                throw ValidationError("--attachments-to is required when --attachments export")
+            }
+
+            return (.extractTo(URL(fileURLWithPath: attachmentsTo)), nil)
+        }
+    }
+
+    private func exportAllure(report: Report, outputDir: String) throws {
+        let formatter = PeekieSDK.AllureFormatter()
+        let summary = try formatter.write(
+            report: report,
+            to: URL(fileURLWithPath: outputDir)
+        )
+        let counts = summary.resultCountsByStatus
+            .sorted { $0.key < $1.key }
+            .map { "\($0.key): \($0.value)" }
+            .joined(separator: ", ")
+        print(
+            "Exported \(summary.resultsTotal) Allure results (\(counts)), "
+                + "\(summary.attachmentsTotal) attachments to \(outputDir)"
+        )
     }
 }
