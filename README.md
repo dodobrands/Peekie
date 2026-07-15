@@ -68,9 +68,13 @@ peekie tests Tests.xcresult --format sonar --tests-path Tests > sonar-tests.xml
 
 # Allure 2 results directory, ready for `allurectl upload` / `allure generate`
 peekie tests Tests.xcresult --format allure --output-dir allure-results
+
+# Same, with XCTest activities mapped to Allure steps and metadata labels
+# (allure.id / allure.label.* / allure.name / allure.description) — for UI tests
+peekie tests UITests.xcresult --format allure --output-dir allure-results --steps
 ```
 
-**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`), `--output-dir` (required with `--format allure`), `--attachments skip|export` + `--attachments-to <dir>` (embeds attachment metadata into each test in the JSON output; required together when exporting).
+**Options:** `--include` (comma-separated statuses), `--include-device-details`, `--tests-path` (required with `--format sonar`), `--output-dir` (required with `--format allure`), `--steps` (with `--format allure`: activities → steps and labels; one extra `xcresulttool` call per test), `--attachments skip|export` + `--attachments-to <dir>` (embeds attachment metadata into each test in the JSON output; required together when exporting).
 
 ### `peekie warnings`
 

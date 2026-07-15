@@ -46,7 +46,7 @@
     "steps" : [
 
     ],
-    "stop" : 25,
+    "stop" : 27,
     "uuid" : "00000000-0000-0000-0000-000000000002"
   },
   {
@@ -66,12 +66,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 26,
+    "start" : 28,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 38,
+    "stop" : 40,
     "uuid" : "00000000-0000-0000-0000-000000000003"
   },
   {
@@ -175,15 +175,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785624,
     "status" : "passed",
     "statusDetails" : {
       "message" : "Failure is expected"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1780907785624,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.expectedFailure()",
+            "stage" : "finished",
+            "start" : 1780907785634,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785634
+          }
+        ],
+        "stop" : 1780907785634
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907785634,
     "uuid" : "00000000-0000-0000-0000-000000000007"
   },
   {
@@ -203,15 +227,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907785814,
     "status" : "passed",
     "statusDetails" : {
       "message" : "Failure is expected"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1780907785814,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.expectedFailure()",
+            "stage" : "finished",
+            "start" : 1780907785815,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785815
+          }
+        ],
+        "stop" : 1780907785815
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907785815,
     "uuid" : "00000000-0000-0000-0000-000000000008"
   },
   {
@@ -231,15 +279,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907786168,
     "status" : "passed",
     "statusDetails" : {
       "message" : "Failure is expected"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1780907786168,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.expectedFailure()",
+            "stage" : "finished",
+            "start" : 1780907786169,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786169
+          }
+        ],
+        "stop" : 1780907786169
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907786169,
     "uuid" : "00000000-0000-0000-0000-000000000009"
   },
   {
@@ -259,15 +331,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785336,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785336,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failure()",
+            "stage" : "finished",
+            "start" : 1780907785341,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785341
+          }
+        ],
+        "stop" : 1780907785341
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907785341,
     "uuid" : "00000000-0000-0000-0000-000000000010"
   },
   {
@@ -287,15 +383,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907785786,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785786,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failure()",
+            "stage" : "finished",
+            "start" : 1780907785787,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785787
+          }
+        ],
+        "stop" : 1780907785787
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907785787,
     "uuid" : "00000000-0000-0000-0000-000000000011"
   },
   {
@@ -315,15 +435,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907786128,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907786128,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failure()",
+            "stage" : "finished",
+            "start" : 1780907786129,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786129
+          }
+        ],
+        "stop" : 1780907786129
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907786129,
     "uuid" : "00000000-0000-0000-0000-000000000012"
   },
   {
@@ -343,15 +487,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778492,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Failure context.txt",
+        "stage" : "finished",
+        "start" : 1780907778492,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context.txt",
+            "stage" : "finished",
+            "start" : 1780907778492,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785364
+          }
+        ],
+        "stop" : 1780907785364
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785364,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907785364,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785364
+          }
+        ],
+        "stop" : 1780907785364
+      }
     ],
-    "stop" : 374,
+    "stop" : 1780907785364,
     "uuid" : "00000000-0000-0000-0000-000000000013"
   },
   {
@@ -371,15 +564,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 375,
+    "start" : 1780907778503,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Failure context.txt",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context.txt",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785788
+          }
+        ],
+        "stop" : 1780907785788
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785788,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907785788,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785788
+          }
+        ],
+        "stop" : 1780907785788
+      }
     ],
-    "stop" : 823,
+    "stop" : 1780907785788,
     "uuid" : "00000000-0000-0000-0000-000000000014"
   },
   {
@@ -399,15 +641,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 824,
+    "start" : 1780907778516,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Failure context.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786129
+          }
+        ],
+        "stop" : 1780907786129
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907786129,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907786129,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786129
+          }
+        ],
+        "stop" : 1780907786129
+      }
     ],
-    "stop" : 1312,
+    "stop" : 1780907786129,
     "uuid" : "00000000-0000-0000-0000-000000000015"
   },
   {
@@ -427,15 +718,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785391,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Flacky failure message: result was 2.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Flacky failure message: result was 2.0",
+        "stage" : "finished",
+        "start" : 1780907785391,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.flacky()",
+            "stage" : "finished",
+            "start" : 1780907785399,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785399
+          }
+        ],
+        "stop" : 1780907785399
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907785399,
     "uuid" : "00000000-0000-0000-0000-000000000016"
   },
   {
@@ -455,12 +770,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907785400,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 1780907785401,
     "uuid" : "00000000-0000-0000-0000-000000000017"
   },
   {
@@ -480,12 +795,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907785402,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 6,
+    "stop" : 1780907785403,
     "uuid" : "00000000-0000-0000-0000-000000000018"
   },
   {
@@ -508,15 +823,39 @@
       }
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785408,
     "status" : "failed",
     "statusDetails" : {
       "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "stage" : "finished",
+        "start" : 1780907785408,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.flackyParameterized(value:)",
+            "stage" : "finished",
+            "start" : 1780907785410,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785410
+          }
+        ],
+        "stop" : 1780907785410
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907785410,
     "uuid" : "00000000-0000-0000-0000-000000000019"
   },
   {
@@ -539,7 +878,7 @@
       }
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907785411,
     "status" : "failed",
     "statusDetails" : {
       "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
@@ -547,7 +886,7 @@
     "steps" : [
 
     ],
-    "stop" : 3,
+    "stop" : 1780907785411,
     "uuid" : "00000000-0000-0000-0000-000000000020"
   },
   {
@@ -570,15 +909,39 @@
       }
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907785793,
     "status" : "failed",
     "statusDetails" : {
       "message" : "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "stage" : "finished",
+        "start" : 1780907785793,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.flackyParameterized(value:)",
+            "stage" : "finished",
+            "start" : 1780907785793,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785793
+          }
+        ],
+        "stop" : 1780907785793
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907785793,
     "uuid" : "00000000-0000-0000-0000-000000000021"
   },
   {
@@ -601,12 +964,12 @@
       }
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907785794,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 1780907785796,
     "uuid" : "00000000-0000-0000-0000-000000000022"
   },
   {
@@ -629,12 +992,12 @@
       }
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907785797,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 7,
+    "stop" : 1780907785797,
     "uuid" : "00000000-0000-0000-0000-000000000023"
   },
   {
@@ -657,12 +1020,36 @@
       }
     ],
     "stage" : "finished",
-    "start" : 8,
+    "start" : 1780907786127,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "stage" : "finished",
+        "start" : 1780907786127,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.flackyParameterized(value:)",
+            "stage" : "finished",
+            "start" : 1780907786127,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786127
+          }
+        ],
+        "stop" : 1780907786127
+      }
     ],
-    "stop" : 8,
+    "stop" : 1780907786127,
     "uuid" : "00000000-0000-0000-0000-000000000024"
   },
   {
@@ -687,7 +1074,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 7,
     "uuid" : "00000000-0000-0000-0000-000000000025"
   },
   {
@@ -707,12 +1094,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 8,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 9,
     "uuid" : "00000000-0000-0000-0000-000000000026"
   },
   {
@@ -732,12 +1119,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 10,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 7,
+    "stop" : 11,
     "uuid" : "00000000-0000-0000-0000-000000000027"
   },
   {
@@ -757,15 +1144,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785334,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: Caught error: .divisionByZero"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Caught error: .divisionByZero",
+        "stage" : "finished",
+        "start" : 1780907785334,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907785339,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785339
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.throwing()",
+            "stage" : "finished",
+            "start" : 1780907785339,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785339
+          }
+        ],
+        "stop" : 1780907785339
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907785339,
     "uuid" : "00000000-0000-0000-0000-000000000028"
   },
   {
@@ -785,15 +1209,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907785778,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: Caught error: .divisionByZero"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Caught error: .divisionByZero",
+        "stage" : "finished",
+        "start" : 1780907785778,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907785779,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785779
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.throwing()",
+            "stage" : "finished",
+            "start" : 1780907785779,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785779
+          }
+        ],
+        "stop" : 1780907785779
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907785779,
     "uuid" : "00000000-0000-0000-0000-000000000029"
   },
   {
@@ -813,15 +1274,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907786132,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: Caught error: .divisionByZero"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Caught error: .divisionByZero",
+        "stage" : "finished",
+        "start" : 1780907786132,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907786133,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786133
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "ExampleSUITests.throwing()",
+            "stage" : "finished",
+            "start" : 1780907786133,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786133
+          }
+        ],
+        "stop" : 1780907786133
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907786133,
     "uuid" : "00000000-0000-0000-0000-000000000030"
   },
   {
@@ -841,12 +1339,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778490,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Calculation Result.txt",
+        "stage" : "finished",
+        "start" : 1780907778490,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculation Result.txt",
+            "stage" : "finished",
+            "start" : 1780907778490,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778495
+          }
+        ],
+        "stop" : 1780907778495
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907778495,
     "uuid" : "00000000-0000-0000-0000-000000000031"
   },
   {
@@ -866,12 +1388,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907778503,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Calculation Result.txt",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculation Result.txt",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778504
+          }
+        ],
+        "stop" : 1780907778504
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907778504,
     "uuid" : "00000000-0000-0000-0000-000000000032"
   },
   {
@@ -891,12 +1437,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907778516,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Calculation Result.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculation Result.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000033"
   },
   {
@@ -916,12 +1486,86 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778493,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Sum result.txt",
+        "stage" : "finished",
+        "start" : 1780907778493,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Sum result.txt",
+            "stage" : "finished",
+            "start" : 1780907778493,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778493
+          }
+        ],
+        "stop" : 1780907778493
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Product result.txt",
+        "stage" : "finished",
+        "start" : 1780907778493,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Product result.txt",
+            "stage" : "finished",
+            "start" : 1780907778493,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778493
+          }
+        ],
+        "stop" : 1780907778493
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Operands.txt",
+        "stage" : "finished",
+        "start" : 1780907778493,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Operands.txt",
+            "stage" : "finished",
+            "start" : 1780907778493,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778503
+          }
+        ],
+        "stop" : 1780907778503
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907778503,
     "uuid" : "00000000-0000-0000-0000-000000000034"
   },
   {
@@ -941,12 +1585,86 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907778503,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Sum result.txt",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Sum result.txt",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778503
+          }
+        ],
+        "stop" : 1780907778503
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Product result.txt",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Product result.txt",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778503
+          }
+        ],
+        "stop" : 1780907778503
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Operands.txt",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Operands.txt",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778504
+          }
+        ],
+        "stop" : 1780907778504
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907778504,
     "uuid" : "00000000-0000-0000-0000-000000000035"
   },
   {
@@ -966,12 +1684,86 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907778516,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Sum result.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Sum result.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778516
+          }
+        ],
+        "stop" : 1780907778516
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Product result.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Product result.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778516
+          }
+        ],
+        "stop" : 1780907778516
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Operands.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Operands.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000036"
   },
   {
@@ -991,12 +1783,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778490,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Pixel.png",
+        "stage" : "finished",
+        "start" : 1780907778490,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Pixel.png",
+            "stage" : "finished",
+            "start" : 1780907778490,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778497
+          }
+        ],
+        "stop" : 1780907778497
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907778497,
     "uuid" : "00000000-0000-0000-0000-000000000037"
   },
   {
@@ -1016,12 +1832,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907778503,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Pixel.png",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Pixel.png",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778505
+          }
+        ],
+        "stop" : 1780907778505
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907778505,
     "uuid" : "00000000-0000-0000-0000-000000000038"
   },
   {
@@ -1041,12 +1881,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907778516,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Pixel.png",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Pixel.png",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000039"
   },
   {
@@ -1066,12 +1930,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778490,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Raw binary blob",
+        "stage" : "finished",
+        "start" : 1780907778490,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Raw binary blob",
+            "stage" : "finished",
+            "start" : 1780907778490,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778495
+          }
+        ],
+        "stop" : 1780907778495
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907778495,
     "uuid" : "00000000-0000-0000-0000-000000000040"
   },
   {
@@ -1091,12 +1979,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907778503,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Raw binary blob",
+        "stage" : "finished",
+        "start" : 1780907778503,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Raw binary blob",
+            "stage" : "finished",
+            "start" : 1780907778503,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778504
+          }
+        ],
+        "stop" : 1780907778504
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907778504,
     "uuid" : "00000000-0000-0000-0000-000000000041"
   },
   {
@@ -1116,12 +2028,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907778516,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Raw binary blob",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Raw binary blob",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000042"
   },
   {
@@ -1146,7 +2082,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 5,
     "uuid" : "00000000-0000-0000-0000-000000000043"
   },
   {
@@ -1166,12 +2102,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 6,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 7,
     "uuid" : "00000000-0000-0000-0000-000000000044"
   },
   {
@@ -1191,12 +2127,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 8,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 6,
+    "stop" : 9,
     "uuid" : "00000000-0000-0000-0000-000000000045"
   },
   {
@@ -1216,15 +2152,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785391,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Outer suite failure: result was 200.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
+        "stage" : "finished",
+        "start" : 1780907785391,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.outerFailure()",
+            "stage" : "finished",
+            "start" : 1780907785396,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785396
+          }
+        ],
+        "stop" : 1780907785396
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907785396,
     "uuid" : "00000000-0000-0000-0000-000000000046"
   },
   {
@@ -1244,15 +2204,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907785791,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Outer suite failure: result was 200.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
+        "stage" : "finished",
+        "start" : 1780907785791,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.outerFailure()",
+            "stage" : "finished",
+            "start" : 1780907785792,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785792
+          }
+        ],
+        "stop" : 1780907785792
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907785792,
     "uuid" : "00000000-0000-0000-0000-000000000047"
   },
   {
@@ -1272,15 +2256,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907786141,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Outer suite failure: result was 200.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
+        "stage" : "finished",
+        "start" : 1780907786141,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.outerFailure()",
+            "stage" : "finished",
+            "start" : 1780907786142,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786142
+          }
+        ],
+        "stop" : 1780907786142
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907786142,
     "uuid" : "00000000-0000-0000-0000-000000000048"
   },
   {
@@ -1305,33 +2313,8 @@
     "steps" : [
 
     ],
-    "stop" : 2,
-    "uuid" : "00000000-0000-0000-0000-000000000049"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerSuccess()",
-    "historyId" : "ExamplesTests/OuterSuite/outerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "ExamplesTests"
-      }
-    ],
-    "name" : "outerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 3,
-    "status" : "passed",
-    "steps" : [
-
-    ],
     "stop" : 5,
-    "uuid" : "00000000-0000-0000-0000-000000000050"
+    "uuid" : "00000000-0000-0000-0000-000000000049"
   },
   {
     "attachments" : [
@@ -1356,6 +2339,31 @@
 
     ],
     "stop" : 7,
+    "uuid" : "00000000-0000-0000-0000-000000000050"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "OuterSuite/outerSuccess()",
+    "historyId" : "ExamplesTests/OuterSuite/outerSuccess()",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "ExamplesTests"
+      }
+    ],
+    "name" : "outerSuccess()",
+    "parameters" : [
+
+    ],
+    "stage" : "finished",
+    "start" : 8,
+    "status" : "passed",
+    "steps" : [
+
+    ],
+    "stop" : 9,
     "uuid" : "00000000-0000-0000-0000-000000000051"
   },
   {
@@ -1375,15 +2383,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785605,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Inner suite failure: result was 12.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
+        "stage" : "finished",
+        "start" : 1780907785605,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.innerFailure()",
+            "stage" : "finished",
+            "start" : 1780907785608,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785608
+          }
+        ],
+        "stop" : 1780907785608
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907785608,
     "uuid" : "00000000-0000-0000-0000-000000000052"
   },
   {
@@ -1403,15 +2435,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907785855,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Inner suite failure: result was 12.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
+        "stage" : "finished",
+        "start" : 1780907785855,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.innerFailure()",
+            "stage" : "finished",
+            "start" : 1780907785856,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785856
+          }
+        ],
+        "stop" : 1780907785856
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907785856,
     "uuid" : "00000000-0000-0000-0000-000000000053"
   },
   {
@@ -1431,15 +2487,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907786141,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Inner suite failure: result was 12.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
+        "stage" : "finished",
+        "start" : 1780907786141,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.innerFailure()",
+            "stage" : "finished",
+            "start" : 1780907786141,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786141
+          }
+        ],
+        "stop" : 1780907786141
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907786141,
     "uuid" : "00000000-0000-0000-0000-000000000054"
   },
   {
@@ -1464,7 +2544,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 3,
     "uuid" : "00000000-0000-0000-0000-000000000055"
   },
   {
@@ -1484,12 +2564,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 4,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 5,
     "uuid" : "00000000-0000-0000-0000-000000000056"
   },
   {
@@ -1509,12 +2589,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 6,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 6,
     "uuid" : "00000000-0000-0000-0000-000000000057"
   },
   {
@@ -1534,15 +2614,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785614,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Deeply nested failure: result was 0.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
+        "stage" : "finished",
+        "start" : 1780907785614,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
+            "stage" : "finished",
+            "start" : 1780907785615,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785615
+          }
+        ],
+        "stop" : 1780907785615
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907785615,
     "uuid" : "00000000-0000-0000-0000-000000000058"
   },
   {
@@ -1562,15 +2666,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 2,
+    "start" : 1780907785853,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Deeply nested failure: result was 0.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
+        "stage" : "finished",
+        "start" : 1780907785853,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
+            "stage" : "finished",
+            "start" : 1780907785854,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785854
+          }
+        ],
+        "stop" : 1780907785854
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907785854,
     "uuid" : "00000000-0000-0000-0000-000000000059"
   },
   {
@@ -1590,15 +2718,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907786169,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Deeply nested failure: result was 0.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
+        "stage" : "finished",
+        "start" : 1780907786169,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
+            "stage" : "finished",
+            "start" : 1780907786169,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786169
+          }
+        ],
+        "stop" : 1780907786169
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907786169,
     "uuid" : "00000000-0000-0000-0000-000000000060"
   },
   {
@@ -1693,12 +2845,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778495,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Deeply nested attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778495,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Deeply nested attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778495,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778496
+          }
+        ],
+        "stop" : 1780907778496
+      }
     ],
-    "stop" : 0,
+    "stop" : 1780907778496,
     "uuid" : "00000000-0000-0000-0000-000000000064"
   },
   {
@@ -1718,12 +2894,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 1,
+    "start" : 1780907778504,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Deeply nested attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778504,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Deeply nested attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778504,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778505
+          }
+        ],
+        "stop" : 1780907778505
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907778505,
     "uuid" : "00000000-0000-0000-0000-000000000065"
   },
   {
@@ -1743,12 +2943,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907778517,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Deeply nested attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778517,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Deeply nested attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778517,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000066"
   },
   {
@@ -1773,7 +2997,7 @@
     "steps" : [
 
     ],
-    "stop" : 16,
+    "stop" : 13,
     "uuid" : "00000000-0000-0000-0000-000000000067"
   },
   {
@@ -1798,7 +3022,7 @@
     "steps" : [
 
     ],
-    "stop" : 13,
+    "stop" : 14,
     "uuid" : "00000000-0000-0000-0000-000000000068"
   },
   {
@@ -1818,12 +3042,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907777900,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Compute and record",
+        "stage" : "finished",
+        "start" : 1780907777900,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Activity attachment",
+            "stage" : "finished",
+            "start" : 1780907777900,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907777903
+          }
+        ],
+        "stop" : 1780907777903
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907777903,
     "uuid" : "00000000-0000-0000-0000-000000000069"
   },
   {
@@ -1843,15 +3091,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907777906,
     "status" : "passed",
     "statusDetails" : {
       "message" : "Failure is expected"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Failure is expected",
+        "stage" : "finished",
+        "start" : 1780907777906,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_expectedFailure()",
+            "stage" : "finished",
+            "start" : 1780907778158,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778158
+          }
+        ],
+        "stop" : 1780907778158
+      }
     ],
-    "stop" : 1298,
+    "stop" : 1780907778158,
     "uuid" : "00000000-0000-0000-0000-000000000070"
   },
   {
@@ -1871,15 +3143,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778157,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778157,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failure()",
+            "stage" : "finished",
+            "start" : 1780907778159,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778159
+          }
+        ],
+        "stop" : 1780907778159
+      }
     ],
-    "stop" : 2,
+    "stop" : 1780907778159,
     "uuid" : "00000000-0000-0000-0000-000000000071"
   },
   {
@@ -1899,15 +3195,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 1780907778158,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778158,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failure()",
+            "stage" : "finished",
+            "start" : 1780907778159,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778159
+          }
+        ],
+        "stop" : 1780907778159
+      }
     ],
-    "stop" : 4,
+    "stop" : 1780907778159,
     "uuid" : "00000000-0000-0000-0000-000000000072"
   },
   {
@@ -1927,15 +3247,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 1780907778159,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778159,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failure()",
+            "stage" : "finished",
+            "start" : 1780907778160,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778160
+          }
+        ],
+        "stop" : 1780907778160
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907778160,
     "uuid" : "00000000-0000-0000-0000-000000000073"
   },
   {
@@ -1955,15 +3299,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778161,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Failure context'",
+        "stage" : "finished",
+        "start" : 1780907778161,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context",
+            "stage" : "finished",
+            "start" : 1780907778161,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778161
+          }
+        ],
+        "stop" : 1780907778161
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778161,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907778163,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778163
+          }
+        ],
+        "stop" : 1780907778163
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907778163,
     "uuid" : "00000000-0000-0000-0000-000000000074"
   },
   {
@@ -1983,15 +3376,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 2,
+    "start" : 1780907778163,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Failure context'",
+        "stage" : "finished",
+        "start" : 1780907778163,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context",
+            "stage" : "finished",
+            "start" : 1780907778163,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778163
+          }
+        ],
+        "stop" : 1780907778163
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778163,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907778165,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778165
+          }
+        ],
+        "stop" : 1780907778165
+      }
     ],
-    "stop" : 15,
+    "stop" : 1780907778165,
     "uuid" : "00000000-0000-0000-0000-000000000075"
   },
   {
@@ -2011,15 +3453,64 @@
 
     ],
     "stage" : "finished",
-    "start" : 16,
+    "start" : 1780907778165,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Failure context'",
+        "stage" : "finished",
+        "start" : 1780907778165,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Failure context",
+            "stage" : "finished",
+            "start" : 1780907778165,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778165
+          }
+        ],
+        "stop" : 1780907778165
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "failed - Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907778165,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_failureWithAttachment()",
+            "stage" : "finished",
+            "start" : 1780907778167,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778167
+          }
+        ],
+        "stop" : 1780907778167
+      }
     ],
-    "stop" : 17,
+    "stop" : 1780907778167,
     "uuid" : "00000000-0000-0000-0000-000000000076"
   },
   {
@@ -2039,15 +3530,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778167,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Flacky failure message: result was 2.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed - Flacky failure message: result was 2.0",
+        "stage" : "finished",
+        "start" : 1780907778167,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_flacky()",
+            "stage" : "finished",
+            "start" : 1780907778169,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778169
+          }
+        ],
+        "stop" : 1780907778169
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907778169,
     "uuid" : "00000000-0000-0000-0000-000000000077"
   },
   {
@@ -2067,12 +3582,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 2,
+    "start" : 1780907778170,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 1780907778171,
     "uuid" : "00000000-0000-0000-0000-000000000078"
   },
   {
@@ -2097,7 +3612,7 @@
     "steps" : [
 
     ],
-    "stop" : 257,
+    "stop" : 261,
     "uuid" : "00000000-0000-0000-0000-000000000079"
   },
   {
@@ -2125,7 +3640,7 @@
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 6,
     "uuid" : "00000000-0000-0000-0000-000000000080"
   },
   {
@@ -2170,15 +3685,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778440,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\""
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed: caught error: \"divisionByZero\"",
+        "stage" : "finished",
+        "start" : 1780907778440,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907778444,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778444
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_throwing()",
+            "stage" : "finished",
+            "start" : 1780907778444,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778444
+          }
+        ],
+        "stop" : 1780907778444
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907778444,
     "uuid" : "00000000-0000-0000-0000-000000000082"
   },
   {
@@ -2198,15 +3750,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907778443,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\""
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed: caught error: \"divisionByZero\"",
+        "stage" : "finished",
+        "start" : 1780907778443,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907778445,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778445
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_throwing()",
+            "stage" : "finished",
+            "start" : 1780907778445,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778445
+          }
+        ],
+        "stop" : 1780907778445
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907778445,
     "uuid" : "00000000-0000-0000-0000-000000000083"
   },
   {
@@ -2226,15 +3815,52 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907778445,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\""
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "failed: caught error: \"divisionByZero\"",
+        "stage" : "finished",
+        "start" : 1780907778445,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculator.divide(_:_:)",
+            "stage" : "finished",
+            "start" : 1780907778446,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778446
+          },
+          {
+            "attachments" : [
+
+            ],
+            "name" : "XCTestTests.test_throwing()",
+            "stage" : "finished",
+            "start" : 1780907778446,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778446
+          }
+        ],
+        "stop" : 1780907778446
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907778446,
     "uuid" : "00000000-0000-0000-0000-000000000084"
   },
   {
@@ -2254,12 +3880,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778447,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Calculation Result'",
+        "stage" : "finished",
+        "start" : 1780907778447,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Calculation Result",
+            "stage" : "finished",
+            "start" : 1780907778447,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778448
+          }
+        ],
+        "stop" : 1780907778448
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907778448,
     "uuid" : "00000000-0000-0000-0000-000000000085"
   },
   {
@@ -2279,12 +3929,61 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778448,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Sum result'",
+        "stage" : "finished",
+        "start" : 1780907778448,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Sum result",
+            "stage" : "finished",
+            "start" : 1780907778448,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778448
+          }
+        ],
+        "stop" : 1780907778448
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment named 'Product result'",
+        "stage" : "finished",
+        "start" : 1780907778448,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Product result",
+            "stage" : "finished",
+            "start" : 1780907778448,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778449
+          }
+        ],
+        "stop" : 1780907778449
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907778449,
     "uuid" : "00000000-0000-0000-0000-000000000086"
   },
   {
@@ -2304,12 +4003,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778449,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment named 'Pixel.png'",
+        "stage" : "finished",
+        "start" : 1780907778449,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Pixel.png",
+            "stage" : "finished",
+            "start" : 1780907778449,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778452
+          }
+        ],
+        "stop" : 1780907778452
+      }
     ],
-    "stop" : 1,
+    "stop" : 1780907778452,
     "uuid" : "00000000-0000-0000-0000-000000000087"
   },
   {
@@ -2359,7 +4082,7 @@
     "steps" : [
 
     ],
-    "stop" : 3,
+    "stop" : 12,
     "uuid" : "00000000-0000-0000-0000-000000000089"
   },
   {
@@ -2379,12 +4102,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 13,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 14,
     "uuid" : "00000000-0000-0000-0000-000000000090"
   },
   {
@@ -2404,12 +4127,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 15,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 7,
+    "stop" : 16,
     "uuid" : "00000000-0000-0000-0000-000000000091"
   },
   {
@@ -2434,7 +4157,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 7,
     "uuid" : "00000000-0000-0000-0000-000000000092"
   },
   {
@@ -2454,12 +4177,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 8,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 9,
     "uuid" : "00000000-0000-0000-0000-000000000093"
   },
   {
@@ -2479,12 +4202,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 10,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 6,
+    "stop" : 11,
     "uuid" : "00000000-0000-0000-0000-000000000094"
   },
   {
@@ -2509,7 +4232,7 @@
     "steps" : [
 
     ],
-    "stop" : 0,
+    "stop" : 7,
     "uuid" : "00000000-0000-0000-0000-000000000095"
   },
   {
@@ -2529,12 +4252,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 1,
+    "start" : 8,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 9,
     "uuid" : "00000000-0000-0000-0000-000000000096"
   },
   {
@@ -2554,12 +4277,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 10,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 11,
     "uuid" : "00000000-0000-0000-0000-000000000097"
   },
   {
@@ -2584,7 +4307,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 8,
     "uuid" : "00000000-0000-0000-0000-000000000098"
   },
   {
@@ -2604,12 +4327,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 9,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 4,
+    "stop" : 10,
     "uuid" : "00000000-0000-0000-0000-000000000099"
   },
   {
@@ -2629,12 +4352,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 5,
+    "start" : 11,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 6,
+    "stop" : 12,
     "uuid" : "00000000-0000-0000-0000-000000000100"
   },
   {
@@ -2659,7 +4382,7 @@
     "steps" : [
 
     ],
-    "stop" : 14,
+    "stop" : 19,
     "uuid" : "00000000-0000-0000-0000-000000000101"
   },
   {
@@ -2679,12 +4402,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 15,
+    "start" : 20,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 26,
+    "stop" : 33,
     "uuid" : "00000000-0000-0000-0000-000000000102"
   },
   {
@@ -2704,12 +4427,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 27,
+    "start" : 34,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 40,
+    "stop" : 47,
     "uuid" : "00000000-0000-0000-0000-000000000103"
   },
   {
@@ -2729,15 +4452,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907785127,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785127,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "rootLevelFailure()",
+            "stage" : "finished",
+            "start" : 1780907785138,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785138
+          }
+        ],
+        "stop" : 1780907785138
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907785138,
     "uuid" : "00000000-0000-0000-0000-000000000104"
   },
   {
@@ -2757,15 +4504,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907785775,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907785775,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "rootLevelFailure()",
+            "stage" : "finished",
+            "start" : 1780907785777,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907785777
+          }
+        ],
+        "stop" : 1780907785777
+      }
     ],
-    "stop" : 5,
+    "stop" : 1780907785777,
     "uuid" : "00000000-0000-0000-0000-000000000105"
   },
   {
@@ -2785,15 +4556,39 @@
 
     ],
     "stage" : "finished",
-    "start" : 6,
+    "start" : 1780907786072,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1780907786072,
+        "status" : "failed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "rootLevelFailure()",
+            "stage" : "finished",
+            "start" : 1780907786073,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907786073
+          }
+        ],
+        "stop" : 1780907786073
+      }
     ],
-    "stop" : 7,
+    "stop" : 1780907786073,
     "uuid" : "00000000-0000-0000-0000-000000000106"
   },
   {
@@ -2818,7 +4613,7 @@
     "steps" : [
 
     ],
-    "stop" : 1,
+    "stop" : 8,
     "uuid" : "00000000-0000-0000-0000-000000000107"
   },
   {
@@ -2838,12 +4633,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 2,
+    "start" : 9,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 3,
+    "stop" : 10,
     "uuid" : "00000000-0000-0000-0000-000000000108"
   },
   {
@@ -2863,12 +4658,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 11,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 12,
     "uuid" : "00000000-0000-0000-0000-000000000109"
   },
   {
@@ -2888,12 +4683,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1780907778486,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Root attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778486,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Root attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778486,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778494
+          }
+        ],
+        "stop" : 1780907778494
+      }
     ],
-    "stop" : 3,
+    "stop" : 1780907778494,
     "uuid" : "00000000-0000-0000-0000-000000000110"
   },
   {
@@ -2913,12 +4732,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 1780907778502,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Root attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778502,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Root attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778502,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778503
+          }
+        ],
+        "stop" : 1780907778503
+      }
     ],
-    "stop" : 6,
+    "stop" : 1780907778503,
     "uuid" : "00000000-0000-0000-0000-000000000111"
   },
   {
@@ -2938,12 +4781,36 @@
 
     ],
     "stage" : "finished",
-    "start" : 7,
+    "start" : 1780907778516,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Root attachment.txt",
+        "stage" : "finished",
+        "start" : 1780907778516,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Root attachment.txt",
+            "stage" : "finished",
+            "start" : 1780907778516,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1780907778517
+          }
+        ],
+        "stop" : 1780907778517
+      }
     ],
-    "stop" : 8,
+    "stop" : 1780907778517,
     "uuid" : "00000000-0000-0000-0000-000000000112"
   },
   {
@@ -2968,7 +4835,7 @@
     "steps" : [
 
     ],
-    "stop" : 1,
+    "stop" : 11,
     "uuid" : "00000000-0000-0000-0000-000000000113"
   },
   {
@@ -2988,12 +4855,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 2,
+    "start" : 12,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 3,
+    "stop" : 13,
     "uuid" : "00000000-0000-0000-0000-000000000114"
   },
   {
@@ -3013,12 +4880,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 14,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 15,
     "uuid" : "00000000-0000-0000-0000-000000000115"
   },
   {
@@ -3043,7 +4910,7 @@
     "steps" : [
 
     ],
-    "stop" : 2,
+    "stop" : 11,
     "uuid" : "00000000-0000-0000-0000-000000000116"
   },
   {
@@ -3063,12 +4930,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 3,
+    "start" : 12,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 3,
+    "stop" : 13,
     "uuid" : "00000000-0000-0000-0000-000000000117"
   },
   {
@@ -3088,12 +4955,12 @@
 
     ],
     "stage" : "finished",
-    "start" : 4,
+    "start" : 14,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 5,
+    "stop" : 15,
     "uuid" : "00000000-0000-0000-0000-000000000118"
   }
 ]
