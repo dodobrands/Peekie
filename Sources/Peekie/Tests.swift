@@ -49,6 +49,14 @@ public struct Tests: AsyncParsableCommand {
     )
     public var outputDir: String?
 
+    @Flag(
+        help: """
+        With --format allure: map XCTest activities to Allure steps and metadata labels \
+        (one extra xcresulttool call per test — recommended for UI test bundles).
+        """
+    )
+    public var steps = false
+
     @Option(help: "Attachments handling: skip (default) or export.")
     public var attachments = AttachmentsMode.skip
 
@@ -117,7 +125,7 @@ public struct Tests: AsyncParsableCommand {
                 throw ValidationError("--output-dir is required when --format allure")
             }
 
-            try exportAllure(report: report, outputDir: outputDir)
+            try await exportAllure(report: report, outputDir: outputDir)
         }
     }
 
@@ -148,12 +156,21 @@ public struct Tests: AsyncParsableCommand {
         }
     }
 
-    private func exportAllure(report: Report, outputDir: String) throws {
+    private func exportAllure(report: Report, outputDir: String) async throws {
         let formatter = PeekieSDK.AllureFormatter()
-        let summary = try formatter.write(
-            report: report,
-            to: URL(fileURLWithPath: outputDir)
-        )
+        let summary: PeekieSDK.AllureFormatter.WriteSummary =
+            if steps {
+                try await formatter.write(
+                    report: report,
+                    to: URL(fileURLWithPath: outputDir),
+                    stepsFrom: URL(fileURLWithPath: xcresultPath)
+                )
+            } else {
+                try formatter.write(
+                    report: report,
+                    to: URL(fileURLWithPath: outputDir)
+                )
+            }
         let counts = summary.resultCountsByStatus
             .sorted { $0.key < $1.key }
             .map { "\($0.key): \($0.value)" }

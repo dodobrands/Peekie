@@ -38,6 +38,33 @@ struct AllureFormatterSnapshotTests {
     }
 
     @Test(arguments: Constants.testsReportFileNames)
+    func results_withSteps(_ fileName: String) async throws {
+        let originalPath = try Constants.url(for: fileName)
+        let reportPath = try Constants.copyXcresultToTemporaryDirectory(originalPath)
+        defer {
+            try? FileManager.default.removeItem(at: reportPath)
+        }
+        let report = try await Report(xcresultPath: reportPath)
+
+        let results = await formatter.results(
+            report: report,
+            startedAt: Date(timeIntervalSince1970: 0),
+            stepsFrom: reportPath,
+            makeUUID: Self.makeSequentialUUID()
+        )
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        let json = try String(decoding: encoder.encode(results), as: UTF8.self)
+
+        assertSnapshot(
+            of: json,
+            as: .lines,
+            named: "\(snapshotName(from: fileName))_allure_steps"
+        )
+    }
+
+    @Test(arguments: Constants.testsReportFileNames)
     func write_producesResultFilesAndAttachments(_ fileName: String) async throws {
         let originalPath = try Constants.url(for: fileName)
         let reportPath = try Constants.copyXcresultToTemporaryDirectory(originalPath)
@@ -182,5 +209,51 @@ struct AllureFormatterIdentifierTests {
                 from: "test://com.apple.xcode/Module/ModuleTests"
             ) == nil
         )
+    }
+}
+
+// MARK: - AllureActivityMetadataTests
+
+struct AllureActivityMetadataTests {
+    @Test
+    func allureIDBecomesASIDLabel() {
+        var metadata = AllureFormatter.ActivityMetadata()
+        let consumed = metadata.consume(title: "allure.id:862916")
+        #expect(consumed)
+        #expect(metadata.labels.map(\.name) == ["AS_ID"])
+        #expect(metadata.labels.map(\.value) == ["862916"])
+    }
+
+    @Test
+    func allureLabelBecomesNamedLabel() {
+        var metadata = AllureFormatter.ActivityMetadata()
+        let consumed = metadata.consume(title: "allure.label.ALLURE_ID:862916")
+        #expect(consumed)
+        #expect(metadata.labels.map(\.name) == ["ALLURE_ID"])
+        #expect(metadata.labels.map(\.value) == ["862916"])
+    }
+
+    @Test
+    func allureNameOverridesResultName() {
+        var metadata = AllureFormatter.ActivityMetadata()
+        let consumed = metadata.consume(title: "allure.name:Readable test name")
+        #expect(consumed)
+        #expect(metadata.nameOverride == "Readable test name")
+    }
+
+    @Test
+    func allureDescriptionIsCaptured() {
+        var metadata = AllureFormatter.ActivityMetadata()
+        let consumed = metadata.consume(title: "allure.description:What the test verifies")
+        #expect(consumed)
+        #expect(metadata.description == "What the test verifies")
+    }
+
+    @Test
+    func regularStepTitleIsNotConsumed() {
+        var metadata = AllureFormatter.ActivityMetadata()
+        let consumed = metadata.consume(title: "Step: Открыть корзину")
+        #expect(consumed == false)
+        #expect(metadata.labels.isEmpty)
     }
 }
