@@ -55,7 +55,6 @@ struct TestActivitiesDTO: Decodable {
         let uuid: String?
     }
 
-    let testIdentifier: String
     let testRuns: [TestRun]
 }
 
