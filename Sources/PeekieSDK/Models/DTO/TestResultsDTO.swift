@@ -197,14 +197,37 @@ extension TestResultsDTO.TestNode {
         case expectedFailure = "Expected Failure"
     }
 
+    /// Children visible for metadata lookup. For test cases the search descends
+    /// through structural wrapper nodes (Device/Arguments) that `xcresulttool
+    /// merge` inserts between a test case and its metadata: in a merged bundle
+    /// the tree is `Test Case → Device → Failure Message`, while an unmerged one
+    /// has the message as a direct child. Dimension nodes (Device, Arguments,
+    /// Repetition) stay scoped to their direct children — each owns its own
+    /// messages, mirroring how `extractPaths`/`mergedTests` treat them.
+    var metadataSearchSpace: [Self] {
+        guard nodeType == .testCase else {
+            return children ?? []
+        }
+
+        var queue = children ?? []
+        var result = [Self]()
+        while queue.isEmpty == false {
+            let node = queue.removeFirst()
+            result.append(node)
+            if node.nodeType == .device || node.nodeType == .arguments {
+                queue.append(contentsOf: node.children ?? [])
+            }
+        }
+        return result
+    }
+
     /// Extracts failure message from children nodes
     /// Extracts message after "failed -" separator (e.g., "File.swift:51: failed - Failure message"
     /// -> "Failure message")
     /// For Swift Testing format, extracts message after "Issue recorded: " (e.g., "File.swift:56:
     /// Issue recorded: Failure message" -> "Failure message")
     var failureMessage: String? {
-        guard let children,
-              let messageNode = children.first(where: { $0.nodeType == .failureMessage })
+        guard let messageNode = metadataSearchSpace.first(where: { $0.nodeType == .failureMessage })
         else {
             return nil
         }
@@ -225,11 +248,7 @@ extension TestResultsDTO.TestNode {
     /// Extracts message after "skipped -" separator (e.g., "Test skipped - Skip message" -> "Skip
     /// message")
     var skipMessage: String? {
-        guard let children else {
-            return nil
-        }
-
-        let messageNode = children.first {
+        let messageNode = metadataSearchSpace.first {
             $0.nodeType == .failureMessage && $0.name.lowercased().contains("skip")
         }
         guard let message = messageNode?.name else {

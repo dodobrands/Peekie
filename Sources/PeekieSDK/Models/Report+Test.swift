@@ -186,9 +186,10 @@ extension Report.Module.Suite.RepeatableTest.Test {
 
         self.path = path
 
-        // Extract messages from testCase metadata
-        failureMessage = testCase.failureMessage
-        skipMessage = testCase.skipMessage
+        // Prefer the arguments node's own messages so each argument set keeps its
+        // message; fall back to testCase metadata
+        failureMessage = node.failureMessage ?? testCase.failureMessage
+        skipMessage = node.skipMessage ?? testCase.skipMessage
         attachments = []
     }
 
