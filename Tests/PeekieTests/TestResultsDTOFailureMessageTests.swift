@@ -116,6 +116,32 @@ struct TestResultsDTOFailureMessageTests {
     }
 
     @Test
+    func dimensionNodesStayScopedToDirectChildren() {
+        // A device node must not surface a message owned by an arguments node
+        // beneath it — only test cases search through wrappers
+        let device = makeNode(
+            name: "iPhone 13",
+            nodeType: .device,
+            result: .failed,
+            children: [
+                makeNode(
+                    name: "value: 42",
+                    nodeType: .arguments,
+                    result: .failed,
+                    children: [
+                        makeNode(
+                            name: "File.swift:12: failed - Argument message",
+                            nodeType: .failureMessage
+                        ),
+                    ]
+                ),
+            ]
+        )
+
+        #expect(device.failureMessage == nil)
+    }
+
+    @Test
     func skipMessageThroughDeviceWrapper() {
         let testCase = makeNode(
             name: "test_example()",

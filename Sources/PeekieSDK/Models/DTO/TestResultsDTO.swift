@@ -197,13 +197,18 @@ extension TestResultsDTO.TestNode {
         case expectedFailure = "Expected Failure"
     }
 
-    /// Children visible for metadata lookup, descending through structural wrapper
-    /// nodes (Device/Arguments) that `xcresulttool merge` inserts between a test
-    /// case and its metadata: in a merged bundle the tree is
-    /// `Test Case → Device → Failure Message`, while an unmerged one has the
-    /// message as a direct child. Repetition nodes are not entered — each
-    /// repetition owns its messages.
+    /// Children visible for metadata lookup. For test cases the search descends
+    /// through structural wrapper nodes (Device/Arguments) that `xcresulttool
+    /// merge` inserts between a test case and its metadata: in a merged bundle
+    /// the tree is `Test Case → Device → Failure Message`, while an unmerged one
+    /// has the message as a direct child. Dimension nodes (Device, Arguments,
+    /// Repetition) stay scoped to their direct children — each owns its own
+    /// messages, mirroring how `extractPaths`/`mergedTests` treat them.
     var metadataSearchSpace: [Self] {
+        guard nodeType == .testCase else {
+            return children ?? []
+        }
+
         var queue = children ?? []
         var result = [Self]()
         while queue.isEmpty == false {
