@@ -90,7 +90,8 @@ extension Report {
         let attachmentLookup = try await Self.resolveAttachmentLookup(
             xcresultPath: xcresultPath,
             includeTests: includeTests,
-            attachments: attachments
+            attachments: attachments,
+            testResults: testResultsDTO
         )
 
         let (warningsByFileName, errorsByFileName) = await Self
@@ -180,7 +181,8 @@ extension Report {
     private static func resolveAttachmentLookup(
         xcresultPath: URL,
         includeTests: Bool,
-        attachments: AttachmentPolicy
+        attachments: AttachmentPolicy,
+        testResults: TestResultsDTO?
     ) async throws
         -> [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
     {
@@ -194,10 +196,13 @@ extension Report {
             at: outputDirectory,
             withIntermediateDirectories: true
         )
+        // Callers pass display-style ids straight from `peekie tests` output;
+        // xcresulttool only understands node identifiers, so translate first.
+        let resolvedTestID = testID.map { testResults?.resolveTestID($0) ?? $0 }
         let dto = try await AttachmentsDTO(
             from: xcresultPath,
             outputDirectory: outputDirectory,
-            testID: testID
+            testID: resolvedTestID
         )
         return buildAttachmentLookup(
             dto: dto,
