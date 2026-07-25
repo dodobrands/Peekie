@@ -25,7 +25,14 @@ public struct Attachments: AsyncParsableCommand {
     @Option(name: .customLong("output-dir"), help: "Directory to extract attachments into.")
     public var outputDir: String
 
-    @Option(name: .customLong("test-id"), help: "Limit export to a single test identifier or URL.")
+    @Option(
+        name: .customLong("test-id"),
+        help: """
+        Limit export to a single test. Accepts an xcresulttool identifier or \
+        identifier URL, or a qualified name as printed by `peekie tests` \
+        (module prefix and ` [arguments]` suffix included).
+        """
+    )
     public var testID: String?
 
     @Option(help: "Comma-separated test statuses to include (success,failure,skipped,...).")
