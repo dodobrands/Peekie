@@ -166,6 +166,22 @@ struct TestResultsDTOFailureMessageTests {
     }
 
     @Test
+    func skipMessageFromDedicatedNode() {
+        // Xcode 27+: Repetition -> Skip Message
+        let repetition = makeNode(
+            name: "First Run",
+            nodeType: .repetition,
+            result: .skipped,
+            children: [
+                makeNode(name: "Test skipped: Disabled reason", nodeType: .skipMessage),
+            ]
+        )
+
+        #expect(repetition.skipMessage == "Test skipped: Disabled reason")
+        #expect(repetition.failureMessage == "Test skipped: Disabled reason")
+    }
+
+    @Test
     func argumentsInitPrefersOwnMessageOverTestCase() {
         let failedArguments = makeNode(
             name: "value: 42",

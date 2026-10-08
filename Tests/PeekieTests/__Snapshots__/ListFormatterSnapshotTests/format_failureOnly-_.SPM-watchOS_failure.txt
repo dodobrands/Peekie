@@ -4,7 +4,7 @@ ExamplesTests / (no suite)
 ExamplesTests / ExampleSUITests
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ failureWithAttachment() (Expected 5.0 but got 6.0)
-❌ throwing() (Calculator.swift:26: Caught error: .divisionByZero)
+❌ throwing() (Caught error: .divisionByZero)
 
 ExamplesTests / OuterSuite
 ❌ outerFailure() (Outer suite failure: result was 200.0)
@@ -18,4 +18,4 @@ ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite
 ExamplesTests / XCTestTests
 ❌ test_failure() (Expected 5.0 but got 6.0)
 ❌ test_failureWithAttachment() (Expected 5.0 but got 6.0)
-❌ test_throwing() (Calculator.swift:26: failed: caught error: "divisionByZero")
+❌ test_throwing() (failed: caught error: "divisionByZero")

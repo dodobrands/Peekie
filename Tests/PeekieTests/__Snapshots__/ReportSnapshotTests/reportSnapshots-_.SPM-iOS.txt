@@ -1140,7 +1140,7 @@
                     - value: 2.7599334716796875
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                    - some: "failed: caught error: \"divisionByZero\""
                   - name: "test_throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1149,7 +1149,7 @@
                           - value: 2.7599334716796875
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                        - some: "failed: caught error: \"divisionByZero\""
                       - name: "First Run"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -1161,7 +1161,7 @@
                     - value: 0.9629726409912109
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                    - some: "failed: caught error: \"divisionByZero\""
                   - name: "test_throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1170,7 +1170,7 @@
                           - value: 0.9629726409912109
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                        - some: "failed: caught error: \"divisionByZero\""
                       - name: "Retry 1"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -1182,7 +1182,7 @@
                     - value: 0.9409189224243164
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                    - some: "failed: caught error: \"divisionByZero\""
                   - name: "test_throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1191,7 +1191,7 @@
                           - value: 0.9409189224243164
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: failed: caught error: \"divisionByZero\""
+                        - some: "failed: caught error: \"divisionByZero\""
                       - name: "Retry 2"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -1904,7 +1904,8 @@
                   ▿ duration: 8.981943130493164 ms
                     - value: 8.981943130493164
                     - unit: "ms"
-                  - failureMessage: Optional<String>.none
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1912,7 +1913,8 @@
                         ▿ some: 8.981943130493164 ms
                           - value: 8.981943130493164
                           - unit: "ms"
-                      - message: Optional<String>.none
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                       - name: "First Run"
                       ▿ result: Optional<Status>
                         - some: Status.expectedFailure
@@ -1923,7 +1925,8 @@
                   ▿ duration: 1.0960102081298828 ms
                     - value: 1.0960102081298828
                     - unit: "ms"
-                  - failureMessage: Optional<String>.none
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1931,7 +1934,8 @@
                         ▿ some: 1.0960102081298828 ms
                           - value: 1.0960102081298828
                           - unit: "ms"
-                      - message: Optional<String>.none
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                       - name: "Retry 1"
                       ▿ result: Optional<Status>
                         - some: Status.expectedFailure
@@ -1942,7 +1946,8 @@
                   ▿ duration: 0.8349418640136719 ms
                     - value: 0.8349418640136719
                     - unit: "ms"
-                  - failureMessage: Optional<String>.none
+                  ▿ failureMessage: Optional<String>
+                    - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                   - name: "expectedFailure()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -1950,7 +1955,8 @@
                         ▿ some: 0.8349418640136719 ms
                           - value: 0.8349418640136719
                           - unit: "ms"
-                      - message: Optional<String>.none
+                      ▿ message: Optional<String>
+                        - some: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
                       - name: "Retry 2"
                       ▿ result: Optional<Status>
                         - some: Status.expectedFailure
@@ -2159,7 +2165,7 @@
                     - value: 0.7951259613037109
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                    - some: "Expectation failed: (result → 4.0) == 5.0"
                   - name: "flackyParameterized(value:)"
                   ▿ path: 2 elements
                     ▿ PathNode
@@ -2175,7 +2181,7 @@
                           - value: 0.7951259613037109
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                        - some: "Expectation failed: (result → 4.0) == 5.0"
                       - name: "First Run"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -2187,7 +2193,7 @@
                     - value: 0.04315376281738281
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                    - some: "Expectation failed: (result → 4.0) == 5.0"
                   - name: "flackyParameterized(value:)"
                   ▿ path: 2 elements
                     ▿ PathNode
@@ -2203,7 +2209,7 @@
                           - value: 0.04315376281738281
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                        - some: "Expectation failed: (result → 4.0) == 5.0"
                       - name: "Retry 1"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -2215,7 +2221,7 @@
                     - value: 0.21195411682128906
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                    - some: "Expectation failed: (result → 4.0) == 5.0"
                   - name: "flackyParameterized(value:)"
                   ▿ path: 2 elements
                     ▿ PathNode
@@ -2231,7 +2237,7 @@
                           - value: 0.21195411682128906
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0"
+                        - some: "Expectation failed: (result → 4.0) == 5.0"
                       - name: "Retry 2"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -2384,7 +2390,7 @@
                     - value: 11.048078536987305
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                    - some: "Caught error: .divisionByZero"
                   - name: "throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -2393,7 +2399,7 @@
                           - value: 11.048078536987305
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                        - some: "Caught error: .divisionByZero"
                       - name: "First Run"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -2405,7 +2411,7 @@
                     - value: 1.1320114135742188
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                    - some: "Caught error: .divisionByZero"
                   - name: "throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -2414,7 +2420,7 @@
                           - value: 1.1320114135742188
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                        - some: "Caught error: .divisionByZero"
                       - name: "Retry 1"
                       ▿ result: Optional<Status>
                         - some: Status.failure
@@ -2426,7 +2432,7 @@
                     - value: 0.9870529174804688
                     - unit: "ms"
                   ▿ failureMessage: Optional<String>
-                    - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                    - some: "Caught error: .divisionByZero"
                   - name: "throwing()"
                   ▿ path: 1 element
                     ▿ PathNode
@@ -2435,7 +2441,7 @@
                           - value: 0.9870529174804688
                           - unit: "ms"
                       ▿ message: Optional<String>
-                        - some: "Calculator.swift:26: Caught error: .divisionByZero"
+                        - some: "Caught error: .divisionByZero"
                       - name: "Retry 2"
                       ▿ result: Optional<Status>
                         - some: Status.failure
