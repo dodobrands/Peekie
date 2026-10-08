@@ -1,2 +1,5 @@
 retain_public: true
 retain_encodable_properties: true
+# Swift 6.4 builds with swift-build, which writes the index store to .build/out.
+index_store_path:
+  - .build/out
