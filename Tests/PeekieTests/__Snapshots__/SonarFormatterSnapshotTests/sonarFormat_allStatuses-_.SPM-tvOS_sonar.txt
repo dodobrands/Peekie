@@ -20,12 +20,12 @@
         </testCase>
         <testCase name="ExampleSUITests / flacky()" duration="4" />
         <testCase name="ExampleSUITests / flackyParameterized(value:) [false]" duration="2">
-            <failure message="SwiftTestingTests.swift:66: Expectation failed: (result → 4.0) == 5.0" />
+            <failure message="Expectation failed: (result → 4.0) == 5.0" />
         </testCase>
         <testCase name="ExampleSUITests / flackyParameterized(value:) [true]" duration="0" />
         <testCase name="ExampleSUITests / success()" duration="4" />
         <testCase name="ExampleSUITests / throwing()" duration="5">
-            <failure message="Calculator.swift:26: Caught error: .divisionByZero" />
+            <failure message="Caught error: .divisionByZero" />
         </testCase>
         <testCase name="ExampleSUITests / withAttachment()" duration="3" />
         <testCase name="ExampleSUITests / withMultipleAttachments()" duration="5" />
@@ -63,7 +63,7 @@
         </testCase>
         <testCase name="XCTestTests / test_success()" duration="0" />
         <testCase name="XCTestTests / test_throwing()" duration="4">
-            <failure message="Calculator.swift:26: failed: caught error: &quot;divisionByZero&quot;" />
+            <failure message="failed: caught error: &quot;divisionByZero&quot;" />
         </testCase>
         <testCase name="XCTestTests / test_withAttachment()" duration="0" />
         <testCase name="XCTestTests / test_withMultipleAttachments()" duration="1" />

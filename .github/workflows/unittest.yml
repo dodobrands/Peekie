@@ -15,7 +15,7 @@ concurrency:
 jobs:
   tests:
 
-    runs-on: 'macos-latest'
+    runs-on: 'xcode-27'
     timeout-minutes: 10
 
     steps:
