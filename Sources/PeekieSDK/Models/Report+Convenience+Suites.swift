@@ -131,7 +131,7 @@ extension Report {
     /// Converts a `Test Case` node into a `RepeatableTest`. Used both by top-level
     /// bundle walking (root-level `@Test` cases) and by suite walking (cases inside
     /// `@Suite` types and `XCTestCase` subclasses).
-    private static func buildRepeatableTest(
+    static func buildRepeatableTest(
         from testCase: TestResultsDTO.TestNode,
         attachmentLookup: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]] = [:]
     )
@@ -204,7 +204,10 @@ extension Report {
 
         let filteredChildren = (node.children ?? []).filter { $0.isMetadata == false }
 
-        if node.nodeType == .arguments {
+        // A matrix run without retries reports each destination as `Device -> Failure Message`,
+        // so a Device with no nested runs is itself the run for that destination
+        let isLeafDevice = node.nodeType == .device && filteredChildren.isEmpty
+        if node.nodeType == .arguments || isLeafDevice {
             let hasRepetitions = filteredChildren.contains { $0.nodeType == .repetition }
             if hasRepetitions == false {
                 appendArgumentsTest(
