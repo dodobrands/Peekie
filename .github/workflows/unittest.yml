@@ -46,17 +46,20 @@ jobs:
       run: swift test --skip-build
 
     # Verify CLI tool functionality by parsing test xcresult file
+    - name: Unzip xcresult fixtures
+      run: for f in Tests/PeekieTests/Resources/*.xcresult.zip; do ditto -x -k "$f" "$RUNNER_TEMP/xcresults"; done
+
     - name: Parse xcresult (tests, list format)
-      run: swift run peekie tests Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult
+      run: swift run peekie tests $RUNNER_TEMP/xcresults/SPM-26.5-iOS.xcresult
 
     - name: Parse xcresult (tests, sonar format)
-      run: swift run peekie tests Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult --format sonar --tests-path swift-tests-example/SPM/Tests/ExamplesTests
+      run: swift run peekie tests $RUNNER_TEMP/xcresults/SPM-26.5-iOS.xcresult --format sonar --tests-path swift-tests-example/SPM/Tests/ExamplesTests
 
     - name: Parse xcresult (warnings, json)
-      run: swift run peekie warnings Tests/PeekieTests/Resources/Xcworkspace-26.5-iOS.xcresult
+      run: swift run peekie warnings $RUNNER_TEMP/xcresults/Xcworkspace-26.5-iOS.xcresult
 
     - name: Parse xcresult (coverage, json)
-      run: swift run peekie coverage Tests/PeekieTests/Resources/SPM-26.5-iOS.xcresult
+      run: swift run peekie coverage $RUNNER_TEMP/xcresults/SPM-26.5-iOS.xcresult
 
     - name: Install mise
       uses: jdx/mise-action@v5.2.0

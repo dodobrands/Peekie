@@ -7,9 +7,10 @@ enum Constants {
     // MARK: Internal
 
     /// Returns array of xcresult file names for use in parameterized tests
+    /// (e.g. `SPM-26.5-iOS.xcresult`, without the `.zip` the fixture is stored as)
     /// Returns empty array if paths cannot be loaded (test will be skipped)
     static var testsReportFileNames: [String] {
-        ((try? testsReportPaths) ?? []).map(\.lastPathComponent)
+        ((try? testsReportPaths) ?? []).map { $0.deletingPathExtension().lastPathComponent }
     }
 
     /// Copies xcresult bundle to a temporary directory to avoid SQLite access conflicts
@@ -37,30 +38,36 @@ enum Constants {
     /// Solution: Each test gets its own copy of the xcresult bundle in a temporary directory,
     /// ensuring complete isolation and preventing concurrent SQLite access conflicts.
     ///
-    /// - Parameter xcresultPath: The original xcresult bundle path
-    /// - Returns: URL to the temporary copy
-    /// - Throws: An error if copying fails
+    /// Fixtures are stored zipped (one file per bundle instead of hundreds), so the copy is made
+    /// by unzipping the fixture into a unique temporary directory.
+    ///
+    /// - Parameter xcresultPath: The zipped xcresult fixture path (`*.xcresult.zip`)
+    /// - Returns: URL to the unzipped temporary bundle
+    /// - Throws: An error if unzipping fails
     static func copyXcresultToTemporaryDirectory(_ xcresultPath: URL) throws -> URL {
-        let fileManager = FileManager.default
-        let tempDir = fileManager.temporaryDirectory
-        let uniqueName = UUID().uuidString + ".xcresult"
-        let tempXcresultPath = tempDir.appendingPathComponent(uniqueName)
+        let tempDir = FileManager.default
+            .temporaryDirectory
+            .appendingPathComponent(UUID().uuidString)
 
-        // Remove destination if it exists (shouldn't happen with UUID, but just in case)
-        if fileManager.fileExists(atPath: tempXcresultPath.path) {
-            try fileManager.removeItem(at: tempXcresultPath)
+        let ditto = Process()
+        ditto.executableURL = URL(fileURLWithPath: "/usr/bin/ditto")
+        ditto.arguments = ["-x", "-k", xcresultPath.path, tempDir.path]
+        try ditto.run()
+        ditto.waitUntilExit()
+        guard ditto.terminationStatus == 0 else {
+            throw TestError.couldNotUnzipXcresult(path: xcresultPath.path)
         }
 
-        // Copy the entire bundle (directory) recursively
-        try fileManager.copyItem(at: xcresultPath, to: tempXcresultPath)
-
-        return tempXcresultPath
+        return tempDir
+            .appendingPathComponent(xcresultPath.deletingPathExtension().lastPathComponent)
     }
 
-    /// Returns URL for a given xcresult file name
+    /// Returns URL of the zipped fixture for a given xcresult file name
     static func url(for fileName: String) throws -> URL {
         let paths = try testsReportPaths
-        guard let url = paths.first(where: { $0.lastPathComponent == fileName }) else {
+        guard let url = paths
+            .first(where: { $0.deletingPathExtension().lastPathComponent == fileName })
+        else {
             throw TestError.couldNotFindXcresultFile(fileName: fileName)
         }
 
@@ -97,18 +104,15 @@ enum Constants {
             }
             guard let contents = try? fileManager.contentsOfDirectory(
                 at: resourcesURL,
-                includingPropertiesForKeys: [.isDirectoryKey],
+                includingPropertiesForKeys: nil,
                 options: [.skipsHiddenFiles]
             )
             else {
                 throw TestError.couldNotReadResourcesDirectory
             }
 
-            return contents.filter { url in
-                url.pathExtension == "xcresult"
-                    && (try? url.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) == true
-            }
-            .sorted { $0.lastPathComponent < $1.lastPathComponent }
+            return contents.filter { $0.lastPathComponent.hasSuffix(".xcresult.zip") }
+                .sorted { $0.lastPathComponent < $1.lastPathComponent }
         }
     }
 }
@@ -120,4 +124,5 @@ enum TestError: Error {
     case resourcesDirectoryDoesNotExist(path: String)
     case couldNotReadResourcesDirectory
     case couldNotFindXcresultFile(fileName: String)
+    case couldNotUnzipXcresult(path: String)
 }
