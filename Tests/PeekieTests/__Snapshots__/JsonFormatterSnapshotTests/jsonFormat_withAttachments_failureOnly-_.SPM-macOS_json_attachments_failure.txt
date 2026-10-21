@@ -174,7 +174,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         },
@@ -215,7 +215,7 @@
       "name" : "ExamplesTests",
       "rootLevelTests" : [
         {
-          "durationMs" : 43.61987113952637,
+          "durationMs" : 0.7452964782714844,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
@@ -230,7 +230,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 48.48313331604004,
+              "durationMs" : 1.0137557983398438,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
@@ -240,38 +240,38 @@
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "D5BEFF35-1951-424A-8033-A2E6A27BCEC2.txt",
+                  "exportedFileName" : "BC83E710-3D1D-4904-B896-25F930F6A3F6.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_A0B5FE4D-28BA-4C3E-935C-DB1E757DDBAD.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/D5BEFF35-1951-424A-8033-A2E6A27BCEC2.txt",
+                  "name" : "Failure context_0_7F44D301-4627-4977-853F-7577CCD17853.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/BC83E710-3D1D-4904-B896-25F930F6A3F6.txt",
                   "repetitionNumber" : 1
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "6A37AF5D-ACB1-47B8-ABD2-4676ACD35D93.txt",
+                  "exportedFileName" : "8B95A944-DD07-473F-A286-83FBBD037C15.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_AD59FF82-1C1D-4BA8-8015-081E51B7737E.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/6A37AF5D-ACB1-47B8-ABD2-4676ACD35D93.txt",
+                  "name" : "Failure context_0_1DFCF07C-A96A-49FE-BDA4-A96787749A5A.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/8B95A944-DD07-473F-A286-83FBBD037C15.txt",
                   "repetitionNumber" : 2
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "F7A60C5D-0D02-435B-9119-CADA3F096FB9.txt",
+                  "exportedFileName" : "E264B866-F06C-4879-8062-0079C4568A05.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_DD33EBA3-93FA-430C-AD1B-D75F1827ACC6.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/F7A60C5D-0D02-435B-9119-CADA3F096FB9.txt",
+                  "name" : "Failure context_0_821D0D09-82CE-4E1B-8522-23374ED1B79F.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/E264B866-F06C-4879-8062-0079C4568A05.txt",
                   "repetitionNumber" : 3
                 }
               ],
-              "durationMs" : 51.05781555175781,
+              "durationMs" : 26.999950408935547,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 48.818111419677734,
+              "durationMs" : 2.614259719848633,
               "message" : "Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -294,7 +294,7 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 27.034282684326172,
+                      "durationMs" : 1.1632442474365234,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
@@ -304,7 +304,7 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 42.76704788208008,
+                  "durationMs" : 1.775979995727539,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
@@ -314,7 +314,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 30.96604347229004,
+              "durationMs" : 1.6291141510009766,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
@@ -329,7 +329,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 2.6280879974365234,
+              "durationMs" : 2.2040605545043945,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
@@ -339,38 +339,38 @@
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "274CBEFF-82BB-4F8D-863B-090BF4939BB2.txt",
+                  "exportedFileName" : "534071FE-5019-43B3-8F54-8C9E1548293B.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_55F0CC8B-AD1B-49F6-9899-049BBD1C9DBA.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/274CBEFF-82BB-4F8D-863B-090BF4939BB2.txt",
+                  "name" : "Failure context_0_8F932F40-2572-42E3-B92F-8D6F831E516B.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/534071FE-5019-43B3-8F54-8C9E1548293B.txt",
                   "repetitionNumber" : 1
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "2C28703A-96D9-48F6-BCB2-68CCE217B402.txt",
+                  "exportedFileName" : "33C92C76-9BBB-458F-9CE7-F8204926786E.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_2B9FFE14-24DB-4D05-9943-193D10E80190.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/2C28703A-96D9-48F6-BCB2-68CCE217B402.txt",
+                  "name" : "Failure context_0_A549BD19-056D-4540-A0F5-1158CB0F6898.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/33C92C76-9BBB-458F-9CE7-F8204926786E.txt",
                   "repetitionNumber" : 2
                 },
                 {
                   "configurationName" : "Test Scheme Action",
                   "contentType" : "text\/plain",
-                  "exportedFileName" : "1B3D5BFF-2F57-45E2-8663-A1E8DA2572F5.txt",
+                  "exportedFileName" : "4FEAD9CC-E86B-47CE-A1B5-722C5ED229C5.txt",
                   "isAssociatedWithFailure" : false,
-                  "name" : "Failure context_0_3E71C5EC-6344-4139-B69D-C24782A51BE6.txt",
-                  "path" : "<ATTACHMENTS_DIR>\/1B3D5BFF-2F57-45E2-8663-A1E8DA2572F5.txt",
+                  "name" : "Failure context_0_452A7AD2-9636-4D53-8F5A-2713B2EFFBA3.txt",
+                  "path" : "<ATTACHMENTS_DIR>\/4FEAD9CC-E86B-47CE-A1B5-722C5ED229C5.txt",
                   "repetitionNumber" : 3
                 }
               ],
-              "durationMs" : 3.276824951171875,
+              "durationMs" : 3.162860870361328,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.989981651306152,
+              "durationMs" : 2.311825752258301,
               "message" : "failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"

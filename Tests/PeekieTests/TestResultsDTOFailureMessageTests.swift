@@ -27,6 +27,42 @@ struct TestResultsDTOFailureMessageTests {
     }
 
     @Test
+    func knownIssueMessageDropsFileLinePrefix() {
+        // Xcode 27 keeps the "File.swift:NN: " prefix only on Swift Testing known issues
+        let testCase = makeNode(
+            name: "expectedFailure()",
+            nodeType: .testCase,
+            result: .expectedFailure,
+            children: [
+                makeNode(
+                    name: "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0)"
+                        + "\nresult == 2.0 → (): Failure is expected",
+                    nodeType: .expectedFailure
+                ),
+            ]
+        )
+
+        #expect(
+            testCase.failureMessage
+                == "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected"
+        )
+    }
+
+    @Test
+    func messageWithoutFileLinePrefixIsKept() {
+        let testCase = makeNode(
+            name: "throwing()",
+            nodeType: .testCase,
+            result: .failed,
+            children: [
+                makeNode(name: "Caught error: .divisionByZero", nodeType: .failureMessage),
+            ]
+        )
+
+        #expect(testCase.failureMessage == "Caught error: .divisionByZero")
+    }
+
+    @Test
     func failureMessageThroughDeviceWrapper() {
         // Merged bundle: Test Case -> Device -> Failure Message
         let testCase = makeNode(

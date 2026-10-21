@@ -13,11 +13,11 @@ ExamplesTests / (no suite)
 ExamplesTests / ExampleSUITests
 ✅ async()
 ⏭️ disabled() (Test skipped: Disabled reason)
-🤡 expectedFailure() (Failure is expected)
+🤡 expectedFailure() (Expectation failed: Bool(result == 2.0) result == 2.0 → (): Failure is expected)
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ failureWithAttachment() (Expected 5.0 but got 6.0)
 ⚠️ flacky() (Flacky failure message: result was 2.0)
-❌ flackyParameterized(value:) [false] (Expectation failed: (result → 4.0) == 5.0)
+❌ flackyParameterized(value:) [false] (Expectation failed: result == 5.0 result → 4.0)
 ✅ flackyParameterized(value:) [true]
 ✅ success()
 ❌ throwing() (Caught error: .divisionByZero)

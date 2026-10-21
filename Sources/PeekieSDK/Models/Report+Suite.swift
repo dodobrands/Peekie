@@ -308,7 +308,7 @@ public extension Report.Module.Suite.RepeatableTest {
     }
 
     private func failureMessage(group: [Test], status: Test.Status) -> String? {
-        guard status == .failure || status == .mixed else {
+        guard status == .failure || status == .mixed || status == .expectedFailure else {
             return nil
         }
 

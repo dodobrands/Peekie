@@ -63,29 +63,29 @@
       "name" : "XcodeprojExample.app",
       "tests" : [
         {
-          "durationMs" : 8.781909942626953,
+          "durationMs" : 1.2829303741455078,
           "qualifiedName" : "XcodeprojExample.app \/ 2 + 3 = 5",
           "status" : "success"
         },
         {
-          "durationMs" : 41.24188423156738,
+          "durationMs" : 11.218070983886719,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ async()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.2961158752441406,
+          "durationMs" : 0,
           "message" : "Test skipped: Disabled reason",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ disabled()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 10.070085525512695,
-          "message" : "Failure is expected",
+          "durationMs" : 1.5869140625,
+          "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 7.508993148803711,
+          "durationMs" : 1.5749931335449219,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
           "status" : "failure"
@@ -95,60 +95,60 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "3F7F5310-213C-45B9-BF7B-D10B29068E3A.txt",
+              "exportedFileName" : "FEDF4182-85D9-4525-A4C1-64FB9333A485.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_77971F1C-0608-4010-8E8E-2D3F0DD99E75.txt",
-              "path" : "<ATTACHMENTS_DIR>\/3F7F5310-213C-45B9-BF7B-D10B29068E3A.txt",
+              "name" : "Failure context_0_B1472342-F456-4248-ADC6-47F0F9F9BD76.txt",
+              "path" : "<ATTACHMENTS_DIR>\/FEDF4182-85D9-4525-A4C1-64FB9333A485.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "4FF4DB18-98CC-439B-B304-24B1A05B1EEE.txt",
+              "exportedFileName" : "EFF412BA-8348-4752-B455-F0BCE3A1691C.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_1252880B-C158-4016-91ED-C7F04D31A921.txt",
-              "path" : "<ATTACHMENTS_DIR>\/4FF4DB18-98CC-439B-B304-24B1A05B1EEE.txt",
+              "name" : "Failure context_0_8618E1A1-DE65-4E3F-B3BB-A16D3A5F93BE.txt",
+              "path" : "<ATTACHMENTS_DIR>\/EFF412BA-8348-4752-B455-F0BCE3A1691C.txt",
               "repetitionNumber" : 2
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "6889AA8F-4591-4C60-8FE9-A5D2DACACB04.txt",
+              "exportedFileName" : "0856D02D-9DDF-49CF-8B99-31909D30B240.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_FC8EA946-A9E7-49B4-9600-8A7057F3123C.txt",
-              "path" : "<ATTACHMENTS_DIR>\/6889AA8F-4591-4C60-8FE9-A5D2DACACB04.txt",
+              "name" : "Failure context_0_F7946297-201F-4C12-99AF-3EB0A27E94BD.txt",
+              "path" : "<ATTACHMENTS_DIR>\/0856D02D-9DDF-49CF-8B99-31909D30B240.txt",
               "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 98.9999771118164,
+          "durationMs" : 40.9998893737793,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.781909942626953,
+          "durationMs" : 0.24580955505371094,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 3.592967987060547,
-          "message" : "Expectation failed: (result → 4.0) == 5.0",
+          "durationMs" : 2.3043155670166016,
+          "message" : "Expectation failed: result == 5.0\nresult → 4.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
           "status" : "failure"
         },
         {
-          "durationMs" : 0.49376487731933594,
+          "durationMs" : 0.07486343383789062,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
           "status" : "success"
         },
         {
-          "durationMs" : 7.5206756591796875,
+          "durationMs" : 0.5087852478027344,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ success()",
           "status" : "success"
         },
         {
-          "durationMs" : 11.940956115722656,
+          "durationMs" : 0.33354759216308594,
           "message" : "Caught error: .divisionByZero",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
@@ -158,32 +158,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "23EC0F2C-7F85-49C5-AD49-003EADF3CEE0.txt",
+              "exportedFileName" : "45C27659-21C4-40E4-AC3F-CA35FE9A1D00.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_FD47C806-4912-440F-8D22-542CD77E734A.txt",
-              "path" : "<ATTACHMENTS_DIR>\/23EC0F2C-7F85-49C5-AD49-003EADF3CEE0.txt",
+              "name" : "Calculation Result_0_A6FFBE1B-EB10-4799-90C5-00907AED8FFA.txt",
+              "path" : "<ATTACHMENTS_DIR>\/45C27659-21C4-40E4-AC3F-CA35FE9A1D00.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "42DDCEC4-FC8B-490F-9724-AE547AAEFCDC.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_B04CDC84-65FC-43D6-BA74-6D0C5C95DB5F.txt",
-              "path" : "<ATTACHMENTS_DIR>\/42DDCEC4-FC8B-490F-9724-AE547AAEFCDC.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "838D35D3-D0F7-4C92-8DBD-17514A3F7527.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_44EB9B55-0EE3-4D87-BCB4-726DF27D76E3.txt",
-              "path" : "<ATTACHMENTS_DIR>\/838D35D3-D0F7-4C92-8DBD-17514A3F7527.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 10.864973068237305,
+          "durationMs" : 0.033855438232421875,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withAttachment()",
           "status" : "success"
         },
@@ -192,86 +174,32 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "C0C0E15B-51A7-4EFF-8788-81D1B2BA23CC.txt",
+              "exportedFileName" : "30531E3E-4472-4757-AE97-00AB222A196A.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_CB3CFD57-1620-46D8-81D8-D10509C1BF7A.txt",
-              "path" : "<ATTACHMENTS_DIR>\/C0C0E15B-51A7-4EFF-8788-81D1B2BA23CC.txt",
+              "name" : "Operands_0_DCFE4069-4764-4D18-B2F0-FEF58922026A.txt",
+              "path" : "<ATTACHMENTS_DIR>\/30531E3E-4472-4757-AE97-00AB222A196A.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "E9E81F77-4DBB-4CB7-8552-C64786B6E6F3.txt",
+              "exportedFileName" : "35AAA202-DB52-40EB-AFD6-E204F4CDCDE2.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_A8130D05-EC25-445C-B3E8-547399F747AF.txt",
-              "path" : "<ATTACHMENTS_DIR>\/E9E81F77-4DBB-4CB7-8552-C64786B6E6F3.txt",
+              "name" : "Product result_0_E455DC07-19EB-402F-8751-41B5F9C08D50.txt",
+              "path" : "<ATTACHMENTS_DIR>\/35AAA202-DB52-40EB-AFD6-E204F4CDCDE2.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "DA3024F8-B19D-4B5C-9E38-8B68F25F664C.txt",
+              "exportedFileName" : "2F1FF64C-AABD-4841-A7EB-3876A4B48D9A.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_D1393E32-5171-48E0-B0AC-83F05DF95C2F.txt",
-              "path" : "<ATTACHMENTS_DIR>\/DA3024F8-B19D-4B5C-9E38-8B68F25F664C.txt",
+              "name" : "Sum result_0_AFB47C50-A7E1-46BB-94D9-C8BAAF31D408.txt",
+              "path" : "<ATTACHMENTS_DIR>\/2F1FF64C-AABD-4841-A7EB-3876A4B48D9A.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "8CAC589B-DFA5-4BCB-8C2B-1C3C2C8939D8.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_4F4DFA4B-5625-4660-8A21-C6B5CC37CEE7.txt",
-              "path" : "<ATTACHMENTS_DIR>\/8CAC589B-DFA5-4BCB-8C2B-1C3C2C8939D8.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "C9CAB159-DAE0-416A-9B8C-85A8A3E4BA92.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_3BC72235-A88A-46DC-A90E-0DDDAA9C4063.txt",
-              "path" : "<ATTACHMENTS_DIR>\/C9CAB159-DAE0-416A-9B8C-85A8A3E4BA92.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "FEBD6291-27FD-465B-81D1-B18F53D6CB4E.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_74803747-29E4-4301-A22F-9885450B034C.txt",
-              "path" : "<ATTACHMENTS_DIR>\/FEBD6291-27FD-465B-81D1-B18F53D6CB4E.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "35BF0234-2EB7-4289-8A23-4587BE698C39.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_CEECDBC5-B080-477D-912F-8FA0CDCF3527.txt",
-              "path" : "<ATTACHMENTS_DIR>\/35BF0234-2EB7-4289-8A23-4587BE698C39.txt",
-              "repetitionNumber" : 3
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "FED641CC-1F1F-49BF-ACEC-FF2754EFA0EC.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_A8CCEAEC-44BE-4FBD-BA03-CD3852070D79.txt",
-              "path" : "<ATTACHMENTS_DIR>\/FED641CC-1F1F-49BF-ACEC-FF2754EFA0EC.txt",
-              "repetitionNumber" : 3
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "145A8CC5-778E-422A-8DEC-F4155E470445.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_34096DAA-5CF3-4933-906D-AD8B5EDFFB7B.txt",
-              "path" : "<ATTACHMENTS_DIR>\/145A8CC5-778E-422A-8DEC-F4155E470445.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 11.854171752929688,
+          "durationMs" : 2.1657943725585938,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withMultipleAttachments()",
           "status" : "success"
         },
@@ -280,32 +208,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "image\/png",
-              "exportedFileName" : "FE8B6088-BC4A-4A78-BB62-45339F34542E.png",
+              "exportedFileName" : "77761725-AEEE-4B5F-9D8E-CA95F2381C85.png",
               "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_8C9CBF1E-38FF-4128-A7DF-8C63DE073EB1.png",
-              "path" : "<ATTACHMENTS_DIR>\/FE8B6088-BC4A-4A78-BB62-45339F34542E.png",
+              "name" : "Pixel_0_F4C4C234-C5B2-47EC-9E70-AF349D9DFF80.png",
+              "path" : "<ATTACHMENTS_DIR>\/77761725-AEEE-4B5F-9D8E-CA95F2381C85.png",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "image\/png",
-              "exportedFileName" : "59E7DDD5-60BB-4AEE-8C74-9C3F557C443D.png",
-              "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_BB519CA0-A64C-48FD-A74A-7A908B165487.png",
-              "path" : "<ATTACHMENTS_DIR>\/59E7DDD5-60BB-4AEE-8C74-9C3F557C443D.png",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "image\/png",
-              "exportedFileName" : "88ACBC15-C3C3-49C7-B2A8-C367C62A8A9A.png",
-              "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_1091E00E-ABC7-4332-AA52-067BB4411B4D.png",
-              "path" : "<ATTACHMENTS_DIR>\/88ACBC15-C3C3-49C7-B2A8-C367C62A8A9A.png",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 8.452415466308594,
+          "durationMs" : 0.4019737243652344,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withPNGAttachment()",
           "status" : "success"
         },
@@ -313,41 +223,25 @@
           "attachments" : [
             {
               "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "A4D5F7CF-975E-4786-AD98-F3A094F7FDEC",
+              "exportedFileName" : "0055F286-A022-418E-BD2B-DE06858D1009",
               "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_9F13FB95-ABA6-48AD-83F2-687671A0DA26",
-              "path" : "<ATTACHMENTS_DIR>\/A4D5F7CF-975E-4786-AD98-F3A094F7FDEC",
+              "name" : "Raw binary blob_0_B08556B2-474E-44CC-8C61-61442370951F",
+              "path" : "<ATTACHMENTS_DIR>\/0055F286-A022-418E-BD2B-DE06858D1009",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "593315BF-8CD4-45D9-A215-C3990F7A6604",
-              "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_3EBA056F-7487-4D8E-85A7-607699701E3D",
-              "path" : "<ATTACHMENTS_DIR>\/593315BF-8CD4-45D9-A215-C3990F7A6604",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "F74C622C-487E-4EB7-9C74-B5010B41F204",
-              "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_030FC010-2227-4587-94B0-743CF29BCF1B",
-              "path" : "<ATTACHMENTS_DIR>\/F74C622C-487E-4EB7-9C74-B5010B41F204",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 7.415056228637695,
+          "durationMs" : 0.37384033203125,
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ withRawBinaryAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 3.25775146484375,
+          "durationMs" : 1.1107921600341797,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 2.9549598693847656,
+          "durationMs" : 0.4661083221435547,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
           "status" : "success"
         },
@@ -356,69 +250,51 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "0A17B43C-6A98-4C90-9885-35F9A3FB599F.txt",
+              "exportedFileName" : "D9DB438D-DC86-42E5-A4D1-636ABDF976A5.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_F2C57C97-8B21-4155-8707-B934090C4825.txt",
-              "path" : "<ATTACHMENTS_DIR>\/0A17B43C-6A98-4C90-9885-35F9A3FB599F.txt",
+              "name" : "Deeply nested attachment_0_4DF8D2C9-A163-492E-9423-9DCE9D7D2FCC.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D9DB438D-DC86-42E5-A4D1-636ABDF976A5.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "304AF462-2A67-44BA-AD45-517438AF76F7.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_EE72CEE0-CB67-4978-80DE-C975ADC11E43.txt",
-              "path" : "<ATTACHMENTS_DIR>\/304AF462-2A67-44BA-AD45-517438AF76F7.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "BB48A8DA-0F6A-4324-9CB0-D7AA0FE824E5.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_1BA307F6-B22C-49B3-A7E1-EE5EBDCD6CE1.txt",
-              "path" : "<ATTACHMENTS_DIR>\/BB48A8DA-0F6A-4324-9CB0-D7AA0FE824E5.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 3.6721229553222656,
+          "durationMs" : 0.7450580596923828,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 7.313013076782227,
+          "durationMs" : 0.5240440368652344,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 4.492044448852539,
+          "durationMs" : 0.02574920654296875,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 10.502099990844727,
+          "durationMs" : 0.019073486328125,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outer with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 10.712146759033203,
+          "durationMs" : 1.283407211303711,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.22305679321289,
+          "durationMs" : 0.7710456848144531,
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 12.822985649108887,
+          "durationMs" : 12.431025505065918,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_async()",
           "status" : "success"
         },
         {
-          "durationMs" : 11.703014373779297,
+          "durationMs" : 11.475086212158203,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_asyncWithExpectation()",
           "status" : "success"
         },
@@ -427,25 +303,25 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "76CBDC48-E45B-4741-91EE-144A6A6CF590.txt",
+              "exportedFileName" : "A7A762D4-EAAB-4223-A617-EA100BF29685.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Activity attachment_0_7987CC94-AF88-4061-91C6-8E5CD63EC722.txt",
-              "path" : "<ATTACHMENTS_DIR>\/76CBDC48-E45B-4741-91EE-144A6A6CF590.txt",
+              "name" : "Activity attachment_0_E3B094CB-5138-4EBA-8005-703B5C262606.txt",
+              "path" : "<ATTACHMENTS_DIR>\/A7A762D4-EAAB-4223-A617-EA100BF29685.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 0.7240772247314453,
+          "durationMs" : 0.7230043411254883,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_attachmentInsideActivity()",
           "status" : "success"
         },
         {
-          "durationMs" : 48.431992530822754,
+          "durationMs" : 69.31602954864502,
           "message" : "Failure is expected",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 2.4700164794921875,
+          "durationMs" : 2.1179914474487305,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
           "status" : "failure"
@@ -455,60 +331,60 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "89EE9B07-B71D-4B99-BB5B-204DD468FE7A.txt",
+              "exportedFileName" : "1BF6CA52-F68F-4E0D-B165-DFE44808AE97.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_771005E6-CBD0-4517-AB27-4E8A0B0AE78E.txt",
-              "path" : "<ATTACHMENTS_DIR>\/89EE9B07-B71D-4B99-BB5B-204DD468FE7A.txt",
+              "name" : "Failure context_0_17C66BC0-D421-4E9A-A9DE-ED7DF51DB835.txt",
+              "path" : "<ATTACHMENTS_DIR>\/1BF6CA52-F68F-4E0D-B165-DFE44808AE97.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "EC05E115-90E5-4912-86DF-75C07B900135.txt",
+              "exportedFileName" : "DED93ED4-328F-4979-86F3-C65D0977FD10.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_0FE1F684-55AE-4362-A697-39BF5D06CEFB.txt",
-              "path" : "<ATTACHMENTS_DIR>\/EC05E115-90E5-4912-86DF-75C07B900135.txt",
+              "name" : "Failure context_0_1D11BB86-DD67-4D57-8303-33109DED17FD.txt",
+              "path" : "<ATTACHMENTS_DIR>\/DED93ED4-328F-4979-86F3-C65D0977FD10.txt",
               "repetitionNumber" : 2
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "54A8A610-755E-42AB-8546-A1FFDD2FD843.txt",
+              "exportedFileName" : "DE768037-5A71-400B-8BAE-43D5E591961F.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_6308C12B-7592-4BE8-97A9-54B07330FACE.txt",
-              "path" : "<ATTACHMENTS_DIR>\/54A8A610-755E-42AB-8546-A1FFDD2FD843.txt",
+              "name" : "Failure context_0_94110608-3C3B-48A6-B909-8EC328DCF994.txt",
+              "path" : "<ATTACHMENTS_DIR>\/DE768037-5A71-400B-8BAE-43D5E591961F.txt",
               "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 5.963921546936035,
+          "durationMs" : 2.754092216491699,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 5.362153053283691,
+          "durationMs" : 1.0800361633300781,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 257.1558952331543,
+          "durationMs" : 254.44400310516357,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_performance()",
           "status" : "success"
         },
         {
-          "durationMs" : 2.393007278442383,
+          "durationMs" : 1.4170408248901367,
           "message" : "Skip message",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_skip()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 1.0449886322021484,
+          "durationMs" : 0.5270242691040039,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_success()",
           "status" : "success"
         },
         {
-          "durationMs" : 7.175087928771973,
+          "durationMs" : 2.9931068420410156,
           "message" : "failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
@@ -518,14 +394,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "86DADE83-9486-4369-825F-45700257C054.txt",
+              "exportedFileName" : "B4C140CA-300C-4087-A3F9-B6BCA188A824.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_F12FC2F5-06DC-4D20-B853-8F534C167CED.txt",
-              "path" : "<ATTACHMENTS_DIR>\/86DADE83-9486-4369-825F-45700257C054.txt",
+              "name" : "Calculation Result_0_D12E318D-52F5-427A-807E-3E5DA97AAE89.txt",
+              "path" : "<ATTACHMENTS_DIR>\/B4C140CA-300C-4087-A3F9-B6BCA188A824.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 1.5799999237060547,
+          "durationMs" : 0.7789134979248047,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withAttachment()",
           "status" : "success"
         },
@@ -534,23 +410,23 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "4523FFFC-D3CC-49F9-B997-4B348C5C0F53.txt",
+              "exportedFileName" : "9C38C042-76D0-4118-A656-AE1F89243D22.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_63670C64-3641-41AF-82FF-D4B9684DAA63.txt",
-              "path" : "<ATTACHMENTS_DIR>\/4523FFFC-D3CC-49F9-B997-4B348C5C0F53.txt",
+              "name" : "Product result_0_A0CC8777-B90F-4256-8F61-25D62DD0604A.txt",
+              "path" : "<ATTACHMENTS_DIR>\/9C38C042-76D0-4118-A656-AE1F89243D22.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "95043A6D-E99E-4B65-BBB6-CFB09E8BCB73.txt",
+              "exportedFileName" : "CB02CBA8-A270-4998-BFCE-0BD6C53EAD01.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_740BC931-2642-43BB-8256-1EB7F1B90BF4.txt",
-              "path" : "<ATTACHMENTS_DIR>\/95043A6D-E99E-4B65-BBB6-CFB09E8BCB73.txt",
+              "name" : "Sum result_0_A6C6B291-D5B8-4FBF-BBCC-5D055DF4743A.txt",
+              "path" : "<ATTACHMENTS_DIR>\/CB02CBA8-A270-4998-BFCE-0BD6C53EAD01.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 2.198934555053711,
+          "durationMs" : 0.9660720825195312,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withMultipleAttachments()",
           "status" : "success"
         },
@@ -559,50 +435,50 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "image\/png",
-              "exportedFileName" : "D2428DB5-2BCA-419B-9E50-20E42A2ADB5D.png",
+              "exportedFileName" : "289B3F82-3475-47C2-9C3D-6AC56DA9C016.png",
               "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_9E382166-9BA0-4BC0-8258-750F35755646.png",
-              "path" : "<ATTACHMENTS_DIR>\/D2428DB5-2BCA-419B-9E50-20E42A2ADB5D.png",
+              "name" : "Pixel_0_FCF75F1A-95AE-491D-8EE2-27712A3FC969.png",
+              "path" : "<ATTACHMENTS_DIR>\/289B3F82-3475-47C2-9C3D-6AC56DA9C016.png",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 1.6360282897949219,
+          "durationMs" : 0.6909370422363281,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withPNGAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 1.1720657348632812,
+          "durationMs" : 1.0960102081298828,
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_withWarning()",
           "status" : "success"
         },
         {
-          "durationMs" : 10.619878768920898,
+          "durationMs" : 0.3008842468261719,
           "qualifiedName" : "XcodeprojExample.app \/ array[0] is nil?",
           "status" : "success"
         },
         {
-          "durationMs" : 11.079072952270508,
+          "durationMs" : 0.46133995056152344,
           "qualifiedName" : "XcodeprojExample.app \/ divide(10, 2) \/ returns 5",
           "status" : "success"
         },
         {
-          "durationMs" : 8.926153182983398,
+          "durationMs" : 0.6270408630371094,
           "qualifiedName" : "XcodeprojExample.app \/ root level with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 40.244102478027344,
+          "durationMs" : 11.5509033203125,
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelAsync()",
           "status" : "success"
         },
         {
-          "durationMs" : 8.4228515625,
+          "durationMs" : 0.9169578552246094,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.615255355834961,
+          "durationMs" : 0.36597251892089844,
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelSuccess()",
           "status" : "success"
         },
@@ -611,42 +487,24 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "18E49178-34E0-4CCB-B008-40BEDFDA2557.txt",
+              "exportedFileName" : "60B8ECF3-1A83-4FAF-B07A-3ABC1FABD1D5.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_0D5B1269-D916-4167-92A5-5955977CC90A.txt",
-              "path" : "<ATTACHMENTS_DIR>\/18E49178-34E0-4CCB-B008-40BEDFDA2557.txt",
+              "name" : "Root attachment_0_0D38BAA4-D8F0-4D80-995D-C99912A729F2.txt",
+              "path" : "<ATTACHMENTS_DIR>\/60B8ECF3-1A83-4FAF-B07A-3ABC1FABD1D5.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "2C1A1537-61BA-45CA-B53D-AB307C57B381.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_C161958F-A56C-40A1-9122-1D103A32D3BD.txt",
-              "path" : "<ATTACHMENTS_DIR>\/2C1A1537-61BA-45CA-B53D-AB307C57B381.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "EDE7D595-411C-4CA7-9E2D-C64C2571BD48.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_AAAE746D-1ACD-4068-BD38-755D6677D0F4.txt",
-              "path" : "<ATTACHMENTS_DIR>\/EDE7D595-411C-4CA7-9E2D-C64C2571BD48.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 12.887001037597656,
+          "durationMs" : 0.6501674652099609,
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 10.454893112182617,
+          "durationMs" : 0.4830360412597656,
           "qualifiedName" : "XcodeprojExample.app \/ success 🎯",
           "status" : "success"
         },
         {
-          "durationMs" : 11.3067626953125,
+          "durationMs" : 0.5719661712646484,
           "qualifiedName" : "XcodeprojExample.app \/ сложение работает",
           "status" : "success"
         }
@@ -771,7 +629,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         }

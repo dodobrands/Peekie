@@ -174,7 +174,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         },
@@ -215,7 +215,7 @@
       "name" : "ExamplesTests",
       "rootLevelTests" : [
         {
-          "durationMs" : 43.61987113952637,
+          "durationMs" : 0.7452964782714844,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
@@ -230,19 +230,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 48.48313331604004,
+              "durationMs" : 1.0137557983398438,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 51.05781555175781,
+              "durationMs" : 26.999950408935547,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 48.818111419677734,
+              "durationMs" : 2.614259719848633,
               "message" : "Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -265,7 +265,7 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 27.034282684326172,
+                      "durationMs" : 1.1632442474365234,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
@@ -275,7 +275,7 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 42.76704788208008,
+                  "durationMs" : 1.775979995727539,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
@@ -285,7 +285,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 30.96604347229004,
+              "durationMs" : 1.6291141510009766,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
@@ -300,19 +300,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 2.6280879974365234,
+              "durationMs" : 2.2040605545043945,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 3.276824951171875,
+              "durationMs" : 3.162860870361328,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.989981651306152,
+              "durationMs" : 2.311825752258301,
               "message" : "failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"

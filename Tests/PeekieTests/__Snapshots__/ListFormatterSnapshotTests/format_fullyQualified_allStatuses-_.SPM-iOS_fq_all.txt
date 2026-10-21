@@ -34,7 +34,7 @@
 ✅ ExamplesTests / сложение работает
 ❌ ExamplesTests / ExampleSUITests / failure() (Expected 5.0 but got 6.0)
 ❌ ExamplesTests / ExampleSUITests / failureWithAttachment() (Expected 5.0 but got 6.0)
-❌ ExamplesTests / ExampleSUITests / flackyParameterized(value:) [false] (Expectation failed: (result → 4.0) == 5.0)
+❌ ExamplesTests / ExampleSUITests / flackyParameterized(value:) [false] (Expectation failed: result == 5.0 result → 4.0)
 ❌ ExamplesTests / ExampleSUITests / throwing() (Caught error: .divisionByZero)
 ❌ ExamplesTests / OuterSuite / InnerSuite / DeeplyNestedSuite / deeplyNestedFailure() (Deeply nested failure: result was 0.0)
 ❌ ExamplesTests / OuterSuite / InnerSuite / innerFailure() (Inner suite failure: result was 12.0)
@@ -43,5 +43,5 @@
 ❌ ExamplesTests / XCTestTests / test_failureWithAttachment() (Expected 5.0 but got 6.0)
 ❌ ExamplesTests / XCTestTests / test_throwing() (failed: caught error: "divisionByZero")
 ❌ ExamplesTests / rootLevelFailure() (Expected 5.0 but got 6.0)
-🤡 ExamplesTests / ExampleSUITests / expectedFailure() (Failure is expected)
+🤡 ExamplesTests / ExampleSUITests / expectedFailure() (Expectation failed: Bool(result == 2.0) result == 2.0 → (): Failure is expected)
 🤡 ExamplesTests / XCTestTests / test_expectedFailure() (Failure is expected)

@@ -250,6 +250,14 @@ extension TestResultsDTO.TestNode {
         if let range = message.range(of: "failed -") {
             return String(message[range.upperBound...]).trimmingCharacters(in: .whitespaces)
         }
+        // Xcode 27 drops the "File.swift:NN: " prefix from most messages but keeps it on
+        // Swift Testing known issues; strip it so every message looks the same
+        if let prefix = message.range(
+            of: #"^[^\s:/]+\.[A-Za-z]\w*:\d+: "#,
+            options: .regularExpression
+        ) {
+            return String(message[prefix.upperBound...])
+        }
         return message
     }
 

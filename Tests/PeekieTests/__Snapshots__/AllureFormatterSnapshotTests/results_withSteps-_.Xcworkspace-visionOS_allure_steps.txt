@@ -21,58 +21,8 @@
     "steps" : [
 
     ],
-    "stop" : 37,
+    "stop" : 13,
     "uuid" : "00000000-0000-0000-0000-000000000001"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/async()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/async()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "async()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 38,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 57,
-    "uuid" : "00000000-0000-0000-0000-000000000002"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/async()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/async()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "async()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 58,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 71,
-    "uuid" : "00000000-0000-0000-0000-000000000003"
   },
   {
     "attachments" : [
@@ -100,238 +50,331 @@
 
     ],
     "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000002"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/expectedFailure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "expectedFailure()",
+    "parameters" : [
+
+    ],
+    "stage" : "finished",
+    "start" : 1792599285235,
+    "status" : "passed",
+    "statusDetails" : {
+      "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1792599285235,
+        "status" : "passed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285247
+      }
+    ],
+    "stop" : 1792599285247,
+    "uuid" : "00000000-0000-0000-0000-000000000003"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/expectedFailure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "expectedFailure()",
+    "parameters" : [
+
+    ],
+    "stage" : "finished",
+    "start" : 1792599285242,
+    "status" : "passed",
+    "statusDetails" : {
+      "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1792599285242,
+        "status" : "passed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285244
+      }
+    ],
+    "stop" : 1792599285244,
     "uuid" : "00000000-0000-0000-0000-000000000004"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/disabled()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/disabled()",
+    "fullName" : "ExampleSUITests/expectedFailure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "disabled()",
+    "name" : "expectedFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1,
-    "status" : "skipped",
+    "start" : 1792599285252,
+    "status" : "passed",
     "statusDetails" : {
-      "message" : "Test skipped: Disabled reason"
+      "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expected failure",
+        "stage" : "finished",
+        "start" : 1792599285252,
+        "status" : "passed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285261
+      }
     ],
-    "stop" : 1,
+    "stop" : 1792599285261,
     "uuid" : "00000000-0000-0000-0000-000000000005"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/disabled()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/disabled()",
+    "fullName" : "ExampleSUITests/failure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "disabled()",
+    "name" : "failure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 2,
-    "status" : "skipped",
+    "start" : 1792599285227,
+    "status" : "failed",
     "statusDetails" : {
-      "message" : "Test skipped: Disabled reason"
+      "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1792599285227,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285236
+      }
     ],
-    "stop" : 2,
+    "stop" : 1792599285236,
     "uuid" : "00000000-0000-0000-0000-000000000006"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/expectedFailure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
+    "fullName" : "ExampleSUITests/failure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "expectedFailure()",
+    "name" : "failure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897784,
-    "status" : "passed",
+    "start" : 1792599285245,
+    "status" : "failed",
     "statusDetails" : {
-      "message" : "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
+      "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expected failure",
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897784,
-        "status" : "passed",
+        "start" : 1792599285245,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.expectedFailure()",
-            "stage" : "finished",
-            "start" : 1780907897801,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897801
-          }
         ],
-        "stop" : 1780907897801
+        "stop" : 1792599285253
       }
     ],
-    "stop" : 1780907897801,
+    "stop" : 1792599285253,
     "uuid" : "00000000-0000-0000-0000-000000000007"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/expectedFailure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
+    "fullName" : "ExampleSUITests/failure()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "expectedFailure()",
+    "name" : "failure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897834,
-    "status" : "passed",
+    "start" : 1792599285246,
+    "status" : "failed",
     "statusDetails" : {
-      "message" : "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
+      "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expected failure",
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897834,
-        "status" : "passed",
+        "start" : 1792599285246,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.expectedFailure()",
-            "stage" : "finished",
-            "start" : 1780907897844,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897844
-          }
         ],
-        "stop" : 1780907897844
+        "stop" : 1792599285246
       }
     ],
-    "stop" : 1780907897844,
+    "stop" : 1792599285246,
     "uuid" : "00000000-0000-0000-0000-000000000008"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/expectedFailure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/expectedFailure()",
+    "fullName" : "ExampleSUITests/failureWithAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "expectedFailure()",
+    "name" : "failureWithAttachment()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897850,
-    "status" : "passed",
+    "start" : 1792599285191,
+    "status" : "failed",
     "statusDetails" : {
-      "message" : "SwiftTestingTests.swift:41: Expectation failed: Bool(result == 2.0 → false): Failure is expected"
+      "message" : "Expected 5.0 but got 6.0"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expected failure",
+        "name" : "Added attachment name Failure context.txt",
         "stage" : "finished",
-        "start" : 1780907897850,
+        "start" : 1792599285191,
         "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "ExampleSUITests.expectedFailure()",
+            "name" : "Failure context.txt",
             "stage" : "finished",
-            "start" : 1780907897859,
+            "start" : 1792599285191,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897859
+            "stop" : 1792599285216
           }
         ],
-        "stop" : 1780907897859
+        "stop" : 1792599285216
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1792599285216,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285216
       }
     ],
-    "stop" : 1780907897859,
+    "stop" : 1792599285216,
     "uuid" : "00000000-0000-0000-0000-000000000009"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/failure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
+    "fullName" : "ExampleSUITests/failureWithAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "failure()",
+    "name" : "failureWithAttachment()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897766,
+    "start" : 1792599285195,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -341,49 +384,62 @@
         "attachments" : [
 
         ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "name" : "Added attachment name Failure context.txt",
         "stage" : "finished",
-        "start" : 1780907897766,
-        "status" : "failed",
+        "start" : 1792599285195,
+        "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "ExampleSUITests.failure()",
+            "name" : "Failure context.txt",
             "stage" : "finished",
-            "start" : 1780907897782,
+            "start" : 1792599285195,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897782
+            "stop" : 1792599285221
           }
         ],
-        "stop" : 1780907897782
+        "stop" : 1792599285221
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1792599285221,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285221
       }
     ],
-    "stop" : 1780907897782,
+    "stop" : 1792599285221,
     "uuid" : "00000000-0000-0000-0000-000000000010"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/failure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
+    "fullName" : "ExampleSUITests/failureWithAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "failure()",
+    "name" : "failureWithAttachment()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897831,
+    "start" : 1792599285195,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -393,313 +449,43 @@
         "attachments" : [
 
         ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "name" : "Added attachment name Failure context.txt",
         "stage" : "finished",
-        "start" : 1780907897831,
-        "status" : "failed",
+        "start" : 1792599285195,
+        "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "ExampleSUITests.failure()",
+            "name" : "Failure context.txt",
             "stage" : "finished",
-            "start" : 1780907897840,
+            "start" : 1792599285195,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897840
+            "stop" : 1792599285224
           }
         ],
-        "stop" : 1780907897840
+        "stop" : 1792599285224
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Issue recorded: Expected 5.0 but got 6.0",
+        "stage" : "finished",
+        "start" : 1792599285224,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285224
       }
     ],
-    "stop" : 1780907897840,
+    "stop" : 1792599285224,
     "uuid" : "00000000-0000-0000-0000-000000000011"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/failure()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "failure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897844,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expected 5.0 but got 6.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
-        "stage" : "finished",
-        "start" : 1780907897844,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "ExampleSUITests.failure()",
-            "stage" : "finished",
-            "start" : 1780907897846,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897846
-          }
-        ],
-        "stop" : 1780907897846
-      }
-    ],
-    "stop" : 1780907897846,
-    "uuid" : "00000000-0000-0000-0000-000000000012"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/failureWithAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "failureWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897757,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expected 5.0 but got 6.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Failure context.txt",
-        "stage" : "finished",
-        "start" : 1780907897757,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Failure context.txt",
-            "stage" : "finished",
-            "start" : 1780907897757,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897772
-          }
-        ],
-        "stop" : 1780907897772
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
-        "stage" : "finished",
-        "start" : 1780907897772,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "ExampleSUITests.failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897773,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897773
-          }
-        ],
-        "stop" : 1780907897773
-      }
-    ],
-    "stop" : 1780907897773,
-    "uuid" : "00000000-0000-0000-0000-000000000013"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/failureWithAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "failureWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897803,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expected 5.0 but got 6.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Failure context.txt",
-        "stage" : "finished",
-        "start" : 1780907897803,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Failure context.txt",
-            "stage" : "finished",
-            "start" : 1780907897803,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897837
-          }
-        ],
-        "stop" : 1780907897837
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
-        "stage" : "finished",
-        "start" : 1780907897837,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "ExampleSUITests.failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897837,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897837
-          }
-        ],
-        "stop" : 1780907897837
-      }
-    ],
-    "stop" : 1780907897837,
-    "uuid" : "00000000-0000-0000-0000-000000000014"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/failureWithAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/failureWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "failureWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897814,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expected 5.0 but got 6.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Failure context.txt",
-        "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Failure context.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897848
-          }
-        ],
-        "stop" : 1780907897848
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Expected 5.0 but got 6.0",
-        "stage" : "finished",
-        "start" : 1780907897848,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "ExampleSUITests.failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897848,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897848
-          }
-        ],
-        "stop" : 1780907897848
-      }
-    ],
-    "stop" : 1780907897848,
-    "uuid" : "00000000-0000-0000-0000-000000000015"
   },
   {
     "attachments" : [
@@ -718,7 +504,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897785,
+    "start" : 1792599285236,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Flacky failure message: result was 2.0"
@@ -730,2211 +516,1098 @@
         ],
         "name" : "Issue recorded: Flacky failure message: result was 2.0",
         "stage" : "finished",
-        "start" : 1780907897785,
+        "start" : 1792599285236,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.flacky()",
-            "stage" : "finished",
-            "start" : 1780907897802,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897802
-          }
         ],
-        "stop" : 1780907897802
+        "stop" : 1792599285245
       }
     ],
-    "stop" : 1780907897802,
+    "stop" : 1792599285245,
+    "uuid" : "00000000-0000-0000-0000-000000000012"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/flacky()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/flacky()",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "flacky()",
+    "parameters" : [
+
+    ],
+    "stage" : "finished",
+    "start" : 1792599285246,
+    "status" : "passed",
+    "steps" : [
+
+    ],
+    "stop" : 1792599285246,
+    "uuid" : "00000000-0000-0000-0000-000000000013"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "flackyParameterized(value:)",
+    "parameters" : [
+      {
+        "name" : "arguments",
+        "value" : "false"
+      }
+    ],
+    "stage" : "finished",
+    "start" : 0,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Expectation failed: result == 5.0\nresult → 4.0"
+    },
+    "steps" : [
+
+    ],
+    "stop" : 13,
+    "uuid" : "00000000-0000-0000-0000-000000000014"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "flackyParameterized(value:)",
+    "parameters" : [
+      {
+        "name" : "arguments",
+        "value" : "false"
+      }
+    ],
+    "stage" : "finished",
+    "start" : 1792599285241,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Expectation failed: result == 5.0\nresult → 4.0"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Expectation failed: result == 5.0\nresult → 4.0",
+        "stage" : "finished",
+        "start" : 1792599285241,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285243
+      }
+    ],
+    "stop" : 1792599285243,
+    "uuid" : "00000000-0000-0000-0000-000000000015"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "flackyParameterized(value:)",
+    "parameters" : [
+      {
+        "name" : "arguments",
+        "value" : "false"
+      }
+    ],
+    "stage" : "finished",
+    "start" : 1792599285243,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Expectation failed: result == 5.0\nresult → 4.0"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Expectation failed: result == 5.0\nresult → 4.0",
+        "stage" : "finished",
+        "start" : 1792599285243,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285244
+      }
+    ],
+    "stop" : 1792599285244,
     "uuid" : "00000000-0000-0000-0000-000000000016"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flacky()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flacky()",
+    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flacky()",
+    "name" : "flackyParameterized(value:)",
     "parameters" : [
-
+      {
+        "name" : "arguments",
+        "value" : "true"
+      }
     ],
     "stage" : "finished",
-    "start" : 1780907897803,
+    "start" : 1792599285251,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Expectation failed: result == 5.0\nresult → 4.0",
+        "stage" : "finished",
+        "start" : 1792599285251,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285252
+      }
     ],
-    "stop" : 1780907897812,
+    "stop" : 1792599285252,
     "uuid" : "00000000-0000-0000-0000-000000000017"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flacky()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flacky()",
+    "fullName" : "ExampleSUITests/success()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/success()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flacky()",
+    "name" : "success()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897813,
+    "start" : 0,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 1780907897815,
+    "stop" : 0,
     "uuid" : "00000000-0000-0000-0000-000000000018"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/throwing()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "throwing()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "false"
-      }
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expectation failed: (result → 4.0) == 5.0"
-    },
-    "steps" : [
 
     ],
-    "stop" : 3,
+    "stage" : "finished",
+    "start" : 1792599285244,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Caught error: .divisionByZero"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Caught error: .divisionByZero",
+        "stage" : "finished",
+        "start" : 1792599285244,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285264
+      }
+    ],
+    "stop" : 1792599285264,
     "uuid" : "00000000-0000-0000-0000-000000000019"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/throwing()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "throwing()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "false"
-      }
+
     ],
     "stage" : "finished",
-    "start" : 1780907897821,
+    "start" : 1792599285245,
     "status" : "failed",
     "statusDetails" : {
-      "message" : "Expectation failed: (result → 4.0) == 5.0"
+      "message" : "Caught error: .divisionByZero"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "name" : "Caught error: .divisionByZero",
         "stage" : "finished",
-        "start" : 1780907897821,
+        "start" : 1792599285245,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.flackyParameterized(value:)",
-            "stage" : "finished",
-            "start" : 1780907897828,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897828
-          }
         ],
-        "stop" : 1780907897828
+        "stop" : 1792599285245
       }
     ],
-    "stop" : 1780907897828,
+    "stop" : 1792599285245,
     "uuid" : "00000000-0000-0000-0000-000000000020"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/throwing()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "throwing()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "false"
-      }
-    ],
-    "stage" : "finished",
-    "start" : 1780907897829,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Expectation failed: (result → 4.0) == 5.0"
-    },
-    "steps" : [
 
     ],
-    "stop" : 1780907897829,
+    "stage" : "finished",
+    "start" : 1792599285247,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Caught error: .divisionByZero"
+    },
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Caught error: .divisionByZero",
+        "stage" : "finished",
+        "start" : 1792599285247,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285247
+      }
+    ],
+    "stop" : 1792599285247,
     "uuid" : "00000000-0000-0000-0000-000000000021"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/withAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/withAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "withAttachment()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "true"
-      }
+
     ],
     "stage" : "finished",
-    "start" : 1780907897832,
+    "start" : 1792599285191,
     "status" : "passed",
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "name" : "Added attachment name Calculation Result.txt",
         "stage" : "finished",
-        "start" : 1780907897832,
-        "status" : "failed",
+        "start" : 1792599285191,
+        "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "ExampleSUITests.flackyParameterized(value:)",
+            "name" : "Calculation Result.txt",
             "stage" : "finished",
-            "start" : 1780907897832,
+            "start" : 1792599285191,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897832
+            "stop" : 1792599285191
           }
         ],
-        "stop" : 1780907897832
+        "stop" : 1792599285191
       }
     ],
-    "stop" : 1780907897832,
+    "stop" : 1792599285191,
     "uuid" : "00000000-0000-0000-0000-000000000022"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/withMultipleAttachments()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/withMultipleAttachments()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "withMultipleAttachments()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "true"
-      }
-    ],
-    "stage" : "finished",
-    "start" : 1780907897833,
-    "status" : "passed",
-    "steps" : [
 
     ],
-    "stop" : 1780907897833,
+    "stage" : "finished",
+    "start" : 1792599285194,
+    "status" : "passed",
+    "steps" : [
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Sum result.txt",
+        "stage" : "finished",
+        "start" : 1792599285194,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Sum result.txt",
+            "stage" : "finished",
+            "start" : 1792599285194,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1792599285194
+          }
+        ],
+        "stop" : 1792599285194
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Product result.txt",
+        "stage" : "finished",
+        "start" : 1792599285194,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Product result.txt",
+            "stage" : "finished",
+            "start" : 1792599285194,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1792599285195
+          }
+        ],
+        "stop" : 1792599285195
+      },
+      {
+        "attachments" : [
+
+        ],
+        "name" : "Added attachment name Operands.txt",
+        "stage" : "finished",
+        "start" : 1792599285195,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Operands.txt",
+            "stage" : "finished",
+            "start" : 1792599285195,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1792599285195
+          }
+        ],
+        "stop" : 1792599285195
+      }
+    ],
+    "stop" : 1792599285195,
     "uuid" : "00000000-0000-0000-0000-000000000023"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/flackyParameterized(value:)",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/flackyParameterized(value:)",
+    "fullName" : "ExampleSUITests/withPNGAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/withPNGAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "flackyParameterized(value:)",
+    "name" : "withPNGAttachment()",
     "parameters" : [
-      {
-        "name" : "arguments",
-        "value" : "true"
-      }
+
     ],
     "stage" : "finished",
-    "start" : 1780907897848,
+    "start" : 1792599285194,
     "status" : "passed",
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Expectation failed: (result → 4.0) == 5.0",
+        "name" : "Added attachment name Pixel.png",
         "stage" : "finished",
-        "start" : 1780907897848,
-        "status" : "failed",
+        "start" : 1792599285194,
+        "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "ExampleSUITests.flackyParameterized(value:)",
+            "name" : "Pixel.png",
             "stage" : "finished",
-            "start" : 1780907897848,
+            "start" : 1792599285194,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897848
+            "stop" : 1792599285195
           }
         ],
-        "stop" : 1780907897848
+        "stop" : 1792599285195
       }
     ],
-    "stop" : 1780907897848,
+    "stop" : 1792599285195,
     "uuid" : "00000000-0000-0000-0000-000000000024"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/success()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/success()",
+    "fullName" : "ExampleSUITests/withRawBinaryAttachment()",
+    "historyId" : "XcodeprojExample.app/ExampleSUITests/withRawBinaryAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "success()",
+    "name" : "withRawBinaryAttachment()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 0,
+    "start" : 1792599285191,
     "status" : "passed",
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Added attachment name Raw binary blob",
+        "stage" : "finished",
+        "start" : 1792599285191,
+        "status" : "passed",
+        "steps" : [
+          {
+            "attachments" : [
+
+            ],
+            "name" : "Raw binary blob",
+            "stage" : "finished",
+            "start" : 1792599285191,
+            "status" : "passed",
+            "steps" : [
+
+            ],
+            "stop" : 1792599285192
+          }
+        ],
+        "stop" : 1792599285192
+      }
     ],
-    "stop" : 17,
+    "stop" : 1792599285192,
     "uuid" : "00000000-0000-0000-0000-000000000025"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/success()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/success()",
+    "fullName" : "OuterSuite/`outer with spaces in name`()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/`outer with spaces in name`()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "success()",
+    "name" : "`outer with spaces in name`()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 18,
+    "start" : 0,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 27,
+    "stop" : 0,
     "uuid" : "00000000-0000-0000-0000-000000000026"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/success()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/success()",
+    "fullName" : "OuterSuite/outerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "success()",
+    "name" : "outerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 28,
-    "status" : "passed",
+    "start" : 1792599285217,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Outer suite failure: result was 200.0"
+    },
     "steps" : [
+      {
+        "attachments" : [
 
+        ],
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
+        "stage" : "finished",
+        "start" : 1792599285217,
+        "status" : "failed",
+        "steps" : [
+
+        ],
+        "stop" : 1792599285220
+      }
     ],
-    "stop" : 30,
+    "stop" : 1792599285220,
     "uuid" : "00000000-0000-0000-0000-000000000027"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/throwing()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
+    "fullName" : "OuterSuite/outerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "throwing()",
+    "name" : "outerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897822,
+    "start" : 1792599285226,
     "status" : "failed",
     "statusDetails" : {
-      "message" : "Caught error: .divisionByZero"
+      "message" : "Outer suite failure: result was 200.0"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Caught error: .divisionByZero",
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
         "stage" : "finished",
-        "start" : 1780907897822,
+        "start" : 1792599285226,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.throwing()",
-            "stage" : "finished",
-            "start" : 1780907897839,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897839
-          }
         ],
-        "stop" : 1780907897839
+        "stop" : 1792599285233
       }
     ],
-    "stop" : 1780907897839,
+    "stop" : 1792599285233,
     "uuid" : "00000000-0000-0000-0000-000000000028"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/throwing()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
+    "fullName" : "OuterSuite/outerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "throwing()",
+    "name" : "outerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897838,
+    "start" : 1792599285250,
     "status" : "failed",
     "statusDetails" : {
-      "message" : "Caught error: .divisionByZero"
+      "message" : "Outer suite failure: result was 200.0"
     },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Caught error: .divisionByZero",
+        "name" : "Issue recorded: Outer suite failure: result was 200.0",
         "stage" : "finished",
-        "start" : 1780907897838,
+        "start" : 1792599285250,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "ExampleSUITests.throwing()",
-            "stage" : "finished",
-            "start" : 1780907897848,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897848
-          }
         ],
-        "stop" : 1780907897848
+        "stop" : 1792599285258
       }
     ],
-    "stop" : 1780907897848,
+    "stop" : 1792599285258,
     "uuid" : "00000000-0000-0000-0000-000000000029"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/throwing()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/throwing()",
+    "fullName" : "OuterSuite/outerSuccess()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/outerSuccess()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "throwing()",
+    "name" : "outerSuccess()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897849,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Caught error: .divisionByZero"
-    },
+    "start" : 0,
+    "status" : "passed",
     "steps" : [
-      {
-        "attachments" : [
 
-        ],
-        "name" : "Caught error: .divisionByZero",
-        "stage" : "finished",
-        "start" : 1780907897849,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "ExampleSUITests.throwing()",
-            "stage" : "finished",
-            "start" : 1780907897858,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897858
-          }
-        ],
-        "stop" : 1780907897858
-      }
     ],
-    "stop" : 1780907897858,
+    "stop" : 0,
     "uuid" : "00000000-0000-0000-0000-000000000030"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withAttachment()",
+    "name" : "innerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897771,
-    "status" : "passed",
+    "start" : 1792599285210,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Inner suite failure: result was 12.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Calculation Result.txt",
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
         "stage" : "finished",
-        "start" : 1780907897771,
-        "status" : "passed",
+        "start" : 1792599285210,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "Calculation Result.txt",
-            "stage" : "finished",
-            "start" : 1780907897771,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897788
-          }
         ],
-        "stop" : 1780907897788
+        "stop" : 1792599285212
       }
     ],
-    "stop" : 1780907897788,
+    "stop" : 1792599285212,
     "uuid" : "00000000-0000-0000-0000-000000000031"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withAttachment()",
+    "name" : "innerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897802,
-    "status" : "passed",
+    "start" : 1792599285235,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Inner suite failure: result was 12.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Calculation Result.txt",
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
         "stage" : "finished",
-        "start" : 1780907897802,
-        "status" : "passed",
+        "start" : 1792599285235,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "Calculation Result.txt",
-            "stage" : "finished",
-            "start" : 1780907897802,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897812
-          }
         ],
-        "stop" : 1780907897812
+        "stop" : 1792599285244
       }
     ],
-    "stop" : 1780907897812,
+    "stop" : 1792599285244,
     "uuid" : "00000000-0000-0000-0000-000000000032"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withAttachment()",
+    "name" : "innerFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897814,
-    "status" : "passed",
+    "start" : 1792599285248,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Inner suite failure: result was 12.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Calculation Result.txt",
+        "name" : "Issue recorded: Inner suite failure: result was 12.0",
         "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
+        "start" : 1792599285248,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "Calculation Result.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897823
-          }
         ],
-        "stop" : 1780907897823
+        "stop" : 1792599285258
       }
     ],
-    "stop" : 1780907897823,
+    "stop" : 1792599285258,
     "uuid" : "00000000-0000-0000-0000-000000000033"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withMultipleAttachments()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withMultipleAttachments()",
+    "fullName" : "OuterSuite/InnerSuite/innerSuccess()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerSuccess()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withMultipleAttachments()",
+    "name" : "innerSuccess()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897757,
+    "start" : 0,
     "status" : "passed",
     "steps" : [
-      {
-        "attachments" : [
 
-        ],
-        "name" : "Added attachment name Sum result.txt",
-        "stage" : "finished",
-        "start" : 1780907897757,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Sum result.txt",
-            "stage" : "finished",
-            "start" : 1780907897757,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897761
-          }
-        ],
-        "stop" : 1780907897761
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Product result.txt",
-        "stage" : "finished",
-        "start" : 1780907897761,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Product result.txt",
-            "stage" : "finished",
-            "start" : 1780907897761,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897761
-          }
-        ],
-        "stop" : 1780907897761
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Operands.txt",
-        "stage" : "finished",
-        "start" : 1780907897761,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Operands.txt",
-            "stage" : "finished",
-            "start" : 1780907897761,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897772
-          }
-        ],
-        "stop" : 1780907897772
-      }
     ],
-    "stop" : 1780907897772,
+    "stop" : 0,
     "uuid" : "00000000-0000-0000-0000-000000000034"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withMultipleAttachments()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withMultipleAttachments()",
+    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withMultipleAttachments()",
+    "name" : "deeplyNestedFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897795,
-    "status" : "passed",
+    "start" : 1792599285225,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Deeply nested failure: result was 0.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Sum result.txt",
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
         "stage" : "finished",
-        "start" : 1780907897795,
-        "status" : "passed",
+        "start" : 1792599285225,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Sum result.txt",
-            "stage" : "finished",
-            "start" : 1780907897795,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897795
-          }
-        ],
-        "stop" : 1780907897795
-      },
-      {
-        "attachments" : [
 
         ],
-        "name" : "Added attachment name Product result.txt",
-        "stage" : "finished",
-        "start" : 1780907897795,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Product result.txt",
-            "stage" : "finished",
-            "start" : 1780907897795,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897795
-          }
-        ],
-        "stop" : 1780907897795
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Operands.txt",
-        "stage" : "finished",
-        "start" : 1780907897795,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Operands.txt",
-            "stage" : "finished",
-            "start" : 1780907897795,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897804
-          }
-        ],
-        "stop" : 1780907897804
+        "stop" : 1792599285232
       }
     ],
-    "stop" : 1780907897804,
+    "stop" : 1792599285232,
     "uuid" : "00000000-0000-0000-0000-000000000035"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withMultipleAttachments()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withMultipleAttachments()",
+    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withMultipleAttachments()",
+    "name" : "deeplyNestedFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897814,
-    "status" : "passed",
+    "start" : 1792599285251,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Deeply nested failure: result was 0.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Sum result.txt",
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
         "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
+        "start" : 1792599285251,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Sum result.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897814
-          }
-        ],
-        "stop" : 1780907897814
-      },
-      {
-        "attachments" : [
 
         ],
-        "name" : "Added attachment name Product result.txt",
-        "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Product result.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897814
-          }
-        ],
-        "stop" : 1780907897814
-      },
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Operands.txt",
-        "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Operands.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897822
-          }
-        ],
-        "stop" : 1780907897822
+        "stop" : 1792599285264
       }
     ],
-    "stop" : 1780907897822,
+    "stop" : 1792599285264,
     "uuid" : "00000000-0000-0000-0000-000000000036"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withPNGAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withPNGAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withPNGAttachment()",
+    "name" : "deeplyNestedFailure()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897770,
-    "status" : "passed",
+    "start" : 1792599285253,
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "Deeply nested failure: result was 0.0"
+    },
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Pixel.png",
+        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
         "stage" : "finished",
-        "start" : 1780907897770,
-        "status" : "passed",
+        "start" : 1792599285253,
+        "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "Pixel.png",
-            "stage" : "finished",
-            "start" : 1780907897770,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897786
-          }
         ],
-        "stop" : 1780907897786
+        "stop" : 1792599285253
       }
     ],
-    "stop" : 1780907897786,
+    "stop" : 1792599285253,
     "uuid" : "00000000-0000-0000-0000-000000000037"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withPNGAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withPNGAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withPNGAttachment()",
+    "name" : "deeplyNestedSuccess()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897795,
+    "start" : 0,
     "status" : "passed",
     "steps" : [
-      {
-        "attachments" : [
 
-        ],
-        "name" : "Added attachment name Pixel.png",
-        "stage" : "finished",
-        "start" : 1780907897795,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Pixel.png",
-            "stage" : "finished",
-            "start" : 1780907897795,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897804
-          }
-        ],
-        "stop" : 1780907897804
-      }
     ],
-    "stop" : 1780907897804,
+    "stop" : 2,
     "uuid" : "00000000-0000-0000-0000-000000000038"
   },
   {
     "attachments" : [
 
     ],
-    "fullName" : "ExampleSUITests/withPNGAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withPNGAttachment()",
+    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
+    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
     "labels" : [
       {
         "name" : "suite",
         "value" : "XcodeprojExample.app"
       }
     ],
-    "name" : "withPNGAttachment()",
+    "name" : "deeplyNestedWithAttachment()",
     "parameters" : [
 
     ],
     "stage" : "finished",
-    "start" : 1780907897814,
+    "start" : 1792599285195,
     "status" : "passed",
     "steps" : [
       {
         "attachments" : [
 
         ],
-        "name" : "Added attachment name Pixel.png",
+        "name" : "Added attachment name Deeply nested attachment.txt",
         "stage" : "finished",
-        "start" : 1780907897814,
+        "start" : 1792599285195,
         "status" : "passed",
         "steps" : [
           {
             "attachments" : [
 
             ],
-            "name" : "Pixel.png",
+            "name" : "Deeply nested attachment.txt",
             "stage" : "finished",
-            "start" : 1780907897814,
+            "start" : 1792599285195,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897816
+            "stop" : 1792599285202
           }
         ],
-        "stop" : 1780907897816
+        "stop" : 1792599285202
       }
     ],
-    "stop" : 1780907897816,
+    "stop" : 1792599285202,
     "uuid" : "00000000-0000-0000-0000-000000000039"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/withRawBinaryAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withRawBinaryAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "withRawBinaryAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897771,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Raw binary blob",
-        "stage" : "finished",
-        "start" : 1780907897771,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Raw binary blob",
-            "stage" : "finished",
-            "start" : 1780907897771,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897787
-          }
-        ],
-        "stop" : 1780907897787
-      }
-    ],
-    "stop" : 1780907897787,
-    "uuid" : "00000000-0000-0000-0000-000000000040"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/withRawBinaryAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withRawBinaryAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "withRawBinaryAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897802,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Raw binary blob",
-        "stage" : "finished",
-        "start" : 1780907897802,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Raw binary blob",
-            "stage" : "finished",
-            "start" : 1780907897802,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897811
-          }
-        ],
-        "stop" : 1780907897811
-      }
-    ],
-    "stop" : 1780907897811,
-    "uuid" : "00000000-0000-0000-0000-000000000041"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "ExampleSUITests/withRawBinaryAttachment()",
-    "historyId" : "XcodeprojExample.app/ExampleSUITests/withRawBinaryAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "withRawBinaryAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897814,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Raw binary blob",
-        "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Raw binary blob",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897816
-          }
-        ],
-        "stop" : 1780907897816
-      }
-    ],
-    "stop" : 1780907897816,
-    "uuid" : "00000000-0000-0000-0000-000000000042"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/`outer with spaces in name`()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/`outer with spaces in name`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`outer with spaces in name`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 17,
-    "uuid" : "00000000-0000-0000-0000-000000000043"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/`outer with spaces in name`()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/`outer with spaces in name`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`outer with spaces in name`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 18,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 28,
-    "uuid" : "00000000-0000-0000-0000-000000000044"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/`outer with spaces in name`()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/`outer with spaces in name`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`outer with spaces in name`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 29,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 31,
-    "uuid" : "00000000-0000-0000-0000-000000000045"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897767,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Outer suite failure: result was 200.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Outer suite failure: result was 200.0",
-        "stage" : "finished",
-        "start" : 1780907897767,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.outerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897782,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897782
-          }
-        ],
-        "stop" : 1780907897782
-      }
-    ],
-    "stop" : 1780907897782,
-    "uuid" : "00000000-0000-0000-0000-000000000046"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897829,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Outer suite failure: result was 200.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Outer suite failure: result was 200.0",
-        "stage" : "finished",
-        "start" : 1780907897829,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.outerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897837,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897837
-          }
-        ],
-        "stop" : 1780907897837
-      }
-    ],
-    "stop" : 1780907897837,
-    "uuid" : "00000000-0000-0000-0000-000000000047"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897844,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Outer suite failure: result was 200.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Outer suite failure: result was 200.0",
-        "stage" : "finished",
-        "start" : 1780907897844,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.outerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897846,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897846
-          }
-        ],
-        "stop" : 1780907897846
-      }
-    ],
-    "stop" : 1780907897846,
-    "uuid" : "00000000-0000-0000-0000-000000000048"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 15,
-    "uuid" : "00000000-0000-0000-0000-000000000049"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 16,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 25,
-    "uuid" : "00000000-0000-0000-0000-000000000050"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/outerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/outerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "outerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 26,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 34,
-    "uuid" : "00000000-0000-0000-0000-000000000051"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897815,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Inner suite failure: result was 12.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Inner suite failure: result was 12.0",
-        "stage" : "finished",
-        "start" : 1780907897815,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.innerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897827,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897827
-          }
-        ],
-        "stop" : 1780907897827
-      }
-    ],
-    "stop" : 1780907897827,
-    "uuid" : "00000000-0000-0000-0000-000000000052"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897837,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Inner suite failure: result was 12.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Inner suite failure: result was 12.0",
-        "stage" : "finished",
-        "start" : 1780907897837,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.innerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897839,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897839
-          }
-        ],
-        "stop" : 1780907897839
-      }
-    ],
-    "stop" : 1780907897839,
-    "uuid" : "00000000-0000-0000-0000-000000000053"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897849,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Inner suite failure: result was 12.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Inner suite failure: result was 12.0",
-        "stage" : "finished",
-        "start" : 1780907897849,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.innerFailure()",
-            "stage" : "finished",
-            "start" : 1780907897857,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897857
-          }
-        ],
-        "stop" : 1780907897857
-      }
-    ],
-    "stop" : 1780907897857,
-    "uuid" : "00000000-0000-0000-0000-000000000054"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 12,
-    "uuid" : "00000000-0000-0000-0000-000000000055"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 13,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 15,
-    "uuid" : "00000000-0000-0000-0000-000000000056"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/innerSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/innerSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "innerSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 16,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 24,
-    "uuid" : "00000000-0000-0000-0000-000000000057"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897817,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Deeply nested failure: result was 0.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
-        "stage" : "finished",
-        "start" : 1780907897817,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
-            "stage" : "finished",
-            "start" : 1780907897820,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897820
-          }
-        ],
-        "stop" : 1780907897820
-      }
-    ],
-    "stop" : 1780907897820,
-    "uuid" : "00000000-0000-0000-0000-000000000058"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897839,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Deeply nested failure: result was 0.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
-        "stage" : "finished",
-        "start" : 1780907897839,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
-            "stage" : "finished",
-            "start" : 1780907897839,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897839
-          }
-        ],
-        "stop" : 1780907897839
-      }
-    ],
-    "stop" : 1780907897839,
-    "uuid" : "00000000-0000-0000-0000-000000000059"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedFailure()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedFailure()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897852,
-    "status" : "failed",
-    "statusDetails" : {
-      "message" : "Deeply nested failure: result was 0.0"
-    },
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Issue recorded: Deeply nested failure: result was 0.0",
-        "stage" : "finished",
-        "start" : 1780907897852,
-        "status" : "failed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "OuterSuite.InnerSuite.DeeplyNestedSuite.deeplyNestedFailure()",
-            "stage" : "finished",
-            "start" : 1780907897859,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897859
-          }
-        ],
-        "stop" : 1780907897859
-      }
-    ],
-    "stop" : 1780907897859,
-    "uuid" : "00000000-0000-0000-0000-000000000060"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 3,
-    "uuid" : "00000000-0000-0000-0000-000000000061"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 4,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 5,
-    "uuid" : "00000000-0000-0000-0000-000000000062"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 6,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 13,
-    "uuid" : "00000000-0000-0000-0000-000000000063"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897773,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Deeply nested attachment.txt",
-        "stage" : "finished",
-        "start" : 1780907897773,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Deeply nested attachment.txt",
-            "stage" : "finished",
-            "start" : 1780907897773,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897776
-          }
-        ],
-        "stop" : 1780907897776
-      }
-    ],
-    "stop" : 1780907897776,
-    "uuid" : "00000000-0000-0000-0000-000000000064"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897804,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Deeply nested attachment.txt",
-        "stage" : "finished",
-        "start" : 1780907897804,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Deeply nested attachment.txt",
-            "stage" : "finished",
-            "start" : 1780907897804,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897804
-          }
-        ],
-        "stop" : 1780907897804
-      }
-    ],
-    "stop" : 1780907897804,
-    "uuid" : "00000000-0000-0000-0000-000000000065"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "historyId" : "XcodeprojExample.app/OuterSuite/InnerSuite/DeeplyNestedSuite/deeplyNestedWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "deeplyNestedWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897822,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Deeply nested attachment.txt",
-        "stage" : "finished",
-        "start" : 1780907897822,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Deeply nested attachment.txt",
-            "stage" : "finished",
-            "start" : 1780907897822,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897830
-          }
-        ],
-        "stop" : 1780907897830
-      }
-    ],
-    "stop" : 1780907897830,
-    "uuid" : "00000000-0000-0000-0000-000000000066"
   },
   {
     "attachments" : [
@@ -2958,8 +1631,8 @@
     "steps" : [
 
     ],
-    "stop" : 14,
-    "uuid" : "00000000-0000-0000-0000-000000000067"
+    "stop" : 41,
+    "uuid" : "00000000-0000-0000-0000-000000000040"
   },
   {
     "attachments" : [
@@ -2983,8 +1656,8 @@
     "steps" : [
 
     ],
-    "stop" : 11,
-    "uuid" : "00000000-0000-0000-0000-000000000068"
+    "stop" : 12,
+    "uuid" : "00000000-0000-0000-0000-000000000041"
   },
   {
     "attachments" : [
@@ -3003,7 +1676,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907895333,
+    "start" : 1792599284565,
     "status" : "passed",
     "steps" : [
       {
@@ -3012,7 +1685,7 @@
         ],
         "name" : "Compute and record",
         "stage" : "finished",
-        "start" : 1780907895333,
+        "start" : 1792599284565,
         "status" : "passed",
         "steps" : [
           {
@@ -3021,19 +1694,19 @@
             ],
             "name" : "Activity attachment",
             "stage" : "finished",
-            "start" : 1780907895333,
+            "start" : 1792599284569,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907895334
+            "stop" : 1792599284569
           }
         ],
-        "stop" : 1780907895334
+        "stop" : 1792599284569
       }
     ],
-    "stop" : 1780907895334,
-    "uuid" : "00000000-0000-0000-0000-000000000069"
+    "stop" : 1792599284569,
+    "uuid" : "00000000-0000-0000-0000-000000000042"
   },
   {
     "attachments" : [
@@ -3052,7 +1725,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907895335,
+    "start" : 1792599284571,
     "status" : "passed",
     "statusDetails" : {
       "message" : "Failure is expected"
@@ -3064,28 +1737,16 @@
         ],
         "name" : "Failure is expected",
         "stage" : "finished",
-        "start" : 1780907895335,
+        "start" : 1792599284571,
         "status" : "passed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_expectedFailure()",
-            "stage" : "finished",
-            "start" : 1780907895792,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907895792
-          }
         ],
-        "stop" : 1780907895792
+        "stop" : 1792599284852
       }
     ],
-    "stop" : 1780907895792,
-    "uuid" : "00000000-0000-0000-0000-000000000070"
+    "stop" : 1792599284852,
+    "uuid" : "00000000-0000-0000-0000-000000000043"
   },
   {
     "attachments" : [
@@ -3104,7 +1765,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907895791,
+    "start" : 1792599284853,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3116,28 +1777,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907895791,
+        "start" : 1792599284853,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failure()",
-            "stage" : "finished",
-            "start" : 1780907895793,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907895793
-          }
         ],
-        "stop" : 1780907895793
+        "stop" : 1792599284856
       }
     ],
-    "stop" : 1780907895793,
-    "uuid" : "00000000-0000-0000-0000-000000000071"
+    "stop" : 1792599284856,
+    "uuid" : "00000000-0000-0000-0000-000000000044"
   },
   {
     "attachments" : [
@@ -3156,7 +1805,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907895793,
+    "start" : 1792599284855,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3168,28 +1817,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907895793,
+        "start" : 1792599284855,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failure()",
-            "stage" : "finished",
-            "start" : 1780907895794,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907895794
-          }
         ],
-        "stop" : 1780907895794
+        "stop" : 1792599284856
       }
     ],
-    "stop" : 1780907895794,
-    "uuid" : "00000000-0000-0000-0000-000000000072"
+    "stop" : 1792599284856,
+    "uuid" : "00000000-0000-0000-0000-000000000045"
   },
   {
     "attachments" : [
@@ -3208,7 +1845,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897385,
+    "start" : 1792599284856,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3220,28 +1857,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897385,
+        "start" : 1792599284856,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failure()",
-            "stage" : "finished",
-            "start" : 1780907898978,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907898978
-          }
         ],
-        "stop" : 1780907898978
+        "stop" : 1792599284857
       }
     ],
-    "stop" : 1780907898978,
-    "uuid" : "00000000-0000-0000-0000-000000000073"
+    "stop" : 1792599284857,
+    "uuid" : "00000000-0000-0000-0000-000000000046"
   },
   {
     "attachments" : [
@@ -3260,7 +1885,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897387,
+    "start" : 1792599284858,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3272,7 +1897,7 @@
         ],
         "name" : "Added attachment named 'Failure context'",
         "stage" : "finished",
-        "start" : 1780907897387,
+        "start" : 1792599284858,
         "status" : "passed",
         "steps" : [
           {
@@ -3281,15 +1906,15 @@
             ],
             "name" : "Failure context",
             "stage" : "finished",
-            "start" : 1780907897387,
+            "start" : 1792599284858,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897387
+            "stop" : 1792599284859
           }
         ],
-        "stop" : 1780907897387
+        "stop" : 1792599284859
       },
       {
         "attachments" : [
@@ -3297,28 +1922,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897387,
+        "start" : 1792599284859,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897388,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897388
-          }
         ],
-        "stop" : 1780907897388
+        "stop" : 1792599284860
       }
     ],
-    "stop" : 1780907897388,
-    "uuid" : "00000000-0000-0000-0000-000000000074"
+    "stop" : 1792599284860,
+    "uuid" : "00000000-0000-0000-0000-000000000047"
   },
   {
     "attachments" : [
@@ -3337,7 +1950,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897417,
+    "start" : 1792599284860,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3349,7 +1962,7 @@
         ],
         "name" : "Added attachment named 'Failure context'",
         "stage" : "finished",
-        "start" : 1780907897417,
+        "start" : 1792599284860,
         "status" : "passed",
         "steps" : [
           {
@@ -3358,15 +1971,15 @@
             ],
             "name" : "Failure context",
             "stage" : "finished",
-            "start" : 1780907897417,
+            "start" : 1792599284860,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897418
+            "stop" : 1792599284861
           }
         ],
-        "stop" : 1780907897418
+        "stop" : 1792599284861
       },
       {
         "attachments" : [
@@ -3374,28 +1987,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897418,
+        "start" : 1792599284861,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897447,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897447
-          }
         ],
-        "stop" : 1780907897447
+        "stop" : 1792599284862
       }
     ],
-    "stop" : 1780907897447,
-    "uuid" : "00000000-0000-0000-0000-000000000075"
+    "stop" : 1792599284862,
+    "uuid" : "00000000-0000-0000-0000-000000000048"
   },
   {
     "attachments" : [
@@ -3414,7 +2015,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897419,
+    "start" : 1792599284862,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -3426,7 +2027,7 @@
         ],
         "name" : "Added attachment named 'Failure context'",
         "stage" : "finished",
-        "start" : 1780907897419,
+        "start" : 1792599284862,
         "status" : "passed",
         "steps" : [
           {
@@ -3435,15 +2036,15 @@
             ],
             "name" : "Failure context",
             "stage" : "finished",
-            "start" : 1780907897419,
+            "start" : 1792599284862,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897419
+            "stop" : 1792599284863
           }
         ],
-        "stop" : 1780907897419
+        "stop" : 1792599284863
       },
       {
         "attachments" : [
@@ -3451,28 +2052,16 @@
         ],
         "name" : "failed - Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897419,
+        "start" : 1792599284863,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_failureWithAttachment()",
-            "stage" : "finished",
-            "start" : 1780907897420,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897420
-          }
         ],
-        "stop" : 1780907897420
+        "stop" : 1792599284863
       }
     ],
-    "stop" : 1780907897420,
-    "uuid" : "00000000-0000-0000-0000-000000000076"
+    "stop" : 1792599284863,
+    "uuid" : "00000000-0000-0000-0000-000000000049"
   },
   {
     "attachments" : [
@@ -3491,7 +2080,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897420,
+    "start" : 1792599284864,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Flacky failure message: result was 2.0"
@@ -3503,28 +2092,16 @@
         ],
         "name" : "failed - Flacky failure message: result was 2.0",
         "stage" : "finished",
-        "start" : 1780907897420,
+        "start" : 1792599284864,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_flacky()",
-            "stage" : "finished",
-            "start" : 1780907897449,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897449
-          }
         ],
-        "stop" : 1780907897449
+        "stop" : 1792599284865
       }
     ],
-    "stop" : 1780907897449,
-    "uuid" : "00000000-0000-0000-0000-000000000077"
+    "stop" : 1792599284865,
+    "uuid" : "00000000-0000-0000-0000-000000000050"
   },
   {
     "attachments" : [
@@ -3543,13 +2120,13 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897450,
+    "start" : 1792599284866,
     "status" : "passed",
     "steps" : [
 
     ],
-    "stop" : 1780907897451,
-    "uuid" : "00000000-0000-0000-0000-000000000078"
+    "stop" : 1792599284867,
+    "uuid" : "00000000-0000-0000-0000-000000000051"
   },
   {
     "attachments" : [
@@ -3573,8 +2150,8 @@
     "steps" : [
 
     ],
-    "stop" : 254,
-    "uuid" : "00000000-0000-0000-0000-000000000079"
+    "stop" : 265,
+    "uuid" : "00000000-0000-0000-0000-000000000052"
   },
   {
     "attachments" : [
@@ -3601,8 +2178,8 @@
     "steps" : [
 
     ],
-    "stop" : 10,
-    "uuid" : "00000000-0000-0000-0000-000000000080"
+    "stop" : 12,
+    "uuid" : "00000000-0000-0000-0000-000000000053"
   },
   {
     "attachments" : [
@@ -3626,8 +2203,8 @@
     "steps" : [
 
     ],
-    "stop" : 0,
-    "uuid" : "00000000-0000-0000-0000-000000000081"
+    "stop" : 1,
+    "uuid" : "00000000-0000-0000-0000-000000000054"
   },
   {
     "attachments" : [
@@ -3646,7 +2223,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897718,
+    "start" : 1792599285149,
     "status" : "failed",
     "statusDetails" : {
       "message" : "failed: caught error: \"divisionByZero\""
@@ -3658,28 +2235,16 @@
         ],
         "name" : "failed: caught error: \"divisionByZero\"",
         "stage" : "finished",
-        "start" : 1780907897718,
+        "start" : 1792599285149,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_throwing()",
-            "stage" : "finished",
-            "start" : 1780907897722,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897722
-          }
         ],
-        "stop" : 1780907897722
+        "stop" : 1792599285154
       }
     ],
-    "stop" : 1780907897722,
-    "uuid" : "00000000-0000-0000-0000-000000000082"
+    "stop" : 1792599285154,
+    "uuid" : "00000000-0000-0000-0000-000000000055"
   },
   {
     "attachments" : [
@@ -3698,7 +2263,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897720,
+    "start" : 1792599285152,
     "status" : "failed",
     "statusDetails" : {
       "message" : "failed: caught error: \"divisionByZero\""
@@ -3710,28 +2275,16 @@
         ],
         "name" : "failed: caught error: \"divisionByZero\"",
         "stage" : "finished",
-        "start" : 1780907897720,
+        "start" : 1792599285152,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_throwing()",
-            "stage" : "finished",
-            "start" : 1780907897721,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897721
-          }
         ],
-        "stop" : 1780907897721
+        "stop" : 1792599285154
       }
     ],
-    "stop" : 1780907897721,
-    "uuid" : "00000000-0000-0000-0000-000000000083"
+    "stop" : 1792599285154,
+    "uuid" : "00000000-0000-0000-0000-000000000056"
   },
   {
     "attachments" : [
@@ -3750,7 +2303,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897721,
+    "start" : 1792599285154,
     "status" : "failed",
     "statusDetails" : {
       "message" : "failed: caught error: \"divisionByZero\""
@@ -3762,28 +2315,16 @@
         ],
         "name" : "failed: caught error: \"divisionByZero\"",
         "stage" : "finished",
-        "start" : 1780907897721,
+        "start" : 1792599285154,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "XCTestTests.test_throwing()",
-            "stage" : "finished",
-            "start" : 1780907897722,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897722
-          }
         ],
-        "stop" : 1780907897722
+        "stop" : 1792599285155
       }
     ],
-    "stop" : 1780907897722,
-    "uuid" : "00000000-0000-0000-0000-000000000084"
+    "stop" : 1792599285155,
+    "uuid" : "00000000-0000-0000-0000-000000000057"
   },
   {
     "attachments" : [
@@ -3802,7 +2343,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897722,
+    "start" : 1792599285155,
     "status" : "passed",
     "steps" : [
       {
@@ -3811,7 +2352,7 @@
         ],
         "name" : "Added attachment named 'Calculation Result'",
         "stage" : "finished",
-        "start" : 1780907897722,
+        "start" : 1792599285155,
         "status" : "passed",
         "steps" : [
           {
@@ -3820,19 +2361,19 @@
             ],
             "name" : "Calculation Result",
             "stage" : "finished",
-            "start" : 1780907897722,
+            "start" : 1792599285155,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897723
+            "stop" : 1792599285156
           }
         ],
-        "stop" : 1780907897723
+        "stop" : 1792599285156
       }
     ],
-    "stop" : 1780907897723,
-    "uuid" : "00000000-0000-0000-0000-000000000085"
+    "stop" : 1792599285156,
+    "uuid" : "00000000-0000-0000-0000-000000000058"
   },
   {
     "attachments" : [
@@ -3851,7 +2392,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897723,
+    "start" : 1792599285157,
     "status" : "passed",
     "steps" : [
       {
@@ -3860,7 +2401,7 @@
         ],
         "name" : "Added attachment named 'Sum result'",
         "stage" : "finished",
-        "start" : 1780907897723,
+        "start" : 1792599285157,
         "status" : "passed",
         "steps" : [
           {
@@ -3869,15 +2410,15 @@
             ],
             "name" : "Sum result",
             "stage" : "finished",
-            "start" : 1780907897723,
+            "start" : 1792599285157,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897723
+            "stop" : 1792599285157
           }
         ],
-        "stop" : 1780907897723
+        "stop" : 1792599285157
       },
       {
         "attachments" : [
@@ -3885,7 +2426,7 @@
         ],
         "name" : "Added attachment named 'Product result'",
         "stage" : "finished",
-        "start" : 1780907897723,
+        "start" : 1792599285157,
         "status" : "passed",
         "steps" : [
           {
@@ -3894,19 +2435,19 @@
             ],
             "name" : "Product result",
             "stage" : "finished",
-            "start" : 1780907897723,
+            "start" : 1792599285157,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897724
+            "stop" : 1792599285158
           }
         ],
-        "stop" : 1780907897724
+        "stop" : 1792599285158
       }
     ],
-    "stop" : 1780907897724,
-    "uuid" : "00000000-0000-0000-0000-000000000086"
+    "stop" : 1792599285158,
+    "uuid" : "00000000-0000-0000-0000-000000000059"
   },
   {
     "attachments" : [
@@ -3925,7 +2466,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897724,
+    "start" : 1792599285158,
     "status" : "passed",
     "steps" : [
       {
@@ -3934,7 +2475,7 @@
         ],
         "name" : "Added attachment named 'Pixel.png'",
         "stage" : "finished",
-        "start" : 1780907897724,
+        "start" : 1792599285158,
         "status" : "passed",
         "steps" : [
           {
@@ -3943,19 +2484,19 @@
             ],
             "name" : "Pixel.png",
             "stage" : "finished",
-            "start" : 1780907897724,
+            "start" : 1792599285158,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897725
+            "stop" : 1792599285159
           }
         ],
-        "stop" : 1780907897725
+        "stop" : 1792599285159
       }
     ],
-    "stop" : 1780907897725,
-    "uuid" : "00000000-0000-0000-0000-000000000087"
+    "stop" : 1792599285159,
+    "uuid" : "00000000-0000-0000-0000-000000000060"
   },
   {
     "attachments" : [
@@ -3980,7 +2521,7 @@
 
     ],
     "stop" : 0,
-    "uuid" : "00000000-0000-0000-0000-000000000088"
+    "uuid" : "00000000-0000-0000-0000-000000000061"
   },
   {
     "attachments" : [
@@ -4004,58 +2545,8 @@
     "steps" : [
 
     ],
-    "stop" : 2,
-    "uuid" : "00000000-0000-0000-0000-000000000089"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`2 + 3 = 5`()",
-    "historyId" : "XcodeprojExample.app/`2 + 3 = 5`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`2 + 3 = 5`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 3,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 13,
-    "uuid" : "00000000-0000-0000-0000-000000000090"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`2 + 3 = 5`()",
-    "historyId" : "XcodeprojExample.app/`2 + 3 = 5`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`2 + 3 = 5`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 14,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 15,
-    "uuid" : "00000000-0000-0000-0000-000000000091"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000062"
   },
   {
     "attachments" : [
@@ -4079,58 +2570,8 @@
     "steps" : [
 
     ],
-    "stop" : 19,
-    "uuid" : "00000000-0000-0000-0000-000000000092"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`array[0] is nil?`()",
-    "historyId" : "XcodeprojExample.app/`array[0] is nil?`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`array[0] is nil?`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 20,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 30,
-    "uuid" : "00000000-0000-0000-0000-000000000093"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`array[0] is nil?`()",
-    "historyId" : "XcodeprojExample.app/`array[0] is nil?`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`array[0] is nil?`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 31,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 33,
-    "uuid" : "00000000-0000-0000-0000-000000000094"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000063"
   },
   {
     "attachments" : [
@@ -4154,58 +2595,8 @@
     "steps" : [
 
     ],
-    "stop" : 4,
-    "uuid" : "00000000-0000-0000-0000-000000000095"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`divide(10, 2) / returns 5`()",
-    "historyId" : "XcodeprojExample.app/`divide(10, 2) / returns 5`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`divide(10, 2) / returns 5`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 5,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 15,
-    "uuid" : "00000000-0000-0000-0000-000000000096"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`divide(10, 2) / returns 5`()",
-    "historyId" : "XcodeprojExample.app/`divide(10, 2) / returns 5`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`divide(10, 2) / returns 5`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 16,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 18,
-    "uuid" : "00000000-0000-0000-0000-000000000097"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000064"
   },
   {
     "attachments" : [
@@ -4220,6 +2611,31 @@
       }
     ],
     "name" : "`root level with spaces in name`()",
+    "parameters" : [
+
+    ],
+    "stage" : "finished",
+    "start" : 0,
+    "status" : "passed",
+    "steps" : [
+
+    ],
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000065"
+  },
+  {
+    "attachments" : [
+
+    ],
+    "fullName" : "rootLevelAsync()",
+    "historyId" : "XcodeprojExample.app/rootLevelAsync()",
+    "labels" : [
+      {
+        "name" : "suite",
+        "value" : "XcodeprojExample.app"
+      }
+    ],
+    "name" : "rootLevelAsync()",
     "parameters" : [
 
     ],
@@ -4230,132 +2646,7 @@
 
     ],
     "stop" : 15,
-    "uuid" : "00000000-0000-0000-0000-000000000098"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`root level with spaces in name`()",
-    "historyId" : "XcodeprojExample.app/`root level with spaces in name`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`root level with spaces in name`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 16,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 26,
-    "uuid" : "00000000-0000-0000-0000-000000000099"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`root level with spaces in name`()",
-    "historyId" : "XcodeprojExample.app/`root level with spaces in name`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`root level with spaces in name`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 27,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 29,
-    "uuid" : "00000000-0000-0000-0000-000000000100"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelAsync()",
-    "historyId" : "XcodeprojExample.app/rootLevelAsync()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelAsync()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 0,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 39,
-    "uuid" : "00000000-0000-0000-0000-000000000101"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelAsync()",
-    "historyId" : "XcodeprojExample.app/rootLevelAsync()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelAsync()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 40,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 60,
-    "uuid" : "00000000-0000-0000-0000-000000000102"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelAsync()",
-    "historyId" : "XcodeprojExample.app/rootLevelAsync()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelAsync()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 61,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 113,
-    "uuid" : "00000000-0000-0000-0000-000000000103"
+    "uuid" : "00000000-0000-0000-0000-000000000066"
   },
   {
     "attachments" : [
@@ -4374,7 +2665,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897785,
+    "start" : 1792599285215,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -4386,28 +2677,16 @@
         ],
         "name" : "Issue recorded: Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897785,
+        "start" : 1792599285215,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "rootLevelFailure()",
-            "stage" : "finished",
-            "start" : 1780907897804,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897804
-          }
         ],
-        "stop" : 1780907897804
+        "stop" : 1792599285219
       }
     ],
-    "stop" : 1780907897804,
-    "uuid" : "00000000-0000-0000-0000-000000000104"
+    "stop" : 1792599285219,
+    "uuid" : "00000000-0000-0000-0000-000000000067"
   },
   {
     "attachments" : [
@@ -4426,7 +2705,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897830,
+    "start" : 1792599285222,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -4438,28 +2717,16 @@
         ],
         "name" : "Issue recorded: Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897830,
+        "start" : 1792599285222,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "rootLevelFailure()",
-            "stage" : "finished",
-            "start" : 1780907897840,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897840
-          }
         ],
-        "stop" : 1780907897840
+        "stop" : 1792599285223
       }
     ],
-    "stop" : 1780907897840,
-    "uuid" : "00000000-0000-0000-0000-000000000105"
+    "stop" : 1792599285223,
+    "uuid" : "00000000-0000-0000-0000-000000000068"
   },
   {
     "attachments" : [
@@ -4478,7 +2745,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897847,
+    "start" : 1792599285226,
     "status" : "failed",
     "statusDetails" : {
       "message" : "Expected 5.0 but got 6.0"
@@ -4490,28 +2757,16 @@
         ],
         "name" : "Issue recorded: Expected 5.0 but got 6.0",
         "stage" : "finished",
-        "start" : 1780907897847,
+        "start" : 1792599285226,
         "status" : "failed",
         "steps" : [
-          {
-            "attachments" : [
 
-            ],
-            "name" : "rootLevelFailure()",
-            "stage" : "finished",
-            "start" : 1780907897856,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897856
-          }
         ],
-        "stop" : 1780907897856
+        "stop" : 1792599285233
       }
     ],
-    "stop" : 1780907897856,
-    "uuid" : "00000000-0000-0000-0000-000000000106"
+    "stop" : 1792599285233,
+    "uuid" : "00000000-0000-0000-0000-000000000069"
   },
   {
     "attachments" : [
@@ -4535,58 +2790,8 @@
     "steps" : [
 
     ],
-    "stop" : 17,
-    "uuid" : "00000000-0000-0000-0000-000000000107"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelSuccess()",
-    "historyId" : "XcodeprojExample.app/rootLevelSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 18,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 28,
-    "uuid" : "00000000-0000-0000-0000-000000000108"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelSuccess()",
-    "historyId" : "XcodeprojExample.app/rootLevelSuccess()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelSuccess()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 29,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 30,
-    "uuid" : "00000000-0000-0000-0000-000000000109"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000070"
   },
   {
     "attachments" : [
@@ -4605,7 +2810,7 @@
 
     ],
     "stage" : "finished",
-    "start" : 1780907897761,
+    "start" : 1792599285191,
     "status" : "passed",
     "steps" : [
       {
@@ -4614,7 +2819,7 @@
         ],
         "name" : "Added attachment name Root attachment.txt",
         "stage" : "finished",
-        "start" : 1780907897761,
+        "start" : 1792599285191,
         "status" : "passed",
         "steps" : [
           {
@@ -4623,117 +2828,19 @@
             ],
             "name" : "Root attachment.txt",
             "stage" : "finished",
-            "start" : 1780907897761,
+            "start" : 1792599285191,
             "status" : "passed",
             "steps" : [
 
             ],
-            "stop" : 1780907897779
+            "stop" : 1792599285192
           }
         ],
-        "stop" : 1780907897779
+        "stop" : 1792599285192
       }
     ],
-    "stop" : 1780907897779,
-    "uuid" : "00000000-0000-0000-0000-000000000110"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelWithAttachment()",
-    "historyId" : "XcodeprojExample.app/rootLevelWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897794,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Root attachment.txt",
-        "stage" : "finished",
-        "start" : 1780907897794,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Root attachment.txt",
-            "stage" : "finished",
-            "start" : 1780907897794,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897796
-          }
-        ],
-        "stop" : 1780907897796
-      }
-    ],
-    "stop" : 1780907897796,
-    "uuid" : "00000000-0000-0000-0000-000000000111"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "rootLevelWithAttachment()",
-    "historyId" : "XcodeprojExample.app/rootLevelWithAttachment()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "rootLevelWithAttachment()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 1780907897814,
-    "status" : "passed",
-    "steps" : [
-      {
-        "attachments" : [
-
-        ],
-        "name" : "Added attachment name Root attachment.txt",
-        "stage" : "finished",
-        "start" : 1780907897814,
-        "status" : "passed",
-        "steps" : [
-          {
-            "attachments" : [
-
-            ],
-            "name" : "Root attachment.txt",
-            "stage" : "finished",
-            "start" : 1780907897814,
-            "status" : "passed",
-            "steps" : [
-
-            ],
-            "stop" : 1780907897816
-          }
-        ],
-        "stop" : 1780907897816
-      }
-    ],
-    "stop" : 1780907897816,
-    "uuid" : "00000000-0000-0000-0000-000000000112"
+    "stop" : 1792599285192,
+    "uuid" : "00000000-0000-0000-0000-000000000071"
   },
   {
     "attachments" : [
@@ -4757,58 +2864,8 @@
     "steps" : [
 
     ],
-    "stop" : 3,
-    "uuid" : "00000000-0000-0000-0000-000000000113"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`success 🎯`()",
-    "historyId" : "XcodeprojExample.app/`success 🎯`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`success 🎯`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 4,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 14,
-    "uuid" : "00000000-0000-0000-0000-000000000114"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`success 🎯`()",
-    "historyId" : "XcodeprojExample.app/`success 🎯`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`success 🎯`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 15,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 17,
-    "uuid" : "00000000-0000-0000-0000-000000000115"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000072"
   },
   {
     "attachments" : [
@@ -4832,57 +2889,7 @@
     "steps" : [
 
     ],
-    "stop" : 3,
-    "uuid" : "00000000-0000-0000-0000-000000000116"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`сложение работает`()",
-    "historyId" : "XcodeprojExample.app/`сложение работает`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`сложение работает`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 4,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 6,
-    "uuid" : "00000000-0000-0000-0000-000000000117"
-  },
-  {
-    "attachments" : [
-
-    ],
-    "fullName" : "`сложение работает`()",
-    "historyId" : "XcodeprojExample.app/`сложение работает`()",
-    "labels" : [
-      {
-        "name" : "suite",
-        "value" : "XcodeprojExample.app"
-      }
-    ],
-    "name" : "`сложение работает`()",
-    "parameters" : [
-
-    ],
-    "stage" : "finished",
-    "start" : 7,
-    "status" : "passed",
-    "steps" : [
-
-    ],
-    "stop" : 8,
-    "uuid" : "00000000-0000-0000-0000-000000000118"
+    "stop" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000073"
   }
 ]

@@ -174,7 +174,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         },
@@ -215,53 +215,53 @@
       "name" : "ExamplesTests",
       "rootLevelTests" : [
         {
-          "durationMs" : 5.246162414550781,
+          "durationMs" : 0.016689300537109375,
           "name" : "2 + 3 = 5",
           "status" : "success"
         },
         {
-          "durationMs" : 3.8831233978271484,
+          "durationMs" : 0.2391338348388672,
           "name" : "array[0] is nil?",
           "status" : "success"
         },
         {
-          "durationMs" : 2.6047229766845703,
+          "durationMs" : 0.25081634521484375,
           "name" : "divide(10, 2) \/ returns 5",
           "status" : "success"
         },
         {
-          "durationMs" : 4.150152206420898,
+          "durationMs" : 0.30875205993652344,
           "name" : "root level with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 38.06281089782715,
+          "durationMs" : 11.403799057006836,
           "name" : "rootLevelAsync()",
           "status" : "success"
         },
         {
-          "durationMs" : 5.087614059448242,
+          "durationMs" : 3.9129257202148438,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 2.2377967834472656,
+          "durationMs" : 0.20694732666015625,
           "name" : "rootLevelSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 6.187915802001953,
+          "durationMs" : 0.1819133758544922,
           "name" : "rootLevelWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 2.9838085174560547,
+          "durationMs" : 0.15401840209960938,
           "name" : "success 🎯",
           "status" : "success"
         },
         {
-          "durationMs" : 3.5648345947265625,
+          "durationMs" : 0.24890899658203125,
           "name" : "сложение работает",
           "status" : "success"
         }
@@ -275,79 +275,79 @@
           ],
           "tests" : [
             {
-              "durationMs" : 36.54122352600098,
+              "durationMs" : 11.061906814575195,
               "name" : "async()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.1881122589111328,
+              "durationMs" : 0,
               "message" : "Test skipped: Disabled reason",
               "name" : "disabled()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 4.614591598510742,
-              "message" : "Failure is expected",
+              "durationMs" : 5.65028190612793,
+              "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected",
               "name" : "expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 4.10008430480957,
+              "durationMs" : 5.180835723876953,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 1309.999942779541,
+              "durationMs" : 1004.9998760223389,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.436731338500977,
+              "durationMs" : 1.3849735260009766,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 2.349853515625,
-              "message" : "Expectation failed: (result → 4.0) == 5.0",
+              "durationMs" : 5.542278289794922,
+              "message" : "Expectation failed: result == 5.0\nresult → 4.0",
               "name" : "flackyParameterized(value:) [false]",
               "status" : "failure"
             },
             {
-              "durationMs" : 0.9279251098632812,
+              "durationMs" : 0.8242130279541016,
               "name" : "flackyParameterized(value:) [true]",
               "status" : "success"
             },
             {
-              "durationMs" : 4.373073577880859,
+              "durationMs" : 0.37217140197753906,
               "name" : "success()",
               "status" : "success"
             },
             {
-              "durationMs" : 5.090236663818359,
+              "durationMs" : 3.7603378295898438,
               "message" : "Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 3.7779808044433594,
+              "durationMs" : 0.028848648071289062,
               "name" : "withAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 5.649089813232422,
+              "durationMs" : 0.09703636169433594,
               "name" : "withMultipleAttachments()",
               "status" : "success"
             },
             {
-              "durationMs" : 4.267215728759766,
+              "durationMs" : 0.12326240539550781,
               "name" : "withPNGAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 3.9691925048828125,
+              "durationMs" : 0.048160552978515625,
               "name" : "withRawBinaryAttachment()",
               "status" : "success"
             }
@@ -369,18 +369,18 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 2.2432804107666016,
+                      "durationMs" : 3.0829906463623047,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
                     },
                     {
-                      "durationMs" : 2.264261245727539,
+                      "durationMs" : 0.027179718017578125,
                       "name" : "deeplyNestedSuccess()",
                       "status" : "success"
                     },
                     {
-                      "durationMs" : 1.2159347534179688,
+                      "durationMs" : 1.4977455139160156,
                       "name" : "deeplyNestedWithAttachment()",
                       "status" : "success"
                     }
@@ -389,13 +389,13 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 3.3440589904785156,
+                  "durationMs" : 1.9328594207763672,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
                 },
                 {
-                  "durationMs" : 3.5033226013183594,
+                  "durationMs" : 0.020265579223632812,
                   "name" : "innerSuccess()",
                   "status" : "success"
                 }
@@ -404,18 +404,18 @@
           ],
           "tests" : [
             {
-              "durationMs" : 3.7839412689208984,
+              "durationMs" : 0.0209808349609375,
               "name" : "outer with spaces in name",
               "status" : "success"
             },
             {
-              "durationMs" : 4.762172698974609,
+              "durationMs" : 1.918792724609375,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.527807235717773,
+              "durationMs" : 0.010967254638671875,
               "name" : "outerSuccess()",
               "status" : "success"
             }
@@ -429,83 +429,83 @@
           ],
           "tests" : [
             {
-              "durationMs" : 15.547990798950195,
+              "durationMs" : 13.565897941589355,
               "name" : "test_async()",
               "status" : "success"
             },
             {
-              "durationMs" : 13.47208023071289,
+              "durationMs" : 11.777997016906738,
               "name" : "test_asyncWithExpectation()",
               "status" : "success"
             },
             {
-              "durationMs" : 1.6629695892333984,
+              "durationMs" : 1.4629364013671875,
               "name" : "test_attachmentInsideActivity()",
               "status" : "success"
             },
             {
-              "durationMs" : 1297.8219985961914,
+              "durationMs" : 87.22901344299316,
               "message" : "Failure is expected",
               "name" : "test_expectedFailure()",
               "status" : "expectedFailure"
             },
             {
-              "durationMs" : 3.6330223083496094,
+              "durationMs" : 3.59499454498291,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 15.62488079071045,
+              "durationMs" : 4.710078239440918,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 1.230001449584961,
+              "durationMs" : 1.8600225448608398,
               "message" : "Flacky failure message: result was 2.0",
               "name" : "test_flacky()",
               "status" : "mixed"
             },
             {
-              "durationMs" : 256.71207904815674,
+              "durationMs" : 257.04896450042725,
               "name" : "test_performance()",
               "status" : "success"
             },
             {
-              "durationMs" : 4.00996208190918,
+              "durationMs" : 5.074977874755859,
               "message" : "Skip message",
               "name" : "test_skip()",
               "status" : "skipped"
             },
             {
-              "durationMs" : 0.4919767379760742,
+              "durationMs" : 0.45299530029296875,
               "name" : "test_success()",
               "status" : "success"
             },
             {
-              "durationMs" : 4.658937454223633,
+              "durationMs" : 5.491018295288086,
               "message" : "failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
             },
             {
-              "durationMs" : 0.7659196853637695,
+              "durationMs" : 1.1839866638183594,
               "name" : "test_withAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 1.011967658996582,
+              "durationMs" : 1.1800527572631836,
               "name" : "test_withMultipleAttachments()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.8709430694580078,
+              "durationMs" : 0.7170438766479492,
               "name" : "test_withPNGAttachment()",
               "status" : "success"
             },
             {
-              "durationMs" : 0.3839731216430664,
+              "durationMs" : 0.5229711532592773,
               "name" : "test_withWarning()",
               "status" : "success"
             }

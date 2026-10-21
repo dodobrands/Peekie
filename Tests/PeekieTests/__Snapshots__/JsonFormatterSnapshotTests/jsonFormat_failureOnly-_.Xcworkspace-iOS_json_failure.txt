@@ -63,7 +63,7 @@
       "name" : "XcodeprojExample.app",
       "rootLevelTests" : [
         {
-          "durationMs" : 86.71808242797852,
+          "durationMs" : 4.485607147216797,
           "message" : "Expected 5.0 but got 6.0",
           "name" : "rootLevelFailure()",
           "status" : "failure"
@@ -78,19 +78,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 86.12704277038574,
+              "durationMs" : 7.834911346435547,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 87.81695365905762,
+              "durationMs" : 49.99995231628418,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 113.23308944702148,
+              "durationMs" : 28.440475463867188,
               "message" : "Caught error: .divisionByZero",
               "name" : "throwing()",
               "status" : "failure"
@@ -113,7 +113,7 @@
                   ],
                   "tests" : [
                     {
-                      "durationMs" : 4.866838455200195,
+                      "durationMs" : 19.48094367980957,
                       "message" : "Deeply nested failure: result was 0.0",
                       "name" : "deeplyNestedFailure()",
                       "status" : "failure"
@@ -123,7 +123,7 @@
               ],
               "tests" : [
                 {
-                  "durationMs" : 85.37483215332031,
+                  "durationMs" : 3.6361217498779297,
                   "message" : "Inner suite failure: result was 12.0",
                   "name" : "innerFailure()",
                   "status" : "failure"
@@ -133,7 +133,7 @@
           ],
           "tests" : [
             {
-              "durationMs" : 155.99513053894043,
+              "durationMs" : 18.298864364624023,
               "message" : "Outer suite failure: result was 200.0",
               "name" : "outerFailure()",
               "status" : "failure"
@@ -148,19 +148,19 @@
           ],
           "tests" : [
             {
-              "durationMs" : 1789.3640995025635,
+              "durationMs" : 4.397034645080566,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failure()",
               "status" : "failure"
             },
             {
-              "durationMs" : 28.028011322021484,
+              "durationMs" : 3.084897994995117,
               "message" : "Expected 5.0 but got 6.0",
               "name" : "test_failureWithAttachment()",
               "status" : "failure"
             },
             {
-              "durationMs" : 4.804015159606934,
+              "durationMs" : 4.2999982833862305,
               "message" : "failed: caught error: \"divisionByZero\"",
               "name" : "test_throwing()",
               "status" : "failure"
@@ -288,7 +288,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         }

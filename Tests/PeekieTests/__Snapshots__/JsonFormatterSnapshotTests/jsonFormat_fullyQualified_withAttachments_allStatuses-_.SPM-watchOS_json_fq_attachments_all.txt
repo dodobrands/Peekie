@@ -171,7 +171,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         },
@@ -212,29 +212,29 @@
       "name" : "ExamplesTests",
       "tests" : [
         {
-          "durationMs" : 4.665851593017578,
+          "durationMs" : 0.07128715515136719,
           "qualifiedName" : "ExamplesTests \/ 2 + 3 = 5",
           "status" : "success"
         },
         {
-          "durationMs" : 37.44029998779297,
+          "durationMs" : 10.631084442138672,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ async()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.3046989440917969,
+          "durationMs" : 0,
           "message" : "Test skipped: Disabled reason",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ disabled()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 6.888151168823242,
-          "message" : "Failure is expected",
+          "durationMs" : 5.7048797607421875,
+          "message" : "Expectation failed: Bool(result == 2.0)\nresult == 2.0 → (): Failure is expected",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 5.24592399597168,
+          "durationMs" : 3.1938552856445312,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failure()",
           "status" : "failure"
@@ -244,60 +244,60 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "E18A3567-2F9D-42AE-904F-26302F6E6C70.txt",
+              "exportedFileName" : "589B1F3F-74A2-4D1B-8DB0-86DCF7688863.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_397370AD-BAED-43BB-A428-AFFB849E10F1.txt",
-              "path" : "<ATTACHMENTS_DIR>\/E18A3567-2F9D-42AE-904F-26302F6E6C70.txt",
+              "name" : "Failure context_0_E0CBD20A-A80C-485F-B151-BD6BB0750C5A.txt",
+              "path" : "<ATTACHMENTS_DIR>\/589B1F3F-74A2-4D1B-8DB0-86DCF7688863.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "C790DF75-CD87-499A-998C-085CAB1F5B6F.txt",
+              "exportedFileName" : "D6C29884-854D-463D-A3C3-D8AB96F987EC.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_802166B7-213F-4656-AEBD-E054E501F2BD.txt",
-              "path" : "<ATTACHMENTS_DIR>\/C790DF75-CD87-499A-998C-085CAB1F5B6F.txt",
+              "name" : "Failure context_0_F6834160-6D13-4053-A665-A01BA833F55C.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D6C29884-854D-463D-A3C3-D8AB96F987EC.txt",
               "repetitionNumber" : 2
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "16E08515-D324-47ED-88CC-5B31CB518517.txt",
+              "exportedFileName" : "9816F67F-CD96-4458-950B-B169E2DCFB94.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_B16F2989-5FE7-48F0-96FA-684A5DE1E70C.txt",
-              "path" : "<ATTACHMENTS_DIR>\/16E08515-D324-47ED-88CC-5B31CB518517.txt",
+              "name" : "Failure context_0_CDCEA351-A0E3-43FF-A744-832FFAAF1411.txt",
+              "path" : "<ATTACHMENTS_DIR>\/9816F67F-CD96-4458-950B-B169E2DCFB94.txt",
               "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 6449.999809265137,
+          "durationMs" : 3289.9999618530273,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 6.655216217041016,
+          "durationMs" : 1.0828971862792969,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 3.3931732177734375,
-          "message" : "Expectation failed: (result → 4.0) == 5.0",
+          "durationMs" : 5.00941276550293,
+          "message" : "Expectation failed: result == 5.0\nresult → 4.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [false]",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.0020732879638672,
+          "durationMs" : 0.38886070251464844,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ flackyParameterized(value:) [true]",
           "status" : "success"
         },
         {
-          "durationMs" : 5.273103713989258,
+          "durationMs" : 0.015974044799804688,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ success()",
           "status" : "success"
         },
         {
-          "durationMs" : 7.562875747680664,
+          "durationMs" : 3.288745880126953,
           "message" : "Caught error: .divisionByZero",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
@@ -307,32 +307,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "91F0252F-5970-484D-8F29-131AE25789E7.txt",
+              "exportedFileName" : "A5CD286C-547C-45F7-B968-DB24E589A50F.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_D6BBC4A8-A216-4A13-BC37-C9D52B2A3474.txt",
-              "path" : "<ATTACHMENTS_DIR>\/91F0252F-5970-484D-8F29-131AE25789E7.txt",
+              "name" : "Calculation Result_0_BD3C6BD2-02CE-41C2-8832-C061E08932E5.txt",
+              "path" : "<ATTACHMENTS_DIR>\/A5CD286C-547C-45F7-B968-DB24E589A50F.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "50B104DB-EF53-4A7C-8A92-AA1F9905B3AC.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_4542712B-0304-49DC-A92F-BA2A233FBEE7.txt",
-              "path" : "<ATTACHMENTS_DIR>\/50B104DB-EF53-4A7C-8A92-AA1F9905B3AC.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "E31F3599-6806-4FB1-ABFC-C25D19388BA6.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_78554765-BA34-4B79-AFC6-FA0B6781E3A2.txt",
-              "path" : "<ATTACHMENTS_DIR>\/E31F3599-6806-4FB1-ABFC-C25D19388BA6.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 6.825923919677734,
+          "durationMs" : 0.0591278076171875,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withAttachment()",
           "status" : "success"
         },
@@ -341,86 +323,32 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "59ED79AD-6A91-406D-8887-07B29A4DEEC2.txt",
+              "exportedFileName" : "4B4C5C80-C4F4-4D9E-B3EA-D134958D2662.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_B1B90959-5AAE-44AC-90F5-689A254D4639.txt",
-              "path" : "<ATTACHMENTS_DIR>\/59ED79AD-6A91-406D-8887-07B29A4DEEC2.txt",
+              "name" : "Operands_0_B9D1D0D5-3D8F-4C1F-9564-0F95B81530E4.txt",
+              "path" : "<ATTACHMENTS_DIR>\/4B4C5C80-C4F4-4D9E-B3EA-D134958D2662.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "C3C3D558-F338-497B-A0E8-43C276BEA971.txt",
+              "exportedFileName" : "9EB70B98-E1A2-4F3A-A472-6C4E3E800EB2.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_11A5D0AA-46D1-4C4D-91C6-A5CE69BFF894.txt",
-              "path" : "<ATTACHMENTS_DIR>\/C3C3D558-F338-497B-A0E8-43C276BEA971.txt",
+              "name" : "Product result_0_49C35195-5687-481A-8D18-1BDC3D7F7A2D.txt",
+              "path" : "<ATTACHMENTS_DIR>\/9EB70B98-E1A2-4F3A-A472-6C4E3E800EB2.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "FF74F890-C15B-4141-A269-C8907ABA65AE.txt",
+              "exportedFileName" : "D5F51A16-A4A2-48DB-B4E9-711D9FCAB534.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_4C895E54-3F48-4F4E-8BF3-28F9E9AC9588.txt",
-              "path" : "<ATTACHMENTS_DIR>\/FF74F890-C15B-4141-A269-C8907ABA65AE.txt",
+              "name" : "Sum result_0_F57D6F7B-A67C-40FF-8E41-734E6651DCD5.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D5F51A16-A4A2-48DB-B4E9-711D9FCAB534.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "6E4DF8FC-3AC4-4AD4-8F25-1BA533D4901C.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_DAAEC13E-6EF2-4561-9080-5CEACB51272A.txt",
-              "path" : "<ATTACHMENTS_DIR>\/6E4DF8FC-3AC4-4AD4-8F25-1BA533D4901C.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "EE54C007-B499-4CD6-888F-CD91CD47C84B.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_AB91B891-BA43-45DE-9D18-C13E07EC3356.txt",
-              "path" : "<ATTACHMENTS_DIR>\/EE54C007-B499-4CD6-888F-CD91CD47C84B.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "6EA0E19A-BE56-4C53-A7CB-EA99E78D54A7.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_300EFC0B-FF79-4DF1-9A9E-E9A1E2153A46.txt",
-              "path" : "<ATTACHMENTS_DIR>\/6EA0E19A-BE56-4C53-A7CB-EA99E78D54A7.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "666FFBA8-CD36-4C53-B283-B07A58DB0372.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Operands_0_0A3691D1-EB25-49E7-8DFD-5690F885CD2F.txt",
-              "path" : "<ATTACHMENTS_DIR>\/666FFBA8-CD36-4C53-B283-B07A58DB0372.txt",
-              "repetitionNumber" : 3
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "EC5524B9-3EBE-4CB2-BEC7-955ED875487E.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_1693B408-4A1B-4591-B983-8E07912B679E.txt",
-              "path" : "<ATTACHMENTS_DIR>\/EC5524B9-3EBE-4CB2-BEC7-955ED875487E.txt",
-              "repetitionNumber" : 3
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "BA4555FF-953E-4EF4-B804-17B10A7B0256.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_722A7EBF-9ABC-4D15-A0AC-CF3086299EA5.txt",
-              "path" : "<ATTACHMENTS_DIR>\/BA4555FF-953E-4EF4-B804-17B10A7B0256.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 5.336761474609375,
+          "durationMs" : 0.7641315460205078,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withMultipleAttachments()",
           "status" : "success"
         },
@@ -429,32 +357,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "image\/png",
-              "exportedFileName" : "AC04FB93-9ABC-4B8E-A8B3-F831DEC270EF.png",
+              "exportedFileName" : "3C2E7E2D-BC9F-490E-B0B9-B6C1169151BA.png",
               "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_4725590E-8BFA-4304-84A3-2D451B72B7D2.png",
-              "path" : "<ATTACHMENTS_DIR>\/AC04FB93-9ABC-4B8E-A8B3-F831DEC270EF.png",
+              "name" : "Pixel_0_D26F9F91-97EA-4A7C-BDEC-5CB4F2EC7379.png",
+              "path" : "<ATTACHMENTS_DIR>\/3C2E7E2D-BC9F-490E-B0B9-B6C1169151BA.png",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "image\/png",
-              "exportedFileName" : "6EBEE1B1-E347-4889-83F8-A532BD5C3010.png",
-              "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_C099E144-EC1E-4A47-A8D3-39992B00A817.png",
-              "path" : "<ATTACHMENTS_DIR>\/6EBEE1B1-E347-4889-83F8-A532BD5C3010.png",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "image\/png",
-              "exportedFileName" : "AA414EED-610A-4D37-AD8C-FF9CC1080EB7.png",
-              "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_93C8BC42-F96A-44DD-95C0-48044D39E73B.png",
-              "path" : "<ATTACHMENTS_DIR>\/AA414EED-610A-4D37-AD8C-FF9CC1080EB7.png",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 5.557060241699219,
+          "durationMs" : 0.0591278076171875,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withPNGAttachment()",
           "status" : "success"
         },
@@ -462,41 +372,25 @@
           "attachments" : [
             {
               "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "B4F7FBFF-35D0-4CC2-8008-242F9047D279",
+              "exportedFileName" : "BCA6FCE9-E9DF-4BD6-8773-4818B1151B82",
               "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_A6EC5D77-F1EE-4747-B1A4-D164EC41913A",
-              "path" : "<ATTACHMENTS_DIR>\/B4F7FBFF-35D0-4CC2-8008-242F9047D279",
+              "name" : "Raw binary blob_0_166AB1DE-3062-431E-823E-866256183675",
+              "path" : "<ATTACHMENTS_DIR>\/BCA6FCE9-E9DF-4BD6-8773-4818B1151B82",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "57B645FC-D87F-44DF-A014-81EC9A3621A2",
-              "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_8135C61F-8AA2-4FCB-B069-C1623B97EF1E",
-              "path" : "<ATTACHMENTS_DIR>\/57B645FC-D87F-44DF-A014-81EC9A3621A2",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "exportedFileName" : "8B9EEE28-BFCA-4CF4-B0DB-86B9BCF94DCE",
-              "isAssociatedWithFailure" : false,
-              "name" : "Raw binary blob_0_F9FD0BA0-2C3C-4D0F-B1A2-8FFB49542A8B",
-              "path" : "<ATTACHMENTS_DIR>\/8B9EEE28-BFCA-4CF4-B0DB-86B9BCF94DCE",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 7.3699951171875,
+          "durationMs" : 0.029087066650390625,
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ withRawBinaryAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 1.5108585357666016,
+          "durationMs" : 2.981901168823242,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.2180805206298828,
+          "durationMs" : 1.155853271484375,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedSuccess()",
           "status" : "success"
         },
@@ -505,69 +399,51 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "31CCE38B-1595-4BCC-A9A5-A8FA5D948333.txt",
+              "exportedFileName" : "67F3EA17-3C91-4152-93BD-B0104A61C9CD.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_C9D35DAA-B370-4C52-8F58-927D347A9873.txt",
-              "path" : "<ATTACHMENTS_DIR>\/31CCE38B-1595-4BCC-A9A5-A8FA5D948333.txt",
+              "name" : "Deeply nested attachment_0_3284857C-52C6-4386-8341-E2BBB8F5BCF6.txt",
+              "path" : "<ATTACHMENTS_DIR>\/67F3EA17-3C91-4152-93BD-B0104A61C9CD.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "CD098D5E-2732-4358-B661-E43EF0417CB3.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_D0858AC1-9C7D-42DF-AAA0-19731FB21C59.txt",
-              "path" : "<ATTACHMENTS_DIR>\/CD098D5E-2732-4358-B661-E43EF0417CB3.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "07D5276A-5F5A-4C4F-B0F2-38FF24E149DC.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Deeply nested attachment_0_2BA1891C-ED6F-44B3-9390-84E6F8B3DD34.txt",
-              "path" : "<ATTACHMENTS_DIR>\/07D5276A-5F5A-4C4F-B0F2-38FF24E149DC.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 1.2989044189453125,
+          "durationMs" : 1.0881423950195312,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 4.4651031494140625,
+          "durationMs" : 2.016782760620117,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 4.267215728759766,
+          "durationMs" : 0.034809112548828125,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 6.522893905639648,
+          "durationMs" : 0.5309581756591797,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outer with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 7.071018218994141,
+          "durationMs" : 2.986431121826172,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 7.05409049987793,
+          "durationMs" : 0.17309188842773438,
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerSuccess()",
           "status" : "success"
         },
         {
-          "durationMs" : 12.59005069732666,
+          "durationMs" : 17.22705364227295,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_async()",
           "status" : "success"
         },
         {
-          "durationMs" : 12.165069580078125,
+          "durationMs" : 11.683940887451172,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_asyncWithExpectation()",
           "status" : "success"
         },
@@ -576,25 +452,25 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "C6228CCD-B6DC-4B1A-8C1B-DDF9BE232023.txt",
+              "exportedFileName" : "E2D765DD-DBC3-40B1-8C7A-07B75D81A882.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Activity attachment_0_84B7E7D0-564B-4A37-A7CB-09178EEF4881.txt",
-              "path" : "<ATTACHMENTS_DIR>\/C6228CCD-B6DC-4B1A-8C1B-DDF9BE232023.txt",
+              "name" : "Activity attachment_0_E168C199-8D49-4A98-B95D-58334C9B4894.txt",
+              "path" : "<ATTACHMENTS_DIR>\/E2D765DD-DBC3-40B1-8C7A-07B75D81A882.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 1.0939836502075195,
+          "durationMs" : 2.151012420654297,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_attachmentInsideActivity()",
           "status" : "success"
         },
         {
-          "durationMs" : 686.6929531097412,
+          "durationMs" : 111.70101165771484,
           "message" : "Failure is expected",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_expectedFailure()",
           "status" : "expectedFailure"
         },
         {
-          "durationMs" : 6.266117095947266,
+          "durationMs" : 4.938006401062012,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failure()",
           "status" : "failure"
@@ -604,60 +480,60 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "192DCE63-AC19-46BA-861D-9F703F9FC0BE.txt",
+              "exportedFileName" : "2A9C330B-0EF0-4858-81E6-C29329A01343.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_0B5ADCE4-CC54-498D-86C3-639CF088F085.txt",
-              "path" : "<ATTACHMENTS_DIR>\/192DCE63-AC19-46BA-861D-9F703F9FC0BE.txt",
+              "name" : "Failure context_0_7A047989-B57D-4337-85BF-2114F6A18A38.txt",
+              "path" : "<ATTACHMENTS_DIR>\/2A9C330B-0EF0-4858-81E6-C29329A01343.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "A94192FE-9139-4704-BF5D-6D88B0CE028E.txt",
+              "exportedFileName" : "B9CC4AEF-F5C2-45AA-90B4-74FF53B15D9F.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_78131F97-DF2F-46DA-AD5C-C3C5C9E8D294.txt",
-              "path" : "<ATTACHMENTS_DIR>\/A94192FE-9139-4704-BF5D-6D88B0CE028E.txt",
+              "name" : "Failure context_0_99A7DB62-3764-4D41-9E3B-6BB0B2B45AC9.txt",
+              "path" : "<ATTACHMENTS_DIR>\/B9CC4AEF-F5C2-45AA-90B4-74FF53B15D9F.txt",
               "repetitionNumber" : 2
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "BBB40032-0957-4B75-836A-43A6511E5A31.txt",
+              "exportedFileName" : "6F8C064E-6B37-4046-B780-C6F530D6A2CA.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Failure context_0_99F1D7A6-0ABA-4B9A-B1B2-950ED6537E5E.txt",
-              "path" : "<ATTACHMENTS_DIR>\/BBB40032-0957-4B75-836A-43A6511E5A31.txt",
+              "name" : "Failure context_0_46CFF4DE-7AE2-438F-B566-75AE5545182C.txt",
+              "path" : "<ATTACHMENTS_DIR>\/6F8C064E-6B37-4046-B780-C6F530D6A2CA.txt",
               "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 7.771968841552734,
+          "durationMs" : 4.106998443603516,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 1.5709400177001953,
+          "durationMs" : 1.6330480575561523,
           "message" : "Flacky failure message: result was 2.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_flacky()",
           "status" : "mixed"
         },
         {
-          "durationMs" : 258.0139636993408,
+          "durationMs" : 257.1859359741211,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_performance()",
           "status" : "success"
         },
         {
-          "durationMs" : 3.6499500274658203,
+          "durationMs" : 6.3370466232299805,
           "message" : "Skip message",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_skip()",
           "status" : "skipped"
         },
         {
-          "durationMs" : 0.41604042053222656,
+          "durationMs" : 0.5480051040649414,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_success()",
           "status" : "success"
         },
         {
-          "durationMs" : 3.937959671020508,
+          "durationMs" : 5.952954292297363,
           "message" : "failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
@@ -667,14 +543,14 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "2CE0D42A-FCFB-41A1-BF3B-718DCAA81088.txt",
+              "exportedFileName" : "10B5FF64-D246-42C9-9CA2-EAE4203C9715.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Calculation Result_0_999FEB55-63B3-48E9-94EE-A2FAB35405FB.txt",
-              "path" : "<ATTACHMENTS_DIR>\/2CE0D42A-FCFB-41A1-BF3B-718DCAA81088.txt",
+              "name" : "Calculation Result_0_516313EA-659F-446B-B004-D98523D9C4EE.txt",
+              "path" : "<ATTACHMENTS_DIR>\/10B5FF64-D246-42C9-9CA2-EAE4203C9715.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 0.6619691848754883,
+          "durationMs" : 1.0399818420410156,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withAttachment()",
           "status" : "success"
         },
@@ -683,23 +559,23 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "161590DA-DCF7-4D00-9291-53EA168487A6.txt",
+              "exportedFileName" : "D653D041-DB17-45F3-AF0D-A80F8D97AB13.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Product result_0_485AAD84-8211-4637-AF08-F134D561AA9E.txt",
-              "path" : "<ATTACHMENTS_DIR>\/161590DA-DCF7-4D00-9291-53EA168487A6.txt",
+              "name" : "Product result_0_FB6CA210-66FE-459B-A62B-28C91AFDDCE2.txt",
+              "path" : "<ATTACHMENTS_DIR>\/D653D041-DB17-45F3-AF0D-A80F8D97AB13.txt",
               "repetitionNumber" : 1
             },
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "1E1E245B-D0E6-4111-8E89-8C734FD56BD8.txt",
+              "exportedFileName" : "4A426380-ECAA-4C96-A0A4-ECB8E4908E9E.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Sum result_0_423487A6-D9CE-4F48-BFC9-059E181BF241.txt",
-              "path" : "<ATTACHMENTS_DIR>\/1E1E245B-D0E6-4111-8E89-8C734FD56BD8.txt",
+              "name" : "Sum result_0_D02D0B14-21A3-4EFD-90DF-3B6394D664B3.txt",
+              "path" : "<ATTACHMENTS_DIR>\/4A426380-ECAA-4C96-A0A4-ECB8E4908E9E.txt",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 0.9239912033081055,
+          "durationMs" : 1.2090206146240234,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withMultipleAttachments()",
           "status" : "success"
         },
@@ -708,50 +584,50 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "image\/png",
-              "exportedFileName" : "D635B0D0-7326-431B-9EDE-FE24661D283F.png",
+              "exportedFileName" : "24148945-F25E-403B-9B9A-E4395368A5C1.png",
               "isAssociatedWithFailure" : false,
-              "name" : "Pixel_0_C3F77DE8-51AC-4D5F-B202-1DE6BDDDB1C0.png",
-              "path" : "<ATTACHMENTS_DIR>\/D635B0D0-7326-431B-9EDE-FE24661D283F.png",
+              "name" : "Pixel_0_A3712051-3357-4233-9D5E-E0A4AB483F95.png",
+              "path" : "<ATTACHMENTS_DIR>\/24148945-F25E-403B-9B9A-E4395368A5C1.png",
               "repetitionNumber" : 1
             }
           ],
-          "durationMs" : 0.7179975509643555,
+          "durationMs" : 0.8990764617919922,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withPNGAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 0.3839731216430664,
+          "durationMs" : 0.5650520324707031,
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_withWarning()",
           "status" : "success"
         },
         {
-          "durationMs" : 5.050182342529297,
+          "durationMs" : 0.1990795135498047,
           "qualifiedName" : "ExamplesTests \/ array[0] is nil?",
           "status" : "success"
         },
         {
-          "durationMs" : 7.227659225463867,
+          "durationMs" : 0.1671314239501953,
           "qualifiedName" : "ExamplesTests \/ divide(10, 2) \/ returns 5",
           "status" : "success"
         },
         {
-          "durationMs" : 3.6809444427490234,
+          "durationMs" : 0.017881393432617188,
           "qualifiedName" : "ExamplesTests \/ root level with spaces in name",
           "status" : "success"
         },
         {
-          "durationMs" : 38.22183609008789,
+          "durationMs" : 12.006998062133789,
           "qualifiedName" : "ExamplesTests \/ rootLevelAsync()",
           "status" : "success"
         },
         {
-          "durationMs" : 8.236885070800781,
+          "durationMs" : 1.9707679748535156,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ rootLevelFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 4.675865173339844,
+          "durationMs" : 0.02384185791015625,
           "qualifiedName" : "ExamplesTests \/ rootLevelSuccess()",
           "status" : "success"
         },
@@ -760,42 +636,24 @@
             {
               "configurationName" : "Test Scheme Action",
               "contentType" : "text\/plain",
-              "exportedFileName" : "41421F38-F912-4438-BD35-BFD815D01062.txt",
+              "exportedFileName" : "353D9F20-EDF9-4CF4-ACFB-A89DA7DC8288.txt",
               "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_33C0629A-DAB7-4B8E-8334-88F03A80497E.txt",
-              "path" : "<ATTACHMENTS_DIR>\/41421F38-F912-4438-BD35-BFD815D01062.txt",
+              "name" : "Root attachment_0_D4A45149-F7E6-4948-98DA-7644AC4A4686.txt",
+              "path" : "<ATTACHMENTS_DIR>\/353D9F20-EDF9-4CF4-ACFB-A89DA7DC8288.txt",
               "repetitionNumber" : 1
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "FFA175FD-F040-4FAA-8D22-CBFBB92CF8AD.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_ADFDD8F7-AB0D-4B1B-92D8-7C6514A63D16.txt",
-              "path" : "<ATTACHMENTS_DIR>\/FFA175FD-F040-4FAA-8D22-CBFBB92CF8AD.txt",
-              "repetitionNumber" : 2
-            },
-            {
-              "configurationName" : "Test Scheme Action",
-              "contentType" : "text\/plain",
-              "exportedFileName" : "762C188F-EBFF-433F-B5FA-3FA162E23A95.txt",
-              "isAssociatedWithFailure" : false,
-              "name" : "Root attachment_0_A5B2B782-09FB-4D6B-8B75-25D3F7F1D48A.txt",
-              "path" : "<ATTACHMENTS_DIR>\/762C188F-EBFF-433F-B5FA-3FA162E23A95.txt",
-              "repetitionNumber" : 3
             }
           ],
-          "durationMs" : 7.865190505981445,
+          "durationMs" : 0.1068115234375,
           "qualifiedName" : "ExamplesTests \/ rootLevelWithAttachment()",
           "status" : "success"
         },
         {
-          "durationMs" : 3.4530162811279297,
+          "durationMs" : 0.07319450378417969,
           "qualifiedName" : "ExamplesTests \/ success 🎯",
           "status" : "success"
         },
         {
-          "durationMs" : 3.910064697265625,
+          "durationMs" : 0.10514259338378906,
           "qualifiedName" : "ExamplesTests \/ сложение работает",
           "status" : "success"
         }
