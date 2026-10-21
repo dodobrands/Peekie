@@ -86,7 +86,7 @@ The package exports:
 
 ## Testing
 
-Test resources are stored in `Tests/PeekieTests/Resources/` - sample `.xcresult` files used for testing (e.g., `SPM-26.1.1-iOS.xcresult`, `Xcworkspace-26.1.1-iOS.xcresult`).
+Test resources are stored in `Tests/PeekieTests/Resources/` as zipped `.xcresult` bundles (`<name>.xcresult.zip`). Tests refer to them by the bundle name without `.zip`; `Constants.copyXcresultToTemporaryDirectory` unzips a fresh copy per test. Never commit an unzipped bundle there. To replace fixtures, follow [Test fixtures](README.md#test-fixtures) in the README.
 
 ## Code Style Guidelines
 
