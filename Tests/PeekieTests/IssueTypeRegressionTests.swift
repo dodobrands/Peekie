@@ -10,7 +10,7 @@ import Testing
 /// asserts make a missing typed case impossible to merge.
 struct IssueTypeRegressionTests {
     @Test(
-        arguments: ["SPM-26.5-iOS.xcresult", "Xcworkspace-26.5-iOS.xcresult"]
+        arguments: ["SPM-27.0-iOS.xcresult", "Xcworkspace-27.0-iOS.xcresult"]
     )
     func fixtureSurfacesEveryTypedIssueType(_ fileName: String) async throws {
         // Both bundles ship a `WarningsCatalog.swift` (SPM in the Calculator
@@ -48,6 +48,10 @@ struct IssueTypeRegressionTests {
             warnings.contains { $0.type == .noUsage },
             "expected at least one .noUsage (from unused result of call)"
         )
+        #expect(
+            warnings.contains { $0.type == .unnecessaryEffectMarker },
+            "expected at least one .unnecessaryEffectMarker (from try without throwing calls)"
+        )
 
         // No issue should silently fall through to `.unknown(_)` — if Apple ships a
         // new typed group, we want to know and add it to the enum.
@@ -66,7 +70,7 @@ struct IssueTypeRegressionTests {
     func deprecatedDeclarationsAppearOncePerCallSiteNotOnce() async throws {
         // Regression for #161: dedup was dropped, so 3 identical call sites must produce
         // 3 records (one per line), not collapse to a single entry.
-        let originalPath = try Constants.url(for: "SPM-26.5-iOS.xcresult")
+        let originalPath = try Constants.url(for: "SPM-27.0-iOS.xcresult")
         let reportPath = try Constants.copyXcresultToTemporaryDirectory(originalPath)
         defer { try? FileManager.default.removeItem(at: reportPath) }
 

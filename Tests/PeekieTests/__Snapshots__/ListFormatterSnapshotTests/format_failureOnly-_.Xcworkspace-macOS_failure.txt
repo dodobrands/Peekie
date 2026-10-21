@@ -4,7 +4,7 @@ XcodeprojExample.app / (no suite)
 XcodeprojExample.app / ExampleSUITests
 ❌ failure() (Expected 5.0 but got 6.0)
 ❌ failureWithAttachment() (Expected 5.0 but got 6.0)
-❌ throwing() (SwiftTestingTests.swift:85: Caught error: .divisionByZero)
+❌ throwing() (Caught error: .divisionByZero)
 
 XcodeprojExample.app / OuterSuite
 ❌ outerFailure() (Outer suite failure: result was 200.0)
@@ -18,4 +18,4 @@ XcodeprojExample.app / OuterSuite / InnerSuite / DeeplyNestedSuite
 XcodeprojExample.app / XCTestTests
 ❌ test_failure() (Expected 5.0 but got 6.0)
 ❌ test_failureWithAttachment() (Expected 5.0 but got 6.0)
-❌ test_throwing() (XCTestTests.swift:77: failed: caught error: "divisionByZero")
+❌ test_throwing() (failed: caught error: "divisionByZero")

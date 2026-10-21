@@ -171,7 +171,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         },
@@ -212,61 +212,61 @@
       "name" : "ExamplesTests",
       "tests" : [
         {
-          "durationMs" : 48.48313331604004,
+          "durationMs" : 1.0137557983398438,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 51.05781555175781,
+          "durationMs" : 26.999950408935547,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 48.818111419677734,
-          "message" : "Calculator.swift:26: Caught error: .divisionByZero",
+          "durationMs" : 2.614259719848633,
+          "message" : "Caught error: .divisionByZero",
           "qualifiedName" : "ExamplesTests \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 27.034282684326172,
+          "durationMs" : 1.1632442474365234,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 42.76704788208008,
+          "durationMs" : 1.775979995727539,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 30.96604347229004,
+          "durationMs" : 1.6291141510009766,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "ExamplesTests \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 2.6280879974365234,
+          "durationMs" : 2.2040605545043945,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 3.276824951171875,
+          "durationMs" : 3.162860870361328,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 4.989981651306152,
-          "message" : "Calculator.swift:26: failed: caught error: \"divisionByZero\"",
+          "durationMs" : 2.311825752258301,
+          "message" : "failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "ExamplesTests \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 43.61987113952637,
+          "durationMs" : 0.7452964782714844,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "ExamplesTests \/ rootLevelFailure()",
           "status" : "failure"

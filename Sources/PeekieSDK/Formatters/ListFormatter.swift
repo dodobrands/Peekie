@@ -227,7 +227,8 @@ private extension Report.Module.Suite.RepeatableTest.Test {
         [
             status.icon,
             overrideName ?? name,
-            message.map { "(\($0))" },
+            // One line per test: Swift Testing messages can span several lines
+            message.map { "(\($0.replacing("\n", with: " ")))" },
         ]
         .compactMap(\.self)
         .joined(separator: " ")

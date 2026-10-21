@@ -13,6 +13,9 @@ struct IssueTypeTests {
         #expect(IssueType(rawValue: "Swift Compiler Error") == .swiftCompilerError)
         #expect(IssueType(rawValue: "DeprecatedDeclaration") == .deprecatedDeclaration)
         #expect(IssueType(rawValue: "No-usage") == .noUsage)
+        #expect(IssueType(rawValue: "NoUsage") == .noUsage)
+        #expect(IssueType(rawValue: "UnnecessaryEffectMarker") == .unnecessaryEffectMarker)
+        #expect(IssueType(rawValue: "Warning") == .warning)
     }
 
     @Test
@@ -36,6 +39,8 @@ struct IssueTypeTests {
             .swiftCompilerError,
             .deprecatedDeclaration,
             .noUsage,
+            .unnecessaryEffectMarker,
+            .warning,
             .unknown("FutureType"),
         ]
 

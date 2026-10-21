@@ -120,6 +120,14 @@ extension AllureFormatter {
                     runStopMs: stopMs
                 )
 
+                // Xcode 27 no longer symbolicates the issue's call-site frame and leaves its
+                // title empty; a nameless step is noise, so its children take its place
+                if activity.title.isEmpty {
+                    resultAttachments.append(contentsOf: attachments)
+                    steps.append(contentsOf: childSteps)
+                    continue
+                }
+
                 steps.append(
                     AllureTestResult.Step(
                         name: activity.title,

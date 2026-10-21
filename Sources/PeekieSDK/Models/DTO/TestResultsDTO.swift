@@ -129,6 +129,8 @@ extension TestResultsDTO.TestNode {
         case uiTestBundle
         case repetition
         case failureMessage
+        case skipMessage
+        case expectedFailure
         case testPlan
         case arguments
         case device
@@ -154,6 +156,10 @@ extension TestResultsDTO.TestNode {
                 self = .repetition
             case "Failure Message":
                 self = .failureMessage
+            case "Skip Message":
+                self = .skipMessage
+            case "Expected Failure":
+                self = .expectedFailure
             case "Test Plan":
                 self = .testPlan
             case "Arguments":
@@ -177,6 +183,8 @@ extension TestResultsDTO.TestNode {
                  (.uiTestBundle, .uiTestBundle),
                  (.repetition, .repetition),
                  (.failureMessage, .failureMessage),
+                 (.skipMessage, .skipMessage),
+                 (.expectedFailure, .expectedFailure),
                  (.testPlan, .testPlan),
                  (.arguments, .arguments),
                  (.device, .device),
@@ -226,9 +234,10 @@ extension TestResultsDTO.TestNode {
     /// -> "Failure message")
     /// For Swift Testing format, extracts message after "Issue recorded: " (e.g., "File.swift:56:
     /// Issue recorded: Failure message" -> "Failure message")
+    /// Xcode 27+ splits skip and expected failure messages into their own node types; they are
+    /// read here too, as Xcode 26 reported all three as "Failure Message".
     var failureMessage: String? {
-        guard let messageNode = metadataSearchSpace.first(where: { $0.nodeType == .failureMessage })
-        else {
+        guard let messageNode = metadataSearchSpace.first(where: \.isMessage) else {
             return nil
         }
 
@@ -241,16 +250,27 @@ extension TestResultsDTO.TestNode {
         if let range = message.range(of: "failed -") {
             return String(message[range.upperBound...]).trimmingCharacters(in: .whitespaces)
         }
+        // Xcode 27 drops the "File.swift:NN: " prefix from most messages but keeps it on
+        // Swift Testing known issues; strip it so every message looks the same
+        if let prefix = message.range(
+            of: #"^[^\s:/]+\.[A-Za-z]\w*:\d+: "#,
+            options: .regularExpression
+        ) {
+            return String(message[prefix.upperBound...])
+        }
         return message
     }
 
     /// Extracts skip message from children nodes
     /// Extracts message after "skipped -" separator (e.g., "Test skipped - Skip message" -> "Skip
     /// message")
+    /// Xcode 27+ emits a dedicated "Skip Message" node; older versions report the skip as a
+    /// "Failure Message" mentioning "skip".
     var skipMessage: String? {
-        let messageNode = metadataSearchSpace.first {
-            $0.nodeType == .failureMessage && $0.name.lowercased().contains("skip")
-        }
+        let messageNode = metadataSearchSpace.first { $0.nodeType == .skipMessage }
+            ?? metadataSearchSpace.first {
+                $0.nodeType == .failureMessage && $0.name.lowercased().contains("skip")
+            }
         guard let message = messageNode?.name else {
             return nil
         }
@@ -261,8 +281,13 @@ extension TestResultsDTO.TestNode {
         return message
     }
 
-    /// Returns true if this node is a metadata node (failureMessage, runtimeWarning)
+    /// Returns true if this node is a metadata node (a message or runtimeWarning)
     var isMetadata: Bool {
-        nodeType == .failureMessage || nodeType == .runtimeWarning
+        isMessage || nodeType == .runtimeWarning
+    }
+
+    /// Returns true if this node carries a failure, skip or expected failure message
+    var isMessage: Bool {
+        nodeType == .failureMessage || nodeType == .skipMessage || nodeType == .expectedFailure
     }
 }

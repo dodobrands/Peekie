@@ -296,6 +296,8 @@ public extension Report.File {
             case deprecatedDeclaration
             case noUsage
             case actorIsolatedCall
+            case unnecessaryEffectMarker
+            case warning
             case unknown(String)
         }
 
@@ -320,10 +322,15 @@ public extension Report.File.Issue.IssueType {
             self = .swiftCompilerError
         case "DeprecatedDeclaration":
             self = .deprecatedDeclaration
-        case "No-usage":
+        // Xcode 27 renamed "No-usage" to "NoUsage"
+        case "No-usage", "NoUsage":
             self = .noUsage
         case "ActorIsolatedCall":
             self = .actorIsolatedCall
+        case "UnnecessaryEffectMarker":
+            self = .unnecessaryEffectMarker
+        case "Warning":
+            self = .warning
         default:
             self = .unknown(rawValue)
         }
@@ -343,6 +350,10 @@ public extension Report.File.Issue.IssueType {
             "No-usage"
         case .actorIsolatedCall:
             "ActorIsolatedCall"
+        case .unnecessaryEffectMarker:
+            "UnnecessaryEffectMarker"
+        case .warning:
+            "Warning"
         case .unknown(let raw):
             raw
         }

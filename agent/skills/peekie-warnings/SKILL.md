@@ -38,7 +38,7 @@ Flat sorted array, one entry per warning:
 ```
 
 - `line` / `column` are `null` when xcresult didn't emit them.
-- `type` values are the raw Apple `issueType` strings: `Swift Compiler Warning`, `Swift Compiler Error`, `DeprecatedDeclaration`, `No-usage`, `ActorIsolatedCall`, plus whatever new categories Apple adds.
+- `type` values are the raw Apple `issueType` strings: `Swift Compiler Warning`, `Swift Compiler Error`, `DeprecatedDeclaration`, `No-usage`, `ActorIsolatedCall`, `UnnecessaryEffectMarker`, `Warning`, plus whatever new categories Apple adds. Xcode 27 spells `No-usage` as `NoUsage`; peekie normalizes it to `No-usage`.
 
 ### `--format list`
 

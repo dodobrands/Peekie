@@ -63,61 +63,61 @@
       "name" : "XcodeprojExample.app",
       "tests" : [
         {
-          "durationMs" : 7.508993148803711,
+          "durationMs" : 1.5749931335449219,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 98.9999771118164,
+          "durationMs" : 40.9998893737793,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 11.940956115722656,
-          "message" : "SwiftTestingTests.swift:85: Caught error: .divisionByZero",
+          "durationMs" : 0.33354759216308594,
+          "message" : "Caught error: .divisionByZero",
           "qualifiedName" : "XcodeprojExample.app \/ ExampleSUITests \/ throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 3.25775146484375,
+          "durationMs" : 1.1107921600341797,
           "message" : "Deeply nested failure: result was 0.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ DeeplyNestedSuite \/ deeplyNestedFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 7.313013076782227,
+          "durationMs" : 0.5240440368652344,
           "message" : "Inner suite failure: result was 12.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ InnerSuite \/ innerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 10.712146759033203,
+          "durationMs" : 1.283407211303711,
           "message" : "Outer suite failure: result was 200.0",
           "qualifiedName" : "XcodeprojExample.app \/ OuterSuite \/ outerFailure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 2.4700164794921875,
+          "durationMs" : 2.1179914474487305,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failure()",
           "status" : "failure"
         },
         {
-          "durationMs" : 5.963921546936035,
+          "durationMs" : 2.754092216491699,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_failureWithAttachment()",
           "status" : "failure"
         },
         {
-          "durationMs" : 7.175087928771973,
-          "message" : "XCTestTests.swift:77: failed: caught error: \"divisionByZero\"",
+          "durationMs" : 2.9931068420410156,
+          "message" : "failed: caught error: \"divisionByZero\"",
           "qualifiedName" : "XcodeprojExample.app \/ XCTestTests \/ test_throwing()",
           "status" : "failure"
         },
         {
-          "durationMs" : 8.4228515625,
+          "durationMs" : 0.9169578552246094,
           "message" : "Expected 5.0 but got 6.0",
           "qualifiedName" : "XcodeprojExample.app \/ rootLevelFailure()",
           "status" : "failure"
@@ -243,7 +243,7 @@
                 "startLine" : 89
               },
               "message" : "No calls to throwing functions occur within 'try' expression",
-              "type" : "Swift Compiler Warning"
+              "type" : "UnnecessaryEffectMarker"
             }
           ]
         }
