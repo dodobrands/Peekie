@@ -25,7 +25,8 @@ public struct Report {
         coverage: Double?,
         coverageByModule: [String: Coverage] = [:],
         suitesByModule: [String: [Module.Suite]] = [:],
-        rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>] = [:]
+        rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>] = [:],
+        unassociatedAttachments: [Module.Suite.RepeatableTest.Test.Attachment] = []
     ) {
         self.files = files
         self.modules = modules
@@ -33,6 +34,7 @@ public struct Report {
         self.coverageByModule = coverageByModule
         self.suitesByModule = suitesByModule
         self.rootLevelTestsByModule = rootLevelTestsByModule
+        self.unassociatedAttachments = unassociatedAttachments
     }
 
     // MARK: Public
@@ -63,6 +65,10 @@ public struct Report {
     /// Empty set = no `@Test`s declared outside `@Suite` types (or
     /// `includeTests: false`).
     public let rootLevelTestsByModule: [String: Set<Module.Suite.RepeatableTest>]
+
+    /// Runtime diagnostic attachments explicitly recorded without an associated test or suite.
+    /// The extraction directory is owned by the caller, as with test attachments.
+    public let unassociatedAttachments: [Module.Suite.RepeatableTest.Test.Attachment]
 
     /// All warnings from all files in this report.
     public var warnings: [File.Issue] {

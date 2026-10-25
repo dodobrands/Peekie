@@ -69,5 +69,6 @@ public struct Attachments: AsyncParsableCommand {
         case .list:
             print(formatter.list(report, include: statuses))
         }
+        try report.checkUnassociatedIssues()
     }
 }

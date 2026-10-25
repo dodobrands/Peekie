@@ -88,7 +88,13 @@ public final class AttachmentsFormatter {
     )
         -> [AttachmentRow]
     {
-        var rows = [AttachmentRow]()
+        var rows = report.unassociatedAttachments.map {
+            AttachmentRow(
+                qualifiedName: AttachmentDetails.unassociatedIssuesIdentifier,
+                attachment: $0,
+                scope: "report"
+            )
+        }
         for module in report.modules.sorted(by: { $0.name < $1.name }) {
             let rootLevelTests = report.rootLevelTests(in: module)
                 .filtered(testResults: include)
@@ -170,7 +176,12 @@ public final class AttachmentsFormatter {
 private struct AttachmentRow: Encodable {
     // MARK: Lifecycle
 
-    init(qualifiedName: String, attachment: Report.Module.Suite.RepeatableTest.Test.Attachment) {
+    init(
+        qualifiedName: String,
+        attachment: Report.Module.Suite.RepeatableTest.Test.Attachment,
+        scope: String? = nil
+    ) {
+        self.scope = scope
         self.qualifiedName = qualifiedName
         name = attachment.name
         exportedFileName = attachment.exportedFileName
@@ -184,6 +195,7 @@ private struct AttachmentRow: Encodable {
 
     // MARK: Internal
 
+    let scope: String?
     let configurationName: String?
     let contentType: String?
     let deviceID: String?

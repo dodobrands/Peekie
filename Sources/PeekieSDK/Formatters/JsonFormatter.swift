@@ -91,6 +91,8 @@ private struct JSONReport: Encodable {
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
+        unassociatedAttachments = report.unassociatedAttachments.isEmpty
+            ? nil : report.unassociatedAttachments.map { JSONAttachment(from: $0) }
         coverage = report.coverage
         modules = report.modules
             .sorted { $0.name < $1.name }
@@ -106,6 +108,7 @@ private struct JSONReport: Encodable {
 
     // MARK: Internal
 
+    let unassociatedAttachments: [JSONAttachment]?
     let coverage: Double?
     let modules: [JSONModule]
 }
@@ -164,6 +167,8 @@ private struct JSONReportFlat: Encodable {
         include: [Report.Module.Suite.RepeatableTest.Test.Status],
         includeDeviceDetails: Bool
     ) {
+        unassociatedAttachments = report.unassociatedAttachments.isEmpty
+            ? nil : report.unassociatedAttachments.map { JSONAttachment(from: $0) }
         coverage = report.coverage
         modules = report.modules
             .sorted { $0.name < $1.name }
@@ -179,6 +184,7 @@ private struct JSONReportFlat: Encodable {
 
     // MARK: Internal
 
+    let unassociatedAttachments: [JSONAttachment]?
     let coverage: Double?
     let modules: [JSONModuleFlat]
 }
