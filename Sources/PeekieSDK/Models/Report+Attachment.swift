@@ -26,7 +26,7 @@ extension Report.Module.Suite.RepeatableTest.Test: CustomReflectable {
 // MARK: - Report.Module.Suite.RepeatableTest.Test.Attachment
 
 public extension Report.Module.Suite.RepeatableTest.Test {
-    /// An attachment captured during a test execution.
+    /// An attachment captured during a test run, with or without a test owner.
     ///
     /// Mirrors the entries emitted by `xcrun xcresulttool export attachments` in the
     /// generated `manifest.json`. The on-disk file lives at `path`; the original
@@ -75,7 +75,7 @@ public extension Report.Module.Suite.RepeatableTest.Test {
         /// exported file has no extension or no MIME mapping exists.
         public let contentType: String?
 
-        /// `true` when xcresult linked this attachment to a failure on the same test.
+        /// `true` when xcresult linked this attachment to a failure.
         public let isAssociatedWithFailure: Bool
 
         /// 1-based repetition number for retried tests; `nil` when not reported.
@@ -89,5 +89,25 @@ public extension Report.Module.Suite.RepeatableTest.Test {
 
         /// Test plan configuration name (e.g. `"Test Scheme Action"`).
         public let configurationName: String?
+    }
+}
+
+// MARK: - Report + CustomReflectable
+
+extension Report: CustomReflectable {
+    /// Keeps empty diagnostic attachments out of existing report dumps.
+    public var customMirror: Mirror {
+        var children: [Mirror.Child] = [
+            ("files", files),
+            ("modules", modules),
+            ("coverage", coverage as Any),
+            ("coverageByModule", coverageByModule),
+            ("suitesByModule", suitesByModule),
+            ("rootLevelTestsByModule", rootLevelTestsByModule),
+        ]
+        if unassociatedAttachments.isEmpty == false {
+            children.append(("unassociatedAttachments", unassociatedAttachments))
+        }
+        return Mirror(self, children: children, displayStyle: .struct)
     }
 }

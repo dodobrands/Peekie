@@ -4,16 +4,13 @@ import Testing
 
 struct AttachmentsManifestRegressionTests {
     @Test
-    func retainedUnassociatedBucketReproducesMissingURL() throws {
+    func retainedUnassociatedBucketDecodesWithoutInventingATest() throws {
         let manifest = try #require(Bundle.module.resourceURL)
             .appendingPathComponent("Resources/UnassociatedIssues/manifest.json")
-        let data = try Data(contentsOf: manifest)
-        do {
-            _ = try JSONDecoder().decode(AttachmentsDTO.self, from: data)
-            Issue.record("Expected the existing decoder to reject the unassociated bucket")
-        } catch DecodingError.keyNotFound(let key, let context) {
-            #expect(key.stringValue == "testIdentifierURL")
-            #expect(context.codingPath.first?.intValue == 0)
-        }
+        let dto = try JSONDecoder().decode(AttachmentsDTO.self, from: Data(contentsOf: manifest))
+        #expect(dto.count == 2)
+        #expect(dto[0].testIdentifierURL == nil)
+        #expect(dto[0].attachments.count == 8)
+        #expect(dto[1].testIdentifierURL == "test://com.apple.xcode/Example/ExampleTests/passes()")
     }
 }

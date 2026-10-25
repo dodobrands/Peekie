@@ -96,6 +96,7 @@ public final class AllureFormatter {
     {
         try write(
             items: results(report: report, startedAt: startedAt, makeUUID: makeUUID),
+            unassociatedAttachments: report.unassociatedAttachments,
             to: outputDirectory
         )
     }
@@ -118,6 +119,7 @@ public final class AllureFormatter {
                 stepsFrom: xcresultPath,
                 makeUUID: makeUUID
             ),
+            unassociatedAttachments: report.unassociatedAttachments,
             to: outputDirectory
         )
     }
@@ -221,7 +223,13 @@ public final class AllureFormatter {
         }
     }
 
-    private func write(items: [AllureTestResult], to outputDirectory: URL) throws -> WriteSummary {
+    private func write(
+        items: [AllureTestResult],
+        unassociatedAttachments: [Report.Module.Suite.RepeatableTest.Test.Attachment],
+        to outputDirectory: URL
+    ) throws
+        -> WriteSummary
+    {
         let fileManager = FileManager.default
         try fileManager.createDirectory(at: outputDirectory, withIntermediateDirectories: true)
 
@@ -249,6 +257,11 @@ public final class AllureFormatter {
             let fileURL = outputDirectory.appendingPathComponent("\(item.uuid)-result.json")
             try encoder.encode(item).write(to: fileURL)
         }
+
+        attachmentsTotal += try writeUnassociatedAttachments(
+            unassociatedAttachments,
+            to: outputDirectory
+        )
 
         return WriteSummary(
             resultCountsByStatus: countsByStatus,

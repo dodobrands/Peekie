@@ -106,9 +106,10 @@ extension Report {
         let testNodesByModule = Self.testNodesByCanonicalModule(
             testResultsDTO: testResultsDTO,
             coverageReportDTO: coverageReportDTO,
-            attachmentLookup: attachmentLookup
+            attachmentLookup: attachmentLookup.tests
         )
 
+        unassociatedAttachments = attachmentLookup.unassociated
         self.files = files
         let moduleNames = Self.moduleNames(
             files: files,
@@ -174,7 +175,8 @@ extension Report {
     // MARK: - Attachment lookup
 
     /// Resolves the `(testIdentifierURL, repetitionNumber) → [Attachment]` map
-    /// the rest of the parse joins against. Returns an empty map when the
+    /// the rest of the parse joins against, plus report-scoped diagnostics.
+    /// Returns empty collections when the
     /// caller chose `.skip` or `includeTests == false`; otherwise creates the
     /// output directory, runs `xcresulttool export attachments`, and folds the
     /// manifest via ``buildAttachmentLookup(dto:outputDirectory:)``.
@@ -184,12 +186,15 @@ extension Report {
         attachments: AttachmentPolicy,
         testResults: TestResultsDTO?
     ) async throws
-        -> [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+        -> (
+            tests: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+            unassociated: [Module.Suite.RepeatableTest.Test.Attachment]
+        )
     {
         guard includeTests,
               case .extractTo(let outputDirectory, let testID) = attachments
         else {
-            return [:]
+            return ([:], [])
         }
 
         try FileManager.default.createDirectory(
@@ -212,21 +217,22 @@ extension Report {
 
     /// Folds the flat manifest from `xcresulttool export attachments` into a
     /// `(testIdentifierURL, repetitionNumber) → [Attachment]` map. Entries
-    /// whose `repetitionNumber` is `nil` participate as the catch-all bucket
+    /// without a test URL are retained separately. Entries whose
+    /// `repetitionNumber` is `nil` participate as the catch-all bucket
     /// for tests that ran without retries.
     static func buildAttachmentLookup(
         dto: AttachmentsDTO,
         outputDirectory: URL
     )
-        -> [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]
+        -> (
+            tests: [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]],
+            unassociated: [Module.Suite.RepeatableTest.Test.Attachment]
+        )
     {
         var result = [AttachmentLookupKey: [Module.Suite.RepeatableTest.Test.Attachment]]()
+        var unassociated = [Module.Suite.RepeatableTest.Test.Attachment]()
         for entry in dto {
             for raw in entry.attachments {
-                let key = AttachmentLookupKey(
-                    testIdentifierURL: entry.testIdentifierURL,
-                    repetitionNumber: raw.repetitionNumber
-                )
                 let attachment = Module.Suite.RepeatableTest.Test.Attachment(
                     name: raw.suggestedHumanReadableName,
                     exportedFileName: raw.exportedFileName,
@@ -238,10 +244,18 @@ extension Report {
                     deviceID: raw.deviceID,
                     configurationName: raw.configurationName
                 )
-                result[key, default: []].append(attachment)
+                if let testIdentifierURL = entry.testIdentifierURL {
+                    let key = AttachmentLookupKey(
+                        testIdentifierURL: testIdentifierURL,
+                        repetitionNumber: raw.repetitionNumber
+                    )
+                    result[key, default: []].append(attachment)
+                } else {
+                    unassociated.append(attachment)
+                }
             }
         }
-        return result
+        return (result, unassociated)
     }
 
     /// Infers a MIME type from a filename via `UTType`. Returns `nil` when no

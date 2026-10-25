@@ -127,9 +127,17 @@ public struct Tests: AsyncParsableCommand {
 
             try await exportAllure(report: report, outputDir: outputDir)
         }
+        try report.checkUnassociatedIssues(in: diagnosticsDirectory)
     }
 
     // MARK: Private
+
+    private var diagnosticsDirectory: URL? {
+        format == .allure
+            ? outputDir
+            .map { URL(fileURLWithPath: $0).appendingPathComponent("unassociated-issues") }
+            : nil
+    }
 
     /// Resolves the attachment extraction policy from the CLI flags. The Allure
     /// format needs attachment files even when the user didn't ask for them
