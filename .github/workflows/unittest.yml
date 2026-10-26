@@ -62,7 +62,7 @@ jobs:
       run: swift run peekie coverage $RUNNER_TEMP/xcresults/SPM-27.0-iOS.xcresult
 
     - name: Install mise
-      uses: jdx/mise-action@v5.2.0
+      uses: jdx/mise-action@v5.2.2
 
     - name: Scan for unused code with Periphery
       run: periphery scan --skip-build --strict
