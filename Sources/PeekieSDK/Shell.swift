@@ -35,7 +35,7 @@ enum Shell {
 
         // Check if process exited successfully
         guard case .exited(let code) = result.terminationStatus, code == 0 else {
-            let errorOutput = result.standardError ?? ""
+            let errorOutput = result.standardError
             let exitCode =
                 if case .exited(let exitCodeValue) = result.terminationStatus {
                     "\(exitCodeValue)"
