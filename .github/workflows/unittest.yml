@@ -43,6 +43,8 @@ jobs:
     - name: Test
       env:
         NSUnbufferedIO: YES
+        # Each xcresult test spawns several xcrun/xcresulttool/xccov processes; unbounded parallelism exhausts the runner's process limit (EAGAIN).
+        SWT_EXPERIMENTAL_MAXIMUM_PARALLELIZATION_WIDTH: 4
       run: swift test --skip-build
 
     # Verify CLI tool functionality by parsing test xcresult file
