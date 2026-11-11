@@ -47,7 +47,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/swiftlang/swift-subprocess.git",
-            .upToNextMinor(from: "0.2.1")
+            .upToNextMinor(from: "1.0.2")
         ),
         .package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
